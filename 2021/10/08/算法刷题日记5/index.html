@@ -33,17 +33,17 @@
   <!-- 页面元数据 -->
   <title>算法刷题日记5 - 一方の笔记本</title>
   <meta name="keywords" content="C++,null">
-  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
+  <meta desc name="description" content="2021年10月8日练习。 - John Doe - 一方の笔记本">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法刷题日记5">
 <meta property="og:url" content="http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="algo 1002&amp;emsp;&amp;emsp;记得我第一次用这个平台还是2020年的暑假小学期的时候，当时想按顺序做几道题，但是到这个题目就卡住了…思索很久也没有答案，正好最近在学dp，于是终于把这个题自己解了出来…（其实是看了好多大佬的代码 题目描述在河上有一座独木桥，一只青蛙想沿着独木桥从河的一侧跳到另一侧。在桥上有一些石子，青蛙很讨厌踩在这些石子上。由于桥的长度和青蛙一次跳过的距离都是正整数，我">
+<meta property="og:description" content="2021年10月8日练习。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-08T01:59:35.000Z">
-<meta property="article:modified_time" content="2022-09-13T11:54:43.044Z">
+<meta property="article:modified_time" content="2022-09-15T03:22:48.610Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663169733568),
+    lastupdate: new Date(1663214004146),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2701,22 +2701,54 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="algo-1002"><a href="#algo-1002" class="headerlink" title="algo 1002"></a>algo 1002</h2><p>&emsp;&emsp;记得我第一次用这个平台还是2020年的暑假小学期的时候，当时想按顺序做几道题，但是到这个题目就卡住了…思索很久也没有答案，正好最近在学dp，于是终于把这个题自己解了出来…（其实是看了好多大佬的代码</p>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote><p>在河上有一座独木桥，一只青蛙想沿着独木桥从河的一侧跳到另一侧。在桥上有一些石子，青蛙很讨厌踩在这些石子上。由于桥的长度和青蛙一次跳过的距离都是正整数，我们可以把独木桥上青蛙可能到达的点看成数轴上的一串整点：0，1，……，L（其中L是桥的长度）。坐标为0的点表示桥的起点，坐标为L的点表示桥的终点。青蛙从桥的起点开始，不停的向终点方向跳跃。一次跳跃的距离是S到T之间的任意正整数（包括S,T）。当青蛙跳到或跳过坐标为L的点时，就算青蛙已经跳出了独木桥。<br>题目给出独木桥的长度L，青蛙跳跃的距离范围S,T，桥上石子的位置。你的任务是确定青蛙要想过河，最少需要踩到的石子数。<br>对于30%的数据，$L \leq 10000$；<br>对于全部的数据，$L \leq 10^9$。</p>
+    <p>2021年10月8日练习。 <span id="more"></span></p>
+<h2 id="algo-1002">algo 1002</h2>
+<p>  记得我第一次用这个平台还是2020年的暑假小学期的时候，当时想按顺序做几道题，但是到这个题目就卡住了...思索很久也没有答案，正好最近在学dp，于是终于把这个题自己解了出来...（其实是看了好多大佬的代码
+### 题目描述 <blockquote><p>在河上有一座独木桥，一只青蛙想沿着独木桥从河的一侧跳到另一侧。在桥上有一些石子，青蛙很讨厌踩在这些石子上。由于桥的长度和青蛙一次跳过的距离都是正整数，我们可以把独木桥上青蛙可能到达的点看成数轴上的一串整点：0，1，……，L（其中L是桥的长度）。坐标为0的点表示桥的起点，坐标为L的点表示桥的终点。青蛙从桥的起点开始，不停的向终点方向跳跃。一次跳跃的距离是S到T之间的任意正整数（包括S,T）。当青蛙跳到或跳过坐标为L的点时，就算青蛙已经跳出了独木桥。
+题目给出独木桥的长度L，青蛙跳跃的距离范围S,T，桥上石子的位置。你的任务是确定青蛙要想过河，最少需要踩到的石子数。
+对于30%的数据，<span class="math inline">\(L \leq 10000\)</span>；
+对于全部的数据，<span class="math inline">\(L \leq 10^9\)</span>。</p>
+</blockquote></p>
+<h3 id="输入数据">输入数据</h3>
+<blockquote><p>输入的第一行有一个正整数<span class="math inline">\(L
+(1≤L≤10^9)\)</span>， 表示独木桥的长度。第二行有三个正整数<span
+class="math inline">\(S,T,M\)</span>，
+分别表示青蛙一次跳跃的最小距离，最大距离及桥上石子的个数，其中<span
+class="math inline">\(1≤S≤T≤10,1≤M≤100\)</span>。第三行有<span
+class="math inline">\(M\)</span>个不同的正整数分别表示这<span
+class="math inline">\(M\)</span>个石子在数轴上的位置（数据保证桥的起点和终点处没有石子）。所有相邻的整数之间用一个空格隔开。</p>
 </blockquote>
-
-<h3 id="输入数据"><a href="#输入数据" class="headerlink" title="输入数据"></a>输入数据</h3><blockquote><p>输入的第一行有一个正整数$L (1≤L≤10^9)$， 表示独木桥的长度。第二行有三个正整数$S,T,M$， 分别表示青蛙一次跳跃的最小距离，最大距离及桥上石子的个数，其中$1≤S≤T≤10,1≤M≤100$。第三行有$M$个不同的正整数分别表示这$M$个石子在数轴上的位置（数据保证桥的起点和终点处没有石子）。所有相邻的整数之间用一个空格隔开。</p>
+<h3 id="输出数据">输出数据</h3>
+<blockquote><p>输出只包括一个整数，表示青蛙过河最少需要踩到的石子数。</p>
 </blockquote>
-<h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><blockquote><p>输出只包括一个整数，表示青蛙过河最少需要踩到的石子数。</p>
+<h3 id="样例输入">样例输入</h3>
+<blockquote><p>10 2 3 5 2 3 5 6 7</p>
 </blockquote>
-<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><blockquote><p>10<br>2 3 5<br>2 3 5 6 7</p>
+<h3 id="样例输出">样例输出</h3>
+<blockquote><p>2</p>
 </blockquote>
-
-<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><blockquote><p>2</p>
-</blockquote>
-
-<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>&emsp;&emsp;阅读题目可知只要跳过$L$即可，记到达某一位置$i$所需踩的最少的石头数记作$dp[i]$，其中$i \in [0, L-1+T]$，当前到达当前位置所需的代价与之前$S$到$T$的位置有关。因此很容易写出状态转移方程$dp[i]=min(dp[i-j])$，其中$S \leq i-j \leq T$。再看题目中$L$的数据范围可知对于70%的数据需要进行空间的压缩。由$S$和$T$的范围，记$MOD=lcm(1,…,10)$，则$MOD=2520$。之所以这样做的原因是要求出从任一位置$i$一定能前进的距离的最大值，也就是说可以任取$i$一定能从$i$跳至$(i+MOD)$处。由此可以对距离进行压缩，压缩至大约50万的范围内，可以使用dp。最终在区间$[L,L+T-1]$的范围内找出最小值输出即可。</p>
+<h3 id="题目分析">题目分析</h3>
+<p>  阅读题目可知只要跳过<span
+class="math inline">\(L\)</span>即可，记到达某一位置<span
+class="math inline">\(i\)</span>所需踩的最少的石头数记作<span
+class="math inline">\(dp[i]\)</span>，其中<span class="math inline">\(i
+\in [0, L-1+T]\)</span>，当前到达当前位置所需的代价与之前<span
+class="math inline">\(S\)</span>到<span
+class="math inline">\(T\)</span>的位置有关。因此很容易写出状态转移方程<span
+class="math inline">\(dp[i]=min(dp[i-j])\)</span>，其中<span
+class="math inline">\(S \leq i-j \leq T\)</span>。再看题目中<span
+class="math inline">\(L\)</span>的数据范围可知对于70%的数据需要进行空间的压缩。由<span
+class="math inline">\(S\)</span>和<span
+class="math inline">\(T\)</span>的范围，记<span
+class="math inline">\(MOD=lcm(1,...,10)\)</span>，则<span
+class="math inline">\(MOD=2520\)</span>。之所以这样做的原因是要求出从任一位置<span
+class="math inline">\(i\)</span>一定能前进的距离的最大值，也就是说可以任取<span
+class="math inline">\(i\)</span>一定能从<span
+class="math inline">\(i\)</span>跳至<span
+class="math inline">\((i+MOD)\)</span>处。由此可以对距离进行压缩，压缩至大约50万的范围内，可以使用dp。最终在区间<span
+class="math inline">\([L,L+T-1]\)</span>的范围内找出最小值输出即可。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MOD 2520</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> L;</span><br><span class="line">	cin &gt;&gt; L;</span><br><span class="line">	<span class="type">int</span> S, T, M;</span><br><span class="line">	cin &gt;&gt; S &gt;&gt; T &gt;&gt; M;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; stones;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">		<span class="type">int</span> temp;</span><br><span class="line">		cin &gt;&gt; temp;</span><br><span class="line">		stones.<span class="built_in">emplace_back</span>(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(stones.<span class="built_in">begin</span>(), stones.<span class="built_in">end</span>(), <span class="built_in">less</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">compressed</span><span class="params">(MOD * <span class="number">107</span>)</span></span>;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; dis;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; M; i++) &#123;</span><br><span class="line">		dis.<span class="built_in">push_back</span>((stones[i] - stones[i - <span class="number">1</span>]) % MOD);</span><br><span class="line">	&#125;</span><br><span class="line">	stones[<span class="number">0</span>] = stones[<span class="number">0</span>] % MOD;</span><br><span class="line">	stones[<span class="number">0</span>] += (stones[<span class="number">0</span>] == <span class="number">0</span> ? MOD : <span class="number">0</span>);</span><br><span class="line">	compressed[stones[<span class="number">0</span>]] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; M; i++) &#123;</span><br><span class="line">		stones[i] = stones[i - <span class="number">1</span>] + dis[i - <span class="number">1</span>];</span><br><span class="line">		compressed[stones[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	L = stones[M - <span class="number">1</span>];</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(L + T + <span class="number">1</span>, <span class="number">107</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= L + T; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = S; j &lt;= T; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (i - j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">				dp[i] = <span class="built_in">min</span>(dp[i - j], dp[i]) + (compressed[i] == <span class="literal">true</span> ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">10e9</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = L; i &lt; L + T; i++) &#123;</span><br><span class="line">		ans = <span class="built_in">min</span>(ans, dp[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
   </div>
   
   
@@ -2740,10 +2772,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-13T19:54:43+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-15T11:22:48+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年9月13日</p>
+    <p>更新于：2022年9月15日</p>
   </a>
 </div>
 
@@ -2766,7 +2798,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/&title=算法刷题日记5 - 一方の笔记本&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/&title=算法刷题日记5 - 一方の笔记本&summary=2021年10月8日练习。"
           
           >
           
@@ -2778,7 +2810,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/&title=算法刷题日记5 - 一方の笔记本&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/&title=算法刷题日记5 - 一方の笔记本&summary=2021年10月8日练习。"
           
           >
           
@@ -2790,7 +2822,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/&title=算法刷题日记5 - 一方の笔记本&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/&title=算法刷题日记5 - 一方の笔记本&summary=2021年10月8日练习。"
           
           >
           
@@ -2833,18 +2865,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/10/11/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>算法分析与设计第三次作业题解</p>
-          <p class='content'>题目发布于2021年10月11日零点。
-
-Problem A题目描述我们有n根的木棍。现在从这些木棍中切割出来m条长度相同的木棍，问这m根木棍最长有多长？
-
-题解实际上就是那个切绳子的问题…直接...</p>
+          <p class='content'>题目发布于2021年10月11日零点。  ## Problem A ###
+题目描述 我们有n根的木棍。现在从这些木棍中切割出来m条长度相同的木棍，问这m根木棍最长有多长？
+ ### 题解 ...</p>
         </a>
       
       
         <a class='next' href='/2021/10/04/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B04/'>
           <p class='title'>算法刷题日记4<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Algo 1355&emsp;&emsp;火柴棒拼等式，经典的枚举问题。首先确定$1111+1=1112$共需要27根火柴，而题设说明$n\leq24$，故枚举范围可知。
-12345678910...</p>
+          <p class='content'>Algo 1355
+  火柴棒拼等式，经典的枚举问题。首先确定\(1111+1=1112\)共需要27根火柴，而题设说明\(n\leq24\)，故枚举范围可知。 123456789101112...</p>
         </a>
       
     </div>
@@ -2902,7 +2932,7 @@ Problem A题目描述我们有n根的木棍。现在从这些木棍中切割出�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#algo-1002"><span class="toc-text">algo 1002</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#algo-1002"><span class="toc-text">algo 1002</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3024,13 +3054,19 @@ Problem A题目描述我们有n根的木棍。现在从这些木棍中切割出�
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -4131,6 +4167,77 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+        <style>
+  #post-body p {
+    text-indent: 2em;
+  }
+  #post-body .new-meta-box p,
+  #post-body .note p,
+  #post-body .prev-next p,
+  #post-body .tag p,
+  #post-body blockquote p,
+  #post-body details p,
+  #post-body p.p,
+  #post-body .tab-pane .checkbox
+  #post-body section p {
+    text-indent: initial;
+  }
+</style>
+
+
+
 </pjax>
 
 <script>
@@ -4262,7 +4369,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/08/算法刷题日记5/","name":"算法刷题日记5"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法刷题日记5","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/","wordCount":0,"datePublished":"2021-10-08T01:59:35.000Z","dateModified":"2022-09-13T11:54:43.044Z","articleSection":"算法学习","keywords":"C++","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/08/算法刷题日记5/","name":"算法刷题日记5"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法刷题日记5","description":"2021年10月8日练习。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/08/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B05/","wordCount":13,"datePublished":"2021-10-08T01:59:35.000Z","dateModified":"2022-09-15T03:22:48.610Z","articleSection":"算法学习","keywords":"C++","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

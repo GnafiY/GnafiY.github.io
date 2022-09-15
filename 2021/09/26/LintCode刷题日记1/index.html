@@ -34,12 +34,12 @@
   <title>LintCode刷题日记1 - 一方の笔记本</title>
   <meta name="keywords" content="C++,null">
   <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
-  
+  <meta name="description" content="题目1270   实际上就是判断组成字符串ransomNote字符集合是否是组成字符串magazine字符集合的字集   C++中可以使用includes函数进行操作，其参数为：第一个容器的起始、第一个容器的结束、第二个容器的起始、第二个容器的结束，返回值为前一个容器包含后一个容器（后是前的子集）。但是注意需要对元素进行降序排序。 1234567891011121314class Sol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LintCode刷题日记1">
 <meta property="og:url" content="http://example.com/2021/09/26/LintCode%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B01/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="题目1270&amp;emsp;&amp;emsp;实际上就是判断组成字符串ransomNote字符集合是否是组成字符串magazine字符集合的字集&amp;emsp;&amp;emsp;C++中可以使用includes函数进行操作，其参数为：第一个容器的起始、第一个容器的结束、第二个容器的起始、第二个容器的结束，返回值为前一个容器包含后一个容器（后是前的子集）。但是注意需要对元素进行降序排序。 12345678910111">
+<meta property="og:description" content="题目1270   实际上就是判断组成字符串ransomNote字符集合是否是组成字符串magazine字符集合的字集   C++中可以使用includes函数进行操作，其参数为：第一个容器的起始、第一个容器的结束、第二个容器的起始、第二个容器的结束，返回值为前一个容器包含后一个容器（后是前的子集）。但是注意需要对元素进行降序排序。 1234567891011121314class Sol">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-09-26T08:00:18.000Z">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663169733568),
+    lastupdate: new Date(1663214004146),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2702,12 +2702,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <span id="more"></span>
-<h2 id="题目1270"><a href="#题目1270" class="headerlink" title="题目1270"></a>题目1270</h2><p>&emsp;&emsp;实际上就是判断组成字符串ransomNote字符集合是否是组成字符串magazine字符集合的字集<br>&emsp;&emsp;C++中可以使用includes函数进行操作，其参数为：第一个容器的起始、第一个容器的结束、第二个容器的起始、第二个容器的结束，返回值为前一个容器包含后一个容器（后是前的子集）。但是注意需要对元素进行降序排序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    /**</span><br><span class="line">     * @param ransomNote: a string</span><br><span class="line">     * @param magazine: a string</span><br><span class="line">     * @return: whether the ransom note can be constructed from the magazines</span><br><span class="line">     */</span><br><span class="line">    bool canConstruct(string &amp;ransomNote, string &amp;magazine) &#123;</span><br><span class="line">        string s1 = ransomNote, s2 = magazine;</span><br><span class="line">        sort(s1.begin(), s1.end(), less&lt;char&gt;());</span><br><span class="line">        sort(s2.begin(), s2.end(), less&lt;char&gt;());</span><br><span class="line">        return includes(s2.begin(), s2.end(), s1.begin(), s1.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;对结构体按照某个分量进行排序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct studentInfo &#123;</span><br><span class="line">	int number;</span><br><span class="line">	string name;</span><br><span class="line">	double score;</span><br><span class="line">	studentInfo(int ini_number = 0, string ini_name = &quot;test&quot;, double ini_score = 60.0):number(ini_number), name(ini_name), score(ini_score) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bool compScoreGreater(studentInfo&amp; s1, studentInfo&amp; s2) &#123;</span><br><span class="line">	return s1.score &gt; s2.score;//升序排列，如果改为return 参数表前&gt;参数表后，则为降序</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool compNumberGreater(studentInfo&amp; s1, studentInfo&amp; s2) &#123;</span><br><span class="line">	return s1.number &gt; s2.number;//升序排列，如果改为return 参数表前&gt;参数表后，则为降序</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	vector&lt;studentInfo&gt; test;</span><br><span class="line">	test.push_back(studentInfo(11111111, &quot;John&quot;, 70.5));</span><br><span class="line">	test.push_back(studentInfo(11111000, &quot;Alice&quot;, 60.5));</span><br><span class="line">	test.push_back(studentInfo(11111001, &quot;Tom&quot;, 98.5));</span><br><span class="line">	test.push_back(studentInfo(11111122, &quot;Sam&quot;, 100.0));</span><br><span class="line">	test.push_back(studentInfo(11111000, &quot;Bob&quot;, 30.0));</span><br><span class="line">	cout &lt;&lt; &quot;原始数据&quot; &lt;&lt; endl;</span><br><span class="line">	for (auto info : test)&#123;</span><br><span class="line">		cout &lt;&lt; info.name &lt;&lt; &quot;   &quot; &lt;&lt; info.score &lt;&lt; &quot;   &quot; &lt;&lt; info.number &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(test.begin(), test.end(), compNumberGreater);</span><br><span class="line">	cout &lt;&lt; &quot;按照学号降序排序&quot; &lt;&lt; endl;</span><br><span class="line">	for (auto info : test) &#123;</span><br><span class="line">		cout &lt;&lt; info.name &lt;&lt; &quot;   &quot; &lt;&lt; info.score &lt;&lt; &quot;   &quot; &lt;&lt; info.number &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(test.begin(), test.end(), compScoreGreater);</span><br><span class="line">	cout &lt;&lt; &quot;按照分数降序排序&quot; &lt;&lt; endl;</span><br><span class="line">	for (auto info : test) &#123;</span><br><span class="line">		cout &lt;&lt; info.name &lt;&lt; &quot;   &quot; &lt;&lt; info.score &lt;&lt; &quot;   &quot; &lt;&lt; info.number &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目2719"><a href="#题目2719" class="headerlink" title="题目2719"></a>题目2719</h2><p>linux命令行中利用<b>let</b>关键字为变量赋值，用<b>echo</b>加上”$var”返回变量值。</p>
+<h2 id="题目1270">题目1270</h2>
+<p>  实际上就是判断组成字符串ransomNote字符集合是否是组成字符串magazine字符集合的字集
+  C++中可以使用includes函数进行操作，其参数为：第一个容器的起始、第一个容器的结束、第二个容器的起始、第二个容器的结束，返回值为前一个容器包含后一个容器（后是前的子集）。但是注意需要对元素进行降序排序。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    /**</span><br><span class="line">     * @param ransomNote: a string</span><br><span class="line">     * @param magazine: a string</span><br><span class="line">     * @return: whether the ransom note can be constructed from the magazines</span><br><span class="line">     */</span><br><span class="line">    bool canConstruct(string &amp;ransomNote, string &amp;magazine) &#123;</span><br><span class="line">        string s1 = ransomNote, s2 = magazine;</span><br><span class="line">        sort(s1.begin(), s1.end(), less&lt;char&gt;());</span><br><span class="line">        sort(s2.begin(), s2.end(), less&lt;char&gt;());</span><br><span class="line">        return includes(s2.begin(), s2.end(), s1.begin(), s1.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>   对结构体按照某个分量进行排序。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct studentInfo &#123;</span><br><span class="line">	int number;</span><br><span class="line">	string name;</span><br><span class="line">	double score;</span><br><span class="line">	studentInfo(int ini_number = 0, string ini_name = &quot;test&quot;, double ini_score = 60.0):number(ini_number), name(ini_name), score(ini_score) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bool compScoreGreater(studentInfo&amp; s1, studentInfo&amp; s2) &#123;</span><br><span class="line">	return s1.score &gt; s2.score;//升序排列，如果改为return 参数表前&gt;参数表后，则为降序</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool compNumberGreater(studentInfo&amp; s1, studentInfo&amp; s2) &#123;</span><br><span class="line">	return s1.number &gt; s2.number;//升序排列，如果改为return 参数表前&gt;参数表后，则为降序</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	vector&lt;studentInfo&gt; test;</span><br><span class="line">	test.push_back(studentInfo(11111111, &quot;John&quot;, 70.5));</span><br><span class="line">	test.push_back(studentInfo(11111000, &quot;Alice&quot;, 60.5));</span><br><span class="line">	test.push_back(studentInfo(11111001, &quot;Tom&quot;, 98.5));</span><br><span class="line">	test.push_back(studentInfo(11111122, &quot;Sam&quot;, 100.0));</span><br><span class="line">	test.push_back(studentInfo(11111000, &quot;Bob&quot;, 30.0));</span><br><span class="line">	cout &lt;&lt; &quot;原始数据&quot; &lt;&lt; endl;</span><br><span class="line">	for (auto info : test)&#123;</span><br><span class="line">		cout &lt;&lt; info.name &lt;&lt; &quot;   &quot; &lt;&lt; info.score &lt;&lt; &quot;   &quot; &lt;&lt; info.number &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(test.begin(), test.end(), compNumberGreater);</span><br><span class="line">	cout &lt;&lt; &quot;按照学号降序排序&quot; &lt;&lt; endl;</span><br><span class="line">	for (auto info : test) &#123;</span><br><span class="line">		cout &lt;&lt; info.name &lt;&lt; &quot;   &quot; &lt;&lt; info.score &lt;&lt; &quot;   &quot; &lt;&lt; info.number &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(test.begin(), test.end(), compScoreGreater);</span><br><span class="line">	cout &lt;&lt; &quot;按照分数降序排序&quot; &lt;&lt; endl;</span><br><span class="line">	for (auto info : test) &#123;</span><br><span class="line">		cout &lt;&lt; info.name &lt;&lt; &quot;   &quot; &lt;&lt; info.score &lt;&lt; &quot;   &quot; &lt;&lt; info.number &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="题目2719">题目2719</h2>
+<p>linux命令行中利用<b>let</b>关键字为变量赋值，用<b>echo</b>加上"$var"返回变量值。</p>
 
   </div>
   
@@ -2720,18 +2720,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/09/27/LintCode%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B02/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>LintCode刷题日记2</p>
-          <p class='content'>主要学习dp
-
-题目167&emsp;&emsp;注意进位的问题，最后一步如果有进位需要多加一个结点，实质上考察了对有进位加法的步骤的考察
-123456789101112131415161718...</p>
+          <p class='content'>主要学习dp  ## 题目167
+  注意进位的问题，最后一步如果有进位需要多加一个结点，实质上考察了对有进位加法的步骤的考察
+1234567891011121314151617181920...</p>
         </a>
       
       
         <a class='next' href='/2021/09/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
           <p class='title'>动态规划学习笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>&emsp;&emsp;本篇博客作一些动态规划学习的笔记。&emsp;&emsp;一个问题能用动态规划解决需要满足三个条件：有边界条件、有递推方程且具有最优子结构性质。
-
-最大连续子序列之和12...</p>
+          <p class='content'>  本篇博客作一些动态规划学习的笔记。
+  一个问题能用动态规划解决需要满足三个条件：有边界条件、有递推方程且具有最优子结构性质。
+ ## 最大连续子序列之和 123456789101112...</p>
         </a>
       
     </div>
@@ -2911,13 +2910,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       

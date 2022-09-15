@@ -33,17 +33,17 @@
   <!-- 页面元数据 -->
   <title>一些杂七杂八的数学知识 - 一方の笔记本</title>
   <meta name="keywords" content="null">
-  <meta desc name="description" content="&emsp;&emsp;这篇博客用于记录一些数学知识。 - John Doe - 一方の笔记本">
+  <meta desc name="description" content="这篇博客用于记录一些数学知识。 - John Doe - 一方の笔记本">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些杂七杂八的数学知识">
 <meta property="og:url" content="http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;这篇博客用于记录一些数学知识。">
+<meta property="og:description" content="这篇博客用于记录一些数学知识。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-14T12:18:39.000Z">
-<meta property="article:modified_time" content="2022-09-14T15:06:51.918Z">
+<meta property="article:modified_time" content="2022-09-15T03:07:50.949Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663169733568),
+    lastupdate: new Date(1663214004146),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2696,21 +2696,202 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>&emsp;&emsp;这篇博客用于记录一些数学知识。</p>
-<span id="more"></span>
-
-<h2 id="设-a-n-displaystyle-1-frac-1-n-n-，求证-forall-n-in-text-N-a-n-1-gt-a-n-。"><a href="#设-a-n-displaystyle-1-frac-1-n-n-，求证-forall-n-in-text-N-a-n-1-gt-a-n-。" class="headerlink" title="设 $a_n = \displaystyle (1+\frac{1}{n})^n$，求证 $\forall n \in \text{N}^+, a_{n+1}&gt;a_n$。"></a>设 $a_n = \displaystyle (1+\frac{1}{n})^n$，求证 $\forall n \in \text{N}^+, a_{n+1}&gt;a_n$。</h2><h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><p>&emsp;&emsp;$a_n=\displaystyle \prod_{i=1}^{n} (1 +\frac{1}{n})=\prod_{i=1}^{n} (1 +\frac{1}{n})\cdot 1 \leq (\frac{\displaystyle \sum_{i=1}^{n}(1+\frac{1}{n})+1}{n+1})^{n+1}=(1+\frac{1}{n+1})^{n+1}=a_{n+1}$</p>
-<p>&emsp;&emsp;上式中的取等条件为$\displaystyle \frac{1}{n}+1=1$，这显然是不可能成立的，故$a_{n+1} &gt; a_{n}$。</p>
-<p>&emsp;&emsp;这个解法使用了均值不等式，即$\forall a_1, a_2,\dots,a_n \in \text{R}$，$H_n \leq G_n \leq A_n\leq Q_n$，其中四个均值分别为调和平均数、几何平均数、算数平均数和平方平均数，不等式取等条件都是$\forall i,j\in{1,2,\dots,n},a_i=a_j$。上面的证明使用到了$G_n\leq A_n$的变形，即$\displaystyle \prod_{i=1}^{n}a_i \leq (\frac{\displaystyle \sum_{i=1}^{n}a_i}{n})^n$。</p>
-<h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><p>&emsp;&emsp;$\displaystyle \frac{a_{n+1}}{a_n} = (1-\frac{1}{(n+1)^2})^n \cdot \frac{n+2}{n+1} \geq (1-\frac{n}{(n+1)^2}) \cdot \frac{n+2}{n+1} &gt; (1-\frac{1}{n+2}) \cdot \frac{n+2}{n+1}=1$</p>
-<p>&emsp;&emsp;以上证明使用了伯努利不等式，即$\forall x &gt; -1$：</p>
+    <p>这篇博客用于记录一些数学知识。 <span id="more"></span></p>
+<h2
+id="设a_n-displaystyle-1frac1nn求证forall-n-in-textn-a_n1a_n">设<span
+class="math inline">\(a_n = \displaystyle
+(1+\frac{1}{n})^n\)</span>，求证：<span class="math inline">\(\forall n
+\in \text{N}^+, a_{n+1}&gt;a_n\)</span>。</h2>
+<h3 id="解法一">解法一</h3>
+<p><span class="math inline">\(a_n=\displaystyle \prod_{i=1}^{n} (1
++\frac{1}{n})=\prod_{i=1}^{n} (1 +\frac{1}{n})\cdot 1 \leq
+(\frac{\displaystyle
+\sum_{i=1}^{n}(1+\frac{1}{n})+1}{n+1})^{n+1}=(1+\frac{1}{n+1})^{n+1}=a_{n+1}\)</span></p>
+<p>上式中的取等条件为<span class="math inline">\(\displaystyle
+\frac{1}{n}+1=1\)</span>，这显然是不可能成立的，故<span
+class="math inline">\(a_{n+1} &gt; a_{n}\)</span>。</p>
+<p>这个解法使用了均值不等式，即<span class="math inline">\(\forall a_1,
+a_2,\dots,a_n \in \text{R}\)</span>，<span class="math inline">\(H_n
+\leq G_n \leq A_n\leq
+Q_n\)</span>，其中四个均值分别为调和平均数、几何平均数、算数平均数和平方平均数，不等式取等条件都是<span
+class="math inline">\(\forall
+i,j\in\{1,2,\dots,n\},a_i=a_j\)</span>。上面的证明使用到了<span
+class="math inline">\(G_n\leq A_n\)</span>的变形，即<span
+class="math inline">\(\displaystyle \prod_{i=1}^{n}a_i \leq
+(\frac{\displaystyle \sum_{i=1}^{n}a_i}{n})^n\)</span>。</p>
+<h3 id="解法二">解法二</h3>
+<p><span class="math inline">\(\displaystyle \frac{a_{n+1}}{a_n} =
+(1-\frac{1}{(n+1)^2})^n \cdot \frac{n+2}{n+1} \geq (1-\frac{n}{(n+1)^2})
+\cdot \frac{n+2}{n+1} &gt; (1-\frac{1}{n+2}) \cdot
+\frac{n+2}{n+1}=1\)</span></p>
+<p>以上证明使用了伯努利不等式，即<span class="math inline">\(\forall x
+&gt; -1\)</span>：</p>
+<p>-<span class="math inline">\(n\geq1 \Rightarrow
+(1+x)^n\geq1+nx\)</span>； -<span class="math inline">\(n\in[0,1]
+\Rightarrow(1+x)^n\leq1+nx\)</span>。</p>
+<p>此外，<span class="math inline">\(\displaystyle
+\frac{n}{(n+1)^2}=\frac{1}{n+\displaystyle\frac{1}{n}+2}&lt;\frac{1}{n+2}\)</span>。</p>
+<h3 id="解法三">解法三</h3>
+<p>设<span class="math inline">\(y=e^{\displaystyle
+x\ln(1+\frac{1}{x})}, x\in \text{R}^+\)</span>，则<span
+class="math inline">\(f&#39;(x)=[\displaystyle\ln(1+\frac{1}{x})-\frac{1}{x+1}]f(x)\)</span>。</p>
+<p>设<span
+class="math inline">\(g(x)=\ln(1+x)-\displaystyle\frac{x}{1+x}\)</span>，则<span
+class="math inline">\(g&#39;(x)=\displaystyle\frac{x}{1+x} &gt;
+0\)</span>，那么<span
+class="math inline">\(f&#39;(x)&gt;0\)</span>，那么<span
+class="math inline">\(f(x)\)</span>在<span
+class="math inline">\(\text{R}^+\)</span>上单调递增，原命题显然。</p>
+<h2 id="求idisplaystyle-int_01-ln-x-cdot-ln-1-x-dx">求<span
+class="math inline">\(I=\displaystyle \int_0^1 \ln x \cdot \ln (1-x)
+dx\)</span>。</h2>
+<h3 id="题目求解">题目求解</h3>
+<p>根据<span class="math inline">\(\ln(1-x) =
+-\displaystyle\sum_{n=1}^{\infty}\frac{x^n}{n},x\in(-1,1]\)</span>可得<span
+class="math inline">\(I=\displaystyle-\int_0^1\sum_{n=1}^{\infty}\frac{x^n}{n}\ln
+x=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1 x^n \ln xdx\)</span>。</p>
+<p>而<span class="math inline">\(\displaystyle \int_0^1 x^n \ln x dx
+{\xlongequal{\ln x = -t}}-\int_0^{+\infty}
+te^{-(n+1)t}dt=-\frac{1}{(n+1)^2}\)</span>，故<span
+class="math inline">\(I=\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)^2}\)</span>。</p>
+<p>对于最后一步的级数，可以使用有理函数的拆分得到<span
+class="math inline">\(I=\displaystyle\sum_{n=1}^{\infty}(\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2})\)</span>，前者通过裂项相消可得<span
+class="math inline">\(\displaystyle\sum_{n=1}^{\infty}(\frac{1}{n}-\frac{1}{n+1})=1\)</span>，而后者可以通过巴塞尔级数求解，最终得到<span
+class="math inline">\(I=2-\displaystyle\frac{\pi^2}{6}\)</span>。</p>
+<h3 id="相关知识">相关知识</h3>
+<h4 id="fubinis-theorem">Fubini's Theorem</h4>
+<p>若<span class="math inline">\(\displaystyle\int_{A \times
+B}|f(x,y)|d(x,y)&lt;\infty\)</span>，其中积分是关于空间<span
+class="math inline">\(A \times B\)</span>的积测度，且<span
+class="math inline">\(A\)</span>和<span
+class="math inline">\(B\)</span>都是<span
+class="math inline">\(\sigma\)</span>-有限测度空间，那么有<span
+class="math inline">\(\displaystyle\int_A(\int_B
+f(x,y)dy)dx=\int_B(\int_A f(x,y)dx)dy=\int_{A \times
+B}|f(x,y)|d(x,y)\)</span>，前二者是在两个测度空间上的逐次积分,
+但积分次序不同; 第三个是在乘积空间上关于乘积测度的积分。</p>
+<p>特别地，如果<span
+class="math inline">\(f(x,y)=h(x)g(x)\)</span>，那么<span
+class="math inline">\(\displaystyle \int_A h(x)dx\int_Bg(y)dy=\int_{A
+\times
+B}|f(x,y)|d(x,y)\)</span>。注意，<strong>如果条件中绝对值积分值不是有限，那么上述两个逐次积分的值可能不同</strong>。</p>
+<h4 id="巴塞尔级数">巴塞尔级数</h4>
+<p>即<span class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}\)</span>，证明方法有很多种，在此不再赘述。</p>
+<h4 id="常见函数的幂级数">常见函数的幂级数</h4>
+<p>具体推导详见<a href="/2021/11/11/概率论的一些小技巧/" style="text-decoration:none">另一篇博客</a>，这里只给出公式。</p>
+<p><span class="math display">\[\sin x= \displaystyle
+\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!},x\in(-\infty,+\infty)\]</span></p>
+<p><span class="math display">\[\cos x= \displaystyle
+\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!},x\in(-\infty,+\infty)\]</span></p>
+<p><span class="math display">\[e^x =
+\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!},x\in(-\infty,+\infty)\]</span></p>
+<p><span
+class="math display">\[\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^{n},|x|&lt;1\]</span></p>
+<p><span class="math display">\[(1+x)^{\alpha}=1+\alpha x +\displaystyle
+\frac{\alpha(\alpha-1)}{2!}x^2+\cdots\]</span></p>
+<h2 id="删数问题">删数问题</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>已知有一数组，其元素为<span
+class="math inline">\(1,2,3,\dots,100\)</span>共<span
+class="math inline">\(100\)</span>个数，现随机删除<span
+class="math inline">\(2\)</span>个数，并将其余<span
+class="math inline">\(98\)</span>个数乱序存于另一数组，试问如何求出这<span
+class="math inline">\(2\)</span>个数？</p>
+<h3 id="求解思路">求解思路</h3>
+<p>对于删除<span
+class="math inline">\(1\)</span>个数的情况，可以利用<span
+class="math inline">\(100\)</span>个数的总和为<span
+class="math inline">\(5050\)</span>的条件，遍历剩余的<span
+class="math inline">\(99\)</span>个数并得到总和<span
+class="math inline">\(B_1\)</span>，则被删去的数就是<span
+class="math inline">\((5050 -B_1)\)</span>。</p>
+<p>事实上，不难发现原来<span
+class="math inline">\(100\)</span>个数的乘积也是常数<span
+class="math inline">\(100!\)</span>，那么可以得到剩下<span
+class="math inline">\(98\)</span>个数的和、乘积，即可得到被删除的<span
+class="math inline">\(2\)</span>个数的和、乘积，逆用韦达定理即可构造关于这<span
+class="math inline">\(2\)</span>个数的一元二次方程，求解这个方程，得到的两根一定是被删去的数。</p>
+<h3 id="推广">推广</h3>
+<p>那么，以上求解方程的思想是否可以推广到删除超过<span
+class="math inline">\(2\)</span>个数的情况呢？我经过思考后认为可以。</p>
+<p>设被删除的数为<span
+class="math inline">\(\{b_1,b_2,\dots,b_t\}\)</span>共<span
+class="math inline">\(t\)</span>个，可以通过构造一元<span
+class="math inline">\(t\)</span>次方程求解被删除的数，其中<span
+class="math inline">\(1\leq t \leq99\)</span>。</p>
+<p>首先可以通过剩余<span
+class="math inline">\((100-t)\)</span>个数得到<span
+class="math inline">\(\displaystyle \sum_{i=1}^tb_i\)</span>和<span
+class="math inline">\(\displaystyle
+\prod_{i=1}^tb_i\)</span>，不妨分别记之为<span
+class="math inline">\(B_1\)</span>和<span
+class="math inline">\(B_t\)</span>。</p>
+<p>考虑<span class="math inline">\(\displaystyle (\sum_{i=1}^{100}i)^2 =
+5050^2\)</span>，那么：</p>
+<p><span class="math display">\[\begin{aligned}
+5050^2
+&amp; =\displaystyle (\sum_{i=1}^{100}i)^2 \\ &amp;=
+((\sum_{i=1}^tb_i)+(5050-\sum_{i=1}^tb_i))^2\\
+&amp; = \displaystyle (\sum_{i=1}^tb_i)^2 +
+(5050-\sum_{i=1}^tb_i)^2+2(\sum_{i=1}^tb_i)(5050-\sum_{i=1}^tb_i) \\
+&amp; = B_1^2+(5050-B_1)^2+10100B_1+2\displaystyle
+(\sum_{i=1}^tb_i)(\sum_{i=1}^tb_i) \\ &amp;=
+B_1^2+(5050-B_1)^2+10100B_1+2\displaystyle (\sum_{i=1}^tb_i^2 +
+\sum\sum_{1\leq i &lt; j \leq j} b_i b_j)\end{aligned}\]</span></p>
+<p>不妨记<span class="math inline">\(\displaystyle \sum_{1\leq i &lt; j
+\leq t} b_i b_j = B_2\)</span>。由于<span
+class="math inline">\(100\)</span>个数的平方和是一定的，那么可以得到<span
+class="math inline">\(\displaystyle
+\sum_{i=1}^tb_i^2\)</span>也是常数。恒等式左侧中仅有<span
+class="math inline">\(B_2\)</span>是未知数，而右侧为常数，那么可以求解得到<span
+class="math inline">\(B_2\)</span>。</p>
+<p>现在不妨观察已经得到的<span
+class="math inline">\(3\)</span>个常系数，这<span
+class="math inline">\(3\)</span>个系数与<span
+class="math inline">\(\{b_1,b_2,\dots,b_t\}\)</span>之间的关系为：</p>
+<p><span class="math display">\[\begin{cases}
+\displaystyle \sum_{i=1}^{t}b_i=B_1\\
+\displaystyle \sum\sum_{1\leq i &lt; j \leq t} b_i b_j =
+B_2\\b_1b_2\cdots b_t = B_t\\
+\end{cases}\]</span></p>
+<p>不难发现以上等式左侧都是关于<span
+class="math inline">\(b1,b_2,\dots,b_t\)</span>的轮换对称式，那么可以类比求解<span
+class="math inline">\(B_2\)</span>的方法，利用<span
+class="math inline">\(\displaystyle (\sum_{i=1}^{100}i)^3 =
+5050^3\)</span>，得到<span class="math inline">\(\displaystyle
+\\sum_{1\leq i &lt; j &lt;k \leq t} b_i b_j b_k =
+B_3\)</span>，最终可以得到<span
+class="math inline">\(B_1,B_2,\dots,B_t\)</span>共<span
+class="math inline">\(t\)</span>个常数。上述推理的简单证明如下：</p>
 <ul>
-<li>$n\geq1 \Rightarrow (1+x)^n\geq1+nx$；</li>
-<li>$n\in[0,1] \Rightarrow(1+x)^n\leq1+nx$。</li>
+<li>归纳奠基：显然通过<span
+class="math inline">\(\displaystyle(\sum_{i=1}^{100}i)^1=5050\)</span>已经求得<span
+class="math inline">\(B_1\)</span>；</li>
+<li>归纳推理：设<span class="math inline">\(k\geq2\)</span>，已知<span
+class="math inline">\(\displaystyle
+(\sum_{i=1}^ti)^k=5050^k\)</span>以及<span
+class="math inline">\(B_1,B_2,\dots,B_{k-1}\)</span>，而<span
+class="math inline">\(\displaystyle
+((\sum_{i=1}^tb_i)+(5050-\sum_{i=1}^tb_i))^k\)</span>的的展开式可由二项式定理求得为<span
+class="math inline">\(\displaystyle \sum_{j=0}^k
+C_k^j(\sum_{i=1}^tb_i)^{j}(5050-\sum_{i=1}^tb_i)^{k-j}\)</span>，进一步展开后<span
+class="math inline">\((k+1)\)</span>项中除了<span
+class="math inline">\(B_k\)</span>未知之外，其余各项均已求得，因此可以求得<span
+class="math inline">\(B_k\)</span>。</li>
 </ul>
-<p>&emsp;&emsp;此外，$\displaystyle \frac{n}{(n+1)^2}=\frac{1}{n+\displaystyle\frac{1}{n}+2}&lt;\frac{1}{n+2}$。</p>
-<h3 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h3><p>&emsp;&emsp; 设$y=e^{\displaystyle x\ln(1+\frac{1}{x})}, x\in \text{R}^+$，则$f’(x)=[\displaystyle\ln(1+\frac{1}{x})-\frac{1}{x+1}]f(x)$。</p>
-<p>&emsp;&emsp;设$g(x)=\ln(1+x)-\displaystyle\frac{x}{1+x}$，则$g’(x)=\displaystyle\frac{x}{1+x} &gt; 0$，那么$f’(x)&gt;0$，那么$f(x)$在$\text{R}^+$上单调递增，原命题显然。 </p>
+<p>利用构造出的<span class="math inline">\(t\)</span>个关于<span
+class="math inline">\(b_1,b_2,\dots,b_t\)</span>即可根据系数构造一元<span
+class="math inline">\(t\)</span>次方程：</p>
+<p><span class="math display">\[\displaystyle
+\prod_{i=1}^t(x-b_i)=x^t-B_1x^{t-1}+\cdots+(-1)^tB_t=0\]</span></p>
+<p>求解这个方程就可以得到被删除的<span
+class="math inline">\(t\)</span>个数。</p>
+<h2 id="卡特兰数">卡特兰数</h2>
+<p>卡特兰数的其中一个应用为：数<span class="math inline">\(1 \sim
+n\)</span>按序入栈，求课内的出栈序列的个数。</p>
+<p>卡特兰数的通项公式为<span class="math inline">\(C_n =
+\frac{C_{2n}^n}{n+1},n\in N^+\)</span>。</p>
 
   </div>
   
@@ -2721,10 +2902,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2022/09/15/hello-world/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Hello World</p>
+          <p class='content'>记录一下网站的配置过程，方便以后查阅。 
+公式渲染和代码高亮的问题卡了一天，最后直接重用了旧版本的
+Volantis 搭建的博客的代码。 ## 闲谈
+一直有建立个人网站的想法，借着大三上学...</p>
+        </a>
+      
       
         <a class='next' href='/2022/09/14/%E9%9A%8F%E7%AC%94%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B/'>
           <p class='title'>随笔栏的实现过程<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>&emsp;&emsp;发现白羽老师的博客有一个随笔的专栏，想着学一下怎么做出来的。
+          <p class='content'>发现白羽老师的博客有一个随笔的专栏，想着学一下怎么做出来的。
 
 </p>
         </a>
@@ -2784,7 +2973,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE-a-n-displaystyle-1-frac-1-n-n-%EF%BC%8C%E6%B1%82%E8%AF%81-forall-n-in-text-N-a-n-1-gt-a-n-%E3%80%82"><span class="toc-text">设 $a_n &#x3D; \displaystyle (1+\frac{1}{n})^n$，求证 $\forall n \in \text{N}^+, a_{n+1}&gt;a_n$。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="toc-text">解法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="toc-text">解法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89"><span class="toc-text">解法三</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BEa_n-displaystyle-1frac1nn%E6%B1%82%E8%AF%81forall-n-in-textn-a_n1a_n"><span class="toc-text">设\(a_n &#x3D; \displaystyle
+(1+\frac{1}{n})^n\)，求证：\(\forall n
+\in \text{N}^+, a_{n+1}&gt;a_n\)。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="toc-text">解法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="toc-text">解法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89"><span class="toc-text">解法三</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_01-ln-x-cdot-ln-1-x-dx"><span class="toc-text">求\(I&#x3D;\displaystyle \int_0^1 \ln x \cdot \ln (1-x)
+dx\)。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%B1%82%E8%A7%A3"><span class="toc-text">题目求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fubinis-theorem"><span class="toc-text">Fubini&#39;s Theorem</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%B4%E5%A1%9E%E5%B0%94%E7%BA%A7%E6%95%B0"><span class="toc-text">巴塞尔级数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0%E7%9A%84%E5%B9%82%E7%BA%A7%E6%95%B0"><span class="toc-text">常见函数的幂级数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-text">删数问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%80%9D%E8%B7%AF"><span class="toc-text">求解思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%B9%BF"><span class="toc-text">推广</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0"><span class="toc-text">卡特兰数</span></a></li></ol>
     </div>
   </section>
 
@@ -2906,13 +3098,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -4065,6 +4263,23 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }
 </script>
 
+        <style>
+  #post-body p {
+    text-indent: 2em;
+  }
+  #post-body .new-meta-box p,
+  #post-body .note p,
+  #post-body .prev-next p,
+  #post-body .tag p,
+  #post-body blockquote p,
+  #post-body details p,
+  #post-body p.p,
+  #post-body .tab-pane .checkbox
+  #post-body section p {
+    text-indent: initial;
+  }
+</style>
+
 
 
 </pjax>
@@ -4198,7 +4413,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学知识"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学知识","description":"&emsp;&emsp;这篇博客用于记录一些数学知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-14T15:06:51.918Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学知识"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学知识","description":"这篇博客用于记录一些数学知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":15,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-15T03:07:50.949Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

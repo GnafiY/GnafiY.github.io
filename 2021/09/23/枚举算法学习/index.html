@@ -34,12 +34,12 @@
   <title>枚举算法学习 - 一方の笔记本</title>
   <meta name="keywords" content="暴力枚举,null">
   <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
-  
+  <meta name="description" content="枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一 一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。 其中很重要的两点是不重、不漏。 其特点为解高效、全面；实现简单；效率提升空间大。 例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S&#x3D;1234567891011....，记S中第一次出现1为位置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="枚举算法学习">
 <meta property="og:url" content="http://example.com/2021/09/23/%E6%9E%9A%E4%B8%BE%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一 一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。其中很重要的两点是不重、不漏。其特点为解高效、全面；实现简单；效率提升空间大。例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S&#x3D;1234567891011….，记S中第一次出现1为位置1，求S的第n位。">
+<meta property="og:description" content="枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一 一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。 其中很重要的两点是不重、不漏。 其特点为解高效、全面；实现简单；效率提升空间大。 例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S&#x3D;1234567891011....，记S中第一次出现1为位置">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-09-23T13:23:58.000Z">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663169733568),
+    lastupdate: new Date(1663214004146),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2697,8 +2697,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一 一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。<br>其中很重要的两点是<font color ="red">不重、不漏</font>。<br>其特点为解高效、全面；实现简单；效率提升空间大。<br>例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S=1234567891011….，记S中第一次出现1为位置1，求S的第n位。<br>思路：首先确定n所在的是几位正整数的范围，随后确定在哪个数字上，最后找在哪位上即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">int f(int n) &#123;</span><br><span class="line">	//1、确定n所在的位数范围</span><br><span class="line">	int base = 1;//位数</span><br><span class="line">	int l = 1, step = 9, lnum = 1;</span><br><span class="line">	for (; base &lt;= 8; base++) &#123;</span><br><span class="line">		if (n &gt;= l &amp;&amp; n &lt;= l + step - 1) &#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			l += step;</span><br><span class="line">			step *= (10 * (base + 1));</span><br><span class="line">			step /= base;</span><br><span class="line">			lnum *= 10;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (base &gt; 9) &#123;</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line">	//2、计算在哪个数</span><br><span class="line">	int target = (n - l) / base + lnum;</span><br><span class="line">	//3、计算在这个数的第几位</span><br><span class="line">	int targetIndex = (n - l + 1) % base;</span><br><span class="line">	targetIndex = (!targetIndex ? base : targetIndex);</span><br><span class="line">	vector&lt;int&gt; v;</span><br><span class="line">	while (target)&#123;</span><br><span class="line">		v.push_back(target % 10);</span><br><span class="line">		target /= 10;</span><br><span class="line">	&#125;</span><br><span class="line">	return v[v.size() - targetIndex];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一
+一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。
+其中很重要的两点是<font color ="red">不重、不漏</font>。
+其特点为解高效、全面；实现简单；效率提升空间大。
+例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S=1234567891011....，记S中第一次出现1为位置1，求S的第n位。
+思路：首先确定n所在的是几位正整数的范围，随后确定在哪个数字上，最后找在哪位上即可。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">int f(int n) &#123;</span><br><span class="line">	//1、确定n所在的位数范围</span><br><span class="line">	int base = 1;//位数</span><br><span class="line">	int l = 1, step = 9, lnum = 1;</span><br><span class="line">	for (; base &lt;= 8; base++) &#123;</span><br><span class="line">		if (n &gt;= l &amp;&amp; n &lt;= l + step - 1) &#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			l += step;</span><br><span class="line">			step *= (10 * (base + 1));</span><br><span class="line">			step /= base;</span><br><span class="line">			lnum *= 10;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (base &gt; 9) &#123;</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line">	//2、计算在哪个数</span><br><span class="line">	int target = (n - l) / base + lnum;</span><br><span class="line">	//3、计算在这个数的第几位</span><br><span class="line">	int targetIndex = (n - l + 1) % base;</span><br><span class="line">	targetIndex = (!targetIndex ? base : targetIndex);</span><br><span class="line">	vector&lt;int&gt; v;</span><br><span class="line">	while (target)&#123;</span><br><span class="line">		v.push_back(target % 10);</span><br><span class="line">		target /= 10;</span><br><span class="line">	&#125;</span><br><span class="line">	return v[v.size() - targetIndex];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
   </div>
   
   
@@ -2710,15 +2716,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/09/23/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>算法分析与设计第一次作业题题解</p>
-          <p class='content'>A - 一元三次方程求根有形如：$ax^3+bx^2+cx+d=0$这样的一个一元三次方程。给出该方程中各项的系数($a，b，c，d$均为实数)，并约定该方程存在三个不同实根(根的范围在-100...</p>
+          <p class='content'>A - 一元三次方程求根
+有形如：\(ax^3+bx^2+cx+d=0\)这样的一个一元三次方程。给出该方程中各项的系数(\(a，b，c，d\)均为实数)，并约定该方程存在三个不同实根(根的范...</p>
         </a>
       
-      
-        <a class='next' href='/2021/09/22/post-title-with-whitespace/'>
-          <p class='title'>First Blog of GnafiY<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>尝试使用Hexo
-</p>
-        </a>
       
     </div>
   
@@ -2887,13 +2888,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       

@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663169733568),
+    lastupdate: new Date(1663214004146),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2686,14 +2686,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>本页主要记录网页的建设与维护的过程，并分享一些经验。</p>
-<span id="more"></span>
-<h2 id="2021年9月28日"><a href="#2021年9月28日" class="headerlink" title="2021年9月28日"></a>2021年9月28日</h2><p>&emsp;&emsp;网页出现乱码问题，经查证是编码问题，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangrusheng5200/article/details/83484260">查找资料</a>后在对WinSCP的登陆设置与登陆后的编辑设置中进行修改后问题解决。<br><img src="/img/problem20210928.png" class="lazyload" data-srcset="/img/problem20210928.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" align="middle" /><br>&emsp;&emsp;要使用Markdown语言进行公式编辑就需要在每篇博客的头部加上如下代码。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true # important</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;最终得到的效果为：$e^{i\pi}+1=0$.</p>
-<h2 id="2021年9月29日"><a href="#2021年9月29日" class="headerlink" title="2021年9月29日"></a>2021年9月29日</h2><p>&emsp;&emsp;经大佬的提示，我将网站中的图片进行压缩，转为webp格式…</p>
-<h2 id="2021年11月9日"><a href="#2021年11月9日" class="headerlink" title="2021年11月9日"></a>2021年11月9日</h2><p>&emsp;&emsp;经过查找资料后，我将网站的代码字体更换为Fira Code，实际上流程很简单。<br>&emsp;&emsp;在Ubuntu系统使用如下命令安装Fira Code字体，随后修改_config.volantis.yml中的codefont之后即可使用字体。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure>
+    <p>本页主要记录网页的建设与维护的过程，并分享一些经验。 <span id="more"></span> ##
+2021年9月28日
+  网页出现乱码问题，经查证是编码问题，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangrusheng5200/article/details/83484260">查找资料</a>后在对WinSCP的登陆设置与登陆后的编辑设置中进行修改后问题解决。
+<img src="/img/problem20210928.png" class="lazyload" data-srcset="/img/problem20210928.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" align="middle" />
+  要使用Markdown语言进行公式编辑就需要在每篇博客的头部加上如下代码。
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true # important</span><br></pre></td></tr></table></figure>   最终得到的效果为：<span
+class="math inline">\(e^{i\pi}+1=0\)</span>. ## 2021年9月29日
+  经大佬的提示，我将网站中的图片进行压缩，转为webp格式... ##
+2021年11月9日   经过查找资料后，我将网站的代码字体更换为Fira
+Code，实际上流程很简单。   在Ubuntu系统使用如下命令安装Fira
+Code字体，随后修改_config.volantis.yml中的codefont之后即可使用字体。
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure></p>
+
   </div>
   
   
@@ -2705,14 +2710,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/09/29/%E8%AE%A1%E7%BD%91%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>计网第二章课后习题</p>
-          <p class='content'></p>
+          <p class='content'>
+</p>
         </a>
       
       
         <a class='next' href='/2021/09/28/LintCode%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B03/'>
           <p class='title'>LintCode刷题日记3<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目1300&emsp;&emsp;事实上，当n小于等于3时，我总是能赢；n大于等于4时，只要n是4的倍数我一定输，其他情况我一定赢，因此只要返回$(n%4!=0)$即可。
-1234567891...</p>
+          <p class='content'>题目1300
+  事实上，当n小于等于3时，我总是能赢；n大于等于4时，只要n是4的倍数我一定输，其他情况我一定赢，因此只要返回\((n%4!=0)\)即可。 1234567891011cla...</p>
         </a>
       
     </div>
@@ -2760,19 +2766,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B49%E6%9C%8828%E6%97%A5"><span class="toc-text">2021年9月28日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B49%E6%9C%8829%E6%97%A5"><span class="toc-text">2021年9月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B411%E6%9C%889%E6%97%A5"><span class="toc-text">2021年11月9日</span></a></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -2892,13 +2888,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       

@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663169733568),
+    lastupdate: new Date(1663214004146),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2697,25 +2697,57 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>这次实验内容较为简单，主要就是在老师提供的代码的基础上填充关键部分即可</p>
-<span id="more"></span>
-<h2 id="机器学习第三章实验内容"><a href="#机器学习第三章实验内容" class="headerlink" title="机器学习第三章实验内容"></a>机器学习第三章实验内容</h2><p>详细内容见第二周实验内的jupyter notebook。</p>
-<h3 id="一、实验内容"><a href="#一、实验内容" class="headerlink" title="一、实验内容"></a>一、实验内容</h3><h4 id="1-1-一元线性回归"><a href="#1-1-一元线性回归" class="headerlink" title="1.1 一元线性回归"></a>1.1 一元线性回归</h4><p>使用Kaggle房价预测数据集：<br>1、打乱数据顺序，取前70%的数据作为训练集，后30%的数据作为测试集<br>2、分别以LotArea, BsmtUnfSF, GarageArea三种特征作为模型的输入，SalePrice作为模型的输出<br>3、在训练集上，使用最小二乘法求解模型参数（需自己实现，不允许第三方库完成）<br>4、计算三个模型在测试集上的MAE和RMSE这两种指标的大小（需自己实现，不允许第三方库完成）<br>5、分别绘制模型的在训练集和测试集上的曲线<br>6、选做：尝试去除训练集中的异常值或离群值后再次训练模型，绘制模型的预测曲线，观察模型在测试集上预测能力的变化</p>
-<h4 id="1-2-多元线性回归-对数线性回归（二选一）"><a href="#1-2-多元线性回归-对数线性回归（二选一）" class="headerlink" title="1.2 多元线性回归/对数线性回归（二选一）"></a>1.2 多元线性回归/对数线性回归（二选一）</h4><p>1、多元线性回归<br>使用多个特征作为输入完成房价预测问题，计算模型在十折交叉验证上MAE和RMSE的值，比较不同的特征组合在模型预测能力上的影响。<br>模型可使用sklearn.linear_model.LinearRegression</p>
+    <p>这次实验内容较为简单，主要就是在老师提供的代码的基础上填充关键部分即可
+<span id="more"></span> ## 机器学习第三章实验内容 详细内容见第二周实验内的jupyter
+notebook。 ### 一、实验内容 #### 1.1 一元线性回归
+使用Kaggle房价预测数据集：
+1、打乱数据顺序，取前70%的数据作为训练集，后30%的数据作为测试集
+2、分别以LotArea, BsmtUnfSF,
+GarageArea三种特征作为模型的输入，SalePrice作为模型的输出
+3、在训练集上，使用最小二乘法求解模型参数（需自己实现，不允许第三方库完成）
+4、计算三个模型在测试集上的MAE和RMSE这两种指标的大小（需自己实现，不允许第三方库完成）
+5、分别绘制模型的在训练集和测试集上的曲线
+6、选做：尝试去除训练集中的异常值或离群值后再次训练模型，绘制模型的预测曲线，观察模型在测试集上预测能力的变化
+#### 1.2 多元线性回归/对数线性回归（二选一） 1、多元线性回归
+使用多个特征作为输入完成房价预测问题，计算模型在十折交叉验证上MAE和RMSE的值，比较不同的特征组合在模型预测能力上的影响。
+模型可使用sklearn.linear_model.LinearRegression</p>
 <p>选做：多项式回归（一元线性回归的扩展），尝试对部分特征进行变换，如将其二次幂，三次幂作为特征输入模型，观察模型在预测能力上的变化。</p>
-<p>2、对数线性回归<br>尝试使用对数线性回归完成房价预测问题，特征自选，比较模型十折交叉验证的MAE与RMSE。<br>模型可使用sklearn.linear_model.LinearRegression</p>
-<h4 id="1-3-对数几率回归"><a href="#1-3-对数几率回归" class="headerlink" title="1.3 对数几率回归"></a>1.3 对数几率回归</h4><p>1、使用对数几率回归完成垃圾邮件分类问题和Dota2结果预测问题<br>2、计算十折交叉验证下的精度(accuracy)，查准率(precision)，查全率(recall)，F1值。<br>3、模型可使用sklearn.linear_model.LogisticRegression</p>
-<h4 id="1-4-线性判别分析"><a href="#1-4-线性判别分析" class="headerlink" title="1.4 线性判别分析"></a>1.4 线性判别分析</h4><p>1、使用线性判别分析完成垃圾邮件分类问题和Dota2结果预测问题<br>2、计算十折交叉验证下的精度(accuracy)，查准率(precision)，查全率(recall)，F1值。<br>3、模型可使用sklearn.discriminant_analysis.LinearDiscriminantAnalysis</p>
-<h4 id="1-5-综合题（选做）"><a href="#1-5-综合题（选做）" class="headerlink" title="1.5 综合题（选做）"></a>1.5 综合题（选做）</h4><p>任务要求：白葡萄酒质量共分为7个等级，对白葡萄酒质量进行预测。<br>1、使用精度作为评价指标<br>2、使用一元线性回归、多元线性回归、对数线性回归等线性回归模型对葡萄酒质量进行预测，计算其十折交叉验证的精度。<br>3、使用对数几率回归、线性判别分析对葡萄酒质量进行预测，计算其十折交叉验证的精度。<br>4、对比不同模型的预测能力。</p>
-<h3 id="二、数据介绍"><a href="#二、数据介绍" class="headerlink" title="二、数据介绍"></a>二、数据介绍</h3><p>2.1 kaggle房价预测数据集<br>文件名：<br>1、原始数据：kaggle_hourse_price_train.csv<br>2、字段说明：kaggle房价预测字段说明.txt<br>3、预处理脚本：preprocess.py<br>4、处理后数据：kaggle房价预测处理后数据.csv</p>
-<p>数据来源：<a target="_blank" rel="noopener" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data</a></p>
-<p>数据预处理步骤：<br>该数据集是真实数据集，含有大量的缺失值和噪声数据，提供的预处理脚本只对含缺失值的特征进行丢弃处理，学生可根据自己的需要进行其他方式的处理。<br>3.2    白葡萄酒质量数据集<br>文件名：<br>1、原始数据：winequality-white.csv<br>2、字段说明：葡萄酒字段说明.txt</p>
-<p>数据来源：<a target="_blank" rel="noopener" href="http://archive.ics.uci.edu/ml/datasets/Wine+Quality">http://archive.ics.uci.edu/ml/datasets/Wine+Quality</a></p>
-<p>数据无需预处理，读取即可使用<br>import pandas as pd<br>data = pd.read_csv(‘data/wine_quality/winequality-white.csv’, delimiter=”;”)<br>2.3    spambase垃圾邮件数据集<br>文件名：<br>1、原始数据：spambase.data<br>2、字段说明：spambase数据说明.txt</p>
-<p>数据来源：<a target="_blank" rel="noopener" href="http://archive.ics.uci.edu/ml/datasets/spambase">http://archive.ics.uci.edu/ml/datasets/spambase</a></p>
-<p>数据无需预处理，读取即可使用<br>import numpy as np<br>data = np.loadtxt(‘data/spambase/spambase.data’, delimiter = “,”)<br>2.4    Dota2 Games Results Data Set Dota2游戏结果数据集<br>文件名：<br>1、原始数据：dota2Train.csv<br>2、字段说明：dota2比赛结果字段说明.txt</p>
-<p>数据来源：<a target="_blank" rel="noopener" href="http://archive.ics.uci.edu/ml/datasets/Dota2+Games+Results">http://archive.ics.uci.edu/ml/datasets/Dota2+Games+Results</a></p>
-<p>数据无需预处理，读取即可使用<br>import numpy as np<br>data = np.loadtxt(‘data/dota2Dataset/dota2Train.csv’, delimiter=’,’)</p>
+<p>2、对数线性回归
+尝试使用对数线性回归完成房价预测问题，特征自选，比较模型十折交叉验证的MAE与RMSE。
+模型可使用sklearn.linear_model.LinearRegression #### 1.3 对数几率回归
+1、使用对数几率回归完成垃圾邮件分类问题和Dota2结果预测问题
+2、计算十折交叉验证下的精度(accuracy)，查准率(precision)，查全率(recall)，F1值。
+3、模型可使用sklearn.linear_model.LogisticRegression #### 1.4
+线性判别分析 1、使用线性判别分析完成垃圾邮件分类问题和Dota2结果预测问题
+2、计算十折交叉验证下的精度(accuracy)，查准率(precision)，查全率(recall)，F1值。
+3、模型可使用sklearn.discriminant_analysis.LinearDiscriminantAnalysis
+#### 1.5 综合题（选做）
+任务要求：白葡萄酒质量共分为7个等级，对白葡萄酒质量进行预测。
+1、使用精度作为评价指标
+2、使用一元线性回归、多元线性回归、对数线性回归等线性回归模型对葡萄酒质量进行预测，计算其十折交叉验证的精度。
+3、使用对数几率回归、线性判别分析对葡萄酒质量进行预测，计算其十折交叉验证的精度。
+4、对比不同模型的预测能力。 ### 二、数据介绍 2.1 kaggle房价预测数据集
+文件名： 1、原始数据：kaggle_hourse_price_train.csv
+2、字段说明：kaggle房价预测字段说明.txt 3、预处理脚本：preprocess.py
+4、处理后数据：kaggle房价预测处理后数据.csv</p>
+<p>数据来源：https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data</p>
+<p>数据预处理步骤：
+该数据集是真实数据集，含有大量的缺失值和噪声数据，提供的预处理脚本只对含缺失值的特征进行丢弃处理，学生可根据自己的需要进行其他方式的处理。
+3.2 白葡萄酒质量数据集 文件名： 1、原始数据：winequality-white.csv
+2、字段说明：葡萄酒字段说明.txt</p>
+<p>数据来源：http://archive.ics.uci.edu/ml/datasets/Wine+Quality</p>
+<p>数据无需预处理，读取即可使用 import pandas as pd data =
+pd.read_csv('data/wine_quality/winequality-white.csv', delimiter=";")
+2.3 spambase垃圾邮件数据集 文件名： 1、原始数据：spambase.data
+2、字段说明：spambase数据说明.txt</p>
+<p>数据来源：http://archive.ics.uci.edu/ml/datasets/spambase</p>
+<p>数据无需预处理，读取即可使用 import numpy as np data =
+np.loadtxt('data/spambase/spambase.data', delimiter = ",") 2.4 Dota2
+Games Results Data Set Dota2游戏结果数据集 文件名：
+1、原始数据：dota2Train.csv 2、字段说明：dota2比赛结果字段说明.txt</p>
+<p>数据来源：http://archive.ics.uci.edu/ml/datasets/Dota2+Games+Results</p>
+<p>数据无需预处理，读取即可使用 import numpy as np data =
+np.loadtxt('data/dota2Dataset/dota2Train.csv', delimiter=',')</p>
 
   </div>
   
@@ -2728,15 +2760,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/09/30/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>算法分析与设计第二次作业题题解</p>
-          <p class='content'>题目发布于2021年9月30日上午十点。
-
-Problem A题目描述如果一个质数能被表示为三个不同的质数的和的形式，那么我们称它为立方质数。现在给你一个数n（n≤1000），判断它是不是立方质...</p>
+          <p class='content'>题目发布于2021年9月30日上午十点。  ## Problem A ###
+题目描述 如果一个质数能被表示为三个不同的质数的和的形式，那么我们称它为立方质数。现在给你一个数n（n≤1000）...</p>
         </a>
       
       
         <a class='next' href='/2021/09/29/%E8%AE%A1%E7%BD%91%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/'>
           <p class='title'>计网第二章课后习题<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'></p>
+          <p class='content'>
+</p>
         </a>
       
     </div>
@@ -2784,19 +2816,9 @@ Problem A题目描述如果一个质数能被表示为三个不同的质数的�
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">机器学习第三章实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">一、实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">1.1 一元线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-%E5%AF%B9%E6%95%B0%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%E9%80%89%E4%B8%80%EF%BC%89"><span class="toc-text">1.2 多元线性回归&#x2F;对数线性回归（二选一）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92"><span class="toc-text">1.3 对数几率回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-text">1.4 线性判别分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E7%BB%BC%E5%90%88%E9%A2%98%EF%BC%88%E9%80%89%E5%81%9A%EF%BC%89"><span class="toc-text">1.5 综合题（选做）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D"><span class="toc-text">二、数据介绍</span></a></li></ol></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -2916,13 +2938,19 @@ Problem A题目描述如果一个质数能被表示为三个不同的质数的�
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
