@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-11-09T09:08:53.000Z">
-<meta property="article:modified_time" content="2022-09-15T03:49:18.244Z">
+<meta property="article:modified_time" content="2022-09-16T01:40:41.251Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663292383835),
+    lastupdate: new Date(1663415857245),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2714,14 +2714,17 @@ class="math inline">\(\Rightarrow\)</span><b>动态规划</b>。</p>
 <p>给定<span
 class="math inline">\(1×N\)</span>的单行矩阵，矩阵每个元素都是<span
 class="math inline">\(-127\)</span>到<span
-class="math inline">\(127\)</span>之间的整数。请找到一个连续子矩阵，使得其元素之和最大。
-### 输入数据 多组测试数据，每组数据的第一行为一个整数<span
+class="math inline">\(127\)</span>之间的整数。请找到一个连续子矩阵，使得其元素之和最大。</p>
+<h3 id="输入数据">输入数据</h3>
+<p>多组测试数据，每组数据的第一行为一个整数<span
 class="math inline">\(N(N \leq 100)\)</span>，第二行包含<span
 class="math inline">\(N\)</span>个整数，为行矩阵的<span
 class="math inline">\(N\)</span>个元素，每个元素介于<span
 class="math inline">\(-127\)</span>到<span
-class="math inline">\(127\)</span>之间。 ### 输出数据
-最大子矩阵之和，每组对应一行。 ### 样例输入</p>
+class="math inline">\(127\)</span>之间。</p>
+<h3 id="输出数据">输出数据</h3>
+<p>最大子矩阵之和，每组对应一行。</p>
+<h3 id="样例输入">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">0 -2 -7 0 -2 11 -4 13 -5 -2</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20</span><br></pre></td></tr></table></figure>
@@ -2734,14 +2737,14 @@ class="math inline">\(127\)</span>之间。 ### 输出数据
 <p>给定<span class="math inline">\(N×N\)</span>矩阵，矩阵元素都是<span
 class="math inline">\(-127\)</span>到<span
 class="math inline">\(127\)</span>之间的整数。请找到一个子矩阵，使得其元素之和最大。</p>
-<h3 id="输入数据">输入数据</h3>
+<h3 id="输入数据-1">输入数据</h3>
 <p>多组测试数据，每组测试数据的第一行整数<span class="math inline">\(N
 (N \leq 100)\)</span>；接下来N行元素，每行N个元素，每个元素介于<span
 class="math inline">\(-127\)</span>到<span
 class="math inline">\(127\)</span>之间。</p>
-<h3 id="输出数据">输出数据</h3>
+<h3 id="输出数据-1">输出数据</h3>
 <p>最大子矩阵元素之和，每组测试数据对应一行。</p>
-<h3 id="样例输入">样例输入</h3>
+<h3 id="样例输入-1">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">0 -2 -7 0</span><br><span class="line">9 2 -6 2</span><br><span class="line">-4 1 -4 1</span><br><span class="line">-1 8 0 -2</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出-1">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
@@ -2763,16 +2766,16 @@ class="math inline">\(i\)</span>个打工的日期从<span
 class="math inline">\(l_i\)</span>开始，到<span
 class="math inline">\(r_i\)</span>为止，一共付给他<span
 class="math inline">\(c_i\)</span>元钱。因为这些打工的时间都相互冲突，所以同一天小明最多参加一个打工，并且一个打工一旦开始，就必须一直工作到结束，不能中途退出。现在小明想要知道，这个暑假他打工最多能得到多少钱？</p>
-<h3 id="输入数据-1">输入数据</h3>
+<h3 id="输入数据-2">输入数据</h3>
 <p>第一行一个整数<span class="math inline">\(n(1 \leq n \leq
 1000000)\)</span>，表示招聘广告的数量；接下来一共<span
 class="math inline">\(n\)</span>行，每行3个整数<span
 class="math inline">\(l_i,r_i,c_i(1 \leq l_i ≤ r_i \leq 1000000,1 \leq
 c_i \leq 1000000000)\)</span>，表示打工的开始时间，结束时间和报酬。</p>
-<h3 id="输出数据-1">输出数据</h3>
+<h3 id="输出数据-2">输出数据</h3>
 <p>一行一个整数<span
 class="math inline">\(k\)</span>，表示小明最多能够得到的钱数。</p>
-<h3 id="样例输入-1">样例输入</h3>
+<h3 id="样例输入-2">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 2 3</span><br><span class="line">3 4 3</span><br><span class="line">2 3 5</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出-2">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
@@ -2874,13 +2877,13 @@ class="math inline">\(M(N+M \leq
 class="math inline">\(max\)</span>，使得<span
 class="math inline">\(\{1,\dots
 ,max\}\)</span>的每一个邮资值都能得到？</p>
-<h3 id="输入数据-2">输入数据</h3>
+<h3 id="输入数据-3">输入数据</h3>
 <p>一行，分别为<span class="math inline">\(N,M\)</span>。</p>
-<h3 id="输出数据-2">输出数据</h3>
+<h3 id="输出数据-3">输出数据</h3>
 <p>第一行为<span
 class="math inline">\(m\)</span>种邮票的面值，按升序排列，各数之间用一个空格隔开；第二行为最大值，格式为：<code>"MAX=%d"</code>
 。</p>
-<h3 id="样例输入-2">样例输入</h3>
+<h3 id="样例输入-3">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出-3">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 3</span><br><span class="line">MAX=7</span><br></pre></td></tr></table></figure>
@@ -2891,13 +2894,13 @@ class="math inline">\(m\)</span>种邮票的面值，按升序排列，各数之
 <h2 id="problem-e">Problem E</h2>
 <h3 id="题目描述-4">题目描述</h3>
 <p>某国为了防御敌国的导弹袭击，研发出一种导弹拦截系统。但是这种导弹拦截系统有一个缺陷：虽然它的第一发炮弹能够到达任意的高度，但是以后每一发炮弹都不能高于前一发的高度。某天，雷达捕捉到敌国的导弹来袭。由于该系统还在试验阶段，所以只有一套系统，因此有可能不能拦截所有的导弹。</p>
-<h3 id="输入数据-3">输入数据</h3>
+<h3 id="输入数据-4">输入数据</h3>
 <p>输入数据只有一行，该行包含若干个数据，之间用半角逗号隔开，表示导弹依次飞来的高度（导弹最多有<span
 class="math inline">\(20\)</span>枚，其高度为不大于<span
 class="math inline">\(3×10^3\)</span>的正整数）。</p>
-<h3 id="输出数据-3">输出数据</h3>
+<h3 id="输出数据-4">输出数据</h3>
 <p>输出数据只有一行，该行包含两个数据，之间用半角逗号隔开。第一个数据表示这套系统最多能拦截的导弹数；第二个数据表示若要拦截所有导弹至少要再添加多少套这样的系统。</p>
-<h3 id="样例输入-3">样例输入</h3>
+<h3 id="样例输入-4">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">389,207,155,300,299,170,158,65</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出-4">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6,1</span><br></pre></td></tr></table></figure>
@@ -2992,7 +2995,7 @@ LintCode 1316
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-a"><span class="toc-text">Problem A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-b"><span class="toc-text">Problem B</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-1"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-c"><span class="toc-text">Problem C</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-1"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-1"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-2"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-2"><span class="toc-text">题目分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-text">基本思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%9A%E5%9C%BA%E5%AE%89%E6%8E%92%E9%97%AE%E9%A2%98"><span class="toc-text">会场安排问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="toc-text">树状数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-d"><span class="toc-text">Problem D</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-2"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-2"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-2"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-3"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-3"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-e"><span class="toc-text">Problem E</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-3"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-3"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-3"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-4"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-a"><span class="toc-text">Problem A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-b"><span class="toc-text">Problem B</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-1"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-1"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-1"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-c"><span class="toc-text">Problem C</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-2"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-2"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-2"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-2"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-2"><span class="toc-text">题目分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-text">基本思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%9A%E5%9C%BA%E5%AE%89%E6%8E%92%E9%97%AE%E9%A2%98"><span class="toc-text">会场安排问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="toc-text">树状数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-d"><span class="toc-text">Problem D</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-3"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-3"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-3"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-3"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-3"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-e"><span class="toc-text">Problem E</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE-4"><span class="toc-text">输入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE-4"><span class="toc-text">输出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-4"><span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-4"><span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
     </div>
   </section>
 
@@ -4129,7 +4132,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["/static/images/cover1.webp","/static/images/cover2.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover2.webp","/static/images/cover3.webp","/static/images/cover4.webp","/static/images/cover5.webp","/static/images/cover6.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4429,7 +4432,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/题解/","name":"题解"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/题解/课业/","name":"课业"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/09/算法分析与设计第五次作业题题解/","name":"算法分析与设计第五次作业题题解"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法分析与设计第五次作业题题解","description":"动态规划的题目。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/09/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/09/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/","wordCount":8,"datePublished":"2021-11-09T09:08:53.000Z","dateModified":"2022-09-15T03:49:18.244Z","articleSection":"算法学习","keywords":"C++","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/题解/","name":"题解"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/题解/课业/","name":"课业"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/09/算法分析与设计第五次作业题题解/","name":"算法分析与设计第五次作业题题解"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法分析与设计第五次作业题题解","description":"动态规划的题目。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/09/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/09/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/","wordCount":8,"datePublished":"2021-11-09T09:08:53.000Z","dateModified":"2022-09-16T01:40:41.251Z","articleSection":"算法学习","keywords":"C++","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
