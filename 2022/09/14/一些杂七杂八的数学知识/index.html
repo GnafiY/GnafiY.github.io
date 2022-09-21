@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-14T12:18:39.000Z">
-<meta property="article:modified_time" content="2022-09-15T06:33:31.162Z">
+<meta property="article:modified_time" content="2022-09-21T09:53:12.463Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663676849828),
+    lastupdate: new Date(1663754020818),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2702,7 +2702,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 id="设a_n-displaystyle-1frac1nn求证forall-n-in-textn-a_n1a_n">设<span
 class="math inline">\(a_n = \displaystyle
 (1+\frac{1}{n})^n\)</span>，求证：<span class="math inline">\(\forall n
-\in \text{N}^+, a_{n+1}&gt;a_n\)</span>。</h2>
+\in \text{N}^+, a_{n+1}&gt;a_n\)</span></h2>
 <h3 id="解法一">解法一</h3>
 <p><span class="math inline">\(a_n=\displaystyle \prod_{i=1}^{n} (1
 +\frac{1}{n})=\prod_{i=1}^{n} (1 +\frac{1}{n})\cdot 1 \leq
@@ -2743,9 +2743,9 @@ class="math inline">\(g&#39;(x)=\displaystyle\frac{x}{1+x} &gt;
 class="math inline">\(f&#39;(x)&gt;0\)</span>，那么<span
 class="math inline">\(f(x)\)</span>在<span
 class="math inline">\(\text{R}^+\)</span>上单调递增，原命题显然。</p>
-<h2 id="求idisplaystyle-int_01-ln-x-cdot-ln-1-x-dx">求<span
-class="math inline">\(I=\displaystyle \int_0^1 \ln x \cdot \ln (1-x)
-dx\)</span>。</h2>
+<h2 id="求i-displaystyle-int_01-ln-x-cdot-ln-1-x-dx">求<span
+class="math inline">\(I= \displaystyle \int_{0}^{1} \ln x \cdot \ln
+(1-x) dx\)</span></h2>
 <h3 id="题目求解">题目求解</h3>
 <p>根据<span class="math inline">\(\ln(1-x) =
 -\displaystyle\sum_{n=1}^{\infty}\frac{x^n}{n},x\in(-1,1]\)</span>可得<span
@@ -2780,7 +2780,7 @@ B}|f(x,y)|d(x,y)\)</span>。注意，<strong>如果条件中绝对值积分值�
 <p>即<span class="math inline">\(\displaystyle
 \sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}\)</span>，证明方法有很多种，在此不再赘述。</p>
 <h4 id="常见函数的幂级数">常见函数的幂级数</h4>
-<p>具体推导详见<a href="/2021/11/11/概率论的一些小技巧/" style="text-decoration:none">另一篇博客</a>，这里只给出公式。</p>
+<p>具体推导详见<a href="/2021/11/11/概率论的一些小技巧/" style="text-decoration:none" target = "_blank">另一篇博客</a>，这里只给出公式。</p>
 <p><span class="math display">\[\sin x= \displaystyle
 \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!},x\in(-\infty,+\infty)\]</span></p>
 <p><span class="math display">\[\cos x= \displaystyle
@@ -2892,7 +2892,84 @@ class="math inline">\(t\)</span>个数。</p>
 <p>卡特兰数的其中一个应用为：数<span class="math inline">\(1 \sim
 n\)</span>按序入栈，求课内的出栈序列的个数。</p>
 <p>卡特兰数的通项公式为<span class="math inline">\(C_n =
-\frac{C_{2n}^n}{n+1},n\in N^+\)</span>。</p>
+\frac{C_{2n}^n}{n+1},n\in \text{N}^+\)</span>。</p>
+<h2 id="求ilimlimits_x-to-1--1-x3-displaystyle-sum_n1infty-n2xn">求<span
+class="math inline">\(I=\lim\limits_{x \to 1^-} (1-x)^3 \displaystyle
+\sum_{n=1}^{\infty} n^2x^n\)</span></h2>
+<p>首先需要知道以下公式。 <span
+class="math display">\[\displaystyle\sum_{n=0}^{\infty}x^n =
+\frac{1}{1-x}, x\in(-1,1)\]</span></p>
+<p>对上式两端求导得到如下公式。 <span
+class="math display">\[\displaystyle\sum_{n=0}^{\infty}(n+1)x^{n} =
+\frac{1}{(1-x)^2}, x\in(-1,1)\]</span> <span
+class="math display">\[\displaystyle\sum_{n=0}^{\infty}(n+1)(n+2)x^{n} =
+\frac{2}{(1-x)^3}, x\in(-1,1)\]</span></p>
+<p>由<span
+class="math inline">\(n^2=(n+1)(n+2)-3(n+1)+1\)</span>可以得到如下的结果。
+<span class="math display">\[\displaystyle \sum_{n=1}^{\infty} n^2x^n =
+\frac{2}{(1-x)^3} - \frac{3}{(1-x)^2} + \frac{1}{1-x} , x
+\in(-1,1)\]</span></p>
+<p>最终可以得到<span class="math inline">\(I=2\)</span>。</p>
+<h3 id="无穷级数中的下标变化问题">无穷级数中的下标变化问题</h3>
+<p>在前面求解过程中涉及到了两次求导，事实上隐含了两次下标变换，具体如下所示。</p>
+<p><span class="math display">\[(\frac{1}{1-x})&#39; =
+\displaystyle\sum_{n=1}^{\infty}nx^{n-1} =
+\displaystyle\sum_{n-1=0}^{\infty}[(n-1)+1]x^{n-1} =
+\displaystyle\sum_{n=0}^{\infty}(n+1)x^{n}, x\in(-1,1)\]</span> <span
+class="math display">\[[\frac{1}{(1-x)^2}]&#39;=
+\sum_{n=1}^{\infty}n(n+1)x^{n-1}=
+\sum_{n-1=0}^{\infty}[(n-1)+1][(n-1)+2]x^{n-1} =
+\displaystyle\sum_{n=0}^{\infty}(n+1)(n+2)x^{n}, x\in(-1,1)\]</span></p>
+<p>实际上，无穷级数的第一项需要分类讨论，因为对于<span
+class="math inline">\(f(x)=Cx^0\)</span>，<span
+class="math inline">\(f&#39;(x) \neq Cx^{-1}\)</span>，而是<span
+class="math inline">\(f&#39;(x)=0\)</span>，因此需要分类讨论。</p>
+<h2 id="无穷集合势相关的证明">无穷集合势相关的证明</h2>
+<h3 id="证明01sim-01">证明：<span class="math inline">\([0,1]\sim
+(0,1)\)</span></h3>
+<p>可以构造如下的<span class="math inline">\([0,1] \to
+(0,1)\)</span>的双射，证毕。</p>
+<p><span class="math display">\[f(x) = \begin{cases}
+\displaystyle \frac{1}{2}, x = 1\\
+\displaystyle \frac{1}{4}, x = 0\\
+\displaystyle \frac{1}{2^{(n+2)}}, x = \frac{1}{2^n}, n \in
+\{1,2,3,\dots\}\\
+\displaystyle x, \text{others}\\
+\end{cases}\]</span></p>
+<h3 id="证明textn-01">证明：<span class="math inline">\(|\text{N}^+|
+&lt; |(0,1)|\)</span></h3>
+<p>参考康托对角线证明。</p>
+<h2 id="求-idisplaystyle-limlimits_n-to-infty-sum_i1n-frac1ni">求 <span
+class="math inline">\(I=\displaystyle \lim\limits_{n \to \infty}
+\sum_{i=1}^{n} \frac{1}{n+i}\)</span></h2>
+<h3 id="解法一-1">解法一</h3>
+<p>可以使用定积分定义求解。</p>
+<p><span class="math display">\[ I = \displaystyle
+\frac{1}{n}\sum_{i=1}^{n} \frac{1}{1+ \displaystyle\frac{i}{n}} =
+\int_{0}^{1}\frac{1}{1+x}dx=\ln 2\]</span></p>
+<h3 id="解法二-1">解法二</h3>
+<p>由不等式<span class="math inline">\(\displaystyle \frac{x}{1+x} &lt;
+\ln(1+x) &lt; x\)</span>，可以使用夹逼定理求解。</p>
+<p><span class="math display">\[\displaystyle \frac{1}{n + 1} =
+\frac{\displaystyle \frac{1}{n}}{1 + \displaystyle \frac{1}{n}} &lt;
+\ln(1 + \frac{1}{n}) =\ln(n+1) - \ln n &lt; \frac{1}{n} \]</span></p>
+<p>类推可以得到下列不等式。</p>
+<p><span class="math display">\[\displaystyle \frac{1}{n + 1}  &lt;
+\ln(n+1) - \ln n &lt; \frac{1}{n} \]</span> <span
+class="math display">\[\displaystyle \frac{1}{n + 2}  &lt; \ln(n+2) -
+\ln (n+1) &lt; \frac{1}{n + 1} \]</span> <span
+class="math display">\[\cdots\]</span> <span
+class="math display">\[\displaystyle \frac{1}{2n}  &lt; \ln(2n) - \ln
+(2n-1) &lt; \frac{1}{2n-1}\]</span></p>
+<p>将以上<span
+class="math inline">\(n\)</span>个不等式求和可得到如下不等式。</p>
+<p><span class="math display">\[\displaystyle \sum_{i=1}^{n}
+\frac{1}{n+i}  &lt; \ln2 &lt; \sum_{i=1}^{n} \frac{1}{n+i} + \frac{1}{n}
+- \frac{1}{2n} = \sum_{i=1}^{n} \frac{1}{n+i} +
+\frac{1}{2n}\]</span></p>
+<p>进一步可知<span class="math inline">\(\displaystyle \ln2 -
+\frac{1}{2n} &lt; \sum_{i=1}^{n} \frac{1}{n+i} &lt;
+\ln2\)</span>，故<span class="math inline">\(I=\ln2\)</span>。</p>
 
   </div>
   
@@ -2976,8 +3053,12 @@ Volantis 搭建的博客的代码。 ## 闲谈
     <div class='content'>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BEa_n-displaystyle-1frac1nn%E6%B1%82%E8%AF%81forall-n-in-textn-a_n1a_n"><span class="toc-text">设\(a_n &#x3D; \displaystyle
 (1+\frac{1}{n})^n\)，求证：\(\forall n
-\in \text{N}^+, a_{n+1}&gt;a_n\)。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="toc-text">解法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="toc-text">解法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89"><span class="toc-text">解法三</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_01-ln-x-cdot-ln-1-x-dx"><span class="toc-text">求\(I&#x3D;\displaystyle \int_0^1 \ln x \cdot \ln (1-x)
-dx\)。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%B1%82%E8%A7%A3"><span class="toc-text">题目求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fubinis-theorem"><span class="toc-text">Fubini&#39;s Theorem</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%B4%E5%A1%9E%E5%B0%94%E7%BA%A7%E6%95%B0"><span class="toc-text">巴塞尔级数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0%E7%9A%84%E5%B9%82%E7%BA%A7%E6%95%B0"><span class="toc-text">常见函数的幂级数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-text">删数问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%80%9D%E8%B7%AF"><span class="toc-text">求解思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%B9%BF"><span class="toc-text">推广</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0"><span class="toc-text">卡特兰数</span></a></li></ol>
+\in \text{N}^+, a_{n+1}&gt;a_n\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="toc-text">解法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="toc-text">解法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89"><span class="toc-text">解法三</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_01-ln-x-cdot-ln-1-x-dx"><span class="toc-text">求\(I&#x3D; \displaystyle \int_{0}^{1} \ln x \cdot \ln
+(1-x) dx\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%B1%82%E8%A7%A3"><span class="toc-text">题目求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fubinis-theorem"><span class="toc-text">Fubini&#39;s Theorem</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%B4%E5%A1%9E%E5%B0%94%E7%BA%A7%E6%95%B0"><span class="toc-text">巴塞尔级数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0%E7%9A%84%E5%B9%82%E7%BA%A7%E6%95%B0"><span class="toc-text">常见函数的幂级数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-text">删数问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%80%9D%E8%B7%AF"><span class="toc-text">求解思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%B9%BF"><span class="toc-text">推广</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0"><span class="toc-text">卡特兰数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82ilimlimits_x-to-1--1-x3-displaystyle-sum_n1infty-n2xn"><span class="toc-text">求\(I&#x3D;\lim\limits_{x \to 1^-} (1-x)^3 \displaystyle
+\sum_{n&#x3D;1}^{\infty} n^2x^n\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%AD%E7%9A%84%E4%B8%8B%E6%A0%87%E5%8F%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="toc-text">无穷级数中的下标变化问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E7%A9%B7%E9%9B%86%E5%90%88%E5%8A%BF%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AF%81%E6%98%8E"><span class="toc-text">无穷集合势相关的证明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E01sim-01"><span class="toc-text">证明：\([0,1]\sim
+(0,1)\)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8Etextn-01"><span class="toc-text">证明：\(|\text{N}^+|
+&lt; |(0,1)|\)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-idisplaystyle-limlimits_n-to-infty-sum_i1n-frac1ni"><span class="toc-text">求 \(I&#x3D;\displaystyle \lim\limits_{n \to \infty}
+\sum_{i&#x3D;1}^{n} \frac{1}{n+i}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-1"><span class="toc-text">解法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-1"><span class="toc-text">解法二</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4414,7 +4495,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-15T06:33:31.162Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-21T09:53:12.463Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
