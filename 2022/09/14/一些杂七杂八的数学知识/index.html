@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-14T12:18:39.000Z">
-<meta property="article:modified_time" content="2022-09-22T09:15:11.926Z">
+<meta property="article:modified_time" content="2022-09-22T09:19:09.213Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1663838141558),
+    lastupdate: new Date(1663838405302),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2954,13 +2954,14 @@ class="math inline">\(I=\displaystyle \lim\limits_{n \to \infty}
 \frac{\displaystyle \frac{1}{n}}{1 + \displaystyle \frac{1}{n}} &lt;
 \ln(1 + \frac{1}{n}) =\ln(n+1) - \ln n &lt; \frac{1}{n} \]</span></p>
 <p>类推可以得到下列不等式。</p>
-<p><span class="math display">\[\displaystyle \frac{1}{n + 1}  &lt;
-\ln(n+1) - \ln n &lt; \frac{1}{n} \]</span> <span
-class="math display">\[\displaystyle \frac{1}{n + 2}  &lt; \ln(n+2) -
-\ln (n+1) &lt; \frac{1}{n + 1} \]</span> <span
-class="math display">\[\cdots\]</span> <span
-class="math display">\[\displaystyle \frac{1}{2n}  &lt; \ln(2n) - \ln
-(2n-1) &lt; \frac{1}{2n-1}\]</span></p>
+<p><span class="math display">\[\begin{cases}
+\displaystyle \frac{1}{n + 1}  &lt; \ln(n+1) - \ln n &lt; \frac{1}{n}\\
+\displaystyle \frac{1}{n + 2}  &lt; \ln(n+2) - \ln (n+1) &lt; \frac{1}{n
++ 1}\\
+\cdots\\
+\displaystyle \frac{1}{2n}  &lt; \ln(2n) - \ln (2n-1) &lt;
+\frac{1}{2n-1}
+\end{cases}\]</span></p>
 <p>将以上<span
 class="math inline">\(n\)</span>个不等式求和可得到如下不等式。</p>
 <p><span class="math display">\[\displaystyle \sum_{i=1}^{n}
@@ -3012,16 +3013,13 @@ class="math inline">\(f(\zeta^1)\)</span>，<span
 class="math inline">\(f(\zeta^2)\)</span>，<span
 class="math inline">\(f(\zeta^3)\)</span>和<span
 class="math inline">\(f(\zeta^4)\)</span>，由复数性质可得如下结果。</p>
-<p><span
-class="math display">\[f(\zeta^0)=T_0+T_1+T_2+T_3+T_4=2^{2000}\]</span>
-<span class="math display">\[f(\zeta^1)=T_0+\zeta^1
-T_1+\zeta^2T_2+\zeta^3T_3+\zeta^4T_4=2^{400}\]</span> <span
-class="math display">\[f(\zeta^2)=T_0+\zeta^2
-T_1+\zeta^4T_2+\zeta^1T_3+\zeta^3T_4=2^{400}\]</span> <span
-class="math display">\[f(\zeta^3)=T_0+\zeta^3
-T_1+\zeta^1T_2+\zeta^4T_3+\zeta^2T_4=2^{400}\]</span> <span
-class="math display">\[f(\zeta^4)=T_0+\zeta^4
-T_1+\zeta^3T_2+\zeta^2T_3+\zeta^1T_4=2^{400}\]</span></p>
+<p><span class="math display">\[\begin{cases}
+f(\zeta^0)=T_0+T_1+T_2+T_3+T_4=2^{2000}\\
+f(\zeta^1)=T_0+\zeta^1 T_1+\zeta^2T_2+\zeta^3T_3+\zeta^4T_4=2^{400}\\
+f(\zeta^2)=T_0+\zeta^2 T_1+\zeta^4T_2+\zeta^1T_3+\zeta^3T_4=2^{400}\\
+f(\zeta^3)=T_0+\zeta^3 T_1+\zeta^1T_2+\zeta^4T_3+\zeta^2T_4=2^{400}\\
+f(\zeta^4)=T_0+\zeta^4 T_1+\zeta^3T_2+\zeta^2T_3+\zeta^1T_4=2^{400}
+\end{cases}\]</span></p>
 <p><span
 class="math inline">\(f(1)\)</span>显然可得。下面将主要求解<span
 class="math inline">\(f(\zeta)\)</span>，其余<span
@@ -4564,7 +4562,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-22T09:15:11.926Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-22T09:19:09.213Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
