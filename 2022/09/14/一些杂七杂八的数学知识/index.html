@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-14T12:18:39.000Z">
-<meta property="article:modified_time" content="2022-09-25T07:43:57.213Z">
+<meta property="article:modified_time" content="2022-09-28T13:14:46.162Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664091877198),
+    lastupdate: new Date(1664370908206),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -3076,6 +3076,51 @@ V\)</span>，假定<span class="math inline">\(abc \neq
 ac\)</span>，那么<span class="math inline">\(abc \cdot ac \neq ac \cdot
 abc\)</span>，由结合律和（2）可知<span class="math inline">\(abc \neq
 abc\)</span>，产生矛盾，因此命题成立。</p>
+<h2 id="抽象函数相关的题目">抽象函数相关的题目</h2>
+<h3
+id="已知函数fx在textr可导且fxyeyfxexfy以及f02求fx的表达式">已知函数<span
+class="math inline">\(f(x)\)</span>在<span
+class="math inline">\(\text{R}\)</span>可导，且<span
+class="math inline">\(f(x+y)=e^yf(x)+e^xf(y)\)</span>以及<span
+class="math inline">\(f&#39;(0)=2\)</span>，求<span
+class="math inline">\(f(x)\)</span>的表达式</h3>
+<p>首先令<span class="math inline">\(x=y=0\)</span>，得到<span
+class="math inline">\(f(0)=0\)</span>。</p>
+<p>再令<span class="math inline">\(y=\Delta x\)</span>，那么<span
+class="math inline">\(f(x+\Delta x) - f(x) = (e^{\Delta x} -
+1)f(x)+e^xf(\Delta x)\)</span>。</p>
+<p>由题目的<span
+class="math inline">\(f(x)\)</span>处处可导及导数定义有： <span
+class="math display">\[f&#39;(x)=\lim_\limits{\Delta \to 0}
+\displaystyle \frac{f(x + \Delta x) - f(x)}{\Delta
+x}=f(x)\lim_\limits{\Delta \to 0}\frac { e^{\Delta x} - 1}{\Delta x}  +
+e^x \lim_\limits{\Delta x \to 0} \frac{f(\Delta x) - f(0)}{\Delta x -
+0}=f(x)+2e^x\]</span></p>
+<p>求解微分方程得到<span class="math inline">\(f(x)=e^x(C+2x),C\in
+\text{R}\)</span>。</p>
+<p>对于微分方程<span class="math inline">\(\displaystyle \frac{dy}{dx} +
+P(x)y=Q(x)\)</span>，其通解为<span
+class="math inline">\(y=e^{-\displaystyle \int P(x) dx}(C +
+\displaystyle \int e^{P(x)}Q(x)dx)\)</span>。</p>
+<h2 id="求i-displaystyle-int_0fracpi2-ln-cos-x-dx">求<span
+class="math inline">\(I = \displaystyle \int_{0}^{\frac{\pi}{2}} \ln
+\cos x dx\)</span></h2>
+<p>使用区间再现可以得到如下结论。</p>
+<p><span class="math display">\[I \xlongequal{t = \frac{\pi}{2} - x}
+\displaystyle - \int_{\frac{\pi}{2}}^{0} \ln \sin t dt =
+\int_{0}^{\frac{\pi}{2}} \ln \sin x dx\]</span></p>
+<p>因此可得：</p>
+<p><span class="math display">\[I = \displaystyle \frac{1}{2}
+\int_{0}^{\frac{\pi}{2}} (\ln \sin x + \ln \cos x) dx = \frac{1}{2}
+\int_{0}^{\frac{\pi}{2}} \ln \sin 2x dx - \frac{\pi}{4}\ln
+2\]</span></p>
+<p>又因为：</p>
+<p><span class="math display">\[\displaystyle \int_{0}^{\frac{\pi}{2}}
+\ln \sin 2x dx \xlongequal{t = 2x} \frac{1}{2} \int_{0}^{\pi} \ln \sin t
+dt = \frac{1}{2}(\int_{0}^{\frac{\pi}{2}} \ln \sin x dx +
+\int_{\frac{\pi}{2}}^{\pi} \ln \sin x dx) = I\]</span></p>
+<p>因此<span class="math inline">\(I = \displaystyle - \frac{\pi}{2} \ln
+2\)</span>。</p>
 
   </div>
   
@@ -3166,7 +3211,8 @@ Volantis 搭建的博客的代码。 ## 闲谈
 &lt; |(0,1)|\)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-idisplaystyle-limlimits_n-to-infty-sum_i1n-frac1ni"><span class="toc-text">求 \(I&#x3D;\displaystyle \lim\limits_{n \to \infty}
 \sum_{i&#x3D;1}^{n} \frac{1}{n+i}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80-1"><span class="toc-text">解法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-1"><span class="toc-text">解法二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5s12dots2000%E6%B1%82%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6s_i-subseteq-s%E4%B8%94displaystylesum_e-in-s_ie-equiv-0-pmod5%E7%9A%84%E9%9B%86%E5%90%88s_i%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">已知\(S&#x3D;\{1,2,\dots,2000\}\)，求满足条件\(S_i \subseteq S\)且\(\displaystyle\sum_{e \in S_i}e \equiv 0
 \pmod{5}\)的集合\(S_i\)的个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E6%96%B9%E9%98%B5a%E5%92%8Cb%E6%BB%A1%E8%B6%B3%E5%85%B3%E7%B3%BBabab%E6%B1%82%E8%AF%81abba"><span class="toc-text">已知方阵\(A\)和\(B\)满足关系\(AB&#x3D;A+B\)，求证：\(AB&#x3D;BA\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E8%AE%BA%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%81%E6%98%8E"><span class="toc-text">群论相关的一些证明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5vcdot%E4%B8%BA%E5%8D%8A%E7%BE%A4%E4%B8%94forall-ab-in-v-a-neq-b-rightarrow-ab-neq-ba%E6%B1%82%E8%AF%81%E4%BB%A5%E4%B8%8B%E5%91%BD%E9%A2%98"><span class="toc-text">已知\(&lt;V,\cdot&gt;\)为半群，且\(\forall a,b \in V, a \neq b \Rightarrow ab \neq
-ba\)，求证以下命题</span></a></li></ol></li></ol>
+ba\)，求证以下命题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84%E9%A2%98%E7%9B%AE"><span class="toc-text">抽象函数相关的题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E5%87%BD%E6%95%B0fx%E5%9C%A8textr%E5%8F%AF%E5%AF%BC%E4%B8%94fxyeyfxexfy%E4%BB%A5%E5%8F%8Af02%E6%B1%82fx%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">已知函数\(f(x)\)在\(\text{R}\)可导，且\(f(x+y)&#x3D;e^yf(x)+e^xf(y)\)以及\(f&#39;(0)&#x3D;2\)，求\(f(x)\)的表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_0fracpi2-ln-cos-x-dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{\frac{\pi}{2}} \ln
+\cos x dx\)</span></a></li></ol>
     </div>
   </section>
 
@@ -4303,7 +4349,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["/static/images/cover1.webp","/static/images/cover2.webp","/static/images/cover3.webp","/static/images/cover4.webp","/static/images/cover5.webp","/static/images/cover6.webp","/static/images/cover7.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover2.webp","/static/images/cover3.webp","/static/images/cover4.webp","/static/images/cover5.webp","/static/images/cover6.webp","/static/images/cover7.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4603,7 +4649,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-25T07:43:57.213Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/14/一些杂七杂八的数学知识/","name":"一些杂七杂八的数学题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/14/%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/","wordCount":27,"datePublished":"2022-09-14T12:18:39.000Z","dateModified":"2022-09-28T13:14:46.162Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
