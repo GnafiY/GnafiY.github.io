@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-30T09:06:15.000Z">
-<meta property="article:modified_time" content="2022-10-02T02:30:45.598Z">
+<meta property="article:modified_time" content="2022-10-02T09:27:20.524Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664678692143),
+    lastupdate: new Date(1665908466379),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2712,9 +2712,9 @@ a_{i,j}=(q^i)^T \cdot k^j\]</span></p>
 </p>
 <h4 id="对a使用textsoftmax函数进行激活得到矩阵a">对<span
 class="math inline">\(A\)</span>使用<span
-class="math inline">\(\text{Softmax}\)</span>函数进行激活，得到矩阵<span
+class="math inline">\(\text{softmax}\)</span>函数进行激活，得到矩阵<span
 class="math inline">\(A&#39;\)</span></h4>
-<p><span class="math display">\[a&#39;_{i,j} = \text{Softmax}(a_{i,j}) =
+<p><span class="math display">\[a&#39;_{i,j} = \text{softmax}(a_{i,j}) =
 \displaystyle \frac{e^{a_{i,j}}}{\displaystyle \sum_{i = 1} ^ {4}\sum_{j
 = 1} ^ {4} e^{a_{i,j}}}\]</span></p>
 <h4 id="最终得到输出矩阵o">最终得到输出矩阵<span
@@ -2726,6 +2726,9 @@ class="math inline">\(O\)</span></h4>
 图1-2 矩阵<span class="math inline">\(O\)</span>图示
 </p>
 <h3 id="文章设计的解决方案">文章设计的解决方案</h3>
+<h4 id="sparse-attention-mechanisms"><code>Sparse Attention
+Mechanisms</code></h4>
+<p><img src = "/static/images/sparse-self-attention1.png" width = "630px"/></p>
 <h2 id="scalehls">ScaleHLS</h2>
 <h2 id="参考资料">参考资料</h2>
 <h3 id="salo-1">SALO</h3>
@@ -2742,6 +2745,13 @@ class="math inline">\(O\)</span></h4>
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2022-10-05-%E7%89%87%E4%B8%8A%E7%B3%BB%E7%BB%9F%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>片上系统综合实践课程笔记</p>
+          <p class='content'>这是北京交通大学2022年秋季课程——片上系统综合实践的课程笔记。
+
+</p>
+        </a>
       
       
         <a class='next' href='/2022-09-30-%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0/'>
@@ -2808,7 +2818,8 @@ class="math inline">\(O\)</span></h4>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#salo"><span class="toc-text">SALO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">主要计算过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%97%E5%88%B0qk%E5%92%8Cv%E7%9F%A9%E9%98%B5"><span class="toc-text">得到\(Q\)、\(K\)和\(V\)矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8q%E5%92%8Ck%E8%AE%A1%E7%AE%97%E6%AF%8F%E4%B8%A4%E4%B8%AA%E8%BE%93%E5%85%A5%E5%90%91%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="toc-text">利用\(Q\)和\(K\)计算每两个输入向量之间的相关性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9a%E4%BD%BF%E7%94%A8textsoftmax%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E6%BF%80%E6%B4%BB%E5%BE%97%E5%88%B0%E7%9F%A9%E9%98%B5a"><span class="toc-text">对\(A\)使用\(\text{Softmax}\)函数进行激活，得到矩阵\(A&#39;\)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E8%BE%93%E5%87%BA%E7%9F%A9%E9%98%B5o"><span class="toc-text">最终得到输出矩阵\(O\)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">文章设计的解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scalehls"><span class="toc-text">ScaleHLS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#salo-1"><span class="toc-text">SALO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scalehls-1"><span class="toc-text">ScaleHLS</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#salo"><span class="toc-text">SALO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">主要计算过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%97%E5%88%B0qk%E5%92%8Cv%E7%9F%A9%E9%98%B5"><span class="toc-text">得到\(Q\)、\(K\)和\(V\)矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8q%E5%92%8Ck%E8%AE%A1%E7%AE%97%E6%AF%8F%E4%B8%A4%E4%B8%AA%E8%BE%93%E5%85%A5%E5%90%91%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="toc-text">利用\(Q\)和\(K\)计算每两个输入向量之间的相关性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9a%E4%BD%BF%E7%94%A8textsoftmax%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E6%BF%80%E6%B4%BB%E5%BE%97%E5%88%B0%E7%9F%A9%E9%98%B5a"><span class="toc-text">对\(A\)使用\(\text{softmax}\)函数进行激活，得到矩阵\(A&#39;\)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E8%BE%93%E5%87%BA%E7%9F%A9%E9%98%B5o"><span class="toc-text">最终得到输出矩阵\(O\)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">文章设计的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sparse-attention-mechanisms"><span class="toc-text">Sparse Attention
+Mechanisms</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scalehls"><span class="toc-text">ScaleHLS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#salo-1"><span class="toc-text">SALO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scalehls-1"><span class="toc-text">ScaleHLS</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4245,7 +4256,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-09-30-两篇体系结构方向英文论文阅读笔记/","name":"两篇体系结构方向英文论文阅读笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"两篇体系结构方向英文论文阅读笔记","description":"首次阅读这方面的英文论文，有不足和错误之处还望各位不吝赐教。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-09-30-%E4%B8%A4%E7%AF%87%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%96%B9%E5%90%91%E8%8B%B1%E6%96%87%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-09-30-%E4%B8%A4%E7%AF%87%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%96%B9%E5%90%91%E8%8B%B1%E6%96%87%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/","wordCount":30,"datePublished":"2022-09-30T09:06:15.000Z","dateModified":"2022-10-02T02:30:45.598Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-09-30-两篇体系结构方向英文论文阅读笔记/","name":"两篇体系结构方向英文论文阅读笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"两篇体系结构方向英文论文阅读笔记","description":"首次阅读这方面的英文论文，有不足和错误之处还望各位不吝赐教。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-09-30-%E4%B8%A4%E7%AF%87%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%96%B9%E5%90%91%E8%8B%B1%E6%96%87%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-09-30-%E4%B8%A4%E7%AF%87%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%96%B9%E5%90%91%E8%8B%B1%E6%96%87%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/","wordCount":30,"datePublished":"2022-09-30T09:06:15.000Z","dateModified":"2022-10-02T09:27:20.524Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
