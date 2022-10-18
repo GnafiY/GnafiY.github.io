@@ -33,17 +33,17 @@
   <!-- 页面元数据 -->
   <title>二分查找学习 - 一方の笔记本</title>
   <meta name="keywords" content="二分查找,null">
-  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
-  <meta name="description" content="折半查找的思想十分简单，其效率也很高，时间复杂度为对数级的\(O(log(n))\)；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。 ## 在数组中查找   设\(arr\)为一个数组，\(target\)为目标值。假设\(arr\)已经是升序排序过的并且下文中默认这个条件。取\(arr\)的长度为\(L\)。 ### 查找值   假定需要在\(arr\)中查找是否存在等于">
+  <meta desc name="description" content="折半查找的思想十分简单，其效率也很高；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。 - John Doe - 一方の笔记本">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分查找学习">
 <meta property="og:url" content="http://example.com/2021-10-11-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="折半查找的思想十分简单，其效率也很高，时间复杂度为对数级的\(O(log(n))\)；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。 ## 在数组中查找   设\(arr\)为一个数组，\(target\)为目标值。假设\(arr\)已经是升序排序过的并且下文中默认这个条件。取\(arr\)的长度为\(L\)。 ### 查找值   假定需要在\(arr\)中查找是否存在等于">
+<meta property="og:description" content="折半查找的思想十分简单，其效率也很高；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-11T09:41:26.000Z">
-<meta property="article:modified_time" content="2022-09-13T11:49:58.907Z">
+<meta property="article:modified_time" content="2022-10-17T02:41:44.973Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665908466379),
+    lastupdate: new Date(1666088730771),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2697,39 +2697,39 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>  折半查找的思想十分简单，其效率也很高，时间复杂度为对数级的<span
-class="math inline">\(O(log(n))\)</span>；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。
-## 在数组中查找   设<span
-class="math inline">\(arr\)</span>为一个数组，<span
-class="math inline">\(target\)</span>为目标值。假设<span
-class="math inline">\(arr\)</span>已经是升序排序过的并且下文中默认这个条件。取<span
-class="math inline">\(arr\)</span>的长度为<span
-class="math inline">\(L\)</span>。 ### 查找值   假定需要在<span
-class="math inline">\(arr\)</span>中查找是否存在等于<span
-class="math inline">\(target\)</span>的元素，如果查找到了则返回对应元素的下标；否则返回<span
-class="math inline">\(-1\)</span>。<br>
-  对于这种情况，返回结果的范围是<span class="math inline">\({-1} \bigcup
-[0, L-1]\)</span>，因此取<b>初始区间</b><span class="math inline">\([l,
-r]\)</span>为<span class="math inline">\([0,L-1]\)</span>，若找到<span
-class="math inline">\(target\)</span>直接返回<span
-class="math inline">\(mid\)</span>，否则一直查找，最后返回<span
+    <p>折半查找的思想十分简单，其效率也很高；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。</p>
+<span id="more"></span>
+<h2 id="在数组中查找">在数组中查找</h2>
+<p>设 <code>arr</code> 为一个数组， <code>target</code> 为目标值。假设
+<code>arr</code> 已经是升序排序过的并且下文中默认这个条件。取
+<code>arr</code> 的长度为<span class="math inline">\(L\)</span>。</p>
+<h3 id="查找值">查找值</h3>
+<p>假定需要在 <code>arr</code> 中查找是否存在等于 <code>target</code>
+的元素，如果查找到了则返回对应元素的下标；否则返回<span
+class="math inline">\(-1\)</span>。</p>
+<p>对于这种情况，返回结果的范围是<span class="math inline">\(\{-1\}
+\bigcup \{0,1,\dots
+,L-1\}\)</span>，因此取<strong>初始区间</strong><span
+class="math inline">\([l, r]\)</span>为<span
+class="math inline">\([0,L-1]\)</span>，若找到 <code>target</code>
+直接返回 <code>mid</code> ，否则一直查找，最后返回<span
 class="math inline">\(-1\)</span>即可。值得注意还有<b>结束条件</b>，由于查找的有效结果是一个值，因此要保证区间<span
 class="math inline">\([0,L-1]\)</span>中没有遗漏的值，那么必须保证没有找到的条件下，退出时的区间<span
 class="math inline">\([l,r]\)</span>满足<span class="math inline">\(l
 &gt; r\)</span>，可以得出循环条件为<span class="math inline">\(l
-\leqslant r\)</span>。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findVal</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] == target) &#123;</span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &gt; target) &#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ### 查找界   假定要查找<span
-class="math inline">\(arr\)</span>中<span
-class="math inline">\(target\)</span>的上确界，并且要求如果所有元素均大于等于<span
-class="math inline">\(target\)</span>则返回<span
-class="math inline">\(0\)</span>，如果所有元素均小于等于<span
-class="math inline">\(target\)</span>则返回<span
-class="math inline">\(L\)</span>。<br>
-  对于这种情况，返回结果的范围是<span class="math inline">\([0,L-1]
-\bigcup {L} = [0,L]\)</span>，因此取<b>初始区间</b><span
-class="math inline">\([l, r]\)</span>为<span
-class="math inline">\([0,L]\)</span>，若<span
-class="math inline">\(target \leqslant
-arr[mid]\)</span>，那么可能的结果区间为<span
+\leqslant r\)</span>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findVal</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] == target) &#123;</span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &gt; target) &#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查找界">查找界</h3>
+<p>假定要查找 <code>arr</code> 中 <code>target</code>
+的上确界，并且要求如果所有元素均大于等于 <code>target</code> 则返回<span
+class="math inline">\(0\)</span>，如果所有元素均小于等于
+<code>target</code> 则返回<span class="math inline">\(L\)</span>。</p>
+<p>对于这种情况，返回结果的范围是<span class="math inline">\(\{0,1,\dots
+,L-1\} \bigcup \{L\} = \{0,1,\dots
+,L-1,L\}\)</span>，因此取<b>初始区间</b><span class="math inline">\([l,
+r]\)</span>为<span class="math inline">\([0,L]\)</span>，若
+<code>target</code> <span class="math inline">\(\leqslant\)</span>
+<code>arr[mid]</code> ，那么可能的结果区间为<span
 class="math inline">\([l,mid]\)</span>，则更新<span
 class="math inline">\(r=mid\)</span>；否则更新区间为<span
 class="math inline">\([mid+1,r]\)</span>。由于最终退出循环时为一个区间<span
@@ -2737,14 +2737,14 @@ class="math inline">\([l,r]\)</span>，其中<span class="math inline">\(l
 \leqslant r\)</span>，那么<b>结束条件</b>为<span class="math inline">\(l
 \leqslant r\)</span>，可以得出循环条件为<span
 class="math inline">\(l&lt;r\)</span>，最终的返回值为<span
-class="math inline">\(l\)</span>。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findSupremum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">while</span> (r - l &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &gt;= target) &#123;</span><br><span class="line">			r = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l;<span class="comment">//返回第一个元素的下标</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>   查找下确界同理。
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findInfimum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">while</span> (r - l &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &lt;= target) &#123;</span><br><span class="line">			l = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> r;<span class="comment">//返回最后一个元素的下标</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>   <span
-class="math inline">\(findSupremum()\)</span>函数实现了查找第一个大于等于<span
-class="math inline">\(target\)</span>的数的功能，<span
-class="math inline">\(findInfimum()\)</span>实现了查找最后一个小于等于<span
-class="math inline">\(target\)</span>的数的功能。通过更改<span
-class="math inline">\(while\)</span>循环中<span
-class="math inline">\(if\)</span>的条件可以更改查找的功能。</p>
+class="math inline">\(l\)</span>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findSupremum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">while</span> (r - l &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &gt;= target) &#123;</span><br><span class="line">			r = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l;<span class="comment">//返回第一个元素的下标</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查找下确界同理。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findInfimum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">while</span> (r - l &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &lt;= target) &#123;</span><br><span class="line">			l = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> r;<span class="comment">//返回最后一个元素的下标</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>findSupremum()</code> 函数实现了查找第一个大于等于
+<code>target</code> 的数的功能，<code>findInfimum()</code>
+实现了查找最后一个小于等于 <code>target</code>
+的数的功能。通过修改循环中分支的条件可以更改查找的功能。</p>
 
   </div>
   
@@ -2757,15 +2757,20 @@ class="math inline">\(if\)</span>的条件可以更改查找的功能。</p>
       
         <a class='prev' href='/2021-10-14-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>排序算法</p>
-          <p class='content'>  赶紧复习一下排序算法（  1234567891011121314151617181920212223242526272829303132333435363738394041424344454...</p>
+          <p class='content'>一些排序算法的 C++ 实现。
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434...</p>
         </a>
       
       
         <a class='next' href='/2021-10-11-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/'>
           <p class='title'>算法分析与设计第三次作业题解<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目发布于2021年10月11日零点。  ## Problem A ###
-题目描述 我们有n根的木棍。现在从这些木棍中切割出来m条长度相同的木棍，问这m根木棍最长有多长？
- ### 题解 ...</p>
+          <p class='content'>题目发布于2021年10月11日零点。
+
+Problem A
+题目描述
+我们有\(n\)根的木棍。现在从这些木棍中切割出来\(m\)条长度相同的木棍，问这\(m\)根木棍最长有多长？
+...</p>
         </a>
       
     </div>
@@ -2813,9 +2818,19 @@ class="math inline">\(if\)</span>的条件可以更改查找的功能。</p>
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE"><span class="toc-text">在数组中查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%80%BC"><span class="toc-text">查找值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%95%8C"><span class="toc-text">查找界</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2960,7 +2975,8 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright © since 2021 _GnafiY</a></p>
+        <p><a href="/">Copyright © since 2021
+_GnafiY</a><br><a href = "https://beian.miit.gov.cn/" target = "_blank">京ICP备2021030810号-1</a></p>
 
         </div>
       
@@ -4048,6 +4064,77 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <style>
+  #post-body p {
+    text-indent: 2em;
+  }
+  #post-body .new-meta-box p,
+  #post-body .note p,
+  #post-body .prev-next p,
+  #post-body .tag p,
+  #post-body blockquote p,
+  #post-body details p,
+  #post-body p.p,
+  #post-body .tab-pane .checkbox
+  #post-body section p {
+    text-indent: initial;
+  }
+</style>
+
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
+
 </pjax>
 
 <script>
@@ -4179,7 +4266,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-10-11-二分查找学习/","name":"二分查找学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"二分查找学习","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-10-11-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-10-11-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2021-10-11T09:41:26.000Z","dateModified":"2022-09-13T11:49:58.907Z","articleSection":"算法学习","keywords":"二分查找","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-10-11-二分查找学习/","name":"二分查找学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"二分查找学习","description":"折半查找的思想十分简单，其效率也很高；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-10-11-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-10-11-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0/","wordCount":51,"datePublished":"2021-10-11T09:41:26.000Z","dateModified":"2022-10-17T02:41:44.973Z","articleSection":"算法学习","keywords":"二分查找","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
