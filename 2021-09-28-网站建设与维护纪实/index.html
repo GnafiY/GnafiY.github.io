@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-09-28T11:49:50.000Z">
-<meta property="article:modified_time" content="2022-09-13T11:54:58.439Z">
+<meta property="article:modified_time" content="2022-10-19T13:59:46.656Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1666182358397),
+    lastupdate: new Date(1666188014347),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2642,6 +2642,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/">网站相关</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/" itemprop="url"><span itemprop="name">网站相关</span></a>
+      </span>
+    
+  </div>
+
 
           
         
@@ -2686,18 +2696,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>本页主要记录网页的建设与维护的过程，并分享一些经验。 <span id="more"></span> ##
-2021年9月28日
-  网页出现乱码问题，经查证是编码问题，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangrusheng5200/article/details/83484260">查找资料</a>后在对WinSCP的登陆设置与登陆后的编辑设置中进行修改后问题解决。
-<img src="/img/problem20210928.png" class="lazyload" data-srcset="/img/problem20210928.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" align="middle" />
-  要使用Markdown语言进行公式编辑就需要在每篇博客的头部加上如下代码。
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true # important</span><br></pre></td></tr></table></figure>   最终得到的效果为：<span
-class="math inline">\(e^{i\pi}+1=0\)</span>. ## 2021年9月29日
-  经大佬的提示，我将网站中的图片进行压缩，转为webp格式... ##
-2021年11月9日   经过查找资料后，我将网站的代码字体更换为Fira
-Code，实际上流程很简单。   在Ubuntu系统使用如下命令安装Fira
-Code字体，随后修改_config.volantis.yml中的codefont之后即可使用字体。
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure></p>
+    <p>本页主要记录网页的建设与维护的过程，并分享一些经验。</p>
+<span id="more"></span>
+<h2 id="年9月28日">2021年9月28日</h2>
+<p>网页出现乱码问题，经查证是编码问题，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangrusheng5200/article/details/83484260" target = "_blank">查找资料</a>后在对
+WinSCP 的登陆设置与登陆后的编辑设置中进行修改后问题解决。</p>
+<p><img src="/img/problem20210928.png" class="lazyload" data-srcset="/img/problem20210928.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" align="middle" /></p>
+<p>要使用 <code>Markdown</code>
+进行公式编辑就需要在每篇博客的头部加上如下代码。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>最终得到的效果为：<span
+class="math inline">\(e^{i\pi}+1=0\)</span>。</p>
+<p>以上内容为 <code>Volantis-4.3.1</code> 中的配置方式，事实上，在
+<code>Volantis-5.7.6</code> 中，配置方式如下。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">mathjax</span></span><br></pre></td></tr></table></figure>
+<h2 id="年9月29日">2021年9月29日</h2>
+<p>经大佬的提示，我将网站中的图片进行压缩，转为 <code>webp</code>
+格式。</p>
+<h2 id="年11月9日">2021年11月9日</h2>
+<p>经过查找资料后，我将网站的代码字体更换为 Fira
+Code，实际上流程很简单。</p>
+<p>在腾讯云服务器的 Ubuntu 系统中使用如下命令安装 Fira Code 字体。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure>
+<p>随后修改 <code>_config.volantis.yml</code> 中的 <code>codefont</code>
+之后即可使用字体，如下所示。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: _config.volantis.yml</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">  <span class="attr">fontfamily:</span></span><br><span class="line">    <span class="attr">codefont:</span></span><br><span class="line">      <span class="attr">fontfamily:</span> <span class="string">&#x27;Fira Code&#x27;</span></span><br><span class="line">    <span class="attr">logofont:</span></span><br><span class="line">      <span class="attr">fontfamily:</span> <span class="string">&#x27;&quot;Times New Roman&quot;, SimSun&#x27;</span></span><br><span class="line">      <span class="attr">weight:</span> <span class="string">normal</span></span><br><span class="line">      <span class="attr">style:</span> <span class="string">normal</span></span><br><span class="line">    <span class="attr">bodyfont:</span></span><br><span class="line">      <span class="attr">fontfamily:</span> <span class="string">&#x27;&quot;Times New Roman&quot;, SimSun&#x27;</span></span><br><span class="line">      <span class="attr">weight:</span> <span class="string">normal</span></span><br><span class="line">      <span class="attr">style:</span> <span class="string">normal</span></span><br><span class="line"><span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<h2 id="年10月19日">2022年10月19日</h2>
+<p>观察到博客翻页功能的内容不够美观，于是将 <code>article.ejs</code>
+中部分行进行了注释。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="attr">file</span>: article.<span class="property">ejs</span>, <span class="attr">line</span>: <span class="number">154</span>, <span class="number">160</span>, <span class="number">173</span>, <span class="number">179</span> --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- ... --&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!--<span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;content&#x27;</span>&gt;</span>&lt;%- prev.exp %&gt;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- ... --&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!--<span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;content&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &lt;%- truncate(strip_html(page.prev.content), &#123;length: 100&#125;) %&gt;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- ... --&gt;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2710,19 +2737,19 @@ Code字体，随后修改_config.volantis.yml中的codefont之后即可使用字
       
         <a class='prev' href='/2021-09-29-%E8%AE%A1%E7%BD%91%E7%AC%AC%E4%BA%8C%E7%AB%A0%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>计网第二章课后习题</p>
-          <p class='content'>
-</p>
+          <!--<p class='content'>
+</p>-->
         </a>
       
       
         <a class='next' href='/2021-09-28-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A03/'>
           <p class='title'>算法日常练习3<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2021年9月28日练习。
+          <!--<p class='content'>2021年9月28日练习。
 
 LintCode 1300
 事实上，当\(n \leq
 3\)时，总是能赢；\(n \geq
-4\)时，只要\(n\)是4的倍数一定输，其他情况我一定赢，...</p>
+4\)时，只要\(n\)是4的倍数一定输，其他情况我一定赢，...</p>-->
         </a>
       
     </div>
@@ -2770,9 +2797,19 @@ LintCode 1300
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%8828%E6%97%A5"><span class="toc-text">2021年9月28日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%8829%E6%97%A5"><span class="toc-text">2021年9月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B411%E6%9C%889%E6%97%A5"><span class="toc-text">2021年11月9日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B410%E6%9C%8819%E6%97%A5"><span class="toc-text">2022年10月19日</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4006,6 +4043,77 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <style>
+  #post-body p {
+    text-indent: 2em;
+  }
+  #post-body .new-meta-box p,
+  #post-body .note p,
+  #post-body .prev-next p,
+  #post-body .tag p,
+  #post-body blockquote p,
+  #post-body details p,
+  #post-body p.p,
+  #post-body .tab-pane .checkbox
+  #post-body section p {
+    text-indent: initial;
+  }
+</style>
+
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
+
 </pjax>
 
 <script>
@@ -4137,7 +4245,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-09-28-网站建设与维护纪实/","name":"网站建设与维护纪实"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"网站建设与维护纪实","description":"本页主要记录网页的建设与维护的过程，并分享一些经验。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-09-28-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-09-28-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/","wordCount":26,"datePublished":"2021-09-28T11:49:50.000Z","dateModified":"2022-09-13T11:54:58.439Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/网站相关/","name":"网站相关"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-09-28-网站建设与维护纪实/","name":"网站建设与维护纪实"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"网站建设与维护纪实","description":"本页主要记录网页的建设与维护的过程，并分享一些经验。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-09-28-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-09-28-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/","wordCount":26,"datePublished":"2021-09-28T11:49:50.000Z","dateModified":"2022-10-19T13:59:46.656Z","articleSection":"网站相关","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
