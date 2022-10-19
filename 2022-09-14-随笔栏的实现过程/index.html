@@ -33,15 +33,17 @@
   <!-- 页面元数据 -->
   <title>随笔栏的实现过程 - 一方の笔记本</title>
   <meta name="keywords" content="null">
-  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
-  <meta property="og:type" content="article">
+  <meta desc name="description" content="这篇博客用于记录配置自定义分页的过程。 - John Doe - 一方の笔记本">
+  
+<meta property="og:type" content="article">
 <meta property="og:title" content="随笔栏的实现过程">
 <meta property="og:url" content="http://example.com/2022-09-14-%E9%9A%8F%E7%AC%94%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="一方の笔记本">
+<meta property="og:description" content="这篇博客用于记录配置自定义分页的过程。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-09-14T09:29:41.000Z">
-<meta property="article:modified_time" content="2022-10-01T02:41:54.475Z">
+<meta property="article:modified_time" content="2022-10-19T12:24:38.619Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1871,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1666088730771),
+    lastupdate: new Date(1666182358397),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2694,7 +2696,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <span id="more"></span>
+    <p>这篇博客用于记录配置自定义分页的过程。</p>
+<span id="more"></span>
+<h2 id="安装-hexo-generator-index2">安装
+<code>hexo-generator-index2</code></h2>
+<p>按照<a href = "https://github.com/Jamling/hexo-generator-index2" style = "text-decoration:none" target = "_blank">作者的教程</a>进行安装即可。</p>
+<p>使用如下命令卸载博客自带的分页生成器并安装
+<code>hexo-generator-index2</code> 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index2 --save</span><br><span class="line">npm uninstall hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<h2 id="根配置文件">根配置文件</h2>
+<p>阅读说明后，我进行了如下配置，<strong>注意最好将原来的生成器相关配置注释掉</strong>。</p>
+<p>首先是路径配置。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="comment"># other paths as default</span></span><br><span class="line"><span class="attr">essay_dir:</span> <span class="string">essays</span></span><br></pre></td></tr></table></figure>
+<p>然后是生成器相关的配置。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># index2 generator related configuration</span></span><br><span class="line"><span class="attr">index2_include_index:</span> <span class="literal">false</span> <span class="comment"># suggested false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the custom index2 generator, can be array or object</span></span><br><span class="line"><span class="attr">index2_generator:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">layout:</span> <span class="string">&#x27;index&#x27;</span> <span class="comment"># use existing index layout</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span>        <span class="comment"># default path</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">    <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line">    <span class="attr">index:</span> <span class="literal">true</span> <span class="comment"># home page layout or not</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">category</span> <span class="string">essays</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">layout:</span> <span class="string">&#x27;index&#x27;</span> <span class="comment"># use existing index layout</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">&#x27;essays&#x27;</span> <span class="comment"># your-website/essays</span></span><br><span class="line">    <span class="attr">index:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">    <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line">    <span class="attr">include:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">category</span> <span class="string">essays</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改-generator2.js">修改 <code>generator2.js</code></h2>
+<p>阅读代码后我发现该生成器生成的网站标题名默认为路径，这有些不太美观，因此我做了如下细节的修改。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file: blog-root-path/node_modules/hexo-generator-index2/lib/generator2.js</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">        opts.<span class="property">title</span> = generator.<span class="property">path</span>; <span class="comment">// line: 92</span></span><br><span class="line">        <span class="comment">/* for essays */</span></span><br><span class="line">        <span class="keyword">if</span>(generator.<span class="property">path</span> == <span class="string">&#x27;essays&#x27;</span>) &#123;</span><br><span class="line">            opts.<span class="property">title</span> = <span class="string">&#x27;随笔&#x27;</span>;    <span class="comment">// my code</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//../</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>目标至此完成实现。</p>
+<p>笔者在此前几乎没有接触过 <code>js</code> 的相关项目，对于
+<code>Hexo</code>
+的细节了解也不够充分，但是最终仍然算是自行解决了问题，我认为得益于如下工具或因素：</p>
+<ul>
+<li><p>VS Code 的在文件中搜索文本功能；</p></li>
+<li><p>耐心阅读官方文档；</p></li>
+<li><p><strong>仔细思考后再行动</strong>，这一点也是片上系统综合实践课程老师所提醒我的，千次盲目的尝试比不过静心思考后的一次实践。</p></li>
+</ul>
+<p>这次自定义博客不仅达到了预期目标，还锻炼了我的学习方法和思考问题的方式，我收获颇丰。</p>
+<p>终于可以写随笔了！</p>
 
   </div>
   
@@ -2767,9 +2797,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-hexo-generator-index2"><span class="toc-text">安装
+hexo-generator-index2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">根配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-generator2.js"><span class="toc-text">修改 generator2.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4153,7 +4194,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/网站相关/","name":"网站相关"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-09-14-随笔栏的实现过程/","name":"随笔栏的实现过程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"随笔栏的实现过程","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-09-14-%E9%9A%8F%E7%AC%94%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-09-14-%E9%9A%8F%E7%AC%94%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B/","wordCount":0,"datePublished":"2022-09-14T09:29:41.000Z","dateModified":"2022-10-01T02:41:54.475Z","articleSection":"网站相关","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/网站相关/","name":"网站相关"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-09-14-随笔栏的实现过程/","name":"随笔栏的实现过程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"随笔栏的实现过程","description":"这篇博客用于记录配置自定义分页的过程。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-09-14-%E9%9A%8F%E7%AC%94%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-09-14-%E9%9A%8F%E7%AC%94%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B/","wordCount":19,"datePublished":"2022-09-14T09:29:41.000Z","dateModified":"2022-10-19T12:24:38.619Z","articleSection":"网站相关","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
