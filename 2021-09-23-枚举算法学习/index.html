@@ -33,17 +33,17 @@
   <!-- 页面元数据 -->
   <title>枚举算法学习 - 一方の笔记本</title>
   <meta name="keywords" content="暴力枚举,null">
-  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
-  <meta name="description" content="枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一 一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。 其中很重要的两点是不重、不漏。 其特点为解高效、全面；实现简单；效率提升空间大。 例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S&#x3D;1234567891011....，记S中第一次出现1为">
+  <meta desc name="description" content="枚举算法是最朴素的算法之一。 - John Doe - 一方の笔记本">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="枚举算法学习">
 <meta property="og:url" content="http://example.com/2021-09-23-%E6%9E%9A%E4%B8%BE%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一 一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。 其中很重要的两点是不重、不漏。 其特点为解高效、全面；实现简单；效率提升空间大。 例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S&#x3D;1234567891011....，记S中第一次出现1为">
+<meta property="og:description" content="枚举算法是最朴素的算法之一。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-09-23T13:23:58.000Z">
-<meta property="article:modified_time" content="2022-10-17T04:16:44.131Z">
+<meta property="article:modified_time" content="2022-10-20T05:08:02.012Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="暴力枚举">
 <meta name="twitter:card" content="summary">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1666241482512),
+    lastupdate: new Date(1666243231026),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2699,14 +2699,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <span id="more"></span>
-<p>枚举算法是最朴素的算法之一。也称之为穷举算法，就是按照问题本身的性质，一
-一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。
-其中很重要的两点是<font color ="red">不重、不漏</font>。
-其特点为解高效、全面；实现简单；效率提升空间大。
-例题1：设S为由所有正整数按从小到大的顺序组成的序列，即S=1234567891011....，记S中第一次出现1为位置1，求S的第n位。
-思路：首先确定n所在的是几位正整数的范围，随后确定在哪个数字上，最后找在哪位上即可。
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">int f(int n) &#123;</span><br><span class="line">	//1、确定n所在的位数范围</span><br><span class="line">	int base = 1;//位数</span><br><span class="line">	int l = 1, step = 9, lnum = 1;</span><br><span class="line">	for (; base &lt;= 8; base++) &#123;</span><br><span class="line">		if (n &gt;= l &amp;&amp; n &lt;= l + step - 1) &#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			l += step;</span><br><span class="line">			step *= (10 * (base + 1));</span><br><span class="line">			step /= base;</span><br><span class="line">			lnum *= 10;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (base &gt; 9) &#123;</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line">	//2、计算在哪个数</span><br><span class="line">	int target = (n - l) / base + lnum;</span><br><span class="line">	//3、计算在这个数的第几位</span><br><span class="line">	int targetIndex = (n - l + 1) % base;</span><br><span class="line">	targetIndex = (!targetIndex ? base : targetIndex);</span><br><span class="line">	vector&lt;int&gt; v;</span><br><span class="line">	while (target)&#123;</span><br><span class="line">		v.push_back(target % 10);</span><br><span class="line">		target /= 10;</span><br><span class="line">	&#125;</span><br><span class="line">	return v[v.size() - targetIndex];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+    <p>枚举算法是最朴素的算法之一。</p>
+<span id="more"></span>
+<p>枚举算法也称之为穷举算法，就是按照问题本身的性质，一一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。</p>
+<p>其中很重要的两点是<font color ="red">不重、不漏</font>，注意<strong>枚举算法是计算机可求解问题的本质方法</strong>，其特点为全面且实现简单，效率则相对较低，效率提升空间大。</p>
+<h2 id="例题">例题</h2>
+<p>设<span
+class="math inline">\(S\)</span>为由所有正整数按从小到大的顺序组成的序列，即<span
+class="math inline">\(S=1234567891011 \dots\)</span>，记<span
+class="math inline">\(S\)</span>中第一次出现<span
+class="math inline">\(1\)</span>为位置<span
+class="math inline">\(1\)</span>，求S的第<span
+class="math inline">\(n\)</span>位。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//1、确定n所在的位数范围</span></span><br><span class="line">	<span class="type">int</span> base = <span class="number">1</span>;<span class="comment">//位数</span></span><br><span class="line">	<span class="type">int</span> l = <span class="number">1</span>, step = <span class="number">9</span>, lnum = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (; base &lt;= <span class="number">8</span>; base++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n &gt;= l &amp;&amp; n &lt;= l + step - <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l += step;</span><br><span class="line">			step *= (<span class="number">10</span> * (base + <span class="number">1</span>));</span><br><span class="line">			step /= base;</span><br><span class="line">			lnum *= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (base &gt; <span class="number">9</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//2、计算在哪个数</span></span><br><span class="line">	<span class="type">int</span> target = (n - l) / base + lnum;</span><br><span class="line">	<span class="comment">//3、计算在这个数的第几位</span></span><br><span class="line">	<span class="type">int</span> targetIndex = (n - l + <span class="number">1</span>) % base;</span><br><span class="line">	targetIndex = (!targetIndex ? base : targetIndex);</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">	<span class="keyword">while</span> (target)&#123;</span><br><span class="line">		v.<span class="built_in">push_back</span>(target % <span class="number">10</span>);</span><br><span class="line">		target /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> v[v.<span class="built_in">size</span>() - targetIndex];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2771,9 +2776,19 @@ Problem A
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4157,7 +4172,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-09-23-枚举算法学习/","name":"枚举算法学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"枚举算法学习","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-09-23-%E6%9E%9A%E4%B8%BE%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-09-23-%E6%9E%9A%E4%B8%BE%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2021-09-23T13:23:58.000Z","dateModified":"2022-10-17T04:16:44.131Z","articleSection":"算法学习","keywords":"暴力枚举","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-09-23-枚举算法学习/","name":"枚举算法学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"枚举算法学习","description":"枚举算法是最朴素的算法之一。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-09-23-%E6%9E%9A%E4%B8%BE%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-09-23-%E6%9E%9A%E4%B8%BE%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/","wordCount":14,"datePublished":"2021-09-23T13:23:58.000Z","dateModified":"2022-10-20T05:08:02.012Z","articleSection":"算法学习","keywords":"暴力枚举","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

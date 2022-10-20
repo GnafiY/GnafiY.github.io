@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-01T01:49:12.000Z">
-<meta property="article:modified_time" content="2022-09-13T11:52:33.368Z">
+<meta property="article:modified_time" content="2022-10-20T05:20:09.337Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1666241482512),
+    lastupdate: new Date(1666243231026),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2646,14 +2646,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='new-meta-item category'>
       <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%A6/">数学</a>
+      <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E8%AE%BA/">数论</a>
       
         <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">算法学习</span></a>
         </span>
       
         <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+          <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E8%AE%BA/" itemprop="url"><span itemprop="name">数论</span></a>
         </span>
       
     </div>
@@ -2703,52 +2703,60 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>整理学习数论的所思所想。 <span id="more"></span> ##
-求最大公约数（gcd）与最小公倍数（lcm） ### 求两个数的最大公约数 ####
-暴力枚举   求最大公约数的最朴素的想法就是暴力枚举。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd1</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;<span class="comment">//假定输入的a，b都是正数</span></span><br><span class="line">	<span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b), _min = a + b - _max;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= _min; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (_max % i == <span class="number">0</span> &amp;&amp; _min % i == <span class="number">0</span>) &#123;</span><br><span class="line">			ans = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ####
-辗转相除法   还可以使用<b>辗转相除法</b>。证明如下：   设<span
-class="math inline">\(a=kb+r\)</span>，其中<span
-class="math inline">\(a, b, k, r\in Z，r=amod(b)\)</span>。设<span
-class="math inline">\(d\)</span>为<span
+    <p>整理学习数论的所思所想。</p>
+<span id="more"></span>
+<h2 id="求最大公约数与最小公倍数">求最大公约数与最小公倍数</h2>
+<h3 id="求两个数的最大公约数">求两个数的最大公约数</h3>
+<h4 id="暴力枚举">暴力枚举</h4>
+<p>求最大公约数的最朴素的想法就是暴力枚举。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd1</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;<span class="comment">//假定输入的a，b都是正数</span></span><br><span class="line">	<span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b), _min = a + b - _max;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= _min; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (_max % i == <span class="number">0</span> &amp;&amp; _min % i == <span class="number">0</span>) &#123;</span><br><span class="line">			ans = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="辗转相除法">辗转相除法</h4>
+<p>还可以使用<b>辗转相除法</b>。证明如下：</p>
+<p>设<span class="math inline">\(a=kb+r\)</span>，其中<span
+class="math inline">\(a, b, k, r\in Z，r=a \mod(b)\)</span>。</p>
+<p>另设<span class="math inline">\(d\)</span>为<span
 class="math inline">\(a\)</span>与<span
 class="math inline">\(b\)</span>的一个公约数，由<span
 class="math inline">\(a=kb+r\)</span>有：<span
 class="math inline">\(r=a-kb\)</span>，等式两边同除<span
 class="math inline">\(d\)</span>得：<span
-class="math inline">\(r/d=a/r-kb/d\)</span>，显然式中任意一项都是整数，则<span
+class="math inline">\(\displaystyle
+\frac{r}{d}=\frac{a}{r}-\frac{kb}{d}\)</span>，显然式中任意一项都是整数，则<span
 class="math inline">\(r\)</span>也是<span class="math inline">\(a
-mod(b)\)</span>的因子。<span class="math inline">\(gcd(a, b)=gcd(b, a
-mod(b))\)</span>得证。<br>   事实上<span
-class="math inline">\(gcd(a,b)=gcd(b,a)\)</span>，在程序中也是这样的。以gcd2函数为例，如果<span
-class="math inline">\(b&gt;a\)</span>，则<span
-class="math inline">\(amod(b)=a\)</span>，下一步进行的是求<span
-class="math inline">\(b\)</span>与<span
-class="math inline">\(a\)</span>的最大公约数。因此使用欧几里得算法不需要考虑两个数的大小。
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a % b == <span class="number">0</span> ? b : <span class="built_in">gcd2</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd3</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> r = a;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="number">0</span>) &#123;</span><br><span class="line">		r = a % b;<span class="comment">//取余数</span></span><br><span class="line">		a = b;<span class="comment">//大数更新为小数</span></span><br><span class="line">		b = r;<span class="comment">//小数更新为余数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> #### 更相减损法
-  实际上，<b>更相减损法</b>与辗转相除法实质是一样的，而且前者所需的计算次数通常更多。更相减损法的原理是<span
-class="math inline">\(gcd(a,b)=gcd(min(a,b),max(a,b)-min(a,b))\)</span>。
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd4</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">gcd4</span>(b, a - b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">gcd4</span>(a, b - a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd5</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b), _min = a + b - _max;</span><br><span class="line">	<span class="keyword">while</span>(_max != _min)&#123;</span><br><span class="line">		<span class="type">int</span> tmp1 = _max - _min, tmp2 = _min;</span><br><span class="line">		_max = <span class="built_in">max</span>(tmp1, tmp2);</span><br><span class="line">		_min = tmp1 + tmp2 - _max;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd6</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(a!=b)&#123;</span><br><span class="line">		<span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">			a -= b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			b -= a;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>   显然，更相减损法是需要考虑两个数之间的大小的。 ##
-求两个数的最小公倍数
-  事实上，求最小公倍数可以使用分解质因数法，也可以利用最小公倍数与最大公约数之间的关系求解。
-### 分解质因数法 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">is_prime</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span> || n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">3</span>; i * i &lt;= n; i += <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm1</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b);</span><br><span class="line">	<span class="type">int</span> _lcm = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= _max; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">is_prime</span>(i)) &#123;</span><br><span class="line">			<span class="keyword">while</span> (a % i == <span class="number">0</span> &amp;&amp; b % i == <span class="number">0</span>) &#123;</span><br><span class="line">				_lcm *= i;</span><br><span class="line">				a /= i;</span><br><span class="line">				b /= i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span> (a % i == <span class="number">0</span>)&#123;</span><br><span class="line">				_lcm *= i;</span><br><span class="line">				a /= i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span> (b % i == <span class="number">0</span>) &#123;</span><br><span class="line">				_lcm *= i;</span><br><span class="line">				b /= i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _lcm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ### 利用最大公约数
-  具体原理详见算法分析与设计第二次题解中F题的分析。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a * b / <span class="built_in">gcd1</span>(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ##
-求一个正整数的因数个数以及比它小并且与它互质的数的个数 ###
-求一个正整数的因数个数
-  由算术基本定理可知：每个正整数的标准分解式都是唯一的。考虑任意一个正整数<span
+\mod(b)\)</span>的因子。<span class="math inline">\(\text{gcd}(a,
+b)=\text{gcd}(b, a mod(b))\)</span>得证。</p>
+<p>事实上还有<span
+class="math inline">\(\text{gcd}(a,b)=\text{gcd}(b,a)\)</span>，这一性质可以用于算法正确性的证明。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a % b == <span class="number">0</span> ? b : <span class="built_in">gcd2</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd3</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> r = a;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="number">0</span>) &#123;</span><br><span class="line">		r = a % b;<span class="comment">//取余数</span></span><br><span class="line">		a = b;<span class="comment">//大数更新为小数</span></span><br><span class="line">		b = r;<span class="comment">//小数更新为余数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="更相减损法">更相减损法</h4>
+<p>实际上，<b>更相减损法</b>与辗转相除法实质是一样的，而且前者所需的计算次数通常更多。更相减损法的原理是<span
+class="math inline">\(\text{gcd}(a,b)=\text{gcd}(\min(a,b),\max(a,b)-\min(a,b))\)</span>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd4</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">gcd4</span>(b, a - b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">gcd4</span>(a, b - a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd5</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b), _min = a + b - _max;</span><br><span class="line">	<span class="keyword">while</span>(_max != _min)&#123;</span><br><span class="line">		<span class="type">int</span> tmp1 = _max - _min, tmp2 = _min;</span><br><span class="line">		_max = <span class="built_in">max</span>(tmp1, tmp2);</span><br><span class="line">		_min = tmp1 + tmp2 - _max;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd6</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(a!=b)&#123;</span><br><span class="line">		<span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">			a -= b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			b -= a;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显然，更相减损法是需要考虑两个数之间的大小的。</p>
+<h2 id="求两个数的最小公倍数">求两个数的最小公倍数</h2>
+<p>事实上，求最小公倍数可以使用分解质因数法，也可以利用最小公倍数与最大公约数之间的关系求解。</p>
+<h3 id="分解质因数法">分解质因数法</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">is_prime</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span> || n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">3</span>; i * i &lt;= n; i += <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm1</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b);</span><br><span class="line">	<span class="type">int</span> _lcm = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= _max; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">is_prime</span>(i)) &#123;</span><br><span class="line">			<span class="keyword">while</span> (a % i == <span class="number">0</span> &amp;&amp; b % i == <span class="number">0</span>) &#123;</span><br><span class="line">				_lcm *= i;</span><br><span class="line">				a /= i;</span><br><span class="line">				b /= i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span> (a % i == <span class="number">0</span>)&#123;</span><br><span class="line">				_lcm *= i;</span><br><span class="line">				a /= i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span> (b % i == <span class="number">0</span>) &#123;</span><br><span class="line">				_lcm *= i;</span><br><span class="line">				b /= i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _lcm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="利用最大公约数">利用最大公约数</h3>
+<p>具体原理详见<a href = "/2021-09-30-算法分析与设计第二次作业题题解/" style = "text-decoration: none" target = "_blank">算法分析与设计第二次题解</a>中F题的分析。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a * b / <span class="built_in">gcd1</span>(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2
+id="求一个正整数的因数个数以及比它小并且与它互质的数的个数">求一个正整数的因数个数以及比它小并且与它互质的数的个数</h2>
+<h3 id="求一个正整数的因数个数">求一个正整数的因数个数</h3>
+<p>由算术基本定理可知：每个正整数的标准分解式都是唯一的。考虑任意一个正整数<span
 class="math inline">\(n\)</span>，记<span
-class="math inline">\(n=\prod{p_i^{\alpha_i}}\)</span>，那么<span
-class="math inline">\(n\)</span>的因数<span
-class="math inline">\(k\)</span>的形式必定为<span
-class="math inline">\(n=\prod{p_k^{\beta_k}}\)</span>。当<span
-class="math inline">\(i=k\)</span>时，有<span
-class="math inline">\(0\leq\beta_k\leq\alpha_i\)</span>，每一个质因数<span
-class="math inline">\(p_k（p_i）\)</span>的次数<span
-class="math inline">\(\beta_k\)</span>可取<span
+class="math inline">\(n=\displaystyle\prod_i{p_i^{\alpha_i}}\)</span>，那么<span
+class="math inline">\(n\)</span>的因数的形式必定为<span
+class="math inline">\(n=\displaystyle\prod_i{p_i^{\beta_i}}\)</span>，其中，有<span
+class="math inline">\(0\leq\beta_i\leq\alpha_i\)</span>。每一个质因数<span
+class="math inline">\(p_i\)</span>的次数<span
+class="math inline">\(\beta_i\)</span>可取<span
 class="math inline">\(0\)</span>到<span
 class="math inline">\(\alpha_i\)</span>，即共有<span
 class="math inline">\((\alpha_i+1)\)</span>种取法，因此总的因数个数<span
 class="math inline">\(d(n)\)</span>为<span
-class="math inline">\(d(n)=\prod({\alpha_i + 1})\)</span>。</p>
+class="math inline">\(d(n)=\displaystyle\prod_i({\alpha_i +
+1})\)</span>。</p>
 
   </div>
   
@@ -2823,9 +2831,19 @@ Problem A
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0"><span class="toc-text">求最大公约数与最小公倍数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0"><span class="toc-text">求两个数的最大公约数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE"><span class="toc-text">暴力枚举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95"><span class="toc-text">辗转相除法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E7%9B%B8%E5%87%8F%E6%8D%9F%E6%B3%95"><span class="toc-text">更相减损法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0"><span class="toc-text">求两个数的最小公倍数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0%E6%B3%95"><span class="toc-text">分解质因数法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0"><span class="toc-text">利用最大公约数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9A%84%E5%9B%A0%E6%95%B0%E4%B8%AA%E6%95%B0%E4%BB%A5%E5%8F%8A%E6%AF%94%E5%AE%83%E5%B0%8F%E5%B9%B6%E4%B8%94%E4%B8%8E%E5%AE%83%E4%BA%92%E8%B4%A8%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">求一个正整数的因数个数以及比它小并且与它互质的数的个数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9A%84%E5%9B%A0%E6%95%B0%E4%B8%AA%E6%95%B0"><span class="toc-text">求一个正整数的因数个数</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4059,6 +4077,77 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+        <style>
+  #post-body p {
+    text-indent: 2em;
+  }
+  #post-body .new-meta-box p,
+  #post-body .note p,
+  #post-body .prev-next p,
+  #post-body .tag p,
+  #post-body blockquote p,
+  #post-body details p,
+  #post-body p.p,
+  #post-body .tab-pane .checkbox
+  #post-body section p {
+    text-indent: initial;
+  }
+</style>
+
+
+
 </pjax>
 
 <script>
@@ -4190,7 +4279,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-10-01-数论算法学习笔记/","name":"数论算法学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数论算法学习笔记","description":"整理学习数论的所思所想。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-10-01-%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-10-01-%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":12,"datePublished":"2021-10-01T01:49:12.000Z","dateModified":"2022-09-13T11:52:33.368Z","articleSection":"算法学习","keywords":"数论","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/","name":"算法学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法学习/数论/","name":"数论"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-10-01-数论算法学习笔记/","name":"数论算法学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数论算法学习笔记","description":"整理学习数论的所思所想。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-10-01-%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-10-01-%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","wordCount":12,"datePublished":"2021-10-01T01:49:12.000Z","dateModified":"2022-10-20T05:20:09.337Z","articleSection":"算法学习","keywords":"数论","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
