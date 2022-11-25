@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-16T06:48:36.000Z">
-<meta property="article:modified_time" content="2022-10-20T01:57:22.681Z">
+<meta property="article:modified_time" content="2022-11-25T14:20:50.226Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669367230891),
+    lastupdate: new Date(1669388201130),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2887,6 +2887,33 @@ dx\)</span></h2>
 \xlongequal{t = x - \pi} - \int_{-\pi}^{\pi}\sin t \cos(\sin t) dt =
 0\]</span></p>
 <p><span class="math display">\[\therefore I = 0\]</span></p>
+<h2 id="求displaystyle-int-e2x-1tan-x2-dx">求<span
+class="math inline">\(\displaystyle \int e^{2x} (1+\tan x)^2
+dx\)</span></h2>
+<p>不妨观察<span class="math inline">\(\displaystyle \int e^{2x} \tan x
+dx\)</span>。</p>
+<p><span class="math display">\[\displaystyle \int e^{2x} \tan x dx =
+\frac{1}{2} \int \tan x d(e^{2x})=\frac{1}{2}e^{2x}\tan x -
+\frac{1}{2}\int e^{2x} \sec^2x dx\]</span></p>
+<p>而<span class="math inline">\(\displaystyle \int e^{2x} \sec^2x dx =
+\int e^{2x}(1+\tan^2 x)dx\)</span>，</p>
+<p>故<span class="math inline">\(\displaystyle \int e^{2x} (1+\tan x)^2
+dx = e^{2x} \tan x + C\)</span>。</p>
+<h2 id="求displaystyle-int-fracesin-2xsin2xe2xdx">求<span
+class="math inline">\(\displaystyle \int \frac{e^{\sin
+2x}\sin^2x}{e^{2x}}dx\)</span></h2>
+<p><span class="math inline">\(\displaystyle \int \frac{e^{\sin
+2x}\sin^2x}{e^{2x}}dx=\int \frac{e^{\sin 2x} \frac{1-\cos
+2x}{2}}{e^{2x}} dx=\frac{1}{2}\int \frac{e^{\sin
+2x}}{e^{2x}}dx-\frac{1}{4}\int
+e^{-2x}d(e^{\sin2x})=-\frac{1}{4}e^{\sin2x-2x}+C\)</span></p>
+<h2 id="求displaystyle-int-fracxcos-x-sin-xcos-x-xsin-x2dx">求<span
+class="math inline">\(\displaystyle \int \frac{x+\cos x \sin x}{(\cos
+x-x\sin x)^2}dx\)</span></h2>
+<p><span class="math inline">\(\displaystyle \int \frac{x+\cos x \sin
+x}{(\cos x-x\sin x)^2}dx=\int \frac{x\sec^2x+\tan x}{(1-x\tan x)^2} dx
+=- \int \frac{d(1-x \tan x)}{(1-x\tan x)^2} = \frac{1}{1-x\tan x} +
+C\)</span></p>
 
   </div>
   
@@ -2906,13 +2933,14 @@ BJTU-ALGO 2148
         </a>
       
       
-        <a class='next' href='/2022-10-09-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/'>
-          <p class='title'>复变函数学习<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <!--<p class='content'>复变函数是一个很好的数学工具，能为积分求解等问题提供新的方法，值得学习。
+        <a class='next' href='/2022-10-09-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>复变函数与积分变换自学笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <!--<p class='content'>复变函数与积分变换能为积分求解、信号处理等问题提供新的方法，值得学习。
 
-第一章 复数与复变函数
+复变函数
 复数的一些性质
-\[\displaystyle z+\bar{z} = 2\text{...</p>-->
+\[\displaystyle z+\bar{z} = 2\text{Re}(z)
+...</p>-->
         </a>
       
     </div>
@@ -2983,7 +3011,10 @@ x}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href=
 \frac{dx}{(1+x^2)(1+x^{\alpha})}\)，其中\(\alpha &gt; 0\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint-fracln-1x---ln-xxx1-dx"><span class="toc-text">求\(I&#x3D;\displaystyle\int \frac{\ln (1+x) - \ln
 x}{x(x+1)} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int-sec3-x-dx"><span class="toc-text">求\(I&#x3D;\displaystyle \int \sec^3 x dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-fracln-xsqrtx31-x-dx"><span class="toc-text">求\(I&#x3D;\displaystyle \frac{\ln x}{\sqrt{x^3(1-x)}}
 dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_02pi-sinsin-x---x-dx"><span class="toc-text">求\(I&#x3D;\displaystyle \int_{0}^{2\pi} \sin(\sin x - x)
-dx\)</span></a></li></ol>
+dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-e2x-1tan-x2-dx"><span class="toc-text">求\(\displaystyle \int e^{2x} (1+\tan x)^2
+dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-fracesin-2xsin2xe2xdx"><span class="toc-text">求\(\displaystyle \int \frac{e^{\sin
+2x}\sin^2x}{e^{2x}}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-fracxcos-x-sin-xcos-x-xsin-x2dx"><span class="toc-text">求\(\displaystyle \int \frac{x+\cos x \sin x}{(\cos
+x-x\sin x)^2}dx\)</span></a></li></ol>
     </div>
   </section>
 
@@ -4420,7 +4451,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-10-16-一些积分题目/","name":"一些积分题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些积分题目","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/","wordCount":20,"datePublished":"2022-10-16T06:48:36.000Z","dateModified":"2022-10-20T01:57:22.681Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-10-16-一些积分题目/","name":"一些积分题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些积分题目","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/","wordCount":20,"datePublished":"2022-10-16T06:48:36.000Z","dateModified":"2022-11-25T14:20:50.226Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
