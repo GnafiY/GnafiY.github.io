@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-16T06:48:36.000Z">
-<meta property="article:modified_time" content="2022-11-25T14:20:50.226Z">
+<meta property="article:modified_time" content="2022-12-31T03:49:44.505Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669391096225),
+    lastupdate: new Date(1672480051113),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2914,6 +2914,26 @@ x-x\sin x)^2}dx\)</span></h2>
 x}{(\cos x-x\sin x)^2}dx=\int \frac{x\sec^2x+\tan x}{(1-x\tan x)^2} dx
 =- \int \frac{d(1-x \tan x)}{(1-x\tan x)^2} = \frac{1}{1-x\tan x} +
 C\)</span></p>
+<h2 id="求-idisplaystyle-int_01dxint_0xfraceysqrt1-xx-ydy">求 <span
+class="math inline">\(I=\displaystyle
+\int_{0}^{1}dx\int_0^{x}\frac{e^y}{\sqrt{(1-x)(x-y)}}dy\)</span></h2>
+<p>注意到<span class="math inline">\(I=\displaystyle
+\int_{0}^{1}\frac{1}{\sqrt{1-x}}dx\int_{0}^{x}\frac{e^y}{\sqrt{x-y}}dy\)</span>，不妨考虑对<span
+class="math inline">\(\displaystyle\int_{0}^{x}\frac{e^y}{\sqrt{x-y}}dy\)</span>进行换元。</p>
+<p><span
+class="math inline">\(\displaystyle\int_{0}^{x}\frac{e^y}{\sqrt{x-y}}dy\xlongequal{\sqrt{x-y}=t}2\int_{0}^{\sqrt{x}}e^{x-t^2}dt=2e^x\int_0^{\sqrt{x}}e^{-t^2}dt\)</span></p>
+<p>那么原积分转化为<span class="math inline">\(I=2\displaystyle
+\int_{0}^{1}\frac{e^x}{\sqrt{1-x}}dx\int_0^{\sqrt{x}}e^{-t^2}dt\)</span>。</p>
+<p>类似地有<span class="math inline">\(\displaystyle
+\int_{0}^{1}\frac{e^x}{\sqrt{1-x}}dx=2\int_0^{1}e^{1-u^2}du\)</span>，其中
+<span class="math inline">\(x=1-u^2\)</span>。</p>
+<p>那么<span class="math inline">\(I=4e\displaystyle
+\int_{0}^{1}e^{-u^2}du\int_0^{\sqrt{1-u^2}}e^{-t^2}dt\)</span>。</p>
+<p>显然上式用极坐标计算较为方便，积分区域为单位圆的第一象限部分。</p>
+<p><span class="math inline">\(I=4e\displaystyle
+\int_{0}^{1}e^{-u^2}du\int_0^{\sqrt{1-u^2}}e^{-t^2}dt=4e\int_0^{\frac{\pi}{2}}d
+\theta\int_{0}^{1}\rho e^{-\rho^2}d\rho =\pi
+e(1-\frac{1}{e})=\pi(e-1)\)</span></p>
 
   </div>
   
@@ -3014,7 +3034,8 @@ dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#
 dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-e2x-1tan-x2-dx"><span class="toc-text">求\(\displaystyle \int e^{2x} (1+\tan x)^2
 dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-fracesin-2xsin2xe2xdx"><span class="toc-text">求\(\displaystyle \int \frac{e^{\sin
 2x}\sin^2x}{e^{2x}}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-fracxcos-x-sin-xcos-x-xsin-x2dx"><span class="toc-text">求\(\displaystyle \int \frac{x+\cos x \sin x}{(\cos
-x-x\sin x)^2}dx\)</span></a></li></ol>
+x-x\sin x)^2}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-idisplaystyle-int_01dxint_0xfraceysqrt1-xx-ydy"><span class="toc-text">求 \(I&#x3D;\displaystyle
+\int_{0}^{1}dx\int_0^{x}\frac{e^y}{\sqrt{(1-x)(x-y)}}dy\)</span></a></li></ol>
     </div>
   </section>
 
@@ -4451,7 +4472,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-10-16-一些积分题目/","name":"一些积分题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些积分题目","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/","wordCount":20,"datePublished":"2022-10-16T06:48:36.000Z","dateModified":"2022-11-25T14:20:50.226Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-10-16-一些积分题目/","name":"一些积分题目"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些积分题目","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-10-16-%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE/","wordCount":20,"datePublished":"2022-10-16T06:48:36.000Z","dateModified":"2022-12-31T03:49:44.505Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
