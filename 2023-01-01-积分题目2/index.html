@@ -33,17 +33,17 @@
   <!-- 页面元数据 -->
   <title>积分题目2 - 一方の笔记本</title>
   <meta name="keywords" content="null">
-  <meta desc name="description" content="这篇博客用于记录一些比较有趣的积分问题。 - John Doe - 一方の笔记本">
+  <meta desc name="description" content="这篇博客用于总结概率论相关的积分计算问题。 - John Doe - 一方の笔记本">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="积分题目2">
 <meta property="og:url" content="http://example.com/2023-01-01-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE2/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="这篇博客用于记录一些比较有趣的积分问题。">
+<meta property="og:description" content="这篇博客用于总结概率论相关的积分计算问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-01T08:48:36.000Z">
-<meta property="article:modified_time" content="2023-01-03T12:40:16.761Z">
+<meta property="article:modified_time" content="2023-01-03T17:40:50.166Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672750259082),
+    lastupdate: new Date(1672767677333),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2698,7 +2698,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>这篇博客用于记录一些比较有趣的积分问题。</p>
+    <p>这篇博客用于总结概率论相关的积分计算问题。</p>
 <span id="more"></span>
 <h2 id="求zgxy的概率密度函数"><strong>求<span
 class="math inline">\(Z=g(X,Y)\)</span>的概率密度函数</strong></h2>
@@ -2771,7 +2771,31 @@ class="math inline">\(z&lt;0\)</span>的情况同理，最终得到的结果为�
 <p><span class="math display">\[f_{Z}(z) = [F_{Z}(z)]_{z}&#39;=
 \int_{-\infty}^{+\infty}f(yz,y)|y|dy\]</span></p>
 <h3 id="通用方法"><strong>通用方法</strong></h3>
-<p>参考<a href = "https://www.bilibili.com/video/BV1Va411v7gi" target = "_blank">17分钟搞定卷积公式</a>。</p>
+<p>参考<a href = "https://www.bilibili.com/video/BV1Va411v7gi" target = "_blank">17分钟搞定卷积公式</a>，可利用二重积分的换元法求解。</p>
+<p>对<span class="math inline">\(z =
+g(x,y)\)</span><strong>等价</strong>变形为<span class="math inline">\(x
+= x(y,z)\)</span>，作变换<span
+class="math inline">\(\left\{\begin{matrix} x = x(y,z) \\ y = y
+\end{matrix}\right.\)</span>，那么<span
+class="math inline">\(xOy\)</span>平面上的区域<span
+class="math inline">\(D\)</span>被变换为<span
+class="math inline">\(yOz\)</span>平面上的区域<span
+class="math inline">\(D&#39;\)</span>，则：</p>
+<p><span class="math display">\[\iint_{D} f(x,y) dxdy =
+\iint_{D&#39;}f(x(y,z),y)|J|dydz\]</span></p>
+<p>其中，<span class="math inline">\(J = \left|\begin{matrix}
+\displaystyle \frac{\partial x}{\partial y} \frac{\partial x}{\partial
+z} \\ \displaystyle \frac{\partial y}{\partial y} \frac{\partial
+y}{\partial z} \end{matrix}\right|\)</span>，为雅可比行列式。</p>
+<p>此时令<span class="math inline">\(D=R^2\)</span>有：</p>
+<p><span class="math display">\[\iint_{D&#39;}f(x(y,z),y)|\frac{\partial
+x}{\partial z}|dydz=1\]</span></p>
+<p>可知<span class="math inline">\(\displaystyle
+f(x(y,z),y)|\frac{\partial x}{\partial z}|\)</span>是二维随机变量<span
+class="math inline">\((Y,Z)\)</span>的联合概率密度，那么：</p>
+<p><span class="math display">\[\displaystyle f_{Z}(z) =
+\int_{-\infty}^{+\infty}f(x(y,z),y)|\frac{\partial x}{\partial
+z}|dy\]</span></p>
 <h2
 id="常见一维随机变量分布的分布律概率密度函数期望和方差以及关系"><strong>常见一维随机变量分布的分布律/概率密度函数、期望和方差以及关系</strong></h2>
 <p><img src = "/static/images/分布表.png"></img></p>
@@ -2789,6 +2813,7 @@ class="math inline">\(D(X) = E(X^2)-[E(X)]^2\)</span>。</p>
 (n-1)!!, n \text{为偶数}
 \end{matrix}\right.\]</span></p>
 <h4 id="二项分布"><strong>二项分布</strong></h4>
+<p>TODO</p>
 <h3 id="不同分布之间的关系"><strong>不同分布之间的关系</strong></h3>
 <p>显而易见，伯努利分布是二项分布的特例，二项分布是帕斯卡分布的特例。</p>
 <p>若独立同分布的两个随机变量<span
@@ -2798,7 +2823,24 @@ class="math inline">\(U = \displaystyle
 \frac{X}{Y}\)</span>服从柯西分布，<span
 class="math inline">\(V=\displaystyle
 \sqrt{X^2+Y^2}\)</span>服从瑞利分布，下面给出证明。</p>
+<p>TODO</p>
 <h2 id="正态分布性质推导"><strong>正态分布性质推导</strong></h2>
+<h3 id="一维正态分布的性质">一维正态分布的性质</h3>
+<p>设<span class="math inline">\(X\sim
+N(\mu,\sigma^2)\)</span>，那么<span class="math inline">\(Y=aX+b\sim
+N(a\mu + b, (a\sigma)^2),a \neq 0\)</span>。这一性质很好证明，当<span
+class="math inline">\(a&gt;0\)</span>时：</p>
+<p><span class="math display">\[F_{Y}(y) = P\{Y \leq y\} = P\{aX + b
+\leq y\} = P\{\displaystyle X \leq \frac{y-b}{a}
+\}=F_{X}(\frac{y-b}{a})\]</span></p>
+<p>那么：</p>
+<p><span class="math display">\[f_{Y}(y) = [F_{Y}(y)]&#39;_y =
+\frac{1}{a}f_{X}(\frac{y-b}{a}) = \displaystyle
+\frac{1}{\sqrt{2\pi}a\sigma}e^{-\frac{[y-(a\mu+b)]^2}{2(a\sigma)^2}}\]</span></p>
+<p>显然<span class="math inline">\(Y\sim N(a\mu + b,
+a^2\sigma^2)\)</span>，<span class="math inline">\(a &lt;
+0\)</span>时同理。</p>
+<h3 id="二维正态分布相关的性质">二维正态分布相关的性质</h3>
 <p>设二维随机变量<span class="math inline">\((X,Y)\sim
 N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>，那么有：</p>
 <ul>
@@ -2809,6 +2851,9 @@ class="math inline">\(Y\)</span>不相关<span
 class="math inline">\(\Leftrightarrow X\)</span>与<span
 class="math inline">\(Y\)</span>独立；</li>
 <li><span class="math inline">\(\rho_{XY}=\rho\)</span>；</li>
+<li>设<span class="math inline">\(Z = aX+bY+c\)</span>，那么<span
+class="math inline">\(Z\sim N(a\mu_1+b\mu_2+c, a^2\sigma_1^2 + 2\rho
+ab\sigma_1\sigma_2 + b^2\sigma_2^2)\)</span></li>
 </ul>
 <p>服从二维正态分布随机变量的概率密度函数如下所示。</p>
 <p><span class="math display">\[f(x,y)=\displaystyle
@@ -2912,15 +2957,162 @@ class="math inline">\(E(Y)\)</span>、<span
 class="math inline">\(D(X)\)</span>和<span
 class="math inline">\(D(Y)\)</span>的值代入相关系数的计算公式中可知<span
 class="math inline">\(\rho_{XY}=\rho\)</span>，得证。</p>
-<p>设<span class="math inline">\(X\sim
-N(\mu_1,\sigma_1^2)\)</span>，<span class="math inline">\(Y\sim
-N(\mu_2,\sigma_2^2)\)</span>，那么<span
-class="math inline">\(Z=aX+bY\sim
-N(a\mu_1+b\mu_2,a^2\sigma_1^2+b^2\sigma_2^2+2ab\rho\sigma_1\sigma_2)\)</span>，其中<span
+<p>设<span class="math inline">\((X,Y)\sim
+N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>，那么<span
+class="math inline">\(Z=aX+bY+c\sim
+N(a\mu_1+b\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2+2\rho
+ab\sigma_1\sigma_2)\)</span>，其中<span
 class="math inline">\(\rho\)</span>是<span
-class="math inline">\(X,Y\)</span>的相关系数</p>
-<p>根据定义<span
-class="math inline">\(F_{Z}(z)=P\{Z&lt;z\}=P\{aX+bY&lt;z\}\)</span></p>
+class="math inline">\(X,Y\)</span>的相关系数。该性质的证明过程思路不难，但是计算量极大。</p>
+<p>首先进行如下变换：</p>
+<p><span class="math display">\[\displaystyle f_{Z}(z) =
+\int_{-\infty}^{+\infty}f(x(y,z),y)|\frac{\partial x}{\partial
+z}|dy=\frac{1}{|a|}\int_{-\infty}^{+\infty}f(\frac{z-by-c}{a},y)dy\]</span></p>
+<p>上式中最复杂的部分是被积函数<span class="math inline">\(\displaystyle
+f(\frac{z-by-c}{a},y)\)</span>，积分变量在函数的两个变量位均有出现。类比前面对二维正态分布边缘分布的概率密度函数求解思路。显然被积函数的指数部分具有如下形式：</p>
+<p><span class="math display">\[\displaystyle
+-\frac{1}{2(1-\rho^2)}T(y,z)\]</span></p>
+<p>其中，<span
+class="math inline">\(T(y,z)=\displaystyle\frac{[z-by-(c+a\mu_1)]^2}{(a\sigma_1)^2}-\frac{2\rho}{a\sigma_1\sigma_2}[z-by-(c+a\mu_1)](y-\mu_2)+\frac{(y-\mu_2)^2}{\sigma_2^2}\)</span>。下面是该性质证明中最繁琐的一部分，即对积分变量<span
+class="math inline">\(y\)</span>进行配方，不妨设<span
+class="math inline">\(T(y,z)\)</span>具有如下形式：</p>
+<p><span class="math display">\[T(y,z) = Az^2 + By^2 + Cz + Dy + Eyz +
+F\]</span></p>
+<p>然后对<span
+class="math inline">\(T(y,z)\)</span>进行形式配方，得到如下结果：</p>
+<p><span class="math display">\[T(y,z) = \displaystyle
+B(y+\frac{D+Ez}{2B})^2 + (A - \frac{E^2}{4B})(z+\frac{2BC -
+DE}{4AB-E^2})^2+F-\frac{(2BC-DE)^2}{4B(4AB-E^2)}-\frac{D^2}{4B}\]</span></p>
+<p>将<span
+class="math inline">\(T(y,z)\)</span>展开，得到如下系数表：</p>
+<div
+style="width: auto; display: table; margin-left: auto; margin-right: auto;">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">系数</th>
+<th style="text-align: center;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{1}{a^2\sigma_1^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(B\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{b^2}{a^2\sigma_1^2}+\frac{1}{\sigma_2^2}+\frac{2\rho
+b}{a\sigma_1\sigma_2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(C\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle 2(\frac{\rho
+\mu_2}{a\sigma_1\sigma_2}-\frac{c+a\mu_1}{a^2\sigma_1^2})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(D\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+2[\frac{\rho(c+a\mu_1)}{a\sigma_1\sigma_2}+\frac{b(c+a\mu_1)}{a^2\sigma_1^2}-\frac{\mu_2}{\sigma_2^2}-\frac{\rho
+b\mu_2}{a\sigma_1\sigma_2}]\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(E\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle -2
+[\frac{b}{a^2\sigma_1^2}+\frac{\rho}{a\sigma_1\sigma_2}]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(F\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{(c+a\mu_1)^2}{a^2\sigma_1^2}+\frac{\mu_2^2}{\sigma_2^2}-\frac{2\rho\mu_2(c+a\mu_1)}{a\sigma_1\sigma_2}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>现在只需要将各项系数代入<span
+class="math inline">\(T(y,z)\)</span>的表达式中并求解即可，不妨再列一个系数表：</p>
+<div
+style="width: auto; display: table; margin-left: auto; margin-right: auto;">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">系数</th>
+<th style="text-align: center;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle A-\frac{E^2}{4B}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{1-\rho^2}{a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab
+\sigma_1\sigma_2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2BC -
+DE\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+-4\frac{(1-\rho^2)(a\mu_1+b\mu_2+c)}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(4AB-E^2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+4\frac{(1-\rho^2)}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+F-\frac{(2BC-DE)^2}{4B(4AB-E^2)}-\frac{D^2}{4B}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span
+class="math inline">\(B\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{a^2\sigma_1^2+b^2\sigma_2^2+2\rho
+ab\sigma_1\sigma_2}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>不妨记<span class="math inline">\(\sigma^2 =
+a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab\sigma_1\sigma_2\)</span>和<span
+class="math inline">\(\mu = a\mu_1+b\mu_2+c\)</span>，那么<span
+class="math inline">\(B=\displaystyle
+\frac{\sigma^2}{a^2\sigma_1^2\sigma_2^2}\)</span>，且：</p>
+<p><span class="math inline">\(\displaystyle f_{Z}(z) =
+\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}
+\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\frac{|a|\sigma_1\sigma_2}{\sigma}\sqrt{1-\rho^2}}e^{-\frac{B(y+\frac{D+Ez}{2B})^2}{2(1-\rho^2)}}d(y+\frac{D+Ez}{2B})\)</span></p>
+<p><span
+class="math inline">\(\displaystyle\xlongequal{t=\frac{y+\frac{D+Ez}{2B}}{\sqrt{\frac{1-\rho^2}{B}}}}\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}\)</span></p>
+<p>原命题得证。</p>
 
   </div>
   
@@ -2931,12 +3123,13 @@ class="math inline">\(F_{Z}(z)=P\{Z&lt;z\}=P\{aX+bY&lt;z\}\)</span></p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023-01-02-%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%86%E5%B9%B4%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA%E9%A2%98%E9%A2%98%E8%A7%A3/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>上海交通大学计算机历年考研复试上机题题解</p>
-          <!--<p class='content'>之前在准备夏令营机试时做过不少题目，现将牛客网上的题目的代码进行整理，以供参考。
+        <a class='prev' href='/2023-01-02-%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA%E9%A2%98%E9%A2%98%E8%A7%A3/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>上海交通大学计算机考研复试上机题题解</p>
+          <!--<p class='content'>之前在准备夏令营机试时做过不少题目，现将牛客网上的部分题目的代码进行整理，以供参考。
 
-路径打印
-12345678910111213141516171819202122232425262728...</p>-->
+String
+Matching
+123456789101112131415161718192021...</p>-->
         </a>
       
       
@@ -3005,7 +3198,7 @@ class="math inline">\(F_{Z}(z)=P\{Z&lt;z\}=P\{aX+bY&lt;z\}\)</span></p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82zgxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;g(X,Y)\)的概率密度函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;X+Y\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zx-y%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;X-Y\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0-1"><span class="toc-text">求\(Z&#x3D;XY\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zdisplaystylefracxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;\displaystyle\frac{X}{Y}\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">通用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E4%B8%80%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83%E7%9A%84%E5%88%86%E5%B8%83%E5%BE%8B%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E4%BB%A5%E5%8F%8A%E5%85%B3%E7%B3%BB"><span class="toc-text">常见一维随机变量分布的分布律&#x2F;概率密度函数、期望和方差以及关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E8%A1%A8%E4%B8%AD%E4%B8%80%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">上表中一维随机变量分布的期望和方差的计算过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%BB%93%E8%AE%BA"><span class="toc-text">常见结论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="toc-text">二项分布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">不同分布之间的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%80%A7%E8%B4%A8%E6%8E%A8%E5%AF%BC"><span class="toc-text">正态分布性质推导</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82zgxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;g(X,Y)\)的概率密度函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;X+Y\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zx-y%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;X-Y\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0-1"><span class="toc-text">求\(Z&#x3D;XY\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82zdisplaystylefracxy%E7%9A%84%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">求\(Z&#x3D;\displaystyle\frac{X}{Y}\)的概率密度函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">通用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E4%B8%80%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83%E7%9A%84%E5%88%86%E5%B8%83%E5%BE%8B%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E4%BB%A5%E5%8F%8A%E5%85%B3%E7%B3%BB"><span class="toc-text">常见一维随机变量分布的分布律&#x2F;概率密度函数、期望和方差以及关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E8%A1%A8%E4%B8%AD%E4%B8%80%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">上表中一维随机变量分布的期望和方差的计算过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%BB%93%E8%AE%BA"><span class="toc-text">常见结论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="toc-text">二项分布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">不同分布之间的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%80%A7%E8%B4%A8%E6%8E%A8%E5%AF%BC"><span class="toc-text">正态分布性质推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">一维正态分布的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9B%B8%E5%85%B3%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">二维正态分布相关的性质</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4442,7 +4635,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-01-积分题目2/","name":"积分题目2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"积分题目2","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-01-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE2/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-01-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE2/","wordCount":20,"datePublished":"2023-01-01T08:48:36.000Z","dateModified":"2023-01-03T12:40:16.761Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-01-积分题目2/","name":"积分题目2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"积分题目2","description":"这篇博客用于总结概率论相关的积分计算问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-01-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE2/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-01-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE2/","wordCount":21,"datePublished":"2023-01-01T08:48:36.000Z","dateModified":"2023-01-03T17:40:50.166Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
