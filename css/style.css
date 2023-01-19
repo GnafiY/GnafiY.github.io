@@ -256,8 +256,8 @@ th {
 @font-face {
   font-family: 'Fira Code';
   src: url("/static/ttf/FiraCode-Regular.ttf");
-  font-weight: 'normal';
-  font-style: 'normal';
+  font-weight: '';
+  font-style: '';
   font-display: swap;
 }
 article#arc,

@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-09T01:31:12.000Z">
-<meta property="article:modified_time" content="2023-01-03T05:29:39.596Z">
+<meta property="article:modified_time" content="2023-01-19T15:49:13.034Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1673617790425),
+    lastupdate: new Date(1674147887421),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2700,6 +2700,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>复变函数与积分变换能为积分求解、信号处理等问题提供新的方法，值得学习。</p>
 <span id="more"></span>
+<h2 id="前言">前言</h2>
+<p>这篇博客是学习<a href = "https://www.bilibili.com/video/BV1Ns411H7tZ" style = "text-decoration: none" target = "_blank">复变函数与积分变换（华中科技大学）</a>时所作的笔记，适合快速入门或者期末考试做题家速成，如果希望深入学习复变函数则建议学习<a href = "https://space.bilibili.com/1037339140" target = "_blank">上海交大姚卫红老师</a>的<a href = "https://www.bilibili.com/video/BV1Nu411y7Mq" target = "_blank">复变函数与概率</a>。</p>
+<p>本文将非负下标的无穷级数的求和<span
+class="math inline">\(\displaystyle
+\sum_{n=0}^{+\infty}\)</span>简记为<span
+class="math inline">\(\displaystyle \sum_{n=0}^{\infty}\)</span>。</p>
 <h2 id="复变函数">复变函数</h2>
 <h3 id="复数的一些性质">复数的一些性质</h3>
 <p><span class="math display">\[\displaystyle z+\bar{z} = 2\text{Re}(z)
@@ -2731,12 +2737,22 @@ class="math inline">\(n\)</span>次方根。</p>
 <p>根据棣莫弗定理有：<span class="math inline">\(\rho^n(\cos {n\phi} + i
 \sin {n\phi}) = r(\cos \theta + i \sin
 \theta)\)</span>，由复数相等的充要条件有：</p>
-<p><span class="math display">\[r = \rho^n, n\phi = \theta + 2k \pi
-\]</span></p>
+<p><span class="math display">\[r = \rho^n, n\phi = \theta + 2k
+\pi\]</span></p>
 <p>因此有<span class="math inline">\(\rho = \sqrt[n]{r},\displaystyle
-\phi = \frac{\theta + 2k \pi}{n}\)</span>。</p>
+\phi = \frac{\theta + 2k \pi}{n}\)</span>，当<span
+class="math inline">\(k\)</span>取遍<span
+class="math inline">\(\{0,1,\cdots,n-1\}\)</span>，即可取得所有的<span
+class="math inline">\(n\)</span>次方根。</p>
+<p>事实上，对于<span class="math inline">\(xOy\)</span>平面上的点<span
+class="math inline">\(z = x + iy\)</span>，那么：</p>
+<p><span class="math display">\[\text{arg}z = \left\{\begin{matrix}
+\displaystyle\arctan \frac{y}{x}, x &gt; 0, y \neq 0 \\
+\displaystyle\arctan \frac{y}{x} - \pi, x &lt; 0, y &lt; 0 \\
+\displaystyle\arctan \frac{y}{x} + \pi , x &lt; 0, y &gt; 0 \\
+\pi, x &lt; 0, y = 0
+\end{matrix}\right.\]</span></p>
 <h3 id="区域">区域</h3>
-<h4 id="基本概念">基本概念</h4>
 <p>设<span class="math inline">\(G\)</span>为一平面点集，<span
 class="math inline">\(z_0\)</span>为<span
 class="math inline">\(G\)</span>中任意一点。如果存在<span
@@ -2750,7 +2766,8 @@ class="math inline">\(D\)</span>，若其中任意两点都可以用完全属于
 class="math inline">\(D\)</span>的一条折线连接起来，那么称点集<span
 class="math inline">\(D\)</span>为<strong>连通</strong>的。对于平面点集<span
 class="math inline">\(D\)</span>，如果<span
-class="math inline">\(D\)</span>是连通的开集，那么称之为<strong>区域</strong>。</p>
+class="math inline">\(D\)</span>是<strong>连通</strong>的<strong>开集</strong>，那么称之为<strong>区域</strong>。区域和其边界共同构成闭区域，记作<span
+class="math inline">\(\bar{D}\)</span>。</p>
 <p>设<span
 class="math inline">\(D\)</span>为复平面内的一个区域，如果点<span
 class="math inline">\(P \notin D\)</span>，但是在<span
@@ -2769,122 +2786,1276 @@ class="math inline">\(D\)</span>中的每个点<span
 class="math inline">\(z\)</span>都满足<span
 class="math inline">\(|z|&lt;M\)</span>，那么称<span
 class="math inline">\(D\)</span>为<strong>有界</strong>的，否则为<strong>无界</strong>的。</p>
-<h4 id="单连通域与多连通域">单连通域与多连通域</h4>
-<p>两个连续实变函数可以表示出一条连续的平面曲线，其复数形式可以是<span
+<p>为介绍单连通域和多连通域，现介绍光滑曲线的相关概念。两个连续实变函数可以表示出一条连续的平面曲线，其复数形式可以是<span
 class="math inline">\(z(t)=x(t)+iy(t)\)</span>。若<span
 class="math inline">\(x(t)\)</span>和<span
 class="math inline">\(y(t)\)</span>在<span
 class="math inline">\([a,b]\)</span>都有连续的一阶导数，并且<span
-class="math inline">\([x&#39;(t)]+[y&#39;(t)]^2 \neq 0, \forall t \in
-[a,b]\)</span>，那么称这段曲线为<strong>光滑曲线</strong>，由几段光滑曲线所组成的曲线称为<strong>按段光滑曲线</strong>。</p>
-<h4 id="todo">todo</h4>
-<h2 id="积分变换">积分变换</h2>
-<h3 id="傅里叶变换">傅里叶变换</h3>
-<h4 id="概念及定义">概念及定义</h4>
+class="math inline">\([x&#39;(t)]^2+[y&#39;(t)]^2 \neq 0, \forall t \in
+[a,b]\)</span>，那么称这段曲线为<strong>光滑曲线</strong>，由几段光滑曲线所组成的曲线称为<strong>按段光滑曲线</strong>。没有重点的连续曲线被称为简单曲线（与离散数学中关于简单路径的定义相同）或者
+Jordan
+曲线。对于一个区域，如果其中的任意简单闭曲线的内部都完全包含于区域中，那么该区域被称为单连通区域，否则是多（复）连通区域。单连通区域内的简单闭曲线可以通过连续的变形缩为一点，这是多连通域所不具有的拓扑性质。</p>
+<h3
+id="平面曲线实数形式和复数形式之间的转换">平面曲线实数形式和复数形式之间的转换</h3>
+<p>善用以下公式即可：</p>
+<ul>
+<li><span class="math inline">\(|z|^2 = z\bar{z}\)</span>；</li>
+<li><span class="math inline">\(x = \displaystyle \frac{z +
+\bar{z}}{2}\)</span> <span class="math inline">\(\displaystyle y =
+\frac{z - \bar{z}}{2i}\)</span>；</li>
+<li><span class="math inline">\(z = x + yi\)</span>。</li>
+</ul>
+<h3 id="复变函数-1">复变函数</h3>
+<h4 id="复变函数的导数微分与解析性">复变函数的导数、微分与解析性</h4>
+<p>设<span class="math inline">\(f(z)\)</span>为一复变函数，若极限<span
+class="math inline">\(\displaystyle\lim_\limits{\Delta z \to 0}\frac{f(z
++ \Delta z) - f(z)}{\Delta z}=A \in \text{C}\)</span>，那么<span
+class="math inline">\(f&#39;(z)=A\)</span>，并且有<span
+class="math inline">\(f(z + \Delta z)- f(z) = f&#39;(z)\Delta + \rho(z),
+\rho(z) \to 0\)</span>，值得注意的是<span class="math inline">\(\Delta z
+\to
+0\)</span>的方式必须是<strong>任意的</strong>。复变性质与单元实函数基本一致，即可导<span
+class="math inline">\(\Leftrightarrow\)</span>可微。</p>
+<p>若<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(z_0\)</span>的某个<strong>邻域</strong>均可导，则称<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(z_0\)</span>解析。<span
+class="math inline">\(f(z)=u(x,y)+iv(x,y)\)</span>在一点（区域）解析的充要条件是<span
+class="math inline">\(u(x,y)\)</span>和<span
+class="math inline">\(v(x,y)\)</span>均可微且满足 Cauchy-Riemann
+方程：</p>
+<p><span class="math display">\[\frac{\partial u}{\partial x} =
+\frac{\partial v}{\partial y}, \frac{\partial u}{\partial y} = -
+\frac{\partial v}{\partial x}\]</span></p>
+<p>复变函数解析定理非常重要，下面给出证明。</p>
+<p>首先证明必要性。不妨令<span class="math inline">\(\Delta z = \Delta x
++ i \Delta y,\rho(z) = \rho_1 + i\rho_2, f&#39;(z) = a +
+bi\)</span>，那么有：</p>
+<p><span class="math inline">\(f(z + \Delta z)- f(z) = f&#39;(z)\Delta +
+\rho(z) \Delta z = (a+bi)(\Delta x + i \Delta y) + \rho_1 +
+i\rho_2\)</span></p>
+<p><span class="math inline">\(= (a\Delta x - b \Delta y + \rho_1) +
+i(b\Delta x + a\Delta y + \rho_2)\)</span></p>
+<p>可以发现<span class="math inline">\(\Delta u = a\Delta x - b \Delta y
++ \rho_1\)</span>和<span class="math inline">\(\Delta v = b\Delta x +
+a\Delta y + \rho_2\)</span>，结合<span class="math inline">\(\rho(\Delta
+z) = \rho_1 + i\rho_2\)</span>可知两函数都可微，并且有：</p>
+<p><span class="math display">\[\frac{\partial u}{\partial x} = a =
+\frac{\partial v}{\partial y}, -\frac{\partial u}{\partial y} = b =
+\frac{\partial v}{\partial x}\]</span></p>
+<p>再证明充分性。由<span class="math inline">\(u(x,y)\)</span>和<span
+class="math inline">\(v(x,y)\)</span>可微有以下二式：</p>
+<p><span class="math display">\[\Delta u = \frac{\partial u}{\partial x}
+\Delta x + \frac{\partial u}{\partial y} \Delta y + \alpha_1(\Delta
+z)\]</span></p>
+<p><span class="math display">\[\Delta v = \frac{\partial v}{\partial x}
+\Delta x + \frac{\partial v}{\partial y} \Delta y + \alpha_2(\Delta
+z)\]</span></p>
+<p>那么利用 Cauchy-Riemann 方程可得：</p>
+<p><span class="math display">\[f(z + \Delta z) - f(z) = \Delta u +
+i\Delta v = (\frac{\partial u}{\partial x} + i\frac{\partial v}{\partial
+x})(\Delta x + i\Delta y) + \eta|z|\]</span></p>
+<p>其中<span class="math inline">\(\eta = \alpha_1 +
+i\alpha_2,\displaystyle \lim_\limits{\Delta z \to 0} \eta =
+0\)</span>，则有<span class="math inline">\(f&#39;(z) = \displaystyle
+\frac{\partial u}{\partial x} + i\frac{\partial v}{\partial
+x}\)</span>。</p>
+<p>另外，解析函数的导数依然是解析函数，这一定理此处不做证明。</p>
+<p>若二元实函数<span class="math inline">\(\phi(x,y)\)</span>在区域<span
+class="math inline">\(D\)</span>内有二阶连续偏导数，且满足 Laplace
+方程，即<span class="math inline">\(\displaystyle \frac{\partial^2
+\phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} =
+0\)</span>，那么称<span
+class="math inline">\(\phi(x,y)\)</span>在区域<span
+class="math inline">\(D\)</span>内调和或在<span
+class="math inline">\(D\)</span>上的调和函数。若<span
+class="math inline">\(f(z) = u + iv\)</span>在区域<span
+class="math inline">\(D\)</span>内解析，那么<span
+class="math inline">\(u\)</span>和<span
+class="math inline">\(v\)</span>都是调和函数。解析函数的实部和虚部的任意阶偏导都是调和的。此外还可以定义共轭调和函数，记<span
+class="math inline">\(\phi(x,y)\)</span>和<span
+class="math inline">\(\psi(x,y)\)</span>都是区域<span
+class="math inline">\(D\)</span>上的调和函数且满足 Cauchy-Riemann
+方程：</p>
+<p><span class="math display">\[\frac{\partial \phi}{\partial x} =
+\frac{\partial \psi}{\partial y}, \frac{\partial \psi}{\partial x} =
+-\frac{\partial \phi}{\partial y}\]</span> 那么称<span
+class="math inline">\(\psi(x,y)\)</span>是<span
+class="math inline">\(\phi(x,y)\)</span>的共轭调和函数。<strong>注意共轭调和性不具有对称性</strong>。基于共轭调和函数的定义，复变函数是解析函数的另一个充要条件是虚部是实部的共轭调和。</p>
+<h3 id="常见的复变函数及其定义">常见的复变函数及其定义</h3>
+<p><strong>指数函数</strong>被定义为<span class="math inline">\(f(z) =
+e^{z} = \exp z = e^{x} (\cos x + i \sin x),x,y \in
+R\)</span>，具有的性质有：</p>
+<ul>
+<li><span class="math inline">\(|e^{z}| = e^{x}, \text{Arg}e^{z} = y +
+2k\pi, k \in \text{Z}\)</span>;</li>
+<li>单值函数；</li>
+<li><span class="math inline">\(\forall z \in \text{C}, e^{z} \neq
+0\)</span>；</li>
+<li><span class="math inline">\(e^{z_1}e^{z_2} =
+e{z_1+z_2}\)</span>；</li>
+<li>以<span class="math inline">\(2\pi i\)</span>为基本周期；</li>
+<li>在复平面上处处解析，并且有<span class="math inline">\((e^z)&#39; =
+e^{z}\)</span>。</li>
+</ul>
+<p><strong>对数函数</strong>的定义依赖于指数函数，若<span
+class="math inline">\(\exp w = z\)</span>，则称<span
+class="math inline">\(w\)</span>为<span
+class="math inline">\(z\)</span>的对数函数，记作<span
+class="math inline">\(w = \text{Ln}
+z\)</span>，<strong>注意这里的对数符号的首字母需要大写</strong>，与实变函数中的对数函数加以区分，具有的性质有：</p>
+<ul>
+<li>多值性，<span class="math inline">\(w = \text{Ln}z = \ln r +
+i\text{Arg}z\)</span>，主枝被定义为<span class="math inline">\(w_0 = \ln
+z = \ln|z| + i\arg z\)</span>，当<span class="math inline">\(z = x(x
+&gt; 0)\)</span>时，<span class="math inline">\(\text{Ln}z = \ln
+x\)</span>；</li>
+<li><span class="math inline">\(\displaystyle\text{Ln}\frac{z_1}{z_2} =
+\text{Ln}z_1 - \text{Ln}z_2, \text{Ln}z_1z_2 = \text{Ln}z_1 +
+\text{Ln}z_2\)</span>，这两个公式应该理解为<strong>等式左右两边的值构成的集合相同</strong>；</li>
+<li><span class="math inline">\(\text{Ln}e^z = z + 2k\pi
+i\)</span>；</li>
+<li>主枝<span class="math inline">\(\ln
+z\)</span>在除去原点和负实轴的平面内解析，并且<span
+class="math inline">\(\text{Ln}z\)</span>在除去原点和负实轴的平面内解析且具有相同的导数值，并且注意对数函数求导数应当使用反函数求道法则：</li>
+</ul>
+<p><span class="math display">\[w = \ln z \Rightarrow \frac{dw}{dz} =
+\frac{1}{\displaystyle \frac{dz}{dw}} = \frac{1}{e^w} =
+\frac{1}{z}\]</span></p>
+<p><strong>幂函数</strong>的定义依赖于对数函数，<span
+class="math inline">\(w = z^{\alpha} = e^{\alpha \text{Ln} z} =
+e^{\alpha(\ln z + 2k\pi i)}, z\neq 0\)</span>，其中<span
+class="math inline">\(\alpha\)</span>为复常数，并且规定<span
+class="math inline">\(\alpha \in \text{R}^+ \wedge z = 0 \Rightarrow
+z^{\alpha} =
+0\)</span>。由于对数函数的多值性，幂函数一般也是多值的。幂函数的多值性取决于<span
+class="math inline">\(\alpha\)</span>的取值范围：</p>
+<ul>
+<li>当 <span class="math inline">\(\alpha = n \in
+\text{N}^+\)</span>时，<span class="math inline">\(w = z^{\alpha} = e^{n
+\ln z}\)</span>，是复平面上的单值解析函数；</li>
+<li>当<span class="math inline">\(\alpha = \displaystyle
+\frac{p}{q}\)</span>，其中<span class="math inline">\(p,q \in Z \wedge
+(p,q)=1\)</span>时，<span class="math inline">\(w = (e^{2k\pi
+pi})^{\frac{1}{q}}\)</span>，是<span
+class="math inline">\(q\)</span>值函数；</li>
+<li>当<span
+class="math inline">\(\alpha\)</span>为无理数或虚部不为零的复数时，<span
+class="math inline">\(z^{\alpha}\)</span>是无穷多值函数。</li>
+</ul>
+<p><strong>正弦函数和余弦函数</strong>都需要利用指数函数进行定义：</p>
+<p><span class="math display">\[\cos z = \frac{e^{iz} + e^{-iz}}{2},
+\sin z = \frac{e^{iz} - e^{-iz}}{2i}\]</span>
+不难发现，两个三角函数具有如下性质：</p>
+<ul>
+<li>当<span class="math inline">\(z =
+x\)</span>时，其与实函数定义一致；</li>
+<li>在复平面内解析，并且两函数导数在形式上与实函数保持一致；</li>
+<li>奇偶性与实函数一致；</li>
+<li>以<span class="math inline">\(2\pi\)</span>为周期；</li>
+<li>无界性；</li>
+<li>实函数中的三角恒等式仍成立。
+其他三角函数可以利用正弦函数和余弦函数进行定义。</li>
+</ul>
+<p><strong>双曲函数</strong>也是利用指数函数进行定义的：</p>
+<p><span class="math display">\[\cosh z = \frac{e^{z} + e^{-z}}{2},
+\sinh z = \frac{e^{z} - e^{-z}}{2}, \tanh z = \frac{\sinh z}{\cosh
+z}\]</span> 不难发现，双曲正弦函数和双曲余弦函数分别具有如下性质：</p>
+<ul>
+<li><span class="math inline">\(\sinh z = -i \sin iz, \cosh z = \cos iz,
+\tanh z = -i\tan iz\)</span>，<span class="math inline">\(\sinh
+z\)</span>和<span class="math inline">\(\cosh
+x\)</span>都是复平面上处处解析的，<span class="math inline">\((\sinh
+z)&#39; = \cosh z, (\cosh z)&#39; = \sinh z\)</span>，而<span
+class="math inline">\(\tanh z\)</span>在复平面上除去<span
+class="math inline">\(z = \displaystyle (k\pi + \frac{\pi}{2})i, k \in
+\text{Z}\)</span>外处处解析，<span class="math inline">\((\tanh z)&#39;
+= \displaystyle\frac{1}{\cosh^2 z}\)</span>；</li>
+<li>双曲正弦函数和双曲余弦函数以<span class="math inline">\(2\pi
+i\)</span>为周期，双曲正切函数以<span class="math inline">\(\pi
+i\)</span>为周期。</li>
+</ul>
+<h3 id="复积分">复积分</h3>
+<h4 id="复积分的定义和性质">复积分的定义和性质</h4>
+<p>与实积分类似，复积分的定义也需要划分、近似求和以及取极限三个步骤进行。设<span
+class="math inline">\(C\)</span>为简单光滑的有向曲线，其方向为从<span
+class="math inline">\(a\)</span>到<span
+class="math inline">\(b\)</span>，并且<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(C\)</span>上有定义：</p>
+<ul>
+<li><strong>任意</strong>划分：<span class="math inline">\(z_ 0 = a,
+z_1,z_2,\cdots, z_n = b\)</span>，令<span class="math inline">\(\Delta
+z_k = z_k - z_{k - 1}, \lambda = \max_\limits{1\leq k \leq n}|\Delta
+z_k|\)</span>；</li>
+<li>近似求和：在每个弧线段<span class="math inline">\(\mathop{z_{k -
+1}z_k}\)</span>上任取一点<span class="math inline">\(\zeta_k \in
+\mathop{z_{k - 1}z_k}\)</span>，近似求和结果为<span
+class="math inline">\(\displaystyle \sum_{k=1}^{n}f(\zeta_k)\Delta
+z_k\)</span>；</li>
+<li>取极限：若极限<span class="math inline">\(\displaystyle
+\lim_\limits{\lambda \to 0}\sum_{k=1}^{n}f(\zeta_k)\Delta
+z_k\)</span>存在，即极限的结果不依赖于<span
+class="math inline">\(C\)</span>的划分方式和<span
+class="math inline">\(\zeta_k\)</span>的选取，那么称和式的极限为<span
+class="math inline">\(f(z)\)</span>沿<span
+class="math inline">\(C\)</span>的积分，记作<span
+class="math inline">\(\displaystyle \int_{C}f(z)
+dz\)</span>，另外，一般用<span class="math inline">\(\displaystyle
+\oint_{\Gamma}f(z)dz\)</span>表示沿闭曲线逆时针方向的积分。</li>
+</ul>
+<p>复积分的性质与第二类曲线积分的性质类似：</p>
+<ul>
+<li><span class="math inline">\(\displaystyle \int_{C}[\alpha f(z) +
+\beta g(z)]dz = \alpha \int_{C}f(z)dz + \beta
+\int_{C}g(z)dz\)</span>；</li>
+<li><span class="math inline">\(\displaystyle \int_{C}f(z)dz =
+-\int_{C^-}f(z)dz\)</span>；</li>
+<li><span class="math inline">\(\displaystyle \int_{C}f(z)dz =
+\int_{C_1}f(z)dz + \int_{C_2}f(z)dz, C = C_1 + C_2\)</span>；</li>
+<li><span class="math inline">\(\displaystyle \bigg\lvert
+\int_{C}f(z)dz\bigg\rvert \leq \int_{C}|f(z)||dz| = \int_{C}|f(z)|ds
+\leq ML\)</span>，其中<span class="math inline">\(M = \max_\limits{z \in
+C}|f(z)|\)</span>，<span class="math inline">\(L\)</span>为<span
+class="math inline">\(C\)</span>的弧长。</li>
+</ul>
+<h4 id="复积分的计算方法">复积分的计算方法</h4>
+<p>复积分的计算可以使用曲线积分或是直接化为定积分计算，此外，还可以利用原函数、Cauchy
+积分公式、高阶导公式以及留数计算。</p>
+<h5 id="cauchy-积分定理和公式">Cauchy 积分定理和公式</h5>
+<p>设函数<span
+class="math inline">\(f(z)\)</span>在单连通域内解析，<span
+class="math inline">\(\Gamma\)</span>为<span
+class="math inline">\(D\)</span>内的任意一条简单闭曲线，那么<span
+class="math inline">\(\displaystyle \oint_{\Gamma}f(z)dz =
+0\)</span>，该定理又被称为 <strong>Cauchy-Goursat
+基本定理</strong>，证明如下：</p>
+<p><span class="math inline">\(\displaystyle\oint_{\Gamma}f(z)dz =
+\oint_{\Gamma} (udx - vdy) + i\oint_{\Gamma} (vdx + udy)\)</span></p>
+<p><span class="math inline">\(\displaystyle\xlongequal{Green}
+-\iint_{G}(\frac{\partial v}{\partial x} + \frac{\partial u}{\partial
+y})dxdy + i\iint_{G}(\frac{\partial u}{\partial x} - \frac{\partial
+v}{\partial y})dxdy \xlongequal{C-R}0\)</span></p>
+<p>设单连通域的边界为<span class="math inline">\(C\)</span>，函数<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(\bar{D} = D + C\)</span>上连续，那么<span
+class="math inline">\(\displaystyle \oint_{C}f(z)dz = 0\)</span>。</p>
+<p>闭路变形原理的内容为：设二连通域的边界为<span class="math inline">\(C
+= C_1 + C_2^-\)</span>，函数<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(\bar{D}\)</span>上连续，那么<span
+class="math inline">\(\displaystyle \oint_{C}f(z)dz =
+0\)</span>，或<span class="math inline">\(\displaystyle \int_{C_1}f(z)dz
+= \int_{C_2}f(z)dz\)</span>。该定理的证明只需要引入连接<span
+class="math inline">\(C_1\)</span>和<span
+class="math inline">\(C_2\)</span>的双向曲线，将双连通域转化为单连通域即可。<strong>如果无法理解双连通如何通过连一条线就变成单连通域，不妨采用拓扑变形的方法</strong>。</p>
+<p>下面计算一个重要积分。求<span class="math inline">\(\displaystyle
+\oint_{C}\frac{dz}{(z - z_0)^{n+1}}\)</span>，其中<span
+class="math inline">\(C\)</span>为曲线<span class="math inline">\(z =
+z_0 + re^{i\theta}, 0\leq \theta \leq 2\pi\)</span>，<span
+class="math inline">\(n\)</span>为整数。</p>
+<p><span class="math display">\[\oint_{C}\frac{dz}{(z - z_0)^{n+1}} =
+\frac{i}{r^n}\int_{0}^{2\pi}e^{-in\theta}d\theta\]</span></p>
+<p>当<span class="math inline">\(n = 0\)</span>时，结果为<span
+class="math inline">\(i\displaystyle\int_{0}^{2\pi}d\theta=2\pi
+i\)</span>，否则结果为<span class="math inline">\(i\displaystyle
+\int_{0}^{2\pi}(cos n\theta - i\sin n\theta)d\theta =
+0\)</span>，综上所述：</p>
+<p><span class="math display">\[\oint_{C}\frac{dz}{(z - z_0)^{n+1}} =
+\left\{\begin{matrix}
+0, n\neq 0 \\
+2\pi i, n = 0
+\end{matrix}\right.\]</span></p>
+<p>上说结论说明该积分的值与圆周的中心和半径无关，非常重要，应记住。</p>
+<p>利用上述积分的结果可以计算<span class="math inline">\(I=\displaystyle
+\oint_{\Gamma}\frac{dz}{(z-z_0)^n}, n \in \text{Z}\)</span>，其中<span
+class="math inline">\(\Gamma\)</span>为包含<span
+class="math inline">\(z_0\)</span>的一条闭曲线。</p>
+<p><img src = "/static/images/复变函数积分图示1.png"/></p>
+<p>在区域内部引入曲线<span class="math inline">\(C:|z-z_0|=r \Rightarrow
+z = z_0 + re^{i\theta}\)</span>，那么函数<span
+class="math inline">\(f(z)\)</span>在<span class="math inline">\(\bar{D}
+= D + \Gamma + C^{-}\)</span>上解析，因此：</p>
+<p><span class="math display">\[\displaystyle I =
+\oint_{\Gamma}\frac{dz}{(z-z_0)^n} = \oint_{C}\frac{dz}{(z-z_0)^n} =
+\left\{\begin{matrix}
+0, n \neq 1 \\
+2\pi i, n = 1
+\end{matrix}\right.\]</span></p>
+<p>事实上，还将柯西积分定理推广到多连域情况。设多连通域的边界为<span
+class="math inline">\(C = C_0 + \displaystyle
+\sum_{k=1}^{n}C^{-}_{k}\)</span>，函数<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(\bar{D}\)</span>上连续，那么<span
+class="math inline">\(\displaystyle \oint_{C}f(z)dz =
+0\)</span>，或<span class="math inline">\(\displaystyle
+\oint_{C_0}f(z)dz = \sum_{k=1}^{n}\oint_{C_k}f(z)dz\)</span>。</p>
+<p><img src = "/static/images/复变函数积分图示2.png"/></p>
+<p>若函数在区域<span class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(D\)</span>的闭包上连续，<span
+class="math inline">\(z_0 \in D\)</span>，那么<span
+class="math inline">\(f(z_0) = \displaystyle \frac{1}{2\pi
+i}\oint_{C}\frac{f(z)}{z - z_0}dz\)</span>，其中<span
+class="math inline">\(C=\partial
+D\)</span>。这说明<strong>解析函数在其解析区域内的值完全由边界上的值确定</strong>，换言之，<strong>解析函数可以用其解析区域边界上的值以一种特定的积分形式表达出来</strong>。这个公式被称为
+<strong>Cauchy 积分公式</strong>，可以用于积分的计算。</p>
+<p>若函数在<span class="math inline">\(|z -
+z_0|&lt;R\)</span>内解析，在<span class="math inline">\(|z -
+z_0|\)</span>上连续，那么<span class="math inline">\(\displaystyle
+f(z_0) = \frac{1}{2\pi}
+\int_{0}^{2\pi}f(z_0+Re^{i\theta})d\theta\)</span>，该公式被称为<strong>平均值公式</strong>，可以由
+Cauchy 积分公式证明：</p>
+<p><span class="math display">\[f(z_0) = \frac{1}{2\pi i}\oint_{|z -
+z_0| = R}\frac{f(z)}{z - z_0}dz = \frac{1}{2\pi
+i}\int_{0}^{2\pi}\frac{f(z_0 +
+Re^{i\theta})}{Re^{i\theta}}Re^{i\theta}id\theta =
+\frac{1}{2\pi}\int_{0}^{2\pi}f(z_0 + Re^{i\theta})d\theta\]</span></p>
+<p>如果<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>内解析，且不为常数，那么<span
+class="math inline">\(D\)</span>内<span
+class="math inline">\(|f(z)|\)</span>没有最大值，这被称为<strong>最大模原理</strong>。由平均值公式可知：函数<span
+class="math inline">\(f(z)\)</span>在解析区域<span
+class="math inline">\(D\)</span>内任意一点<span
+class="math inline">\(z_0\)</span>的函数值是以该点为圆心的圆周上所有点的平均值。因此<span
+class="math inline">\(|f(z_0)|\)</span>不能达到最大，除非<span
+class="math inline">\(f(z)\)</span>为常数。由最大模原理可知：</p>
+<ul>
+<li>在区域<span
+class="math inline">\(D\)</span>内解析的函数，如果其模在<span
+class="math inline">\(D\)</span>内达到最大值，那么该函数一定是常数；</li>
+<li>若<span class="math inline">\(f(z)\)</span>在有界区域<span
+class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(\bar{D}\)</span>上连续，那么<span
+class="math inline">\(|f(z)|\)</span>在<span
+class="math inline">\(D\)</span>的边界上一定能达到最大值。</li>
+</ul>
+<h5 id="原函数">原函数</h5>
+<p>利用 Cauchy-Goursat 定理可知，若函数<span
+class="math inline">\(f(z)\)</span>在单连通域内解析，并且<span
+class="math inline">\(C_1\)</span>和<span
+class="math inline">\(C_2\)</span>都是区域<span
+class="math inline">\(D\)</span>内的以<span
+class="math inline">\(z_0\)</span>为起点、<span
+class="math inline">\(z_1\)</span>为终点的简单曲线，那么<span
+class="math inline">\(\displaystyle \oint_{C_1}f(z)dz =
+\oint_{C_2}f(z)dz\)</span>，这说明<strong>解析函数在单连通域内的积分只和起点、终点有关</strong>，在计算时可以根据实际情况选择计算量更小的路径。</p>
+<p>不难联想第二类曲线积分中的相关性质：设<span
+class="math inline">\(D\)</span>为<span
+class="math inline">\(xOy\)</span>平面上的单连通闭区域，函数<span
+class="math inline">\(P(x,y)\)</span>和<span
+class="math inline">\(Q(x,y)\)</span>在<span
+class="math inline">\(D\)</span>上有一阶连续偏导数，那么以下性质两两等价：</p>
+<ul>
+<li>沿<span class="math inline">\(D\)</span>内任何光滑闭曲线<span
+class="math inline">\(C\)</span>，总有<span
+class="math inline">\(\displaystyle \oint_{C} Pdx + Qdy =
+0\)</span>；</li>
+<li>积分<span class="math inline">\(\displaystyle \oint_{C} Pdx +
+Qdy\)</span>的值只与起点、终点有关，而与路径无关；</li>
+<li><span class="math inline">\(Pdx + Qdy\)</span>为<span
+class="math inline">\(D\)</span>内的某个函数<span
+class="math inline">\(u(x,y)\)</span>的全微分，即<span
+class="math inline">\(du=Pdx + Qdy\)</span>；</li>
+<li>在<span class="math inline">\(D\)</span>内的每一点总有<span
+class="math inline">\(\displaystyle \frac{\partial Q}{\partial x} =
+\frac{\partial P}{\partial y}\)</span>。</li>
+</ul>
+<p>对于复变函数，同样可以提出原函数的概念：设在单连通域<span
+class="math inline">\(D\)</span>中，<span
+class="math inline">\(F(z)\)</span>总满足<span
+class="math inline">\(F&#39;(z) = f(z)\)</span>，那么称<span
+class="math inline">\(F(z)\)</span>为<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>上的<strong>一个原函数</strong>，原函数的集合被称为<span
+class="math inline">\(f(z)\)</span>的不定积分。<span
+class="math inline">\(f(z)\)</span>的任何两个原函数之间只相差一个常数。对于解析函数而言，其原函数必定解析。</p>
+<p>解析函数在单连通域内沿简单曲线的积分可以使用 Newton-Leibniz
+公式计算。设<span class="math inline">\(F(z)\)</span>为<span
+class="math inline">\(f(z)\)</span>的原函数，那么<span
+class="math inline">\(\displaystyle \int_{z_0}^{z_1}f(z)dz = F(z_1) -
+F(z_0)\)</span>，其中<span class="math inline">\(z_0,z_1 \in
+D\)</span>。</p>
+<h5 id="解析函数的高阶导数">解析函数的高阶导数</h5>
+<p>如果函数<span class="math inline">\(f(z)\)</span>在区域<span
+class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(\bar{D} = D + C\)</span>上连续，那么由 Cauchy
+积分公式有：</p>
+<p><span class="math display">\[f(z) = \displaystyle \frac{1}{2\pi
+i}\oint_{C}\frac{f(\zeta)}{\zeta - z}d\zeta, z \in D\]</span></p>
+<p>对上式求导有：<span class="math inline">\(\displaystyle f(z)^{(n)}(z)
+= \frac{n!}{2\pi i}\oint_{C} \frac{f(\zeta)}{(\zeta - z)^{n+1}}d\zeta, z
+\in D\)</span>，这说明了解析函数的导数依然解析。上式还可以像 Cauchy
+积分公式一样用于求解特定形式的积分值。利用高阶导数还可以得到以下两条定理：</p>
+<ul>
+<li>设函数<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(|z - z_0| &lt; R\)</span>内解析，且<span
+class="math inline">\(|f(z)| &lt; M\)</span>，那么<span
+class="math inline">\(|f^{(n)}(z_0)| \leq \displaystyle \frac{n!M}{R^n},
+n = 1, 2, \cdots\)</span>；</li>
+<li>设函数<span
+class="math inline">\(f(z)\)</span>在全平面上解析且有界，那么<span
+class="math inline">\(f(z)\)</span>是常数。</li>
+</ul>
+<h3 id="幂级数">幂级数</h3>
+<h4 id="基本概念及-aebl-定理">基本概念及 Aebl 定理</h4>
+<h5 id="基本概念">基本概念</h5>
+<p>类比实数序列极限的概念，可以得到复数序列的极限的概念，这里不再赘述。设<span
+class="math inline">\(z_n = x_n + iy_n\)</span>，<span
+class="math inline">\(a = \alpha + i\beta\)</span>，那么：</p>
+<p><span class="math display">\[\displaystyle \lim_\limits{n \to
++\infty}z_n = a \Leftrightarrow \lim_\limits{n \to +\infty}x_n = \alpha
+\wedge \lim_\limits{n \to +\infty}y_n = \beta\]</span></p>
+<p>这是显然的，这里不再证明。下面开始介绍复数项级数。设<span
+class="math inline">\(\{z_n\}\)</span>是一复数序列：</p>
+<ul>
+<li>称<span
+class="math inline">\(\displaystyle\sum_{n=1}^{\infty}z_n\)</span>为<strong>复数项级数</strong>，简记为<span
+class="math inline">\(\displaystyle\sum z_n\)</span>；</li>
+<li>称<span class="math inline">\(s_n=\displaystyle\sum_{k=1}^n z_k =
+z_1+z_2+\cdots+z_n\)</span>为级数的部分和；</li>
+<li>如果序列<span class="math inline">\(\{s_n\}\)</span>收敛，即<span
+class="math inline">\(\displaystyle \lim_\limits{n \to \infty}s_n =
+s\)</span>，则称级数收敛并且极限值<span
+class="math inline">\(s\)</span>称为级数的和；</li>
+<li>如果序列<span
+class="math inline">\(\{s_n\}\)</span>不收敛，则称级数发散。</li>
+<li>若<span class="math inline">\(\displaystyle \sum
+|z_n|\)</span>收敛，则称<span class="math inline">\(\displaystyle \sum
+z_n\)</span>绝对收敛；若<span class="math inline">\(\displaystyle
+\sum|z_n|\)</span>发散，<span class="math inline">\(\displaystyle \sum
+z_n\)</span>收敛，则称<span class="math inline">\(\displaystyle \sum
+z_n\)</span>条件收敛。</li>
+</ul>
+<p>设<span class="math inline">\(z_n = x_n + iy_n\)</span>，那么<span
+class="math inline">\(\displaystyle \sum z_n\)</span>收敛<span
+class="math inline">\(\Leftrightarrow\displaystyle\sum
+x_n\)</span>和<span class="math inline">\(\displaystyle \sum
+y_n\)</span>都收敛；此外，与实数项级数类似，复数项级数也有性质：</p>
+<ul>
+<li><span class="math inline">\(\displaystyle \sum z_n\)</span>收敛<span
+class="math inline">\(\Rightarrow \lim_\limits{n \to \infty} z_n =
+0\)</span>；</li>
+<li>若<span class="math inline">\(\displaystyle
+\sum|z_n|\)</span>收敛<span class="math inline">\(\Rightarrow
+\displaystyle \sum z_n\)</span>收敛。</li>
+</ul>
+<p>基于复数项级数，可以定义<strong>复变函数项级数</strong>。设复变函数<span
+class="math inline">\(f_n(z)\)</span>在区域<span
+class="math inline">\(G\)</span>内有定义：</p>
+<ul>
+<li>称<span class="math inline">\(\{f_n(z)\}\)</span>为区域<span
+class="math inline">\(G\)</span>内的复变函数序列；</li>
+<li>称<span class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty}f_n(z)\)</span>为区域<span
+class="math inline">\(G\)</span>内的复变函数项级数，简记为<span
+class="math inline">\(\displaystyle \sum f_{n}(z)\)</span>。</li>
+</ul>
+<p>设<span class="math inline">\(\displaystyle \sum
+f_n(z)\)</span>为区域<span
+class="math inline">\(G\)</span>内的复变函数项级数：</p>
+<ul>
+<li>称<span class="math inline">\(s_n = \displaystyle
+\sum_{k=1}^{n}f_k(z)\)</span>为级数<span
+class="math inline">\(\displaystyle \sum f_n(z)\)</span>的部分和；</li>
+<li>若对于<span class="math inline">\(G\)</span>内的某一点<span
+class="math inline">\(z_0\)</span>，有<span
+class="math inline">\(\displaystyle \lim_\limits{n \to \infty}s_n(z_0)
+=s(z_0)\)</span>，则称级数<span class="math inline">\(\displaystyle \sum
+f_n(z)\)</span>在<span class="math inline">\(z_0\)</span>点收敛；</li>
+<li>若存在区域<span class="math inline">\(D \subseteq
+G\)</span>，对于<span class="math inline">\(\forall z \in
+D\)</span>，有<span class="math inline">\(\displaystyle \lim_\limits{n
+\to \infty}s_n(z) = s(z)\)</span>，则称级数<span
+class="math inline">\(\displaystyle \sum f_n(z)\)</span>在区域<span
+class="math inline">\(D\)</span>内收敛，此时称<span
+class="math inline">\(s(z)\)</span>为和函数，<span
+class="math inline">\(D\)</span>为收敛域。</li>
+</ul>
+<p><strong>幂级数</strong>由如下的复变函数项级数定义：</p>
+<p><span class="math display">\[\sum_{n=0}^{\infty}a_n(z - a)^n = a_0 +
+a_1(z -a)+ a_2(z - a)^2 + \cdots\]</span></p>
+<p>其中<span class="math inline">\(a\)</span>和<span
+class="math inline">\(\{a_n\}_{n=0,1,2\cdots}\)</span>为复常数，当<span
+class="math inline">\(a \neq 0\)</span>时，幂级数是<span
+class="math inline">\(\text{(I)}\)</span>型的，否则是<span
+class="math inline">\(\text{(II)}\)</span>型的。以后的内容主要对<span
+class="math inline">\(\text{(II)}\)</span>型幂级数进行讨论，所有得到的结论只需要将<span
+class="math inline">\(z\)</span>替换为<span class="math inline">\((z -
+a)\)</span>即可应用到<span
+class="math inline">\(\text{(I)}型幂级数\)</span>。对于两种形式的幂级数，它们都在展开点收敛。</p>
+<h5 id="abel-定理">Abel 定理</h5>
+<p>下面给出幂级数的收敛定理—— <strong>Abel
+定理</strong>。对于幂级数<span class="math inline">\(\displaystyle \sum
+a_n z^n\)</span>有：</p>
+<ul>
+<li>若级数在<span class="math inline">\(z_0\)</span>点收敛，则它在<span
+class="math inline">\(|z| &lt; |z_0|\)</span>上绝对收敛；</li>
+<li>若级数在<span class="math inline">\(z_1\)</span>点发散，则它在<span
+class="math inline">\(|z| &gt; |z_1|\)</span>商发散。</li>
+</ul>
+<p>事实上，级数在<span
+class="math inline">\(z_0\)</span>点收敛，那么有<span
+class="math inline">\(\lim_\limits{n\to \infty} a_n z_0^n =
+0\)</span>，则存在<span class="math inline">\(M\)</span>，使得：</p>
+<p><span class="math display">\[\forall n, |a_nz_0^n| \leq M \Rightarrow
+|a_nz^n| = |a_nz^n_0|\cdot \displaystyle  |\frac{z}{z_0} |^n \leq
+Mq^n\]</span></p>
+<p>其中<span class="math inline">\(q = \displaystyle |\frac{z}{z_0} |
+\in [0,1)\)</span>，由等比级数的性质以及比较审敛法可知级数在<span
+class="math inline">\(|z| &lt;
+|z_0|\)</span>上绝对收敛。利用反证法可以证明另外一个定理，假定级数在<span
+class="math inline">\(z_2 \in \{|z| &gt;
+|z_1|\}\)</span>处收敛，那么根据已证明的定理可知级数在<span
+class="math inline">\(|z| &lt;|z_2|\)</span>收敛，这与级数在<span
+class="math inline">\(z_1\)</span>处发散相矛盾。</p>
+<p>以上的两个定理说明了级数收敛点构成的集合的内点是一个圆，该圆被称为<strong>收敛圆</strong>，<span
+class="math inline">\(|z| &lt; R\)</span>的收敛圆记作<span
+class="math inline">\(C_R\)</span>，其中<span
+class="math inline">\(R\)</span>是收敛半径，<span
+class="math inline">\(R=0\)</span>说明级数只在原点收敛；<span
+class="math inline">\(R =
++\infty\)</span>表明级数在整个复平面上都收敛。注意<strong>级数在收敛圆边界的收敛情况是不一定的</strong>。</p>
+<p>接下来介绍求收敛半径的方法，主要包括两种：</p>
+<ul>
+<li>如果<span class="math inline">\(\displaystyle \lim_\limits{n \to
+\infty} \frac{|a_{n+1}|}{|a_n|} = \lambda\)</span>，则收敛半径为<span
+class="math inline">\(R = \displaystyle
+\frac{1}{\lambda}\)</span>（<strong>比值法</strong>）；</li>
+<li>如果<span class="math inline">\(\displaystyle \lim_\limits{n \to
+\infty}\sqrt[n]{|c_n|} = \rho\)</span>，则收敛半径为<span
+class="math inline">\(R=
+\displaystyle\frac{1}{\rho}\)</span>（<strong>根值法</strong>）。</li>
+</ul>
+<h4 id="性质">性质</h4>
+<h5 id="运算性质">运算性质</h5>
+<p>设<span class="math inline">\(f(z) = \displaystyle \sum_{n =
+0}^{\infty}a_nz^n, |z| &lt; r_1\)</span>和<span
+class="math inline">\(g(z) = \displaystyle \sum_{n = 0}^{\infty}b_n z^n,
+|z| &lt; r_2\)</span>，令<span class="math inline">\(r = \min(r_1,
+r_2)\)</span>，那么在<span class="math inline">\(|z| &lt;
+r\)</span>内有：</p>
+<ul>
+<li><span class="math inline">\(f(z) \pm g(z) = \displaystyle \sum_{n =
+0}^{\infty}(a_n \pm b_n)z^n\)</span>；</li>
+<li><span class="math inline">\(f(z)g(z) = \displaystyle \sum_{n =
+0}^{\infty}a_n z^n \cdot \sum_{n=0}^{\infty0}b_n z^n = \sum_{n =
+0}^{\infty}(\sum_{k = 0}^{n}a_kb_{n-k})z^n\)</span>。</li>
+</ul>
+<h5 id="分析性质">分析性质</h5>
+<p>设<span class="math inline">\(f(z) = \displaystyle \sum_{n =
+0}^{\infty}a_n(z - z_0)^n, |z - z_0| &lt; R\)</span>，那么：</p>
+<ul>
+<li>函数<span class="math inline">\(f(z)\)</span>在收敛圆<span
+class="math inline">\(|z - z_0| &lt;
+R\)</span>内<strong>解析</strong>；</li>
+<li>函数<span
+class="math inline">\(f(z)\)</span>的导数可以由其幂级数<strong>逐项求导</strong>得到，即<span
+class="math inline">\(f&#39;(z) = \displaystyle \sum_{n =
+1}^{\infty}na_n(z - z_0)^{n-1}\)</span>；</li>
+<li>在收敛圆内可以逐项积分，即<span class="math inline">\(F(z) =
+\displaystyle \sum_{n = 0}^{\infty} \frac{a_n}{n+1}(z - z_0)^{n + 1} +
+C\)</span>，其中<span class="math inline">\(C\)</span>是复常数。</li>
+</ul>
+<h5 id="复合性质">复合性质</h5>
+<p>设级数<span class="math inline">\(\displaystyle
+\sum_{n=0}^{\infty}a_n z^n\)</span>在<span class="math inline">\(|z|
+&lt; R\)</span>内收敛，和函数为<span
+class="math inline">\(f(z)\)</span>，又设函数<span
+class="math inline">\(g(z)\)</span>在<span class="math inline">\(|z|
+&lt; r\)</span>内解析，并且<span class="math inline">\(|g(z)| &lt;
+R\)</span>，那么当<span class="math inline">\(|z| &lt;
+r\)</span>时，<span class="math inline">\(f[g(z)] = \displaystyle
+\sum_{n = 0}^{\infty}a_n[g(z)]^n\)</span>。</p>
+<h4 id="taylor-级数">Taylor 级数</h4>
+<p>首先介绍 Taylor 定理的内容。设函数<span
+class="math inline">\(f(z)\)</span>在区域<span
+class="math inline">\(D\)</span>内解析，<span
+class="math inline">\(C\)</span>为<span
+class="math inline">\(D\)</span>的边界，并且有<span
+class="math inline">\(z_0 \in D\)</span>，<span class="math inline">\(R
+= \min_\limits{z \in C}|z - z_0|\)</span>，那么当<span
+class="math inline">\(|z - z_0| &lt; R\)</span>时，有：</p>
+<p><span class="math display">\[f(z) = \sum_{n = 0}^{\infty}a_n(z -
+z_0)^n, a_n = \frac{1}{n!}f^{(n)}(z_0) = \frac{1}{2\pi
+i}\oint_{C}\frac{f(z)}{(z - z_0)^{n + 1}}dz\]</span></p>
+<p>这里需要注意：</p>
+<ul>
+<li>根据幂级数的性质，幂级数的收敛域一定是圆域；</li>
+<li>幂级数收敛<span
+class="math inline">\(\Rightarrow\)</span>和函数解析。</li>
+</ul>
+<p>求解函数的 Taylor
+级数时，需要熟记以下两个已知的展开式（形式上与实变函数相同）：</p>
+<p><span class="math display">\[\frac{1}{1 - z} =1 + z + z^2 +\cdots ,
+|z| &lt; 1\]</span></p>
+<p><span class="math display">\[e^z = \sum_{n =
+0}^{\infty}\frac{z^n}{n!} = 1 + z + \frac{1}{2!}z^2 + \frac{1}{3!}z^3 +
+\cdots, |z| &lt; +\infty\]</span></p>
+<h4 id="laurent-级数">Laurent 级数</h4>
+<p>考察<span class="math inline">\(\displaystyle \frac{1}{1 -
+z}\)</span>的 Taylor 级数，注意到其在复平面上除了奇点<span
+class="math inline">\(z =
+1\)</span>外都解析，但正是这一个奇点，使得函数只能在<span
+class="math inline">\(|z| &lt; 1\)</span>的范围展开。注意到<span
+class="math inline">\(|z| &gt; 1\)</span>时有如下等式成立：</p>
+<p><span class="math display">\[\frac{1}{1-z} = -\frac{1}{z} \frac{1}{1
+- \displaystyle\frac{1}{z}} = -(\frac{1}{z} +
+\frac{1}{z^2}+\cdots)\]</span></p>
+<p>这样一来有：</p>
+<p><span class="math display">\[\frac{1}{1 - z} = \left\{\begin{matrix}
+    1 + z + z^2 + \cdots, |z| &lt; 1 \\
+    \displaystyle -(\frac{1}{z} + \frac{1}{z^2} + \frac{1}{z^3} +
+\cdots), |z| &gt; 1
+\end{matrix}\right.\]</span></p>
+<p>上述例子带来的启示为：<strong>如果不限制一定要展开为只含正幂次项的幂级数的话，即引入负幂次项，那么有可能将函数在除了奇点所在的圆周以外的整个复平面展开</strong>。</p>
+<p>考虑级数<span class="math inline">\(\displaystyle
+\sum_{n=-\infty}^{+\infty}a_n(z -
+z_0)^n\)</span>的收敛特性：对于正（非负）幂次部分，收敛域的形式一定是<span
+class="math inline">\(|z - z_0| &lt;
+R_2\)</span>；对于负幂次部分，收敛域的形式一定是<span
+class="math inline">\(R_1 &lt; |z -
+z_0|\)</span>。因此，如果原级数收敛，那么其收敛域一定是圆环域<span
+class="math inline">\(R_1 &lt; |z - z_0| &lt;
+R_2\)</span>，并且，级数的和函数在收敛域内解析。</p>
+<p><strong>Laurent 定理</strong>的内容为：设<span
+class="math inline">\(f(z)\)</span>在圆环域<span
+class="math inline">\(R_1 &lt; |z - z_0| &lt; R_2\)</span>，那么<span
+class="math inline">\(f(z)\)</span>一定能在该域中展开为如下的形式：</p>
+<p><span class="math display">\[f(z) = \sum_{n = -\infty}^{+\infty}a_n(z
+- z_0)^n,a_n = \frac{1}{2\pi i}\oint_{C}\frac{f(\zeta)}{(\zeta - z_0)^{n
++ 1}}d\zeta, n = 0, \pm 1, \pm 2, \cdots\]</span> 其中<span
+class="math inline">\(C\)</span>为在圆环域内任意一条环绕<span
+class="math inline">\(z_0\)</span>的简单闭曲线。上述形式的级数被称为
+<strong>Laurent 级数</strong>，一个在某圆环域中解析的函数展开为 Laurent
+级数的结果是唯一的。Laurent
+级数中，称正（非负）次幂项和负幂次项分别称为洛朗级数的解析部分和主要部分。<strong>格外注意
+Laurent 级数中各项的系数与 Taylor
+级数不同，即使是正幂次项</strong>。求解函数的 Laurent
+级数前必须先将复平面划分为若干解析环。</p>
+<p>下面以求解函数<span class="math inline">\(f(z) = \displaystyle
+\frac{1}{(z - 1)(z - 2)}\)</span>在<span class="math inline">\(z =
+0\)</span>处展开的 Laurent 级数。</p>
+<p>发现函数奇点<span class="math inline">\(z = 1\)</span>和<span
+class="math inline">\(z = 2\)</span>，据此将复平面划为以下<span
+class="math inline">\(3\)</span>个解析域：</p>
+<ul>
+<li><span class="math inline">\(D_1 = \{z| |z| &lt; 1\}\)</span>；</li>
+<li><span class="math inline">\(D_2 = \{z| 1 &lt; |z| &lt;
+2\}\)</span>；</li>
+<li><span class="math inline">\(D_3 = \{z| |z| &gt; 2\}\)</span>。</li>
+</ul>
+<p>又<span class="math inline">\(f(z) = \displaystyle \frac{1}{1 - z} -
+\frac{1}{2 - z}\)</span>，利用<span class="math inline">\(\displaystyle
+\frac{1}{1-z}\)</span>的展开式最终得到如下结果：</p>
+<p><span class="math display">\[f(z) = \left\{\begin{matrix}
+    \displaystyle = \frac{1}{1 - z} -\frac{1}{2} \frac{1}{1 -
+\displaystyle \frac{z}{2}} = \sum_{n = 0}^{\infty}(1 -
+\frac{1}{2^{n+1}})z^n, 0 \leq |z| &lt; 1 \\
+    \displaystyle = -(\frac{1}{z}\frac{1}{1- \displaystyle\frac{1}{z}} +
+\frac{1}{2}\frac{1}{1 - \displaystyle\frac{z}{2}}) = -\sum_{n =
+0}^{\infty}(\frac{1}{z^{n+1}} + \frac{z^n}{2^{n+1}}), 1 &lt; |z| &lt; 2
+\\
+    \displaystyle -\frac{1}{z}\frac{1}{1 - \displaystyle\frac{1}{z}} +
+\frac{1}{z}\frac{1}{1 - \displaystyle\frac{2}{z}} = \sum_{n =
+0}^{+\infty}\frac{2^n - 1}{z^{n+1}}, |z| &gt; 2
+\end{matrix} \right.\]</span></p>
+<h3 id="留数">留数</h3>
+<h4 id="奇点的相关概念和性质">奇点的相关概念和性质</h4>
+<h5 id="孤立奇点">孤立奇点</h5>
+<p>了解奇点的相关定义对于理解留数的概念非常有帮助。设<span
+class="math inline">\(z_0\)</span>为函数<span
+class="math inline">\(f(z)\)</span>的奇点，并且存在<span
+class="math inline">\(\delta &gt; 0\)</span>，使得<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(\mathring{U}(z_0,\delta)\)</span>内解析，那么称<span
+class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<strong>孤立奇点</strong>。将函数<span
+class="math inline">\(f(z)\)</span>在其孤立奇点的去新邻域中展开为
+Laurent 级数，根据展开式的不同情况可以对鼓励奇点进行分类：</p>
+<ul>
+<li>如果展开式中不含<span class="math inline">\((z -
+z_0)\)</span>的负幂项，那么称<span
+class="math inline">\(z_0\)</span>为可去奇点，如<span
+class="math inline">\(z = 0\)</span>之于<span
+class="math inline">\(f(z)=\left\{\begin{matrix}  \displaystyle\frac{\sin
+z}{z}, z \neq 0 \\  1, z = 0 \end{matrix}\right.\)</span>；</li>
+<li>如果展开式中只包含有限个<span class="math inline">\((z -
+z_0)\)</span>的负幂项，且其中关于<span
+class="math inline">\((z-z_0)^{-1}\)</span>的最高幂次为<span
+class="math inline">\(m\)</span>，或函数<span
+class="math inline">\(f(z)\)</span>可被表示为<span
+class="math inline">\(\displaystyle \frac{g(z)}{(z -
+z_0)^m}\)</span>的形式，其中<span
+class="math inline">\(g(z)\)</span>在<span
+class="math inline">\(z_0\)</span>处解析，且<span
+class="math inline">\(g(z_0)\neq 0\)</span>，那么称<span
+class="math inline">\(z_0\)</span>为<span
+class="math inline">\(m\)</span>阶极点；</li>
+<li>如果展开式中还有无穷多关于<span class="math inline">\((z -
+z_0)\)</span>的负幂项，那么称<span
+class="math inline">\(z_0\)</span>为本性奇点。</li>
+</ul>
+<p>事实上，根据孤立奇点的定义不难得出以下的等价判断条件（在求解极限过程中可以使用
+L'Hospital's 法则）：</p>
+<ul>
+<li><span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的可去奇点<span
+class="math inline">\(\Leftrightarrow\displaystyle \lim_\limits{z \to
+z_0}\)</span>存在且有限；</li>
+<li><span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的极点<span
+class="math inline">\(\Leftrightarrow \displaystyle\lim_\limits{z \to
+z_0}f(z) = \infty\)</span>；</li>
+<li><span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的本性奇点<span
+class="math inline">\(\Leftrightarrow \displaystyle\lim_\limits{z \to
+z_0}f(z)\)</span>不存在且不为<span
+class="math inline">\(\infty\)</span>。</li>
+</ul>
+<p>函数在无穷远点的性态需要另行说明。由于该点时复平面外的理想点，故无穷远点总是<span
+class="math inline">\(f(z)\)</span>的奇点。如果函数<span
+class="math inline">\(f(z)\)</span>在无穷远点的去心邻域<span
+class="math inline">\(R &lt; |z| &lt; \infty\)</span>内解析，则称点<span
+class="math inline">\(\infty\)</span>为<span
+class="math inline">\(f(z)\)</span>的孤立奇点。作变换<span
+class="math inline">\(w =
+\displaystyle\frac{1}{z}\)</span>，可以将扩充<span
+class="math inline">\(z\)</span>平面上的<span
+class="math inline">\(\infty\)</span>去心邻域映射为扩充<span
+class="math inline">\(w\)</span>平面上的原点的去心邻域<span
+class="math inline">\(0 &lt; |w| &lt; \displaystyle
+\frac{1}{R}\)</span>。若记<span class="math inline">\(f(z) =
+f(\displaystyle \frac{1}{w}) = \phi(w)\)</span>，则<span
+class="math inline">\(\lim_\limits{z \to \infty}f(z) = \lim_\limits{w
+\to 0}\phi(w)\)</span>，因此函数<span
+class="math inline">\(f(z)\)</span>在无穷远点<span
+class="math inline">\(z = \infty\)</span>的性态可以由函数<span
+class="math inline">\(\phi(w)\)</span>在原点<span
+class="math inline">\(w = 0\)</span>的性态来刻画。</p>
+<h5 id="零点与极点的关系">零点与极点的关系</h5>
+<p>若<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(z_0\)</span>处解析，而且<span
+class="math inline">\(f(z) = (z - z_0)^m\phi(z)\)</span>，其中<span
+class="math inline">\(\phi(z)\)</span>在<span
+class="math inline">\(z_0\)</span>处解析且<span
+class="math inline">\(\phi(z_0)\neq 0\)</span>，那么称<span
+class="math inline">\(z = z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<span
+class="math inline">\(m\)</span>阶零点。事实上，不恒为<span
+class="math inline">\(0\)</span>的解析函数只有孤立零点。</p>
+<p>如果<span class="math inline">\(z_0\)</span>是<span
+class="math inline">\(f(z)\)</span>的<span
+class="math inline">\(m\)</span>阶零点，那么<span
+class="math inline">\(z_0\)</span>是<span
+class="math inline">\(\displaystyle
+\frac{1}{f(z)}\)</span>，反之亦然。</p>
+<p>设函数<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(z_0\)</span>处解析，那么以下条件等价：</p>
+<ul>
+<li><span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<span
+class="math inline">\(m\)</span>阶零点；</li>
+<li><span class="math inline">\(f^{(k)}(z_0) = 0, k \in \{0,1,2,\cdots,
+m - 1\} \wedge f^{(m)}(z_0) \neq 0\)</span>。</li>
+</ul>
+<h4 id="留数定理与应用">留数定理与应用</h4>
+<h5 id="留数定理">留数定理</h5>
+<p>根据之前章节的内容，对于<strong>复闭路积分</strong><span
+class="math inline">\(I = \displaystyle
+\oint_{\Gamma}f(z)dz\)</span>，有：</p>
+<ul>
+<li>若<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>内解析，在<span
+class="math inline">\(\Gamma\)</span>上连续，由 Cauchy 积分定理可知<span
+class="math inline">\(I = 0\)</span>；</li>
+<li>若<span class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(D\)</span>内有唯一的奇点<span
+class="math inline">\(z_0\)</span>，由秘鲁变形原理可知<span
+class="math inline">\(I = \displaystyle
+\oint_{C}f(z)dz\)</span>，此时对<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(z_0\)</span>的某去心邻域内进行 Laurent
+展开，并且在等式两端同取关于<span
+class="math inline">\(C\)</span>的正向闭路积分可知<span
+class="math inline">\(I = 2 \pi i c_{-1}\)</span>，其中残留的 Laurent
+系数<span class="math inline">\(c_{-1}\)</span>就被称为函数<span
+class="math inline">\(f(z)\)</span>在<span
+class="math inline">\(z_0\)</span>处的<strong>留数</strong>，记作：</li>
+</ul>
+<p><span class="math display">\[\text{Res}[f(z), z_0] = c_{-1} =
+\frac{1}{2\pi i}\oint_{C}f(z)dz\]</span></p>
+<p>设<span class="math inline">\(f(z)\)</span>在区域<span
+class="math inline">\(D\)</span>除了有限个孤立奇点<span
+class="math inline">\(z_1,z_2,\cdots,z_n\)</span>外处处解析，<span
+class="math inline">\(C\)</span>为<span
+class="math inline">\(D\)</span>内包含这<span
+class="math inline">\(n\)</span>个奇点的一条正向简单闭曲线，那么：</p>
+<p><span class="math display">\[\oint_{C}f(z)dz = 2\pi i \sum_{k =
+1}^{n}\text{Res}[f(z), z_k]\]</span>
+以上就是<strong>留数定理</strong>的内容，利用复合闭路定理易证。</p>
+<p>设<span
+class="math inline">\(C\)</span>是复平面上的一条简单闭曲线，并且记<span
+class="math inline">\(D\)</span>和<span
+class="math inline">\(G\)</span>分别为是<span
+class="math inline">\(C\)</span>和<span
+class="math inline">\(C^-\)</span>围成的区域，如果区域<span
+class="math inline">\(D\)</span>内的奇点很多，但是区域<span
+class="math inline">\(G\)</span>内的奇点很少，甚至只有无穷远点<span
+class="math inline">\(\infty\)</span>为奇点，那么沿<span
+class="math inline">\(C^-\)</span>上的积分显然比沿<span
+class="math inline">\(C\)</span>的积分简单很多，因此函数在无穷远点的留数时是必要研究的。设函数<span
+class="math inline">\(f(z)\)</span>在圆环域<span class="math inline">\(R
+&lt; |z| &lt; \infty\)</span>解析，<span
+class="math inline">\(C\)</span>是该圆环域中环绕原点的任何一条简单闭曲线，那么<span
+class="math inline">\(f(z)\)</span>在无穷远处的留数被定义为：</p>
+<p><span class="math display">\[\text{Res}[f(z), \infty] = \displaystyle
+\frac{1}{2\pi i}\oint_{C^-}f(z)dz = c_{-1}\]</span> 其中<span
+class="math inline">\(C^-\)</span>应理解为圆环域内环绕<span
+class="math inline">\(\infty\)</span>的任何一条简单闭曲线。与复平面上的点不同，当<span
+class="math inline">\(\infty\)</span>为可去奇点时，<span
+class="math inline">\(\text{Res}[f(z), \infty]\)</span>不一定为<span
+class="math inline">\(0\)</span>，例如将<span class="math inline">\(f(z)
+= \displaystyle \frac{1}{1-z}\)</span>在<span class="math inline">\(|z|
+&gt; 1\)</span>内展开为 Laurent 级数，易得：</p>
+<p><span class="math display">\[c_{-1} = -1 \Rrightarrow
+\text{Res}[f(z), \infty] = 1\]</span></p>
+<p>这些求解复闭路积分的问题可以转化为求解留数的问题，若知晓奇点的类型，则对求解留数更有利：</p>
+<ul>
+<li>如果<span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<strong>可去奇点</strong>，那么<span
+class="math inline">\(\text{Res}[f(z), z_0] = 0\)</span>；</li>
+<li>如果<span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<strong>本性奇点</strong>，那么只能按照定义将函数在该点
+Laurent 展开；</li>
+<li>如果<span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<strong>极点</strong>，那么可以利用一些有用的法则求解<span
+class="math inline">\(c_{-1}\)</span>。</li>
+</ul>
+<p>下面给出<span class="math inline">\(z_0\)</span>为极点的情况下，<span
+class="math inline">\(\text{Res}[f(z), z_0]\)</span>的求法：</p>
+<ul>
+<li>法则一：若<span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的一阶极点，那么<span
+class="math inline">\(\text{Res}[f(z),z_0] = \lim_\limits{z \to
+z_0}(z-z_0)f(z)\)</span>；</li>
+<li>法则二：若<span class="math inline">\(z_0\)</span>为<span
+class="math inline">\(f(z)\)</span>的<span
+class="math inline">\(m\)</span>阶极点，那么<span
+class="math inline">\(\text{Res}[f(z),z_0] = \displaystyle
+\frac{1}{(m-1)!}\lim_\limits{z \to
+z_0}\frac{d^{m-1}}{dz^{m-1}}\{(z-z_0)^mf(z)\}\)</span>；</li>
+<li>法则三：若<span class="math inline">\(f(z) = \displaystyle
+\frac{P(z)}{Q(z)}\)</span>，<span class="math inline">\(Q(z_0) =
+0\)</span>，<span class="math inline">\(Q&#39;(z_0) \neq
+0\)</span>，<span class="math inline">\(P(z_0) \neq
+0\)</span>，并且<span class="math inline">\(P(z)\)</span>和<span
+class="math inline">\(Q(z)\)</span>在<span
+class="math inline">\(z_0\)</span>解析，那么<span
+class="math inline">\(z_0\)</span>是<span
+class="math inline">\(f(z)\)</span>的简单极点，则<span
+class="math inline">\(\text{Res}[f(z),z_0] = \displaystyle
+\frac{P(z_0)}{Q&#39;(z_0)}\)</span>；</li>
+<li>法则四：<span class="math inline">\(\text{Res}[f(z), \infty] =
+\displaystyle \frac{1}{2\pi i} \oint_{C^-}f(z)dz = -\frac{1}{2\pi
+i}\oint_{c}f(\frac{1}{\epsilon})\frac{1}{\epsilon^2}d\epsilon =
+-\text{Res}[f(\frac{1}{z})\cdot \frac{1}{z^2},
+0]\)</span>，另外，如果<span
+class="math inline">\(f(z)\)</span>在扩充复平面内只有有限个孤立奇点，那么<span
+class="math inline">\(f(z)\)</span>所有奇点（包括<span
+class="math inline">\(\infty\)</span>）的留数总和必定为<span
+class="math inline">\(0\)</span>。</li>
+</ul>
+<p>法则一和法则二易证。<span class="math inline">\(f(z)(z-z_0)^{m} =
+c_{-m} + \cdots + c_{-1}(z-z_0)^{m-1} + \cdots\)</span>，式中只含有<span
+class="math inline">\((z-z_0)\)</span>的正幂次的项，那么：</p>
+<p><span
+class="math display">\[\frac{d^{m-1}}{dz^{m-1}}\{(z-z_0)^mf(z)\} =
+(m-1)!c_{-1}\]</span> 令两端<span class="math inline">\(z\to
+z_0\)</span>，同除<span
+class="math inline">\((m-1)!\)</span>即可得到两个法则。</p>
+<p>对于法则三而言，由于<span class="math inline">\(Q(z_0) =
+0\)</span>和<span class="math inline">\(Q&#39;(z_0) \neq
+0\)</span>，可知<span class="math inline">\(z_0\)</span>时<span
+class="math inline">\(Q(z)\)</span>的一阶零点，从而<span
+class="math inline">\(z_0\)</span>是<span
+class="math inline">\(\displaystyle
+\frac{1}{Q(z)}\)</span>的一阶极点，并且<span
+class="math inline">\(P(z_0) \neq 0\)</span>，因而<span
+class="math inline">\(z_0\)</span>是<span
+class="math inline">\(f(z)\)</span>的一阶极点，根据法则一可得：</p>
+<p><span class="math display">\[\text{Res}[f(z), z_0] = \lim_\limits{z
+\to z_0}\frac{P(z)}{\displaystyle \frac{Q(z)}{(z-z_0)}} =
+\frac{P(z_0)}{Q&#39;(z_0)}\]</span></p>
+<h5 id="留数在定积分计算中的应用">留数在定积分计算中的应用</h5>
+<p>某些定积分可以利用留数进行计算，一般的方法为将定积分转化为复平面上的环路积分进行计算。</p>
+<p><img src = "/static/images/复变函数积分图示3.png"/></p>
+<p>如图，对于实积分<span class="math inline">\(\displaystyle
+\int_a^bf(x)dx\)</span>，变量<span
+class="math inline">\(x\)</span>定义在闭区间<span
+class="math inline">\([a,b]\)</span>，记<span class="math inline">\(l_1
+= \overline{ab}\)</span>，构造闭路曲线<span class="math inline">\(l =
+l_1 + l_2\)</span>。为了将定积分变为闭路积分，闭曲线<span
+class="math inline">\(l\)</span>必须落在被积函数f(x)<span
+class="math inline">\(对应的复变函数\)</span>f(z)$的解析范围内，这时有如下等式：</p>
+<p><span class="math display">\[\oint_l f(z) dz = \int_a^bf(x)dx +
+\int_{l_2}f(z)dz \Rightarrow \int_a^bf(x)dx = \oint_l f(z) dz -
+\int_{l_2}f(z)dz = I_1 - I_2\]</span></p>
+<p><span class="math inline">\(I_1\)</span>可以利用留数计算，<span
+class="math inline">\(I_2\)</span>容易计算或等于<span
+class="math inline">\(0\)</span>，此时定积分可解。</p>
+<p>对于形如<span class="math inline">\(\displaystyle \int_0^{2\pi}R(\cos
+\theta, \sin \theta)d \theta\)</span>的积分，<span
+class="math inline">\(R(u,v)\)</span>是<span
+class="math inline">\(u,v\)</span>的有理数，作变量代换<span
+class="math inline">\(z = e^{i\theta}\)</span>，有：</p>
+<p><span class="math display">\[\cos \theta = \frac{e^{i\theta} +
+e^{-i\theta}}{2} = \frac{z^2+1}{2z}, \sin \theta = \frac{e^{i\theta} -
+e^{-i\theta}}{2i} = \frac{z^2-1}{2iz},dz = ie^{i\theta}d\theta = iz
+d\theta\]</span> 实积分化为沿着正向圆周的复积分：</p>
+<p><span class="math display">\[\int_0^{2\pi}R(\cos \theta, \sin
+\theta)d \theta=\oint_{|z| = 1}
+R(\frac{z^2+1}{2z},\frac{z^2-1}{2iz})\frac{dz}{iz} = \oint_{|z| =
+1}f(z)dz\]</span> 其中<span class="math inline">\(f(z)\)</span>是<span
+class="math inline">\(z\)</span>的有理函数，且在单位圆周<span
+class="math inline">\(|z| =
+1\)</span>上分母不为，根据留数定理最终有：</p>
+<p><span class="math display">\[\int_{0}^{2\pi}R(\cos \theta, \sin
+\theta)d\theta = \oint_{|z| = 1}f(z)dz = 2\pi
+i\sum_{k=1}^n\text{Res}[f(z),z_k]\]</span> 其中<span
+class="math inline">\(z_k(k=1,2,\cdots,n)\)</span>为圆周<span
+class="math inline">\(|z| =
+1\)</span>内的孤立奇点。值得注意，<strong>三角函数有理式的定积分只有在积分区间长度为<span
+class="math inline">\(2\pi\)</span>时，才可由变换<span
+class="math inline">\(z =
+e^{i\theta}\)</span>化为单位圆周上的复闭路积分</strong>。</p>
+<p>对于形如<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}R(x)dx\)</span>的积分，当满足三个条件时，有<span
+class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}R(x)dx =
+2\pi i \sum_{k}\text{Res}[R(z),z_k]\)</span>，其中<span
+class="math inline">\(\{z_k\}\)</span>为<strong>上半复平面的所有孤立奇点</strong>：</p>
+<ul>
+<li><span class="math inline">\(\displaystyle R(x) =
+\frac{P(x)}{Q(x)}\)</span>，其中<span
+class="math inline">\(P(x)\)</span>和<span
+class="math inline">\(Q(x)\)</span>为多项式；</li>
+<li>分母<span class="math inline">\(Q(x)\)</span>的次数比分子<span
+class="math inline">\(P(x)\)</span>的次数至少高两次；</li>
+<li>分母<span class="math inline">\(Q(x)\)</span>没有实零点。</li>
+</ul>
+<p>事实上，设<span class="math inline">\(R(z) = \displaystyle \frac{z^n
++ a_1 z^{n-1} + \cdots a_n}{z^m + b_1 z^{m-1} + \cdots b_m}, m - n \geq
+2\)</span>，显然<span
+class="math inline">\(R(z)\)</span>只有有限个孤立的极点，取积分路径如图所示，其中<span
+class="math inline">\(C_R\)</span>是以原点为中心，<span
+class="math inline">\(R\)</span>为半径的上半平面的半圆周。取<span
+class="math inline">\(R\)</span>适当大，使得<span
+class="math inline">\(R(z)\)</span>所有的在上半平面的所有极点都被包在这闭路积分曲线<span
+class="math inline">\(C = [-R,R] + C_R\)</span>内。</p>
+<p><img src = "/static/images/复变函数积分图示4.png"/> 因此有：</p>
+<p><span class="math display">\[\oint_{C}R(z)dz = \int_{-R}^{R}R(x)dx +
+\int_{C_R}R(z)dz = 2\pi i\sum\text{Res}[R(z), z_k]\]</span>
+根据闭路变形原理，该等式不因<span
+class="math inline">\(C_R\)</span>的半径<span
+class="math inline">\(R\)</span>的不断增大而有所改变，即：</p>
+<p><span class="math display">\[\lim_\limits{R \to
++\infty}[\int_{-R}^{R}R(x)dx + \int_{C_R}R(z)dz] = 2\pi
+i\sum\text{Res}[R(z), z_k]\]</span> 现需对<span
+class="math inline">\(\displaystyle
+\int_{C_R}R(z)dz\)</span>进行估计，先有：</p>
+<p><span class="math display">\[|R(z)| =
+\frac{1}{|z|^{m-n}}\frac{|1+a_1z^{-1}+\cdots +a_n
+z^{-n}|}{|1+b_1z^{-1}+\cdots +b_m z^{-m}|} \leq
+\frac{1}{|z|^{m-n}}\frac{1+|a_1z^{-1}+\cdots +a_n
+z^{-n}|}{1-|b_1z^{-1}+\cdots +b_m z^{-m}|}\]</span> 当<span
+class="math inline">\(|z|\)</span>充分大时,总有：</p>
+<p><span class="math display">\[|a_1z^{-1}+\cdots +a_n z^{-n}| &lt;
+\frac{1}{10}, |b_1z^{-1}+\cdots +b_m z^{-m}| &lt; \frac{1}{10}\]</span>
+再由<span class="math inline">\(m-n \geq 2\)</span>，有：</p>
+<p><span class="math display">\[|R(z)| &lt; \frac{1}{|z|^{m-n}} \cdot
+\frac{1 + \displaystyle \frac{1}{10}}{1 - \displaystyle \frac{1}{10}}
+&lt; \frac{2}{|z|^2}\]</span> 最终有：</p>
+<p><span class="math display">\[\int_{C_R}R(z)dz \leq \int_{C_R}|R(z)|ds
+\leq \frac{2}{R^2}\pi R &lt; \frac{2\pi}{R}\]</span> 令<span
+class="math inline">\(R\to +\infty\)</span>，则<span
+class="math inline">\(\displaystyle \int_{C_R}R(z)dz \to
+0\)</span>，所以：</p>
+<p><span class="math display">\[\displaystyle
+\int_{-\infty}^{+\infty}R(x)dx = 2\pi i
+\sum_{k}\text{Res}[R(z),z_k]\]</span></p>
+<p>对于形如<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}R(x)e^{iax}dx(a &gt;
+0)\)</span>的积分，当满足三个条件时：</p>
+<ul>
+<li><span class="math inline">\(\displaystyle R(x) =
+\frac{P(x)}{Q(x)}\)</span>，其中<span
+class="math inline">\(P(x)\)</span>和<span
+class="math inline">\(Q(x)\)</span>为多项式；</li>
+<li>分母<span class="math inline">\(Q(x)\)</span>的次数比分子<span
+class="math inline">\(P(x)\)</span>的次数至少高一次；</li>
+<li>分母<span class="math inline">\(Q(x)\)</span>没有实零点，</li>
+</ul>
+<p>有<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}R(x)dx = 2\pi i
+\sum_{k}\text{Res}[R(z)e^{iaz},z_k]\)</span>，其中<span
+class="math inline">\(\{z_k\}\)</span>为<strong>上半复平面的所有孤立奇点</strong>。注意到：</p>
+<p><span class="math display">\[\displaystyle
+\int_{-\infty}^{+\infty}R(x)dx = 2\pi i
+\sum_{k}\text{Res}[R(z)e^{iaz},z_k] = A+iB\]</span> 由欧拉公式有<span
+class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}R(x)\cos ax
+dx = A\)</span>和<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}R(x)\sin ax dx =
+B\)</span>，即要求上述类型的广义定积分，可转化为形如<span
+class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}R(x)e^{iax}dx(a &gt;
+0)\)</span>的复积分然后再用留数求解。</p>
+<h3 id="共形映射">共形映射</h3>
+<p>之前的内容从<strong>数</strong>的角度对解析函数进行了研究，本章将从<strong>形</strong>的角度探究解析函数的相关性质。</p>
+<p>本章不再另作笔记，可以查阅<a href = "/static/files/复变函数与积分变换.pdf" style = "text-decoration: none" target = "_blank">教材</a>。</p>
+<h2 id="fourier-变换">Fourier 变换</h2>
+<h3 id="周期函数的-fourier-级数">周期函数的 Fourier 级数</h3>
+<h4 id="三角函数系的正交性">三角函数系的正交性</h4>
+<p>不妨记：</p>
+<p><span class="math display">\[S_{\omega_0}=\{1, \sin \omega_0 t,
+\cdots, \sin n \omega_0 t,\cdots, \cos \omega_0 t , \cdots, \cos n
+\omega_0 t, \cdots\},n\in \text{N}\]</span></p>
+<p>那么<span class="math inline">\(\forall f(t), g(t) \in S_{\omega_0},
+f(t) \neq g(t) \Leftrightarrow \displaystyle
+\int_{t_0}^{t_0+T}f(t)g(t)dt=0\)</span>，其中<span
+class="math inline">\(T =
+\displaystyle\frac{2\pi}{\omega_0}\)</span>，这一性质被称为<strong>三角函数系的正交性</strong>，这一性质在求解
+Fourier 级数被使用。</p>
+<h4 id="fourier-级数的三角形式">Fourier 级数的三角形式</h4>
 <p>记<span class="math inline">\(f_{T}(t)\)</span>是以<span
 class="math inline">\(T\)</span>为周期的函数，若函数在<span
 class="math inline">\([\displaystyle
--\frac{T}{2},\frac{T}{2}]\)</span>满足迪利克雷条件，那么函数可以在该区间上展开成傅里叶级数，即；</p>
+-\frac{T}{2},\frac{T}{2}]\)</span>满足 Dirichlet 条件：</p>
+<ul>
+<li>连续或只有有限个第一类间断点；</li>
+<li>只有有限个极值点，</li>
+</ul>
+<p>令<span class="math inline">\(\omega_0 = \displaystyle
+\frac{2\pi}{T}\)</span>（称为基频），则在<span
+class="math inline">\(f_T(t)\)</span>的<strong>连续点</strong>处，有；</p>
 <p><span class="math display">\[f_{T}(t)=\displaystyle
-\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n \cos(n\omega t)+b_n \sin(n \omega
-t))\]</span></p>
-<p>上式中的各项系数可由如下公式求出，注意<span
+\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n \cos n\omega_0 t+b_n \sin n
+\omega_0 t)\]</span> 在间断点处，上式左端为<span
+class="math inline">\(\displaystyle
+\frac{1}{2}[f_T(t+0)+f_T(t-0)]\)</span>，这就是 <strong>Fourier
+级数的三角形式</strong>，式中的各项系数可由如下公式求出：</p>
+<p><span class="math display">\[a_n=\displaystyle \frac{2}{T}
+\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t) \cos n\omega_0
+tdt,n=0,1,2,\cdots\]</span> <span
+class="math display">\[b_n=\displaystyle\frac{2}{T}
+\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t) \sin n\omega_0
+tdt,n=1,2,\cdots\]</span> 注意<span
 class="math inline">\(b_{-n}=-b_n\)</span>，这一点会在求解傅里叶级数的复指数形式中出现。</p>
-<p><span
-class="math display">\[a_0=\displaystyle\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)dt\]</span>
-<span class="math display">\[a_n=\displaystyle \frac{2}{T}
-\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t) \sin(n\omega t)dt\]</span> <span
-class="math display">\[b_n=\displaystyle\frac{T}{2}
-\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t) \sin(n\omega t)dt\]</span></p>
-<p>事实上，由于傅里叶级数系数的求解利用了三角函数系的正交性，不妨记</p>
-<p><span class="math display">\[S_{\omega}=\{1, \sin \omega t, \cdots,
-\sin n \omega t,\cdots, \cos \omega t , \cdots, \cos n \omega t,
-\cdots\},n\in \text{N}\]</span></p>
-<p>那么<span class="math inline">\(\forall f(t), g(t) \in S_{\omega},
-f(t) \neq g(t) \Leftrightarrow \displaystyle
-\int_{t_0}^{t_0+T}f(t)g(t)dt=0\)</span>，利用这一性质即可求解傅里叶级数的系数了。</p>
+<p>事实上，还可以对 Fourier 级数的三角形式进行改写：</p>
+<p><span class="math display">\[A_0 = \displaystyle \frac{a_0}{2},$A_n =
+\sqrt{a_n^2 + b_n^2},\cos \theta_n = \frac{a_n}{A_n}, \sin \theta =
+\frac{-b_n}{A_n}\]</span> <span class="math display">\[\Rightarrow
+f_T(t) = A_0 + \sum_{n = 1}^{\infty}A_n\cos(n \omega_0 t +
+\theta_n)\]</span> 其中，振幅<span
+class="math inline">\(A_n\)</span>反映了在信号<span
+class="math inline">\(f_T(t)\)</span>中频率为<span
+class="math inline">\(n\omega_0\)</span>的简谐波所占有的份额，相位<span
+class="math inline">\(\theta_n\)</span>反映了信号<span
+class="math inline">\(f_T(t)\)</span>中频率为<span
+class="math inline">\(n\omega_0\)</span>的简谐波沿着时间轴移动的大小，这两个指标完全定量地刻画了信号的频率特征。这说明了周期信号重要的两个特点：</p>
+<ul>
+<li>周期信号可以分解为一些列固定频率的简谐波之和，这些简谐波的角频率分别为基频<span
+class="math inline">\(\omega_0\)</span>的倍数；</li>
+<li>任何一个周期为<span class="math inline">\(T\)</span>的周期信号<span
+class="math inline">\(f_T(t)\)</span>并不包含所有的频率成分，其频率时以基频<span
+class="math inline">\(\omega_0\)</span>为间隔离散地取值的。</li>
+</ul>
+<h4 id="fourier-级数的指数形式">Fourier 级数的指数形式</h4>
 <p>利用复指数的性质可知：</p>
 <p><span class="math display">\[\forall \theta \in \text{R},
 e^{j\theta}=\cos\theta + j\sin\theta \Rightarrow \sin \theta
 =\displaystyle \frac{e^{j\theta}-e^{-j\theta}}{2j},\cos \theta =
 \displaystyle \frac{e^{j\theta}+e^{-j\theta}}{2}\]</span></p>
-<p>将傅里叶级数中的正弦函数和余弦函数代入为复指数可得：</p>
-<p><span class="math inline">\(f_{T}(t)=\displaystyle \frac{a_0}{2} +
-\sum_{n=1}^{\infty}(\frac{e^{jn\omega t}+e^{-jn\omega t}}{2}a_n -
-\frac{e^{jn\omega t}-e^{-jn\omega
-t}}{2}jb_n)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(\frac{a_n-jb_n}{2}e^{jn\omega
-t} + \frac{a_n+jb_n}{2}e^{-jn \omega t})\)</span></p>
+<p>对 Fourire 级数的三角形式中使用欧拉公式可得：</p>
+<p><span
+class="math display">\[f_{T}(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(\frac{a_n-jb_n}{2}e^{jn\omega_0
+t} + \frac{a_n+jb_n}{2}e^{-jn \omega_0 t})\]</span></p>
 <p>若令<span
 class="math inline">\(c_0=\displaystyle\frac{a_0}{2}=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_{T}(t)dt\)</span>及<span
 class="math inline">\(c_n\displaystyle=\frac{a_n-jb_n}{2}=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_{T}(t)e^{-jn
-\omega t}dt\)</span>，可得到傅里叶级数得复指数形式。</p>
-<p>接下来可以从形式上得到函数的傅里叶积分形式。</p>
+\omega t}dt\)</span>，可得到傅里叶级数得复指数形式：</p>
+<p><span
+class="math display">\[f_{T}(t)=\sum_{n=-\infty}^{+\infty}c_ne^{jn\omega_0
+t}\]</span></p>
+<p>对于 Fourier 级数的指数形式有三点说明：</p>
+<ul>
+<li>对于给定的函数，其 Fourier 级数的展开式是唯一的；</li>
+<li>在计算展开系数<span
+class="math inline">\(c_n\)</span>时，可以在任意一个长度为<span
+class="math inline">\(T\)</span>的区间上计算其中的积分；</li>
+<li>利用<strong>解析延拓</strong>，可以将结论运用在只定义在某个有限区间上的函数，换言之，<strong>定义在有限区间上的函数，同样可以展开为
+Fourier 级数</strong>。</li>
+</ul>
+<p>类似三角形式，复指数形式也可以考虑其几何意义，不难得出<span
+class="math inline">\(|c_n|\)</span>是振幅、<span
+class="math inline">\(\text{arg}c_n\)</span>是相位的结论。</p>
+<h4 id="fourier-级数的物理含义">Fourier 级数的物理含义</h4>
+<p>对于复指数形式的级数而言，称<span
+class="math inline">\(|c_n|\)</span>为振幅谱，<span
+class="math inline">\(\text{arg}c_n\)</span>为<strong>相位谱</strong>，称<span
+class="math inline">\(c_n\)</span>为<strong>频谱</strong>。<strong>频谱图</strong>将<span
+class="math inline">\(|c_n|\)</span>、<span
+class="math inline">\(\text{arg}c_n\)</span>与角频率<span
+class="math inline">\(n\omega_0\)</span>的关系画成图形。</p>
+<p><img src = "/static/images/频谱图示例.png"/></p>
+<h3 id="非周期函数的-fourier-变换">非周期函数的 Fourier 变换</h3>
+<h4 id="fourier-积分公式与-fourier-变换的定义">Fourier 积分公式与
+Fourier 变换的定义</h4>
+<p>借助 Fourier
+级数的展开，人们能够利用频谱分析的手段对周期信号进行分析，然而频谱分析的手段对实际问题中存在着的大量的非周期函数却是无效的。因此引入
+<strong>Fourier 积分</strong>，考虑对非周期函数进行频谱分析。设<span
+class="math inline">\(f(t)\)</span>满足如下条件：</p>
+<ul>
+<li>在<span class="math inline">\((-\infty,
++\infty)\)</span>上的任何一个有限区间都满足 Dirichlet 条件；</li>
+<li>绝对可积，</li>
+</ul>
+<p>则在<span
+class="math inline">\(f(t)\)</span>的<strong>连续点</strong>处有：</p>
+<p><span class="math display">\[f(t) =
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}\bigg[\int_{-\infty}^{+\infty}
+f(t) e^{-j\omega t} dt \bigg]e^{j\omega t}d\omega\]</span>
+在间断点处，上式左端为<span class="math inline">\(\displaystyle
+\frac{1}{2}[f(t+0)+f(t-0)]\)</span>，这就是 <strong>Fourier
+级数的三角形式</strong>。</p>
+<p>以下推导从形式上得到了函数的 Fourier 积分。</p>
 <p><span class="math display">\[f_{T}(t)=\displaystyle
 \sum_{n=-\infty}^{+\infty}c_ne^{j n \omega
 t}=\frac{1}{T}\sum_{n=-\infty}^{+\infty}e^{jn\omega
 t}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_{T}(t)e^{-jn\omega
-t}dt\]</span></p>
+t}dt,\omega_n=n\omega_0\]</span></p>
 <p>令<span class="math inline">\(\Delta
 \omega_n=\omega_{n+1}-\omega_{n}\)</span>，那么<span
 class="math inline">\(\Delta \omega_n=\displaystyle\frac{2\pi}{T}\to0
-\Leftrightarrow T\to +\infty\)</span>。再记<span
-class="math inline">\(f(t)=\lim_\limits{T\to+\infty}f_T(t)\)</span>，最终可以得到如下式子，这就是函数的傅里叶积分。</p>
+\Rightarrow T\to +\infty\)</span>，记<span
+class="math inline">\(f(t)=\lim_\limits{T\to+\infty}f_T(t)\)</span>，即可得到
+Fourier 积分：</p>
 <p><span class="math display">\[f(t)=\lim_\limits{\Delta \omega_n \to 0}
 \displaystyle\frac{1}{2\pi} \sum_{n=-\infty}^{+\infty}e^{j \omega_n t}
-\Delta \omega_n \int_{-\frac{T}{2}}^{\frac{T}{2}}f(\tau)e^{-j n \omega
-\tau}d
-\tau=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\int_{-\infty}^{\infty}f(\tau)e^{j\omega(t-
-\tau)}d\tau d\omega,\omega_n=n\omega\]</span></p>
-<p>事实上，函数<span
-class="math inline">\(f(t)\)</span>的傅里叶级数实际上是对函数先后进行了傅里叶变换和傅里叶逆变换，即：</p>
+\Delta \omega_n \int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)e^{-j n \omega t}d
+t=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\bigg[\int_{-\infty}^{+\infty}
+f(t) e^{-j\omega t} dt \bigg]e^{j\omega t}d\omega\]</span></p>
+<p>事实上，函数<span class="math inline">\(f(t)\)</span>的 Fourier
+积分实际上是对函数先后进行了 Fourier 变换和 Fourier 逆变换，即：</p>
 <p><span class="math display">\[F(\omega) =
 \mathcal{F}[f(t)]=\displaystyle \int_{-\infty}^{+\infty}f(t)e^{-j\omega
 t}dt\]</span></p>
 <p><span class="math display">\[f(t)=\mathcal{F}^{-1}[F(\omega)] =
 \displaystyle \frac{1}{2\pi} \int_{-\infty}^{+\infty}F(\omega)e^{j\omega
-t}d \omega\]</span></p>
-<p>如果<span
-class="math inline">\(f(t)\)</span>为奇函数，那么可以得到傅里叶正弦变换的表达式。</p>
-<p><span class="math display">\[\mathcal{F}_{s}[f(t)]=\displaystyle
-\int_{0}^{+\infty}f(t) \sin \omega tdt\]</span></p>
-<p><span
-class="math display">\[f(t)=\mathcal{F}_s^{-1}[F(\omega)]=\displaystyle
-\frac{2}{\pi}\int_{0}^{+\infty}F(\omega)\sin \omega t d
-\omega\]</span></p>
-<p>如果<span
-class="math inline">\(f(t)\)</span>为偶函数，那么可以得到傅里叶余弦变换的表达式。</p>
-<p><span class="math display">\[\mathcal{F}_{c}[f(t)]=\displaystyle
-\int_{0}^{+\infty}f(t) \cos \omega tdt\]</span></p>
-<p><span
-class="math display">\[f(t)=\mathcal{F}_c^{-1}[F(\omega)]=\displaystyle
-\frac{2}{\pi}\int_{0}^{+\infty}F(\omega)\cos \omega t d
-\omega\]</span></p>
-<h4 id="性质">性质</h4>
-<h5 id="线性">线性</h5>
-<p>由积分的线性显而易见，在这里不再证明。</p>
+t}d \omega\]</span> 其中<span
+class="math inline">\(F(\omega)\)</span>被称为<strong>象函数</strong>，<span
+class="math inline">\(f(t)\)</span>被称为<strong>象原函数</strong>，称<span
+class="math inline">\(f(t) \leftrightarrow F(\omega)\)</span>为 Fourier
+变换对。注意上述变换中的广义积分都取 <strong>Cauchy
+主值，因此进行相关计算时要利用好 Euler 公式和奇偶性</strong>。</p>
+<h4 id="fourier-变换的物理含义">Fourier 变换的物理含义</h4>
+<p>与周期函数的 Fourier 级数的物理意义一样，非周期函数的 Fourier
+变换同样刻画了频谱特性，不同之处在于<strong>非周期函数的频谱是连续取值的</strong>。象函数<span
+class="math inline">\(F(\omega)\)</span>反映的是函数<span
+class="math inline">\(f(t)\)</span>中各频率分量的分布密度，它是复值函数，故可以表示为<span
+class="math inline">\(F(\omega) = |F(\omega)|e^{j
+\text{arg}F(\omega)}\)</span>。称<span
+class="math inline">\(F(\omega)\)</span>为<strong>频谱密度函数</strong>（简称为<strong>连续频谱或者频谱</strong>）；称<span
+class="math inline">\(|F(\omega)|\)</span>为振幅谱；称<span
+class="math inline">\(\text{arg}F(\omega)\)</span>为相位谱。</p>
+<h4 id="单位冲激函数">单位冲激函数</h4>
+<h5 id="基本概念-1">基本概念</h5>
+<p>在如数学、物理学以及实际工程技术中，一些常用的函数都不能进行 Fourier
+变换；并且有很多瞬时物理量无法用通常的函数进行描述，例如质点等等。为此引入<strong>单位冲激函数（也称
+Dirac 函数或<span
+class="math inline">\(\delta\)</span>函数）</strong><span
+class="math inline">\(\delta(t)\)</span>：</p>
+<ul>
+<li>当<span class="math inline">\(t \neq 0\)</span>时，<span
+class="math inline">\(\delta = 0\)</span>；</li>
+<li><span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}\delta(t)dt = 1\)</span>。</li>
+</ul>
+<p>关于 Dirac 函数，应当注意以下两点：</p>
+<ul>
+<li>该函数并非是经典意义下的函数，因此通常称之为广义函数或者奇异函数；</li>
+<li>它不能用通常意义下的映射来理解设使用，而总是<strong>通过它的性质来使用它</strong>。</li>
+</ul>
+<h5 id="性质-1">性质</h5>
+<p>Dirac 函数具有如下性质：</p>
+<ul>
+<li><strong>筛选性质</strong> 设函数<span
+class="math inline">\(f(t)\)</span>定义在<span
+class="math inline">\(\text{R}\)</span>上的有界函数，且在<span
+class="math inline">\(t=t_0\)</span>处连续，则： <span
+class="math display">\[\displaystyle\int_{-\infty}^{+\infty}\delta(t-t_0)f(t)dt
+= f(t_0)\]</span></li>
+<li><strong>对称性质</strong> Dirac 函数是偶函数；</li>
+<li><strong>积分性质</strong> Heaviside 函数被定义为<span
+class="math inline">\(u(t) = \left\{\begin{matrix} 1, t &gt; 0 \\ 0, t
+&lt; 0 \end{matrix}\right.\)</span>，那么<span
+class="math inline">\(\displaystyle \int_{-\infty}^t\delta(t)dt =
+u(t)\)</span>，反过来，等式两端对<span
+class="math inline">\(t\)</span>求导有<span
+class="math inline">\(u&#39;(t) = \delta(t)\)</span>。</li>
+</ul>
+<h5 id="图形表示">图形表示</h5>
+<p>通常用一条<strong>从原点出发的、长度为<span
+class="math inline">\(1\)</span>的有向线段</strong>来表示，有向线段的长度被称为冲激强度。</p>
+<p><img src = "/static/images/冲激函数图示.png" /></p>
+<h5 id="dirac-函数的-fourier-变换">Dirac 函数的 Fourier 变换</h5>
+<p>易得 Fourier 变换对<span class="math inline">\(\delta(t)
+\leftrightarrow
+1\)</span>，可知单位冲激函数包含所有的频率成分，且它们具有相同的幅度，故称此频谱图为<strong>均匀频谱或白色频谱</strong>。</p>
+<p><img src = "/static/images/Fourier-Transform-of-Dirac-Function.png" /></p>
+<p>并且可以得到重要公式：</p>
+<p><span class="math display">\[\int_{-\infty}^{+\infty}e^{j\omega
+t}d\omega = 2\pi \delta(t)\]</span></p>
+<p>在<span class="math inline">\(\delta\)</span>函数的 Fourier
+变换中，其广义积分是根据<span
+class="math inline">\(\delta\)</span>函数的筛选性质直接给出的，而不是按照通常的积分方式得到的，这样的变换被称为<strong>广义
+Fourier 变换</strong>。在使用<span
+class="math inline">\(\delta\)</span>函数时，应当牢记三个性质和一个上述重要公式。</p>
+<h4 id="fourier-变换的性质">Fourier 变换的性质</h4>
+<h5 id="线性性质">线性性质</h5>
+<p>由积分的线性显而易见。</p>
 <h5 id="位移性质">位移性质</h5>
-<p><span class="math display">\[\mathcal{F}[f(t\pm t_0)]=e^{j\omega
-t_0}\mathcal{F}[f(t)]\]</span></p>
-<p><span class="math display">\[\mathcal{F}^{-1}[f(\omega \mp
-\omega_0)]=f(t)e^{\pm j\omega_0 t}\]</span></p>
+<p>设<span class="math inline">\(t_0\)</span>和<span
+class="math inline">\(\omega_0\)</span>都是常数，则：</p>
+<ul>
+<li><strong>时移性质</strong> <span
+class="math inline">\(\mathcal{F}[f(t\pm t_0)]=e^{\pm j\omega
+t_0}\mathcal{F}[f(t)]\)</span>；</li>
+<li><strong>频移性质</strong> <span
+class="math inline">\(\mathcal{F}^{-1}[f(\omega \pm
+\omega_0)]=f(t)e^{\mp j\omega_0 t}\)</span>。</li>
+</ul>
+<h5 id="相似性质">相似性质</h5>
+<p>设<span class="math inline">\(a\)</span>为非零常数，则<span
+class="math inline">\(\mathcal{F}[f(at)] =
+\displaystyle\frac{1}{|a|}F(\frac{\omega}{a})\)</span>。</p>
 <h5 id="微分性质">微分性质</h5>
-<p><span class="math display">\[\mathcal{F}[f&#39;(t)]=j\omega
-\mathcal{F}[f(t)]\]</span></p>
-<p>若<span class="math inline">\(\lim\limits_{t\to
-\infty}f(t)=0\)</span>，那么有：</p>
+<p>若<span class="math inline">\(\lim\limits_{|t|\to
+\infty}f(t)=0\)</span>，那么<span
+class="math inline">\(\mathcal{F}[f&#39;(t)]=j\omega
+\mathcal{F}[f(t)]=j\omega F(\omega)\)</span>。</p>
 <p><span class="math display">\[\mathcal{F}[f&#39;(t)]=\displaystyle
 \int_{-\infty}^{+\infty}f&#39;(t)e^{-j\omega
-t}dt=\int_{-\infty}^{+\infty}e^{-j\omega t}d[f(t)]=[f(t)e^{-j\omega
-t}]^{+\infty}_{-\infty}+j\omega\int_{-\infty}^{+\infty}f(t)e^{-j\omega
+t}dt=\int_{-\infty}^{+\infty}e^{-j\omega
+t}d[f(t)]=j\omega\int_{-\infty}^{+\infty}f(t)e^{-j\omega
 t}dt=j\omega\mathcal{F}[f(t)]\]</span></p>
-<p>还可以得到<span
-class="math inline">\(F(\omega)\)</span>导数的表达式，下式经常用于求解<span
+<p>还可以得到象函数导数的表达式，下式经常用于求解<span
 class="math inline">\(\mathcal{F}[tf(t)]\)</span>。</p>
 <p><span class="math display">\[\displaystyle \frac{d}{d
 \omega}F(\omega)=\frac{d}{d\omega}\int_{-\infty}^{+\infty}f(t)e^{-j\omega
 t}dt=-j\int_{-\infty}^{+\infty}tf(t)e^{-j\omega t}dt=-j
-\mathcal{F}[tf(t)]\]</span></p>
-<p>以下是两个常用结论。</p>
+\mathcal{F}[tf(t)]\]</span> 以下是两个常用结论。</p>
 <p><span
 class="math display">\[\mathcal{F}[f^{(n)}(t)]=(j\omega)^n\mathcal{F}[f(t)]\]</span></p>
 <p><span class="math display">\[\displaystyle
@@ -2896,11 +4067,13 @@ class="math display">\[\mathcal{F}[f^{(n)}(t)]=(j\omega)^n\mathcal{F}[f(t)]\]</s
 +\infty}\int_{-\infty}^tf(u)du=0\)</span>，那么：</p>
 <p><span class="math display">\[\mathcal{F}[\displaystyle
 \int_{-\infty}^t f(u)du]=\frac{1}{j\omega}\mathcal{F}[f(t)]\]</span></p>
-<h5 id="能量积分">能量积分</h5>
+<h5 id="parseval-等式">Parseval 等式</h5>
+<p>*<strong>本节中所有上划线均代表复数共轭</strong>。</p>
 <p>记<span
 class="math inline">\(F(\omega)=\mathcal{F}[f(t)]\)</span>，那么有：</p>
 <p><span
-class="math inline">\(\displaystyle\int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}\int_{-\infty}^{+\infty}|F(\omega)|^2d\omega\)</span></p>
+class="math display">\[\displaystyle\int_{-\infty}^{+\infty}f^2(t)dt=\frac{1}{2\pi}\int_{-\infty}^{+\infty}|F(\omega)|^2d\omega\]</span>
+该性质也被称为<strong>能量积分性质</strong>。</p>
 <p>为了证明上式，首先需要证明傅里叶变换的<strong>乘法性质</strong>。记<span
 class="math inline">\(F_i(\omega)=\mathcal{F}[f_i(t)],
 i=1,2\)</span>，那么：</p>
@@ -2912,9 +4085,8 @@ t}d\omega
 <p><span class="math inline">\(=\displaystyle
 \frac{1}{2\pi}\int_{-\infty}^{+\infty}F_{1}(\omega)[\int
 _{-\infty}^{+\infty}\overline{f_2(t)e^{-j\omega t}}
-dt]d\omega=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F_1(\omega)\overline{F_2(\omega)}d\omega\)</span></p>
-<p>上式就是是傅里叶变换的<strong>乘法性质</strong>。</p>
-<p>令<span
+dt]d\omega=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F_1(\omega)\overline{F_2(\omega)}d\omega\)</span>
+上式就是是傅里叶变换的<strong>乘法性质</strong>。令<span
 class="math inline">\(f_1(t)=f_2(t)=f(t)\)</span>，那么有能量积分：</p>
 <p><span class="math display">\[\displaystyle
 \int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}\int_{-\infty}^{+\infty}
@@ -2928,53 +4100,252 @@ t}{t})|^2dt\]</span></p>
 <p><span class="math display">\[\displaystyle\mathcal{F}(\frac{\sin
 t}{t})=\int_{-\infty}^{+\infty} \frac{\sin t}{t} e^{-j\omega t}
 dt=\int_{-\infty}^{+\infty}\frac{\sin t \cos \omega t}{t}dt\]</span></p>
-<p>又 <span class="math display">\[\displaystyle
+<p>又 <span class="math inline">\(\displaystyle
 \int_{-\infty}^{+\infty}\frac{\sin t \cos \omega
-t}{t}dt=\left\{\begin{aligned}\pi,|\omega|&lt;1\\0,\text{others}\end{aligned}\right.\]</span></p>
-<p>因此<span class="math inline">\(\displaystyle
-\int_{-\infty}^{+\infty}(\frac{\sin t}{t})^2dt=\pi\)</span>。</p>
-<p>*<strong>所有上划线均代表复数共轭</strong>。</p>
-<h4 id="常用积分及结论">常用积分及结论</h4>
-<p>首先是一些关于指数函数的反常积分。</p>
-<p><span class="math inline">\(\displaystyle
-\int_{0}^{+\infty}x^ne^{-\lambda
-x}dx=\frac{n!}{\lambda^{n+1}}\)</span></p>
-<p><span class="math inline">\(\displaystyle
+t}{t}dt=\left\{\begin{aligned}\pi,|\omega|&lt;1\\0,\text{others}\end{aligned}\right.\)</span>，因此<span
+class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}(\frac{\sin
+t}{t})^2dt=\pi\)</span>。</p>
+<h5 id="卷积性质">卷积性质</h5>
+<p>设<span class="math inline">\(\mathcal{F}[f_i(t)] = F_i(\omega), i
+=1,2\)</span>，那么：</p>
+<ul>
+<li><span class="math inline">\(\mathcal{F}[f_1(t) * f_2(t)] =
+F_1(\omega) * F_2(\omega)\)</span>；</li>
+<li><span class="math inline">\(\mathcal{F}^{-1}[f_1(t) * f_2(t)] = 2\pi
+f_1(\omega) * f_2(\omega)\)</span>。</li>
+</ul>
+<p>下面证明<span class="math inline">\(\mathcal{F}[f_1(t) * f_2(t)] =
+F_1(\omega) * F_2(\omega)\)</span>：</p>
+<p><span class="math display">\[\mathcal{F}[f_1(t) * f_2(t)] =
+\int_{-\infty}^{+\infty}[\int_{-\infty}^{+\infty} f_1(\tau)f_2(t - \tau)
+d\tau]e^{-j\omega t}dt \]</span></p>
+<p><span class="math display">\[=
+\int_{-\infty}^{+\infty}[\int_{-\infty}^{+\infty} f_1(\tau)f_2(t - \tau)
+dt]e^{-j\omega t}d\tau\]</span></p>
+<p><span class="math display">\[=
+\int_{-\infty}^{+\infty}f_1(\tau)e^{-j\omega
+\tau}[\int_{-\infty}^{+\infty} f_2(t - \tau) e^{-j\omega(t-\tau)}
+dt]d\tau = F_1(\omega) * F_2(\omega)\]</span> 另外一个性质同理可证。</p>
+<h4 id="fourier-变换的一些例子">Fourier 变换的一些例子</h4>
+<p><strong>例1</strong> 求矩形密度函数<span class="math inline">\(f(t) =
+\left\{\begin{matrix}1, |t| \leq a \\ 0, |t| &gt; a
+\end{matrix}\right.(a &gt; 0)\)</span>的 Fourier 变换以及其 Fourier
+积分表达式。</p>
+<p><span class="math display">\[F(\omega) = \mathcal{F}[f(t)] =
+\int_{-a}^{a}e^{-j\omega t}dt = \frac{e^{j\omega a} - e^{-j\omega
+a}}{j\omega} = \frac{2}{\omega}\sin a \omega =2a \frac{\sin
+a\omega}{a\omega}\]</span> 振幅谱为<span
+class="math inline">\(\displaystyle |F(\omega)| = 2a|\frac{\sin
+a\omega}{a\omega}|\)</span>，相位谱为<span
+class="math inline">\(\text{arg}F(\omega
+)=\left\{\begin{matrix}\displaystyle0, \frac{2n\pi}{a} \leq |\omega|
+\leq \frac{(2n+1)\pi}{a} \\ \pi,
+\text{others}\end{matrix}\right.\)</span>，函数的 Fourier
+积分表达式为：</p>
+<p><span class="math display">\[f(t) =\mathcal{F}^{-1}[f(\omega)]=
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d\omega
+=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\sin a\omega \cos \omega
+t}{\omega}d\omega = \left\{\begin{matrix}1,|t|&lt;a \\ \displaystyle
+\frac{1}{2}, |t| = a \\ 0, |t| &gt; a\end{matrix}\right.\]</span>
+在上式中令<span class="math inline">\(t = 0\)</span>，可得 Dirichlet
+积分的结果：</p>
+<p><span class="math display">\[\int_{-\infty}^{+\infty}\frac{\sin
+ax}{x}dx = \pi(a &gt; 0)\]</span></p>
+<p><strong>例2</strong> 已知函数<span
+class="math inline">\(f(t)\)</span>的频谱为<span
+class="math inline">\(F(\omega) = \displaystyle
+\frac{2}{j\omega}\)</span>，求<span
+class="math inline">\(f(t)\)</span>。</p>
+<p><span class="math display">\[f(t) = \mathcal{F}^{-1}[F(\omega)] =
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d \omega =
+\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\sin \omega t}{\omega}d\omega
+= \left\{\begin{matrix}
+1, t&gt; 0 \\
+0, t = 0
+\\ -1, t &lt; 0
+\end{matrix}\right.\]</span> 由这个例子可得 Fourier 变换对<span
+class="math inline">\(\text{sgn}t \leftrightarrow
+\displaystyle\frac{2}{j\omega}\)</span>，这也是一个常用的结果，需要记住。</p>
+<p><strong>例3</strong> 已知函数<span
+class="math inline">\(f(t)\)</span>的频谱为<span
+class="math inline">\(F(\omega) = \left\{\begin{matrix} 1, |\omega| \leq
+a\\ 0, |\omega| &gt; a \end{matrix}\right.(a&gt;0)\)</span>，求<span
+class="math inline">\(f(t)\)</span>。</p>
+<p><span class="math display">\[f(t) = \mathcal{F}[F(\omega)] =
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d\omega =
+\frac{\sin  at}{\pi t}\]</span></p>
+<p><strong>例4</strong> 分别求<span class="math inline">\(f_1(t)
+=1\)</span>与<span class="math inline">\(f_2(t) = t\)</span>的 Fourier
+变换。</p>
+<p><span class="math display">\[F_1(\omega) =
+\int_{-\infty}^{+\infty}f_1(t)e^{-j\omega t}dt = 2\pi
+\delta(\omega)\]</span> 事实上，在上式两端对<span
+class="math inline">\(\omega\)</span>求导有：</p>
+<p><span class="math display">\[-j\int_{-\infty}^{+\infty}te^{-j\omega
+t}dt = 2\pi \delta&#39;(t)\Rightarrow F_2(\omega) =
+2j\omega\delta&#39;(\omega)\]</span></p>
+<p><strong>例5</strong> 求 Heaviside 的 Fourier 变换。</p>
+<p>事实上，<span class="math inline">\(u(t) = \displaystyle
+\frac{1}{2}(\text{sgn}t + 1)\)</span>，由 Fourier 变换的性质易得：</p>
+<p><span class="math display">\[F(\omega) = \mathcal{F}[u(t)] =
+\frac{1}{j\omega} + \pi \delta(t)\]</span></p>
+<p><strong>例6</strong> 分别求<span class="math inline">\(f_1(t)
+=e^{j\omega_0 t}\)</span>与<span class="math inline">\(f_2(t) = \cos
+\omega_0 t\)</span>的 Fourier 变换。</p>
+<p><span class="math display">\[F_1(\omega) =
+\int_{-\infty}^{+\infty}e^{j(\omega_0 - \omega)t}dt =2\pi
+\delta(\omega_0 - \omega) =  2\pi \delta(\omega - \omega_0)\]</span>
+由欧拉公式及 Fourier 变换的性质易得：</p>
+<p><span class="math display">\[F_2(\omega) =
+\frac{1}{2}[\mathcal{F}(e^{j\omega_0t})+\mathcal{F}(-j\omega_0t)] =
+\pi[\delta(\omega - \omega_0)+\delta(\omega + \omega_0)]\]</span>
+又得到一个常用的变换对<span class="math inline">\(e^{j\omega_0
+t}\leftrightarrow 2\pi \delta(\omega - \omega_0)\)</span>。</p>
+<p><strong>例7</strong> 求函数<span
+class="math inline">\(h(t)\)</span>与<span
+class="math inline">\(\delta(t)\)</span>的卷积。</p>
+<p><span class="math display">\[h(t)*\delta(t) =
+\int_{-\infty}^{+\infty}h(\tau)\delta(t-\tau)d\tau = h(t)\]</span>
+这说明了卷积运算的单位元是<span
+class="math inline">\(\delta(t)\)</span>。一般地，有<span
+class="math inline">\(h(t)*\delta(t-t_0) =h(t-t_0)\)</span>。</p>
+<h2 id="lapalce-变换">Lapalce 变换</h2>
+<h3 id="laplace-变换的概念">Laplace 变换的概念</h3>
+<p>实际工程问题中，许多以时间<span
+class="math inline">\(t\)</span>为自变量的函数在<span
+class="math inline">\(t&lt;0\)</span>时为<span
+class="math inline">\(0\)</span>或者没有定义，因此对这些函数进行 Fourier
+变换时，不能或者没有必要在整个实轴上进行，因此考虑对 Fourier
+变换进行改造，具体方法如下：</p>
+<ul>
+<li>将<span class="math inline">\(f(t)\)</span>与<span
+class="math inline">\(u(t)\)</span>相乘，使得函数在<span
+class="math inline">\(t &lt; 0\)</span>时恒被定义为<span
+class="math inline">\(0\)</span>；</li>
+<li>再乘以指数衰减函数<span class="math inline">\(e^{-\beta t}(\beta
+&gt; 0)\)</span>，使得函数在<span class="math inline">\(t &gt;
+0\)</span>时尽快衰减下来，以满足 Fourier 变换的的条件。</li>
+</ul>
+<p>于是得到：</p>
+<p><span class="math display">\[\mathcal{F}[f(t)u(t)e^{-\beta t}] =
+\int_{0}^{+\infty}f(t)e^{-(\beta + j \omega)t}dt\]</span> 将<span
+class="math inline">\(\beta + j\omega\)</span>记作<span
+class="math inline">\(s\)</span>，那么得到一种新的变换：</p>
+<p><span class="math display">\[F(s)=\mathcal{L}[f(t)]=\displaystyle
+\int_{0}^{+\infty}f(t)e^{-st}dt\]</span>
+值得注意的是，上述广义积分结果存在的关键是变量<span
+class="math inline">\(s\)</span>的实部<span
+class="math inline">\(\beta\)</span>足够大。这时可以给出 Laplace
+变换的严格定义。设函数<span
+class="math inline">\(f(t)\)</span>是定义在<span
+class="math inline">\((0,+\infty)\)</span>的实变函数，若对于<strong>复参数</strong><span
+class="math inline">\(s =\beta
++j\omega\)</span>，上式积分在复平面某一区域收敛，那么称<span
+class="math inline">\(F(s)\)</span>是<span
+class="math inline">\(f(t)\)</span>的 <strong>Laplace
+变换或象函数</strong>，记作<span class="math inline">\(F(s) =
+\mathcal{L}[f(t)]\)</span>，相应地称<span
+class="math inline">\(f(t)\)</span>是<span
+class="math inline">\(F(s)\)</span>的 <strong>Laplace
+逆变换或象原函数</strong>。</p>
+<p><strong>在进行积分时，要确定<span
+class="math inline">\(s\)</span>的范围以保证积分存在</strong>，下面给出象函数的存在定理。设函数<span
+class="math inline">\(f(t)\)</span>在<span class="math inline">\(t\geq
+0\)</span>时满足以下两个条件，则象函数<span
+class="math inline">\(F(s)\)</span>一定在半平面<span
+class="math inline">\(\text{Re}(s) &gt; c\)</span>上存在且解析。</p>
+<ul>
+<li>在任何的有限区间上分段连续；</li>
+<li>具有有限的增长性，即存在常数<span
+class="math inline">\(c\)</span>及<span class="math inline">\(M &gt;
+0\)</span>使得<span class="math inline">\(|f(t)| \leq
+Me^{ct}\)</span>（其中<span class="math inline">\(c\)</span>被称为<span
+class="math inline">\(f(t)\)</span>的增长指数）。</li>
+</ul>
+<p>根据存在定理，可以知道：</p>
+<ul>
+<li>象函数的存在域一般是一个右半平面，即只需复数<span
+class="math inline">\(s\)</span>的实部足够大即可，因此<strong>在进行
+Laplace
+变换时，通常略去存在域，只在非常必要时才会特别注明</strong>；</li>
+<li>在 Laplace 变换中的函数通常约定在<span
+class="math inline">\(t&lt;0\)</span>时恒为<span
+class="math inline">\(0\)</span>，即函数<span
+class="math inline">\(f(t)\)</span>等价于<span
+class="math inline">\(f(t)u(t)\)</span>。</li>
+</ul>
+<h3 id="laplace-变换的性质">Laplace 变换的性质</h3>
+<h4 id="线性性质-1">线性性质</h4>
+<p>由积分的线性显而易见。</p>
+<h4 id="相似性质-1">相似性质</h4>
+<p>设<span class="math inline">\(a\)</span>为正实数，则<span
+class="math inline">\(\mathcal{L}[f(at)] =
+\displaystyle\frac{1}{a}F(\frac{s}{a})\)</span>。</p>
+<h4 id="延迟性质和位移性质">延迟性质和位移性质</h4>
+<h5 id="延迟性质">延迟性质</h5>
+<p>对任何一负实数有<span class="math inline">\(\tau\)</span>有：</p>
+<p><span
+class="math display">\[\mathcal{L}[f(t-\tau)u(t-\tau)]=e^{-s\tau}F(s)\Leftrightarrow
+\mathcal{L}^{-1}[e^{-s\tau}F(s)]=f(t-\tau)u(t-\tau)\]</span></p>
+<h5 id="位移性质-1">位移性质</h5>
+<p>设<span class="math inline">\(a\)</span>为一复常数，则<span
+class="math inline">\(\mathcal{L}[e^{at}f(t)] = F(s- a)\)</span>。</p>
+<h4 id="微分性质-1">微分性质</h4>
+<h4 id="积分性质-1">积分性质</h4>
+<h3 id="laplace-逆变换">Laplace 逆变换</h3>
+<h3 id="laplace-变换的变换及综合举例">Laplace 变换的变换及综合举例</h3>
+<h2 id="常用结论">常用结论</h2>
+<h3 id="反常积分">反常积分</h3>
+<p><span class="math display">\[\displaystyle
+\int_{0}^{+\infty}x^ne^{-\lambda x}dx=\frac{n!}{\lambda^{n+1}}(\lambda
+&gt; 0, n \in \text{N}^+)\]</span></p>
+<p><span class="math display">\[\displaystyle
 \int_{0}^{+\infty}e^{-\lambda x} \cos ax dx = \frac{\lambda}{\lambda^2 +
-a^2}\)</span></p>
-<p><span class="math inline">\(\displaystyle
+a^2}(\lambda &gt; 0)\]</span></p>
+<p><span class="math display">\[\displaystyle
 \int_{0}^{+\infty}e^{-\lambda x} \sin ax dx =
-\frac{a}{\lambda^2+a^2}\)</span></p>
-<p>随后是关于<span
-class="math inline">\(\delta(t)\)</span>的定义和一些性质。</p>
-<p><span class="math inline">\(\displaystyle
-\int_{-\infty}^{+\infty}\delta(t)dt=1\)</span></p>
-<p><span class="math inline">\(\displaystyle \delta(t) :=
-\lim_\limits{\epsilon \to 0} \delta_{\epsilon}(t)\)</span></p>
-<p><span class="math inline">\(\displaystyle
-\int_{-\infty}^{+\infty}f(t)\delta(t)dt = f(0)\)</span></p>
-<p><span class="math inline">\(\displaystyle
-\int_{-\infty}^{+\infty}\delta^{n}(t)f(t)dt=(-1)^nf^{(n)}(0)\)</span></p>
-<p>随后是常用的一些的傅里叶变换。</p>
-<p><span class="math inline">\(\displaystyle
-\mathcal{F}[u(t)]=\frac{1}{j \omega} + \pi \delta(\omega)\)</span></p>
-<p><span class="math inline">\(\displaystyle \mathcal{F}[\delta(t)] =
-1\)</span></p>
+\frac{a}{\lambda^2+a^2}(\lambda &gt; 0)\]</span></p>
+<h3 id="deltat的性质"><span
+class="math inline">\(\delta(t)\)</span>的性质</h3>
+<p><span class="math display">\[\displaystyle
+\int_{-\infty}^{+\infty}\delta(t)dt=1\]</span></p>
+<p><span class="math display">\[\displaystyle \delta(t) :=
+\lim_\limits{\epsilon \to 0} \delta_{\epsilon}(t)\]</span></p>
+<p><span class="math display">\[\displaystyle
+\int_{-\infty}^{+\infty}f(t)\delta(t)dt = f(0)\]</span></p>
+<p><span class="math display">\[\displaystyle
+\int_{-\infty}^{+\infty}\delta^{(n)}(t)f(t)dt=(-1)^nf^{(n)}(0)\]</span></p>
+<h3 id="常用的-fourier-变换">常用的 Fourier 变换</h3>
+<p><span class="math display">\[\displaystyle
+\mathcal{F}[u(t)]=\frac{1}{j \omega} + \pi \delta(\omega)\]</span></p>
+<p><span class="math display">\[\displaystyle \mathcal{F}[\delta(t)] =
+1\]</span></p>
 <p><span
-class="math inline">\(\mathcal{F}(e^{j\omega_0t})=2\pi\delta(\omega -
-\omega_0) \Rightarrow \mathcal{F}(1)=2\pi\delta(\omega)\)</span></p>
-<p><span class="math inline">\(\mathcal{F}(\sin \omega_0 t)=\pi
-j[\delta(\omega+\omega_0)-\delta(\omega-\omega_0)]\)</span></p>
-<p><span class="math inline">\(\mathcal{F}(\cos
-\omega_0t)=\pi[\delta(\omega+\omega_0)+\delta(\omega-\omega_0)]\)</span></p>
-<p>事实上由傅里叶变换的线性性质可知 <span
-class="math inline">\(\mathcal{F}(e^{j\omega_0 t})=\mathcal{F}(\cos
-\omega_0 t) + j \mathcal{F}(\sin \omega_o t)\)</span></p>
-<p>其他常用的一些恒等式如下所示。</p>
-<p><span class="math inline">\(\sin3t=3\sin t - 4\sin^3t\)</span></p>
+class="math display">\[\mathcal{F}[e^{j\omega_0t}]=2\pi\delta(\omega -
+\omega_0) \Rightarrow \mathcal{F}(1)=2\pi\delta(\omega)\]</span></p>
+<p><span class="math display">\[\mathcal{F}[\sin \omega_0 t]=\pi
+j[\delta(\omega+\omega_0)-\delta(\omega-\omega_0)]\]</span></p>
+<p><span class="math display">\[\mathcal{F}[\cos
+\omega_0t]=\pi[\delta(\omega+\omega_0)+\delta(\omega-\omega_0)]\]</span></p>
+<p><span class="math display">\[\mathcal{F}[e^{j\omega_0
+t}]=\mathcal{F}(\cos \omega_0 t) + j \mathcal{F}(\sin \omega_o
+t)\]</span></p>
+<h3 id="常用的-laplace-变换">常用的 Laplace 变换</h3>
+<p><span class="math display">\[\mathcal{L}[1] = \displaystyle
+\frac{1}{s}\]</span></p>
+<p><span class="math display">\[\mathcal{L}[t^m] = \displaystyle
+\frac{\Gamma(m + 1)}{s^{m+1}}\]</span></p>
+<p><span class="math display">\[\mathcal{L}[e^at] = \displaystyle
+\frac{1}{s - a}\]</span></p>
+<p><span class="math display">\[\mathcal{L}[\cos at] = \displaystyle
+\frac{s}{s^2+a^2}\]</span></p>
+<p><span class="math display">\[\mathcal{L}[\sin at] = \displaystyle
+\frac{a}{s^2+a^2}\]</span></p>
+<h3 id="其他常用的恒等式">其他常用的恒等式</h3>
+<p><span class="math display">\[\sin3t=3\sin t - 4\sin^3t\]</span></p>
 <p><span
-class="math inline">\(\omega^4+4=[(\omega+1)^2+1][(\omega-1)^2+1]\)</span></p>
-<h4 id="计算技巧">计算技巧</h4>
+class="math display">\[\omega^4+4=[(\omega+1)^2+1][(\omega-1)^2+1]\]</span></p>
+<h3 id="解题技巧">解题技巧</h3>
 <ul>
 <li>对形如<span class="math inline">\(e^{j \omega
 t}\)</span>函数的积分时，当积分下限为<span
@@ -2988,18 +4359,16 @@ class="math inline">\(\text{R}\)</span>上的积分；</li>
 <ul>
 <li>在证明<span
 class="math inline">\(\delta(t)\)</span>的相关性质时，要注意<span
-class="math inline">\(f(t)\)</span>是无穷次可微函数。</li>
+class="math inline">\(f(t)\)</span>需要是无穷次可微函数。</li>
 </ul>
-<h3 id="拉普拉斯变换">拉普拉斯变换</h3>
-<h4 id="概念及定义-1">概念及定义</h4>
-<p><span class="math display">\[F(s)=\mathcal{L}[f(t)]=\displaystyle
-\int_{0}^{+\infty}f(t)e^{-st}dt\]</span></p>
-<h4 id="常用积分及结论-1">常用积分及结论</h4>
-<p><span class="math inline">\(\mathcal{L}(\sin kt) = \displaystyle
-\frac{k}{s^2+k^2}\)</span></p>
-<p><span class="math inline">\(\mathcal{L}(\cos kt) = \displaystyle
-\frac{s}{s^2+k^2}\)</span></p>
-<p><span class="math inline">\(\mathcal{L}[\delta(t)]=1\)</span></p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href = "https://www.bilibili.com/video/BV1Nu411y7Mq" style = "text-decoration: none" target = "_blank">【上海交通大学】姚卫红《复变函数与概率》</a>；</li>
+<li><a href = "https://www.bilibili.com/video/BV1Ns411H7tZ" style = "text-decoration: none" target = "_blank">复变函数与积分变换（华中科技大学）</a>；</li>
+<li>《复变函数（第四版）》，西安交通大学高等数学教研室；</li>
+<li>《积分变换（第五版）》，东南大学数学系；</li>
+<li><a href = "/static/files/复变函数与积分变换.pdf" style = "text-decoration: none" target = "_blank">《复变函数与积分变换》</a>，南开大学出版社。</li>
+</ul>
 
   </div>
   
@@ -3020,11 +4389,14 @@ x)^2} dx\)
         </a>
       
       
-        <a class='next' href='/2022-10-05-%E7%89%87%E4%B8%8A%E7%B3%BB%E7%BB%9F%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/'>
-          <p class='title'>片上系统综合实践课程笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <!--<p class='content'>这是北京交通大学2022年秋季课程——片上系统综合实践的课程笔记。
+        <a class='next' href='/2022-09-30-%E4%B8%A4%E7%AF%87%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%96%B9%E5%90%91%E8%8B%B1%E6%96%87%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>两篇体系结构方向英文论文阅读笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <!--<p class='content'>首次阅读这方面的英文论文，有不足和错误之处还望各位不吝赐教。
 
-</p>-->
+SALO
+这篇文章主要介绍了为降低机器学习中的 self-attention
+机制计算复杂度而设计的一套软硬件系统。
+主...</p>-->
         </a>
       
     </div>
@@ -3082,7 +4454,8 @@ x)^2} dx\)
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0"><span class="toc-text">复变函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%A7%E8%B4%A8"><span class="toc-text">复数的一些性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%A3%E8%8E%AB%E5%BC%97%E5%AE%9A%E7%90%86"><span class="toc-text">棣莫弗定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F"><span class="toc-text">区域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%BF%9E%E9%80%9A%E5%9F%9F%E4%B8%8E%E5%A4%9A%E8%BF%9E%E9%80%9A%E5%9F%9F"><span class="toc-text">单连通域与多连通域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#todo"><span class="toc-text">todo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2"><span class="toc-text">积分变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-text">傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9A%E4%B9%89"><span class="toc-text">概念及定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7"><span class="toc-text">线性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB%E6%80%A7%E8%B4%A8"><span class="toc-text">位移性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%80%A7%E8%B4%A8"><span class="toc-text">微分性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E6%80%A7%E8%B4%A8"><span class="toc-text">积分性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E7%A7%AF%E5%88%86"><span class="toc-text">能量积分</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%A7%AF%E5%88%86%E5%8F%8A%E7%BB%93%E8%AE%BA"><span class="toc-text">常用积分及结论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%8A%80%E5%B7%A7"><span class="toc-text">计算技巧</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2"><span class="toc-text">拉普拉斯变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9A%E4%B9%89-1"><span class="toc-text">概念及定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%A7%AF%E5%88%86%E5%8F%8A%E7%BB%93%E8%AE%BA-1"><span class="toc-text">常用积分及结论</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0"><span class="toc-text">复变函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%A7%E8%B4%A8"><span class="toc-text">复数的一些性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%A3%E8%8E%AB%E5%BC%97%E5%AE%9A%E7%90%86"><span class="toc-text">棣莫弗定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F"><span class="toc-text">区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%9B%B2%E7%BA%BF%E5%AE%9E%E6%95%B0%E5%BD%A2%E5%BC%8F%E5%92%8C%E5%A4%8D%E6%95%B0%E5%BD%A2%E5%BC%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">平面曲线实数形式和复数形式之间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0-1"><span class="toc-text">复变函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0%E5%BE%AE%E5%88%86%E4%B8%8E%E8%A7%A3%E6%9E%90%E6%80%A7"><span class="toc-text">复变函数的导数、微分与解析性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E5%AE%9A%E4%B9%89"><span class="toc-text">常见的复变函数及其定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E7%A7%AF%E5%88%86"><span class="toc-text">复积分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E7%A7%AF%E5%88%86%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E6%80%A7%E8%B4%A8"><span class="toc-text">复积分的定义和性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-text">复积分的计算方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#cauchy-%E7%A7%AF%E5%88%86%E5%AE%9A%E7%90%86%E5%92%8C%E5%85%AC%E5%BC%8F"><span class="toc-text">Cauchy 积分定理和公式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%87%BD%E6%95%B0"><span class="toc-text">原函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0%E7%9A%84%E9%AB%98%E9%98%B6%E5%AF%BC%E6%95%B0"><span class="toc-text">解析函数的高阶导数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%82%E7%BA%A7%E6%95%B0"><span class="toc-text">幂级数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A-aebl-%E5%AE%9A%E7%90%86"><span class="toc-text">基本概念及 Aebl 定理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#abel-%E5%AE%9A%E7%90%86"><span class="toc-text">Abel 定理</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="toc-text">运算性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E6%80%A7%E8%B4%A8"><span class="toc-text">分析性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E6%80%A7%E8%B4%A8"><span class="toc-text">复合性质</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#taylor-%E7%BA%A7%E6%95%B0"><span class="toc-text">Taylor 级数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#laurent-%E7%BA%A7%E6%95%B0"><span class="toc-text">Laurent 级数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%99%E6%95%B0"><span class="toc-text">留数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%87%E7%82%B9%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%E5%92%8C%E6%80%A7%E8%B4%A8"><span class="toc-text">奇点的相关概念和性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%A4%E7%AB%8B%E5%A5%87%E7%82%B9"><span class="toc-text">孤立奇点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9B%B6%E7%82%B9%E4%B8%8E%E6%9E%81%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">零点与极点的关系</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">留数定理与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86"><span class="toc-text">留数定理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E5%9C%A8%E5%AE%9A%E7%A7%AF%E5%88%86%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">留数在定积分计算中的应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E5%BD%A2%E6%98%A0%E5%B0%84"><span class="toc-text">共形映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fourier-%E5%8F%98%E6%8D%A2"><span class="toc-text">Fourier 变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84-fourier-%E7%BA%A7%E6%95%B0"><span class="toc-text">周期函数的 Fourier 级数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%B3%BB%E7%9A%84%E6%AD%A3%E4%BA%A4%E6%80%A7"><span class="toc-text">三角函数系的正交性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E7%BA%A7%E6%95%B0%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2%E5%BC%8F"><span class="toc-text">Fourier 级数的三角形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E7%BA%A7%E6%95%B0%E7%9A%84%E6%8C%87%E6%95%B0%E5%BD%A2%E5%BC%8F"><span class="toc-text">Fourier 级数的指数形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E7%BA%A7%E6%95%B0%E7%9A%84%E7%89%A9%E7%90%86%E5%90%AB%E4%B9%89"><span class="toc-text">Fourier 级数的物理含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84-fourier-%E5%8F%98%E6%8D%A2"><span class="toc-text">非周期函数的 Fourier 变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F%E4%B8%8E-fourier-%E5%8F%98%E6%8D%A2%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">Fourier 积分公式与
+Fourier 变换的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E5%8F%98%E6%8D%A2%E7%9A%84%E7%89%A9%E7%90%86%E5%90%AB%E4%B9%89"><span class="toc-text">Fourier 变换的物理含义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E5%86%B2%E6%BF%80%E5%87%BD%E6%95%B0"><span class="toc-text">单位冲激函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="toc-text">性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E8%A1%A8%E7%A4%BA"><span class="toc-text">图形表示</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#dirac-%E5%87%BD%E6%95%B0%E7%9A%84-fourier-%E5%8F%98%E6%8D%A2"><span class="toc-text">Dirac 函数的 Fourier 变换</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">Fourier 变换的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%80%A7%E8%B4%A8"><span class="toc-text">线性性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB%E6%80%A7%E8%B4%A8"><span class="toc-text">位移性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E6%80%A7%E8%B4%A8"><span class="toc-text">相似性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%80%A7%E8%B4%A8"><span class="toc-text">微分性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E6%80%A7%E8%B4%A8"><span class="toc-text">积分性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#parseval-%E7%AD%89%E5%BC%8F"><span class="toc-text">Parseval 等式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E6%80%A7%E8%B4%A8"><span class="toc-text">卷积性质</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fourier-%E5%8F%98%E6%8D%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BE%8B%E5%AD%90"><span class="toc-text">Fourier 变换的一些例子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lapalce-%E5%8F%98%E6%8D%A2"><span class="toc-text">Lapalce 变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#laplace-%E5%8F%98%E6%8D%A2%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">Laplace 变换的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#laplace-%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">Laplace 变换的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%80%A7%E8%B4%A8-1"><span class="toc-text">线性性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E6%80%A7%E8%B4%A8-1"><span class="toc-text">相似性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E6%80%A7%E8%B4%A8%E5%92%8C%E4%BD%8D%E7%A7%BB%E6%80%A7%E8%B4%A8"><span class="toc-text">延迟性质和位移性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E6%80%A7%E8%B4%A8"><span class="toc-text">延迟性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB%E6%80%A7%E8%B4%A8-1"><span class="toc-text">位移性质</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%80%A7%E8%B4%A8-1"><span class="toc-text">微分性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E6%80%A7%E8%B4%A8-1"><span class="toc-text">积分性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#laplace-%E9%80%86%E5%8F%98%E6%8D%A2"><span class="toc-text">Laplace 逆变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#laplace-%E5%8F%98%E6%8D%A2%E7%9A%84%E5%8F%98%E6%8D%A2%E5%8F%8A%E7%BB%BC%E5%90%88%E4%B8%BE%E4%BE%8B"><span class="toc-text">Laplace 变换的变换及综合举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA"><span class="toc-text">常用结论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86"><span class="toc-text">反常积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deltat%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">\(\delta(t)\)的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-fourier-%E5%8F%98%E6%8D%A2"><span class="toc-text">常用的 Fourier 变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-laplace-%E5%8F%98%E6%8D%A2"><span class="toc-text">常用的 Laplace 变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E6%81%92%E7%AD%89%E5%BC%8F"><span class="toc-text">其他常用的恒等式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%8A%80%E5%B7%A7"><span class="toc-text">解题技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
     </div>
   </section>
 
@@ -4519,7 +5892,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-10-09-复变函数与积分变换自学笔记/","name":"复变函数与积分变换自学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"复变函数与积分变换自学笔记","description":"复变函数与积分变换能为积分求解、信号处理等问题提供新的方法，值得学习。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-10-09-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-10-09-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/","wordCount":35,"datePublished":"2022-10-09T01:31:12.000Z","dateModified":"2023-01-03T05:29:39.596Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-10-09-复变函数与积分变换自学笔记/","name":"复变函数与积分变换自学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"复变函数与积分变换自学笔记","description":"复变函数与积分变换能为积分求解、信号处理等问题提供新的方法，值得学习。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-10-09-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-10-09-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/","wordCount":35,"datePublished":"2022-10-09T01:31:12.000Z","dateModified":"2023-01-19T15:49:13.034Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
