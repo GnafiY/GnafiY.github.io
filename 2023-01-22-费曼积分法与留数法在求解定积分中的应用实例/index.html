@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2021-11-11-概率论的一些小技巧/"/>
+  <link rel="canonical" href="http://example.com/2023-01-22-费曼积分法与留数法在求解定积分中的应用实例/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,22 +31,20 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>概率论的一些知识点的总结 - 一方の笔记本</title>
-  <meta name="keywords" content="概率论,计算技巧,null">
-  <meta desc name="description" content="想起之前学概率论的时候整理了不少计算的小技巧，正好拿来练练写公式。 - John Doe - 一方の笔记本">
+  <title>费曼积分法与留数法在求解定积分中的应用实例 - 一方の笔记本</title>
+  <meta name="keywords" content="null">
+  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论的一些知识点的总结">
-<meta property="og:url" content="http://example.com/2021-11-11-%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="费曼积分法与留数法在求解定积分中的应用实例">
+<meta property="og:url" content="http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="想起之前学概率论的时候整理了不少计算的小技巧，正好拿来练练写公式。">
+<meta property="og:description" content="求\(I &#x3D; \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2}dx\) 费曼积分法 令\(y(a) &#x3D; \displaystyle \int_{0}^{+\infty} \frac{\cos ax}{1+x^2}dx,a&gt;0\)，则\(I &#x3D; 2y(1)\)，并且有\(y(0) &#x3D; \displaystyle\frac{\">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2021-11-11T11:13:52.000Z">
-<meta property="article:modified_time" content="2022-09-15T03:10:43.154Z">
+<meta property="article:published_time" content="2023-01-22T10:26:24.000Z">
+<meta property="article:modified_time" content="2023-01-22T11:47:06.417Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="概率论">
-<meta property="article:tag" content="计算技巧">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1875,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1674186744344),
+    lastupdate: new Date(1674392462262),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2606,7 +2604,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-blog" id="blog" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021-11-11-概率论的一些小技巧/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023-01-22-费曼积分法与留数法在求解定积分中的应用实例/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="一方の笔记本">
   </span>
@@ -2627,7 +2625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        概率论的一些知识点的总结
+        费曼积分法与留数法在求解定积分中的应用实例
       </h1>
       <div class='new-meta-box'>
         
@@ -2660,10 +2658,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-11T19:13:52+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-01-22T18:26:24+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年11月11日</p>
+    <p>发布于：2023年1月22日</p>
   </a>
 </div>
 
@@ -2678,7 +2676,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="概率论的一些知识点的总结" data-path="/2021-11-11-%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+      <span id="lc-pv" data-title="费曼积分法与留数法在求解定积分中的应用实例" data-path="/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2700,47 +2698,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>想起之前学概率论的时候整理了不少计算的小技巧，正好拿来练练写公式。</p>
-<span id="more"></span>
-<h2 id="常用的七个幂级数展开式">常用的七个幂级数展开式</h2>
-<p><span class="math display">\[\displaystyle \sin x = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-...,x\in(-\infty,+\infty)\]</span></p>
-<p><span class="math display">\[\displaystyle \cos x = \sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-...,x\in(-\infty,+\infty)\]</span></p>
-<p><span class="math display">\[\displaystyle e^x=\sum\limits_{n=0}^\infty\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...,x\in(-\infty,+\infty)\]</span></p>
-<p>由以上三个公式可得欧拉公式：<span class="math inline">\(\displaystyle e^{ix}=i \sin x+ \cos x\)</span>。</p>
-<p><span class="math display">\[\displaystyle \ln(1+x)= \sum \limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}x^n=x-\frac{x^2}{2}+\frac{x^3}{3}-...,x\in(-1,1]\]</span></p>
-<p>由<span class="math inline">\(\ln(1+x)\)</span>的展开式可得<span class="math inline">\(\displaystyle \ln2= \sum \limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}\)</span>。</p>
-<p>事实上，<span class="math inline">\(\ln(x+1)\)</span>的展开式可以由下式推出：</p>
-<p><span class="math display">\[\displaystyle\frac{1}{1+x}= \sum \limits_{n=0}^\infty (-x)^n=1-x+x^2-...,x\in(-1,1)\]</span></p>
-<p>将上式中的 <span class="math inline">\(x\)</span> 代换为<span class="math inline">\((-x)\)</span>即可得到下式：</p>
-<p><span class="math display">\[\displaystyle\frac{1}{1-x} =\sum \limits_{n=0}^\infty x^n=1+x+x^2+...,x\in(-1,1)\]</span></p>
-<p>事实上，<span class="math inline">\(\displaystyle\frac{1}{1+x}\)</span>与<span class="math inline">\(\displaystyle\frac{1}{1-x}\)</span>的泰勒展开式就是首项为<span class="math inline">\(1\)</span>，公比为<span class="math inline">\(\mp x\)</span>的等比数列的前 <span class="math inline">\(n\)</span> 项和 <span class="math inline">\(S_n\)</span> 在<span class="math inline">\(n\to\infty\)</span>的极限。关于等比级数还有一个常用的结论：当<span class="math inline">\(|q|&lt;1\)</span> 时，级数<span class="math inline">\(\displaystyle \sum \limits_{n=1}^\infty a_1q^{n-1}\)</span>收敛于<span class="math inline">\(\displaystyle \frac{a_1}{1-q}\)</span>。</p>
-<p>还有一个相对其他六个不太常用的一个公式：</p>
-<p><span class="math display">\[\displaystyle (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+...,x\in(-1,1),a\neq0\]</span></p>
-<p>由第七个公式可得一个常用的等价无穷小：<span class="math inline">\((1+\beta x)^{\alpha}-1\)</span>~<span class="math inline">\(\alpha \beta x,x\to0\)</span>。</p>
-<p>事实上，记住以上七个泰勒公式后，很多等价无穷小可以直接推出。</p>
-<p>另外，同理第五个、第六个公式，有以下公式：</p>
-<p><span class="math display">\[\displaystyle\frac{1}{1+x^2}= \sum \limits_{n=0}^\infty(-1)^nx^{2n}=1-x^2+...,x\in(-1,1)\]</span></p>
-<p>对上式积分有：<span class="math inline">\(\displaystyle\int_0^x\frac{1}{1+t^2}dt=\int_0^x\displaystyle \sum \limits_{n=0}^ \infty(-1)^nt^{2n}dt\)</span>，等式左侧<span class="math inline">\(=\arctan x\)</span>，等式右侧<span class="math inline">\(=\displaystyle \sum \limits_{n=0}^ \infty(-1)^{n}(\frac{1}{2n+1}x^{2n+1})\)</span>，所以：<span class="math display">\[\arctan x =\displaystyle \sum \limits_{n=0}^ \infty(-1)^{n}(\frac{1}{2n+1}x^{2n+1})=x-\frac{x^3}{3}+\frac{x^5}{5}-...,x\in(-1,1)\]</span></p>
-<h2 id="与e-x有关的反常积分">与<span class="math inline">\(e^{-x}\)</span>有关的反常积分</h2>
-<p>首先是最简单的一个积分：<span class="math inline">\(\displaystyle\int_0^{+\infty} e^{-x}dx=[-e^{-x}]_0^{+\infty}=1\)</span>。</p>
-<p>然后进行一些简单的推广：<span class="math inline">\(\displaystyle\int_0^{+\infty} x^n e^{-x}dx=n!,x\in N\)</span>，当<span class="math inline">\(n=0\)</span>时就是上面的积分，这个积分有很多种证明的方法，使用分部积分法加上第一数学归纳法或者待定系数法都可以证明，这里略去证明。当<span class="math inline">\(n\)</span>换为另外一个实数时，以上积分的值需要进行推广，在实数域上就是伽马函数。值得注意的是<span class="math inline">\(\Gamma(x+1)=x\Gamma(x)\)</span>，而<span class="math inline">\((n+1)!=(n+1)n!\)</span>。</p>
-<p>随后再进行一些变换：<span class="math inline">\(\displaystyle\int_0^{+\infty} x^n e^{-\lambda x}dx=\frac{n!}{\lambda ^ {n+1}},n\in N,\lambda\in R^+\)</span>。有了上面的积分的结果，只需要进行一步换元，令<span class="math inline">\(\lambda x = t\)</span>很容易计算出上面的结果。</p>
-<h2 id="与e-x2有关的反常积分">与<span class="math inline">\(e^{-x^2}\)</span>有关的反常积分</h2>
-<p>首先是最著名的高斯积分：<span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}e^{-x^2}dx=\sqrt{\pi}\)</span>。求解这个积分最常见的方法是将其转换为二重积分。记<span class="math inline">\(\displaystyle I = \int ^{+\infty}_{-\infty} e^{-x^2} dx\)</span>，则：</p>
-<p><span class="math display">\[\displaystyle I^2 = \int ^{+\infty} _{-\infty} e^{-x^2} dx\int ^{+\infty} _{-\infty} e^{-y^2} dy = \int ^{+\infty} _{-\infty}  \int ^{+\infty} _{-\infty}e^{-(x^2+y^2)}dxdy \]</span></p>
-<p>随后进行极坐标换元有：<span class="math inline">\(\displaystyle I^2 = \int_0^{2\pi}d\theta\int ^{+\infty} _0 \rho e^{-\rho^2}d\rho=\pi\)</span>，显然<span class="math inline">\(I&gt;0\)</span>，因此<span class="math inline">\(I=\sqrt{\pi}\)</span>。</p>
-<p>此外，还有一个我很喜欢的广义积分：<span class="math inline">\(\displaystyle \int_0^{+\infty}\frac{\sin x}{x}dx=\frac{\pi}{2}\)</span>，这个积分被称为狄利克雷积分积分，使用拉普拉斯变换可以很容易求解这个积分。</p>
-<p>正态分布是概率论中很重要的的一种分布，设<span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu,\sigma^2)\)</span>，则<span class="math inline">\(X\)</span>的概率密度函数为<span class="math inline">\(\displaystyle f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},x\in(-\infty,+\infty),\mu\in R,\sigma\in R^+\)</span>，而由概率密度函数的意义有：<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}f_X(x)dx=1\)</span>，因此有<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx=1\)</span>。纯粹从求解题目的角度来讲，从概率密度函数定义的角度出发也是可以求解高斯积分的。令<span class="math inline">\(\mu=0,\sigma=\displaystyle\frac{\sqrt{2}}{2}\)</span>，代入上述概率密度函数的积分有：<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}\frac{1}{\sqrt{\pi}}e^{-x^2}dx=1\)</span>，结果很显然了。</p>
-<p>设随机变量<span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>，则有：</p>
-<p><span class="math display">\[\displaystyle E(X)=\int ^{+\infty} _{-\infty}xf_X(x)dx=\int ^{+\infty} _{-\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx{\xlongequal{t=\frac{x-\mu}{\sigma}}}\int ^{+\infty} _{-\infty}\frac{\sigma t + \mu}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2}}d(\sigma t+\mu)=\mu\int ^{+\infty} _{-\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu\]</span></p>
-<p>同理可求得<span class="math inline">\(E(X^2)\)</span>：</p>
-<p><span class="math display">\[\displaystyle E(X^2)=\int ^{+\infty} _{-\infty}x^2 f_X(x)dx=\int ^{+\infty} _{-\infty}\frac{x^2}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx{\xlongequal{t=\frac{x-\mu}{\sigma}}}\int ^{+\infty} _{-\infty}\frac{(\sigma t + \mu)^2}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2}}d(\sigma t+\mu)=\mu^2+\frac{\sigma^2}{\sqrt{2\pi}}\int ^{+\infty} _{-\infty}t^2e^{-\frac{t^2}{2}}dt\]</span></p>
-<p>对于最后一部分的积分，有：<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}t^2e^{-\frac{t^2}{2}}dt=\int^{+\infty} _{-\infty}e^{-\frac{t^2}{2}}dt-[te^{-\frac{t^2}{2}}]^{+\infty} _{-\infty}=\sqrt{2\pi}\)</span>，因此<span class="math inline">\(E(X^2)=\mu^2+\sigma^2\)</span>。</p>
-<p>又<span class="math inline">\(D(X)=E(X^2)-[E(X)]^2\)</span>，故<span class="math inline">\(D(X)=\sigma^2\)</span>。</p>
-<p>在求解正态分布的期望和方差时，我们又得到了一个非常有用的积分值<span class="math inline">\(\displaystyle \int^{+\infty} _{-\infty}\frac{x^2}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx=1\)</span>。事实上，可以求出标准正态分布的<span class="math inline">\(n\)</span>阶原点矩。设<span class="math inline">\(X\sim N(0,1)\)</span>当<span class="math inline">\(n\)</span>为偶数时，<span class="math inline">\(E(X^n)=(n-1)!!\)</span>；当<span class="math inline">\(n\)</span>为奇数时，<span class="math inline">\(E(X^n)=0\)</span>。还有一个比较常用的值为<span class="math inline">\(E(X^4)=3\)</span>。</p>
-<h2 id="大学物理中出现的一些积分">大学物理中出现的一些积分</h2>
-<p><span class="math display">\[\displaystyle \int_{-\infty}^{+\infty}x^{2n}e^{-bx^2}dx =2\int^{+\infty}_0(\frac{t}{b})^ne^{-t}d(\sqrt\frac{t}{b})=\frac{1}{(\sqrt b)^{2n+1}}\int_0^{+\infty}t^{n-\frac{1}{2}}e^{-t}dt=\frac{1}{(\sqrt b)^{2n+1}}\Gamma(n+\frac{1}{2})=\displaystyle\frac{(2n-1)!!}{2^{n+1}b^n}\sqrt{\frac{\pi}{b}}\]</span></p>
-<p><span class="math display">\[\displaystyle \int_{0}^{+\infty}\frac{x^3}{e^x-1}dx=\int_{0}^{+\infty}x^3\frac{e^{-x}}{1-e^{-x}}dx=\displaystyle \int_0^{+\infty}x^3 \sum_{n=1}^{\infty} e^{-n} dx=\displaystyle \sum_{n=1}^{\infty}\int_{0}^{+\infty} x^3e^{-n}dx=3! \cdot \displaystyle \sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{\pi^4}{15}\]</span></p>
+    <span id="more"></span>
+<h2 id="求i-displaystyle-int_-inftyinftyfraccos-x1x2dx">求<span class="math inline">\(I = \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2}dx\)</span></h2>
+<h3 id="费曼积分法">费曼积分法</h3>
+<p>令<span class="math inline">\(y(a) = \displaystyle \int_{0}^{+\infty} \frac{\cos ax}{1+x^2}dx,a&gt;0\)</span>，则<span class="math inline">\(I = 2y(1)\)</span>，并且有<span class="math inline">\(y(0) = \displaystyle\frac{\pi}{2}\)</span>。</p>
+<p><span class="math display">\[y&#39;(a) = \int_{0}^{+\infty}(\frac{\partial}{\partial a}\frac{\cos ax}{1+x^2})dx = -\frac{\pi}{2}+\int_{0}^{+\infty}\frac{\sin ax}{x(1+x^2)}dx \Rightarrow y&#39;(0) = -\frac{\pi}{2}\]</span></p>
+<p><span class="math display">\[y&#39;&#39;(a) = \int_{0}^{+\infty}[\frac{\partial}{\partial a}\frac{\sin ax}{x(1+x^2)}]dx = y(a) \Rightarrow y(a) = C_1e^{a}+C_2e^{-a}\]</span></p>
+<p>求解常数<span class="math inline">\(C_1\)</span>和<span class="math inline">\(C_2\)</span>，得到<span class="math inline">\(y(a) = \displaystyle \frac{\pi}{2}e^{-a}\)</span>，那么<span class="math inline">\(I = \displaystyle \frac{\pi}{e}\)</span>。</p>
+<h3 id="留数法">留数法</h3>
+<p>注意到<span class="math inline">\(I = \displaystyle \int_{-\infty}^{+\infty}\frac{\text{Re}(e^{ix})}{1+x^2}dx = \text{Re}[\int_{-\infty}^{+\infty}\frac{e^{ix}}{1+x^2}dx]\)</span>，那么有：</p>
+<p><span class="math display">\[\int_{-\infty}^{+\infty}\frac{e^{ix}}{1+x^2}dx = 2\pi i \text{Res}[\frac{e^{ix}}{1+x^2},i]=\frac{\pi}{e} \Rightarrow I = \frac{\pi}{e}\]</span></p>
 
   </div>
   
@@ -2751,21 +2718,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021-11-12-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A07/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>算法日常练习7</p>
-          <!--<p class='content'>2021年11月12日练习。
-
-BJTU-ALGO 2015
-做题做的人有点麻，来道签到题。 12345678910111213141516171819#include &lt;bits/std...</p>-->
-        </a>
       
-      
-        <a class='next' href='/2021-11-11-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A06/'>
-          <p class='title'>算法日常练习6<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <!--<p class='content'>2021年11月11日练习。
+        <a class='next' href='/2023-01-09-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE3/'>
+          <p class='title'>积分题目3<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <!--<p class='content'>这篇博客用于记录一些比较有趣的积分问题。
 
-平面上最近点对问题
-给定平面上\(n\)个点及其横纵坐标（保证横纵坐标都是 long long 范围内的整数），求这\(n\)个点中距离最小的一对点，要求输出最小...</p>-->
+求\(\displaystyle I = \int \sin(101x)(\sin x)^{99} dx\)
+\[\displaystyle I = ...</p>-->
         </a>
       
     </div>
@@ -2781,7 +2740,7 @@ BJTU-ALGO 2015
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2021-11-11-%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2823,7 +2782,7 @@ BJTU-ALGO 2015
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%83%E4%B8%AA%E5%B9%82%E7%BA%A7%E6%95%B0%E5%B1%95%E5%BC%80%E5%BC%8F"><span class="toc-text">常用的七个幂级数展开式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8Ee-x%E6%9C%89%E5%85%B3%E7%9A%84%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86"><span class="toc-text">与\(e^{-x}\)有关的反常积分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8Ee-x2%E6%9C%89%E5%85%B3%E7%9A%84%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86"><span class="toc-text">与\(e^{-x^2}\)有关的反常积分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A7%AF%E5%88%86"><span class="toc-text">大学物理中出现的一些积分</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_-inftyinftyfraccos-x1x2dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2}dx\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95"><span class="toc-text">费曼积分法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E6%B3%95"><span class="toc-text">留数法</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4052,6 +4011,23 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <style>
+  #post-body p {
+    text-indent: 2em;
+  }
+  #post-body .new-meta-box p,
+  #post-body .note p,
+  #post-body .prev-next p,
+  #post-body .tag p,
+  #post-body blockquote p,
+  #post-body details p,
+  #post-body p.p,
+  #post-body .tab-pane .checkbox
+  #post-body section p {
+    text-indent: initial;
+  }
+</style>
+
         <script>
   // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
   if (typeof MathJax === 'undefined') {
@@ -4103,23 +4079,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     MathJax.typesetPromise();
   }
 </script>
-
-        <style>
-  #post-body p {
-    text-indent: 2em;
-  }
-  #post-body .new-meta-box p,
-  #post-body .note p,
-  #post-body .prev-next p,
-  #post-body .tag p,
-  #post-body blockquote p,
-  #post-body details p,
-  #post-body p.p,
-  #post-body .tab-pane .checkbox
-  #post-body section p {
-    text-indent: initial;
-  }
-</style>
 
 
 
@@ -4254,7 +4213,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021-11-11-概率论的一些小技巧/","name":"概率论的一些知识点的总结"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"概率论的一些知识点的总结","description":"想起之前学概率论的时候整理了不少计算的小技巧，正好拿来练练写公式。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021-11-11-%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021-11-11-%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/","wordCount":33,"datePublished":"2021-11-11T11:13:52.000Z","dateModified":"2022-09-15T03:10:43.154Z","articleSection":"数学","keywords":"概率论,计算技巧","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-22-费曼积分法与留数法在求解定积分中的应用实例/","name":"费曼积分法与留数法在求解定积分中的应用实例"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"费曼积分法与留数法在求解定积分中的应用实例","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/","wordCount":0,"datePublished":"2023-01-22T10:26:24.000Z","dateModified":"2023-01-22T11:47:06.417Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
