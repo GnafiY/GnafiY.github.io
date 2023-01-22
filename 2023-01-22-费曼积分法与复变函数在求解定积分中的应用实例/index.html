@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023-01-22-费曼积分法与留数法在求解定积分中的应用实例/"/>
+  <link rel="canonical" href="http://example.com/2023-01-22-费曼积分法与复变函数在求解定积分中的应用实例/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>费曼积分法与留数法在求解定积分中的应用实例 - 一方の笔记本</title>
+  <title>费曼积分法与复变函数在求解定积分中的应用实例 - 一方の笔记本</title>
   <meta name="keywords" content="null">
-  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
+  <meta desc name="description" content="很多定积分可以利用费曼积分法与复变函数的方法更便捷地进行计算。 - John Doe - 一方の笔记本">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="费曼积分法与留数法在求解定积分中的应用实例">
-<meta property="og:url" content="http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/index.html">
+<meta property="og:title" content="费曼积分法与复变函数在求解定积分中的应用实例">
+<meta property="og:url" content="http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="求\(I &#x3D; \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2}dx\) 费曼积分法 令\(y(a) &#x3D; \displaystyle \int_{0}^{+\infty} \frac{\cos ax}{1+x^2}dx,a&gt;0\)，则\(I &#x3D; 2y(1)\)，并且有\(y(0) &#x3D; \displaystyle\frac{\">
+<meta property="og:description" content="很多定积分可以利用费曼积分法与复变函数的方法更便捷地进行计算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-22T10:26:24.000Z">
-<meta property="article:modified_time" content="2023-01-22T11:47:06.417Z">
+<meta property="article:modified_time" content="2023-01-22T13:12:37.499Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1674392650576),
+    lastupdate: new Date(1674393219092),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2604,7 +2604,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-blog" id="blog" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023-01-22-费曼积分法与留数法在求解定积分中的应用实例/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023-01-22-费曼积分法与复变函数在求解定积分中的应用实例/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="一方の笔记本">
   </span>
@@ -2625,7 +2625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        费曼积分法与留数法在求解定积分中的应用实例
+        费曼积分法与复变函数在求解定积分中的应用实例
       </h1>
       <div class='new-meta-box'>
         
@@ -2676,7 +2676,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="费曼积分法与留数法在求解定积分中的应用实例" data-path="/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/">
+      <span id="lc-pv" data-title="费曼积分法与复变函数在求解定积分中的应用实例" data-path="/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2698,7 +2698,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <span id="more"></span>
+    <p>很多定积分可以利用费曼积分法与复变函数的方法更便捷地进行计算。</p>
+<span id="more"></span>
 <h2 id="求i-displaystyle-int_-inftyinftyfraccos-x1x2dx">求<span class="math inline">\(I = \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2}dx\)</span></h2>
 <h3 id="费曼积分法">费曼积分法</h3>
 <p>令<span class="math inline">\(y(a) = \displaystyle \int_{0}^{+\infty} \frac{\cos ax}{1+x^2}dx,a&gt;0\)</span>，则<span class="math inline">\(I = 2y(1)\)</span>，并且有<span class="math inline">\(y(0) = \displaystyle\frac{\pi}{2}\)</span>。</p>
@@ -2740,7 +2741,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -4213,7 +4214,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-22-费曼积分法与留数法在求解定积分中的应用实例/","name":"费曼积分法与留数法在求解定积分中的应用实例"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"费曼积分法与留数法在求解定积分中的应用实例","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E7%95%99%E6%95%B0%E6%B3%95%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/","wordCount":0,"datePublished":"2023-01-22T10:26:24.000Z","dateModified":"2023-01-22T11:47:06.417Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-22-费曼积分法与复变函数在求解定积分中的应用实例/","name":"费曼积分法与复变函数在求解定积分中的应用实例"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"费曼积分法与复变函数在求解定积分中的应用实例","description":"很多定积分可以利用费曼积分法与复变函数的方法更便捷地进行计算。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/","wordCount":31,"datePublished":"2023-01-22T10:26:24.000Z","dateModified":"2023-01-22T13:12:37.499Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
