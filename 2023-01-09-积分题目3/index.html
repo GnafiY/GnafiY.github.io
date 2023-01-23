@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-01-09T14:57:07.000Z">
-<meta property="article:modified_time" content="2023-01-23T03:00:33.534Z">
+<meta property="article:modified_time" content="2023-01-23T08:26:50.060Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1674442994724),
+    lastupdate: new Date(1674469331082),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -1891,11 +1891,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
-      
-      aplayer: {
-        id: 7633879090,
-        enable:true
-      },
       
       
       
@@ -2739,7 +2734,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>考虑一般形式的积分<span class="math inline">\(J = \displaystyle\int_{0}^{+\infty}x^ne^{-ax}\cos kxdx(a&gt;0,n\in \text{N})\)</span>，注意到可以利用 Laplace 变换的微分性质求解：</p>
 <p><span class="math display">\[F(s)=\mathcal{L}[x^n\cos kx] = (-1)^n\frac{\partial^n}{\partial s^n}\frac{s}{s^2+k^2}\]</span></p>
 <p>代入题设条件得到<span class="math inline">\(I=\displaystyle \frac{5}{169}\)</span>。事实上，有如下等式：</p>
-<p><span class="math display">\[\frac{\partial^n}{\partial s^n}\frac{s}{s^2+k^2} = \frac{(-1)^nn!}{(s^2+k^2)^{n+1}}\text{Re}[(s+ik)^{n+1}]\]</span> 利用这个等式可以将求导运算转化为多项式求系数的问题，计算量有所减少，证明如下： - <span class="math inline">\(n=0\)</span>时，原命题显然成立； - 假设<span class="math inline">\(n=l \geq 0\)</span>时，原命题依然成立，那么<span class="math inline">\(n = l+1\)</span>时有：</p>
+<p><span class="math display">\[\frac{\partial^n}{\partial s^n}\frac{s}{s^2+k^2} = \frac{(-1)^nn!}{(s^2+k^2)^{n+1}}\text{Re}[(s+ik)^{n+1}]\]</span> 利用这个等式可以将求导运算转化为求展开系数的问题，计算量有所减少，证明如下： - <span class="math inline">\(n=0\)</span>时，原命题显然成立； - 假设<span class="math inline">\(n=l \geq 0\)</span>时，原命题依然成立，那么<span class="math inline">\(n = l+1\)</span>时有：</p>
 <p><span class="math display">\[\frac{\partial^n}{\partial s^n}\frac{s}{s^2+k^2} =  (-1)^ll! \cdot \text{Re}[\frac{\partial}{\partial s}\frac{(s+ik)^{l+1}}{(s^2+k^2)^{l+1}}]= \frac{(-1)^{l+1}(l+1)!}{(s^2+k^2)^{(l+1)+1}}\text{Re}[(s+ik)^{(l+1)+1}]\]</span> 证毕，最终得到：</p>
 <p><span class="math display">\[F(s)=\mathcal{L}[x^n\cos kx] = (-1)^n\frac{\partial^n}{\partial s^n}\frac{s}{s^2+k^2}=\frac{n!}{(s^2+k^2)^{n+1}}\text{Re}[(s+ik)^{n+1}]\]</span></p>
 <h2 id="求displaystyle-i-int_0inftyfracx2x4x21dx">求<span class="math inline">\(\displaystyle I = \int_{0}^{+\infty}\frac{x^2}{x^4+x^2+1}dx\)</span></h2>
@@ -2770,7 +2765,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><span class="math display">\[\int_{0}^{+\infty}f[(ax-\frac{b}{x})^2]dx\xlongequal{u=\frac{b}{ax}}\int_{0}^{+\infty}\frac{b}{au^2}f[(au-\frac{b}{u})^2]du\]</span></p>
 <p><span class="math display">\[\Rightarrow \int_{0}^{+\infty}f[(ax-\frac{b}{x})^2]dx = \frac{1}{2a}\int_{0}^{+\infty}f[(ax-\frac{b}{x})^2]d(ax-\frac{b}{x})=\frac{1}{a}\int_{0}^{+\infty}f(x^2)dx\]</span> <strong>注意换元时的积分限</strong>。利用这个结论可计算原积分：</p>
 <p><span class="math display">\[I=\int_{-\infty}^{+\infty}e^{-(\frac{e^x}{2}-\frac{e^{-x}}{2})^2}de^x\xlongequal{t=e^x}\int_{0}^{+\infty}e^{-(\frac{t}{2}-\frac{1}{2t})^2}dt=2\int_{0}^{+\infty}e^{-t^2}dt=\sqrt{\pi}\]</span></p>
-<h2 id="求displaystyle-intfracdx1xn其中n345">求<span class="math inline">\(\displaystyle \int\frac{dx}{1+x^n}\)</span>，其中<span class="math inline">\(n=3,4,5\)</span></h2>
+<h2 id="求displaystyle-intfracdx1xn其中n34">求<span class="math inline">\(\displaystyle \int\frac{dx}{1+x^n}\)</span>，其中<span class="math inline">\(n=3,4\)</span></h2>
+<h3 id="求idisplaystyle-intfracdx1x3">求<span class="math inline">\(I=\displaystyle \int\frac{dx}{1+x^3}\)</span></h3>
+<p>设<span class="math inline">\(\displaystyle \frac{1}{1+x^3}=\frac{A}{x+1}+\frac{Bx+C}{x^2-x+1}\)</span>，利用留数法的思想，可以得到如下方程：</p>
+<p><span class="math display">\[\frac{1}{x^2-x+1}=A+\frac{(Bx+C)(x+1)}{x^2-x+1}\Rightarrow A = \frac{1}{3}\]</span> 再令<span class="math inline">\(x= 1\)</span>和<span class="math inline">\(x=0\)</span>，得到如下两个方程：</p>
+<p><span class="math display">\[A+C=1\]</span></p>
+<p><span class="math display">\[\frac{A}{2}+B+C=\frac{1}{2}\]</span> 解得：</p>
+<p><span class="math display">\[\left\{\begin{matrix}
+    \displaystyle A = \frac{1}{3}\\
+    \displaystyle B=-\frac{1}{3}\\
+    \displaystyle C=\frac{2}{3}
+\end{matrix}\right.\]</span> 那么<span class="math inline">\(I=\displaystyle \frac{1}{3}\ln\frac{|x+1|}{\sqrt{x^2-x+1}}+\frac{1}{\sqrt{3}}\arctan(\frac{2x-1}{\sqrt{3}})+C\)</span>。</p>
+<h3 id="求idisplaystyle-intfracdx1x4">求<span class="math inline">\(I=\displaystyle \int\frac{dx}{1+x^4}\)</span></h3>
+<p>由<span class="math inline">\(x^4+1=(x^2+1)^2-2x^2=(x^2-\sqrt{2}x+1)(x^2+\sqrt{2}x+1)\)</span>，有：</p>
+<p><span class="math display">\[\frac{1}{1+x^4}=\frac{Ax+B}{x^2-\sqrt{2}x+1}+\frac{Cx+D}{x^2+\sqrt{2}x+1}\]</span> 考虑到<span class="math inline">\(x^4+1=0\)</span>没有实根，并且复根形式上较为复杂，直接赋值求系数：</p>
+<p><span class="math display">\[\left\{\begin{matrix}
+\displaystyle \sqrt{2}A+B+\frac{\sqrt{2}}{5}C+\frac{1}{5}D=\frac{1}{5}(\text{令}x=\sqrt2) \\
+\displaystyle -\frac{\sqrt 2}{5}A+\frac{1}{5}B-\sqrt{2}C+D =\frac{1}{5} (\text{令}x=-\sqrt2) \\
+\displaystyle B+D=1 (\text{令}x=0) \\
+\displaystyle \sqrt{2}A+ 2B+\frac{\sqrt{2}}{5}C+ \frac{2}{5}D =\frac{4}{5}(\text{令}x=\frac{\sqrt{2}}{2})
+\end{matrix}\right.\]</span> 解得： <span class="math display">\[\left\{\begin{matrix}
+    \displaystyle A = -\frac{\sqrt{2}}{4} \\ 
+    \displaystyle B = \frac{1}{2} \\
+    \displaystyle C = \frac{\sqrt{2}}{4}\\
+    \displaystyle D = \frac{1}{2}
+\end{matrix}\right.\]</span> 计算过程略，求得<span class="math inline">\(\displaystyle I = \frac{\sqrt{2}}{8}\ln\frac{x^2+\sqrt{2}x+1}{x^2-\sqrt{2}x+1}+\frac{\sqrt{2}}{4}\arctan(\sqrt{2}x-1)+\frac{\sqrt{2}}{4}\arctan(\sqrt{2}x+1)+C\)</span>。</p>
 
   </div>
   
@@ -2853,7 +2872,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int-sin101xsin-x99-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int \sin(101x)(\sin x)^{99} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int-frac1sin-x1-cos-xex-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int \frac{1+\sin x}{1 + \cos x}e^x dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int_0infty-fracsin3-xx3-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int_{0}^{+\infty} \frac{\sin^3 x}{x^3} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int-fracx5---xx81-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int \frac{x^5 - x}{x^8+1} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-fracx-ln1---xx2-dx"><span class="toc-text">求\(\displaystyle \int \frac{x + \ln(1 - x)}{x^2} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_01fracln1x1x2dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{1}\frac{\ln(1+x)}{1+x^2}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-fracxearctan-x1xfrac32dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \frac{xe^{\arctan x}}{(1+x)^{\frac{3}{2}}}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-e-fracx2fraccos-x---sin-xsqrtsin-xdx"><span class="toc-text">求\(I &#x3D; \displaystyle \int e^{-\frac{x}{2}}\frac{\cos x - \sin x}{\sqrt{\sin x}}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-frace-sin-xsin-2xsin4fracpi4-fracx2-dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \frac{e^{-\sin x}\sin 2x}{\sin^4(\frac{\pi}{4}-\frac{x}{2})} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-intfrac1-2xearctan-x1x2dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int\frac{(1-2x)e^{\arctan x}}{(1+x^2)}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint_0inftyxe-3xcos-2xdx"><span class="toc-text">求\(I&#x3D;\displaystyle\int_{0}^{+\infty}xe^{-3x}\cos 2xdx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int_0inftyfracx2x4x21dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int_{0}^{+\infty}\frac{x^2}{x^4+x^2+1}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wallis-%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-text">Wallis 公式推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F1"><span class="toc-text">公式1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F2"><span class="toc-text">公式2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint_-inftyinftyex-sinh2-xdx"><span class="toc-text">求\(I&#x3D;\displaystyle\int_{-\infty}^{+\infty}e^{x-\sinh^2 x}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-intfracdx1xn%E5%85%B6%E4%B8%ADn345"><span class="toc-text">求\(\displaystyle \int\frac{dx}{1+x^n}\)，其中\(n&#x3D;3,4,5\)</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int-sin101xsin-x99-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int \sin(101x)(\sin x)^{99} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int-frac1sin-x1-cos-xex-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int \frac{1+\sin x}{1 + \cos x}e^x dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int_0infty-fracsin3-xx3-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int_{0}^{+\infty} \frac{\sin^3 x}{x^3} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int-fracx5---xx81-dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int \frac{x^5 - x}{x^8+1} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-int-fracx-ln1---xx2-dx"><span class="toc-text">求\(\displaystyle \int \frac{x + \ln(1 - x)}{x^2} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_01fracln1x1x2dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{1}\frac{\ln(1+x)}{1+x^2}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-fracxearctan-x1xfrac32dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \frac{xe^{\arctan x}}{(1+x)^{\frac{3}{2}}}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-e-fracx2fraccos-x---sin-xsqrtsin-xdx"><span class="toc-text">求\(I &#x3D; \displaystyle \int e^{-\frac{x}{2}}\frac{\cos x - \sin x}{\sqrt{\sin x}}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-frace-sin-xsin-2xsin4fracpi4-fracx2-dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \frac{e^{-\sin x}\sin 2x}{\sin^4(\frac{\pi}{4}-\frac{x}{2})} dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-intfrac1-2xearctan-x1x2dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int\frac{(1-2x)e^{\arctan x}}{(1+x^2)}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint_0inftyxe-3xcos-2xdx"><span class="toc-text">求\(I&#x3D;\displaystyle\int_{0}^{+\infty}xe^{-3x}\cos 2xdx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-int_0inftyfracx2x4x21dx"><span class="toc-text">求\(\displaystyle I &#x3D; \int_{0}^{+\infty}\frac{x^2}{x^4+x^2+1}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wallis-%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-text">Wallis 公式推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F1"><span class="toc-text">公式1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F2"><span class="toc-text">公式2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint_-inftyinftyex-sinh2-xdx"><span class="toc-text">求\(I&#x3D;\displaystyle\int_{-\infty}^{+\infty}e^{x-\sinh^2 x}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-intfracdx1xn%E5%85%B6%E4%B8%ADn34"><span class="toc-text">求\(\displaystyle \int\frac{dx}{1+x^n}\)，其中\(n&#x3D;3,4\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82idisplaystyle-intfracdx1x3"><span class="toc-text">求\(I&#x3D;\displaystyle \int\frac{dx}{1+x^3}\)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82idisplaystyle-intfracdx1x4"><span class="toc-text">求\(I&#x3D;\displaystyle \int\frac{dx}{1+x^4}\)</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2940,22 +2959,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#ec1c24'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='7633879090'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -3556,82 +3559,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-
-
-  <script>
-  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
-  (async () => {
-    // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
-    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
-  
-    // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js')
-  
-  })();
-
-  function SetAPlayerPlugin(){
-    let Metings = document.querySelectorAll('meting-js');
-    if (Metings.length === 0) {return;};
-    if (Metings[0].aplayer && Metings[0].aplayer.on) {
-      // improve the accessibility https://web.dev/button-name/
-      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
-        e.setAttribute("aria-label","Aplayer Menu")
-      })
-      // message see: /layout/_plugins/message/script.ejs
-      
-        try {
-          setTimeout(() => {
-            Metings.forEach((item, index) => {
-              const aplayerItem = item.aplayer; if(!aplayerItem) return;
-              const rightAplayerCheck = 'true' === 'true'
-                && item.meta.id === '7633879090';
-              if(rightAplayerCheck) RightMenuAplayer.checkAPlayer();
-              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
-                aplayerItem.on('play', function messagePlay() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                      icon: 'fa-solid fa-play',
-                      transitionIn: 'flipInX',
-                      transitionOut: 'flipOutX'
-                    });
-                  }, 100)
-                });
-              }
-              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
-                aplayerItem.on('pause', function messagePause() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
-                    if(aplayerItem.paused) {
-                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                        icon: 'fa-solid fa-pause',
-                        transitionIn: 'flipInX',
-                        transitionOut: 'flipOutX'
-                      });
-                    }
-                  }, 100)
-                });
-              }
-            });
-          }, 500)
-        } catch (error) { console.error(error); }
-      
-    }else{
-      volantis.requestAnimationFrame(SetAPlayerPlugin)
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", ()=>{
-    SetAPlayerPlugin();
-  });
-  volantis.pjax.push(SetAPlayerPlugin);
-</script>
 
 
 
@@ -4284,7 +4211,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-09-积分题目3/","name":"积分题目3"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"积分题目3","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-09-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE3/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-09-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE3/","wordCount":20,"datePublished":"2023-01-09T14:57:07.000Z","dateModified":"2023-01-23T03:00:33.534Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-09-积分题目3/","name":"积分题目3"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"积分题目3","description":"这篇博客用于记录一些比较有趣的积分问题。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-09-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE3/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-09-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE3/","wordCount":20,"datePublished":"2023-01-09T14:57:07.000Z","dateModified":"2023-01-23T08:26:50.060Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
