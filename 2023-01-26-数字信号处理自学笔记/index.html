@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022-12-26-asr入门/"/>
+  <link rel="canonical" href="http://example.com/2023-01-26-数字信号处理自学笔记/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>智能语音技术入门 - 一方の笔记本</title>
+  <title>数字信号处理自学笔记 - 一方の笔记本</title>
   <meta name="keywords" content="null">
-  <meta desc name="description" content="研究生阶段的主要研究领域，近期在做本科开题报告时深感亟需补充该领域的相关知识，于是有了这篇概述智能语音技术以及近期工作总结的博客。 - John Doe - 一方の笔记本">
+  <meta desc name="description" content="数字信号处理是信号处理的重要理论课。 - John Doe - 一方の笔记本">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="智能语音技术入门">
-<meta property="og:url" content="http://example.com/2022-12-26-ASR%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:title" content="数字信号处理自学笔记">
+<meta property="og:url" content="http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="研究生阶段的主要研究领域，近期在做本科开题报告时深感亟需补充该领域的相关知识，于是有了这篇概述智能语音技术以及近期工作总结的博客。">
+<meta property="og:description" content="数字信号处理是信号处理的重要理论课。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-12-26T14:45:49.000Z">
-<meta property="article:modified_time" content="2023-01-03T05:23:13.769Z">
+<meta property="article:published_time" content="2023-01-26T10:05:44.000Z">
+<meta property="article:modified_time" content="2023-01-26T10:47:41.266Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1674469442880),
+    lastupdate: new Date(1675623020357),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -1891,6 +1891,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 7633879090,
+        enable:true
+      },
       
       
       
@@ -2599,7 +2604,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-blog" id="blog" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022-12-26-ASR入门/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023-01-26-数字信号处理自学笔记/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="一方の笔记本">
   </span>
@@ -2620,7 +2625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        智能语音技术入门
+        数字信号处理自学笔记
       </h1>
       <div class='new-meta-box'>
         
@@ -2640,18 +2645,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='new-meta-item category'>
       <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/">语音识别</a>
+      <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
       
         <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">机器学习</span></a>
-        </span>
-      
-        <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">深度学习</span></a>
-        </span>
-      
-        <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" itemprop="url"><span itemprop="name">语音识别</span></a>
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
         </span>
       
     </div>
@@ -2661,10 +2658,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-12-26T22:45:49+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-01-26T18:05:44+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年12月26日</p>
+    <p>发布于：2023年1月26日</p>
   </a>
 </div>
 
@@ -2679,7 +2676,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="智能语音技术入门" data-path="/2022-12-26-ASR%E5%85%A5%E9%97%A8/">
+      <span id="lc-pv" data-title="数字信号处理自学笔记" data-path="/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2701,22 +2698,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>研究生阶段的主要研究领域，近期在做本科开题报告时深感亟需补充该领域的相关知识，于是有了这篇概述智能语音技术以及近期工作总结的博客。</p>
+    <p>数字信号处理是信号处理的重要理论课。</p>
 <span id="more"></span>
-<h2 id="智能语音技术概述">智能语音技术概述</h2>
-<h3 id="研究方向">研究方向</h3>
-<h3 id="语音识别">语音识别</h3>
-<h3 id="唤醒词检测语音唤醒">唤醒词检测（语音唤醒）</h3>
-<h2 id="论文阅读">论文阅读</h2>
-<p>经过师兄的推荐，我主要阅读了以下几篇论文。</p>
-<h2 id="环境配置">环境配置</h2>
-<h3 id="本地环境">本地环境</h3>
-<h4 id="ubuntu虚拟机双系统的安装方法">Ubuntu虚拟机/双系统的安装方法</h4>
-<h3 id="服务器端">服务器端</h3>
-<p>服务器整体结构复杂，需要专员维护，作为用户需要了解操作规范以及服务器的环境变量配置和提交任务的方法。</p>
-<h4 id="module-的使用"><code>module</code> 的使用</h4>
-<h4 id="slurm-的使用"><code>slurm</code> 的使用</h4>
-<h2 id="wekws-examples-试运行"><code>WeKWS</code> examples 试运行</h2>
+<h2 id="概述">概述</h2>
+<h3 id="信号">信号</h3>
+<p>信号可以按照不同角度进行划分：</p>
+<ul>
+<li>按照自变量的个数：一维信号、二维信号、多维信号，本课程只讨论一维信号；</li>
+<li>周期信号、非周期信号；</li>
+<li>确定信号、随机信号；</li>
+<li>能量信号、功率信号；</li>
+<li>连续时间信号、模拟信号、离散时间信号（主要讨论）、数字信号。</li>
+</ul>
+<h3 id="系统">系统</h3>
+<p>系统也可以按照不同角度进行划分：</p>
+<ul>
+<li>按照处理的信号种类：模拟系统、连续时间系统、离散时间系统、数字系统；</li>
+<li>线性、非线性；</li>
+<li>时（移）不变、可变；</li>
+<li>因果、非因果。</li>
+</ul>
+<h3 id="信号处理">信号处理</h3>
+<p>信号处理是研究用系统对含有信息的信号进行处理（变换），以获得人们所希望的信号，从而达到提取信息、便于利用的一门科学，具体内容包括滤波、变换、检测、谱分析、估计、压缩和识别等等一系列的加工处理。</p>
+<p>数字信号处理是把信号用数字或字符表示的序列，通过计算机或信号处理设备，用数字的数值计算方法加以处理，以达到提取有用信息便于应用的目的。</p>
+<h2 id="离散时间信号与系统">离散时间信号与系统</h2>
+<h3 id="离散时间信号序列">离散时间信号——序列</h3>
+<h3 id="序列的定义与运算">序列的定义与运算</h3>
+<p>离散时间信号是一个整数值变量<span class="math inline">\(n\)</span>的函数，表示为<span class="math inline">\(x(n)\)</span>或<span class="math inline">\(\{x(n)\}\)</span>，其中独立变量<span class="math inline">\(n\)</span>不一定代表时间，注意<span class="math inline">\(x(n)\)</span>可能取实数，也可能取复数。序列具有如下的运算：</p>
+<ul>
+<li>移位：<span class="math inline">\(w(n)=x(n-m),m\in\text{Z}\)</span>，当<span class="math inline">\(m&gt;0\)</span>时为右移动，否则为左移；</li>
+<li>翻褶：<span class="math inline">\(w(x)=x(-n)\)</span>；</li>
+<li>求和：<span class="math inline">\(z(n)=x(n)+y(n)\)</span>；</li>
+<li>乘积：<span class="math inline">\(w(n)=x(n)*y(n)\)</span>；</li>
+<li>标乘：<span class="math inline">\(w(n)=cx(n)\)</span>，其中<span class="math inline">\(c\)</span>为常数；</li>
+<li>累加：<span class="math inline">\(y(n)=\displaystyle\sum_{k=-\infty}^{n}x(k)\)</span>；</li>
+<li>差分：<span class="math inline">\(\Delta x(n) = x(n+1)-x(n)\)</span>被定义为前向差分，<span class="math inline">\(\nabla x(n)=x(n)-x(n-1)\)</span>被定义为后向差分；</li>
+<li>卷积：<span class="math inline">\(y(n)=\displaystyle \sum_{m=-\infty}^{+\infty}x(m)h(n-m)=x(n)*h(n)\)</span>，这被称为<strong>线性卷积</strong>。</li>
+</ul>
+<h3 id="常用的序列">常用的序列</h3>
+<p><strong>单位脉冲信号</strong>的定义为<span class="math inline">\(\delta(n) = \left\{\begin{matrix}  1, n = 0 \\  0, \text{else} \end{matrix}\right.\)</span>，也被称为单位采样序列。</p>
+<h3 id="连续时间系统">连续时间系统</h3>
+<h3 id="常系数线性差分方程">常系数线性差分方程</h3>
+<h3 id="连续时间信号抽样">连续时间信号抽样</h3>
 
   </div>
   
@@ -2727,22 +2750,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023-01-01-%E7%A7%AF%E5%88%86%E9%A2%98%E7%9B%AE2/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>积分题目2</p>
-          <!--<p class='content'>这篇博客用于总结概率论相关的积分计算问题。
-
-求\(Z=g(X,Y)\)的概率密度函数
-设有二维随机变量\((X,Y)\)以及其联合分布的概率密度函数\(f(x,y)\)，试求\(Z=g(X,Y...</p>-->
-        </a>
       
-      
-        <a class='next' href='/2022-11-13-PyTorch%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8/'>
-          <p class='title'>PyTorch 框架入门<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <!--<p class='content'>记录一下入门 PyTorch 时所写的一些代码。
+        <a class='next' href='/2023-01-22-%E8%B4%B9%E6%9B%BC%E7%A7%AF%E5%88%86%E6%B3%95%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%9C%A8%E6%B1%82%E8%A7%A3%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/'>
+          <p class='title'>费曼积分法与复变函数在求解定积分中的应用实例<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <!--<p class='content'>很多定积分可以利用费曼积分法与复变函数的方法更便捷地进行计算。
 
-Anaconda 环境配置
-VS Code 配置
-工欲善其事，必先利其器。我最终选择 VS Code 作为开发环境，原因很简单，该开发环境需要...</p>-->
+求\(I = \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2...</p>-->
         </a>
       
     </div>
@@ -2758,7 +2771,7 @@ VS Code 配置
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022-12-26-ASR%E5%85%A5%E9%97%A8/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2800,7 +2813,7 @@ VS Code 配置
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="toc-text">智能语音技术概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91"><span class="toc-text">研究方向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-text">语音识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%94%A4%E9%86%92%E8%AF%8D%E6%A3%80%E6%B5%8B%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92"><span class="toc-text">唤醒词检测（语音唤醒）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB"><span class="toc-text">论文阅读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83"><span class="toc-text">本地环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-text">Ubuntu虚拟机&#x2F;双系统的安装方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="toc-text">服务器端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#module-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">module 的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slurm-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">slurm 的使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wekws-examples-%E8%AF%95%E8%BF%90%E8%A1%8C"><span class="toc-text">WeKWS examples 试运行</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7"><span class="toc-text">信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F"><span class="toc-text">系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-text">信号处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F"><span class="toc-text">离散时间信号与系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E5%BA%8F%E5%88%97"><span class="toc-text">离散时间信号——序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-text">序列的定义与运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BA%8F%E5%88%97"><span class="toc-text">常用的序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E7%B3%BB%E7%BB%9F"><span class="toc-text">连续时间系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">常系数线性差分方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E6%8A%BD%E6%A0%B7"><span class="toc-text">连续时间信号抽样</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2887,6 +2900,22 @@ VS Code 配置
       
         <div class="aplayer-container">
           
+
+  
+    <meting-js
+      theme='#ec1c24'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='7633879090'
+      list-folded='true'>
+    </meting-js>
+  
 
 
         </div>
@@ -3489,6 +3518,82 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+    // 右键 music 需要在 APlayer  MetingJS 之后加载
+    await volantis.js('/js/plugins/aplayer.js')
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '7633879090';
+              if(rightAplayerCheck) RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3954,6 +4059,58 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }
 </style>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
 
 
 </pjax>
@@ -4087,7 +4244,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/机器学习/","name":"机器学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/机器学习/深度学习/","name":"深度学习"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/机器学习/深度学习/语音识别/","name":"语音识别"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022-12-26-ASR入门/","name":"智能语音技术入门"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"智能语音技术入门","description":"研究生阶段的主要研究领域，近期在做本科开题报告时深感亟需补充该领域的相关知识，于是有了这篇概述智能语音技术以及近期工作总结的博客。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022-12-26-ASR%E5%85%A5%E9%97%A8/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022-12-26-ASR%E5%85%A5%E9%97%A8/","wordCount":65,"datePublished":"2022-12-26T14:45:49.000Z","dateModified":"2023-01-03T05:23:13.769Z","articleSection":"机器学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-26-数字信号处理自学笔记/","name":"数字信号处理自学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数字信号处理自学笔记","description":"数字信号处理是信号处理的重要理论课。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/","wordCount":18,"datePublished":"2023-01-26T10:05:44.000Z","dateModified":"2023-01-26T10:47:41.266Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
