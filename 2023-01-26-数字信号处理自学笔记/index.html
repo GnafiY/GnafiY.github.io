@@ -33,17 +33,15 @@
   <!-- 页面元数据 -->
   <title>数字信号处理自学笔记 - 一方の笔记本</title>
   <meta name="keywords" content="null">
-  <meta desc name="description" content="数字信号处理是信号处理的重要理论课。 - John Doe - 一方の笔记本">
-  
-<meta property="og:type" content="article">
+  <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="数字信号处理自学笔记">
 <meta property="og:url" content="http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="数字信号处理是信号处理的重要理论课。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-01-26T10:05:44.000Z">
-<meta property="article:modified_time" content="2023-01-26T10:47:41.266Z">
+<meta property="article:published_time" content="2023-01-26T02:55:17.000Z">
+<meta property="article:modified_time" content="2023-02-07T06:19:07.282Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1871,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675623020357),
+    lastupdate: new Date(1675750918870),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2658,7 +2656,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-01-26T18:05:44+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-01-26T10:55:17+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2023年1月26日</p>
@@ -2698,48 +2696,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>数字信号处理是信号处理的重要理论课。</p>
-<span id="more"></span>
-<h2 id="概述">概述</h2>
-<h3 id="信号">信号</h3>
-<p>信号可以按照不同角度进行划分：</p>
-<ul>
-<li>按照自变量的个数：一维信号、二维信号、多维信号，本课程只讨论一维信号；</li>
-<li>周期信号、非周期信号；</li>
-<li>确定信号、随机信号；</li>
-<li>能量信号、功率信号；</li>
-<li>连续时间信号、模拟信号、离散时间信号（主要讨论）、数字信号。</li>
-</ul>
-<h3 id="系统">系统</h3>
-<p>系统也可以按照不同角度进行划分：</p>
-<ul>
-<li>按照处理的信号种类：模拟系统、连续时间系统、离散时间系统、数字系统；</li>
-<li>线性、非线性；</li>
-<li>时（移）不变、可变；</li>
-<li>因果、非因果。</li>
-</ul>
-<h3 id="信号处理">信号处理</h3>
-<p>信号处理是研究用系统对含有信息的信号进行处理（变换），以获得人们所希望的信号，从而达到提取信息、便于利用的一门科学，具体内容包括滤波、变换、检测、谱分析、估计、压缩和识别等等一系列的加工处理。</p>
-<p>数字信号处理是把信号用数字或字符表示的序列，通过计算机或信号处理设备，用数字的数值计算方法加以处理，以达到提取有用信息便于应用的目的。</p>
-<h2 id="离散时间信号与系统">离散时间信号与系统</h2>
-<h3 id="离散时间信号序列">离散时间信号——序列</h3>
-<h3 id="序列的定义与运算">序列的定义与运算</h3>
-<p>离散时间信号是一个整数值变量<span class="math inline">\(n\)</span>的函数，表示为<span class="math inline">\(x(n)\)</span>或<span class="math inline">\(\{x(n)\}\)</span>，其中独立变量<span class="math inline">\(n\)</span>不一定代表时间，注意<span class="math inline">\(x(n)\)</span>可能取实数，也可能取复数。序列具有如下的运算：</p>
-<ul>
-<li>移位：<span class="math inline">\(w(n)=x(n-m),m\in\text{Z}\)</span>，当<span class="math inline">\(m&gt;0\)</span>时为右移动，否则为左移；</li>
-<li>翻褶：<span class="math inline">\(w(x)=x(-n)\)</span>；</li>
-<li>求和：<span class="math inline">\(z(n)=x(n)+y(n)\)</span>；</li>
-<li>乘积：<span class="math inline">\(w(n)=x(n)*y(n)\)</span>；</li>
-<li>标乘：<span class="math inline">\(w(n)=cx(n)\)</span>，其中<span class="math inline">\(c\)</span>为常数；</li>
-<li>累加：<span class="math inline">\(y(n)=\displaystyle\sum_{k=-\infty}^{n}x(k)\)</span>；</li>
-<li>差分：<span class="math inline">\(\Delta x(n) = x(n+1)-x(n)\)</span>被定义为前向差分，<span class="math inline">\(\nabla x(n)=x(n)-x(n-1)\)</span>被定义为后向差分；</li>
-<li>卷积：<span class="math inline">\(y(n)=\displaystyle \sum_{m=-\infty}^{+\infty}x(m)h(n-m)=x(n)*h(n)\)</span>，这被称为<strong>线性卷积</strong>。</li>
-</ul>
-<h3 id="常用的序列">常用的序列</h3>
-<p><strong>单位脉冲信号</strong>的定义为<span class="math inline">\(\delta(n) = \left\{\begin{matrix}  1, n = 0 \\  0, \text{else} \end{matrix}\right.\)</span>，也被称为单位采样序列。</p>
-<h3 id="连续时间系统">连续时间系统</h3>
-<h3 id="常系数线性差分方程">常系数线性差分方程</h3>
-<h3 id="连续时间信号抽样">连续时间信号抽样</h3>
+    
 
   </div>
   
@@ -2803,19 +2760,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7"><span class="toc-text">信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F"><span class="toc-text">系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-text">信号处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F"><span class="toc-text">离散时间信号与系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E5%BA%8F%E5%88%97"><span class="toc-text">离散时间信号——序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-text">序列的定义与运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BA%8F%E5%88%97"><span class="toc-text">常用的序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E7%B3%BB%E7%BB%9F"><span class="toc-text">连续时间系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">常系数线性差分方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E6%8A%BD%E6%A0%B7"><span class="toc-text">连续时间信号抽样</span></a></li></ol></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -4244,7 +4191,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-26-数字信号处理自学笔记/","name":"数字信号处理自学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数字信号处理自学笔记","description":"数字信号处理是信号处理的重要理论课。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/","wordCount":18,"datePublished":"2023-01-26T10:05:44.000Z","dateModified":"2023-01-26T10:47:41.266Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-01-26-数字信号处理自学笔记/","name":"数字信号处理自学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数字信号处理自学笔记","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-01-26-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/","wordCount":0,"datePublished":"2023-01-26T02:55:17.000Z","dateModified":"2023-02-07T06:19:07.282Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
