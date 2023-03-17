@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2721,7 +2721,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	<span class="type">int</span> V, M;</span><br><span class="line">	cin &gt;&gt;V &gt;&gt; M;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt;<span class="built_in">cost</span>(M + <span class="number">1</span>), <span class="built_in">value</span>(M + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= M; i++) &#123;</span><br><span class="line">		cin &gt;&gt; cost[i] &gt;&gt; value[i];</span><br><span class="line">	&#125;</span><br><span class="line">	vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;<span class="built_in">dp</span>(M + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(V + <span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= M; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = cost[i]; j &lt;= V; j++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; j &gt;= k * cost[i]; k++) &#123;</span><br><span class="line">				dp[i][j] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - k * cost[i]] + k * value[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*或者可以这样</span></span><br><span class="line"><span class="comment">	for (int i = 1; i &lt;= M; i++) &#123;</span></span><br><span class="line"><span class="comment">		for (int j = cost[i]; j &lt;= V; j++) &#123;</span></span><br><span class="line"><span class="comment">			dp[i][j] = max(dp[i - 1][j], dp[i][j - cost[i]] + value[i]);</span></span><br><span class="line"><span class="comment">			//与0-1背包问题的唯一不同就是后一项中dp那部分的下标由(i - 1, j - cost[i])变为了(i, j - cost[i])</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	cout &lt;&lt; dp[M][V] &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-c">Problem C</h2>
 <h3 id="题目描述">题目描述</h3>
-<p><span class="math inline">\(N\)</span>位同学站成一排，音乐老师要请其中的<span class="math inline">\((N-K)\)</span>位同学出列，使得剩下的<span class="math inline">\(K\)</span>位同学排成合唱队形。 合唱队形是指这样的一种队形：设<span class="math inline">\(K\)</span>位同学从左到右依次编号为<span class="math inline">\(1,2,...,K\)</span>，他们的身高分别为<span class="math inline">\(T_1,T_2,...,T_K\)</span>，则他们的身高满足<span class="math inline">\(T_1&lt;...&lt;T_i\)</span>且<span class="math inline">\(T_i&gt; T_{i+1}&gt;...&gt;T_K(1 \leq i \leq K)\)</span>。 你的任务是，已知所有N位同学的身高，计算最少需要几位同学出列，可以使得剩下的同学排成合唱队形。</p>
+<p><span
+class="math inline">\(N\)</span>位同学站成一排，音乐老师要请其中的<span
+class="math inline">\((N-K)\)</span>位同学出列，使得剩下的<span
+class="math inline">\(K\)</span>位同学排成合唱队形。
+合唱队形是指这样的一种队形：设<span
+class="math inline">\(K\)</span>位同学从左到右依次编号为<span
+class="math inline">\(1,2,...,K\)</span>，他们的身高分别为<span
+class="math inline">\(T_1,T_2,...,T_K\)</span>，则他们的身高满足<span
+class="math inline">\(T_1&lt;...&lt;T_i\)</span>且<span
+class="math inline">\(T_i&gt; T_{i+1}&gt;...&gt;T_K(1 \leq i \leq
+K)\)</span>。
+你的任务是，已知所有N位同学的身高，计算最少需要几位同学出列，可以使得剩下的同学排成合唱队形。</p>
 <h3 id="题解">题解</h3>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> N;</span><br><span class="line">	cin &gt;&gt; N;</span><br><span class="line">	<span class="type">int</span> K = <span class="number">0</span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">T</span><span class="params">(<span class="number">1</span>, <span class="number">-1</span>)</span></span>;</span><br><span class="line">	<span class="comment">//第i位同学左侧最长单调增子序列、右侧最长单调减子序列的长度</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">		<span class="type">int</span> Ti;</span><br><span class="line">		cin &gt;&gt; Ti;</span><br><span class="line">		T.<span class="built_in">emplace_back</span>(Ti);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp_l</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span>, <span class="title">dp_r</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (T[i] &gt; T[j]) &#123;</span><br><span class="line">				dp_l[i] = <span class="built_in">max</span>(dp_l[i], dp_l[j] + <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = N; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = N; j &gt; i; j--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (T[i] &gt; T[j]) &#123;</span><br><span class="line">				dp_r[i] = <span class="built_in">max</span>(dp_r[i], dp_r[j] + <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">		K = <span class="built_in">max</span>(K, dp_l[i] + dp_r[i] + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; N - K &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-d">Problem D</h2>
@@ -2740,10 +2751,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021-10-25-%E5%8D%95%E8%B0%83%E6%A0%88%E5%92%8C%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>单调栈和单调队列</p>
-          <!--<p class='content'>单调栈和单调队列可以用来降低一些查找问题的时间复杂度。 
+          <!--<p class='content'>单调栈和单调队列可以用来降低一些查找问题的时间复杂度。
+
 内容待补充。
 LintCode 1316
-本题对于算法的时间复杂度要求较高。 12345678910111213141516171819...</p>-->
+本题对于算法的时间复杂度要求较高。 1234567891011121314151617...</p>-->
         </a>
       
       
@@ -2751,7 +2763,7 @@ LintCode 1316
           <p class='title'>排序算法<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <!--<p class='content'>一些排序算法的 C++ 实现。
 
-12345678910111213141516171819202122232425262728293031323334353637383940414243444...</p>-->
+123456789101112131415161718192021222324252627282930313233343536373839404142434...</p>-->
         </a>
       
     </div>
@@ -2931,13 +2943,19 @@ LintCode 1316
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3940,7 +3958,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

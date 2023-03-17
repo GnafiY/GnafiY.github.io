@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2699,7 +2699,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>单调栈和单调队列可以用来降低一些查找问题的时间复杂度。 <span id="more"></span></p>
+    <p>单调栈和单调队列可以用来降低一些查找问题的时间复杂度。
+<span id="more"></span></p>
 <p>内容待补充。</p>
 <h2 id="lintcode-1316">LintCode 1316</h2>
 <p>本题对于算法的时间复杂度要求较高。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param arr: the arr</span></span><br><span class="line"><span class="comment">     * @return: the sum of the luck number</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">bool</span> <span class="title">pairComByFirst</span><span class="params">(pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;a, pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a.first &lt; b.first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">luckNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; a;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            a.<span class="built_in">emplace_back</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>, <span class="type">int</span>&gt;(arr[i], i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>(), pairComByFirst);</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">l</span><span class="params">(n, <span class="number">0</span>)</span>, <span class="title">r</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        stack&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; s;</span><br><span class="line">        <span class="function">pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; <span class="title">fir</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                fir = s.<span class="built_in">top</span>();</span><br><span class="line">                <span class="keyword">if</span> (a[i].second &lt; fir.second) &#123;</span><br><span class="line">                    l[fir.second] = a[i].first;</span><br><span class="line">                    s.<span class="built_in">pop</span>();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            s.<span class="built_in">push</span>(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            s.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                fir = s.<span class="built_in">top</span>();</span><br><span class="line">                <span class="keyword">if</span> (a[i].second &gt; fir.second) &#123;</span><br><span class="line">                    r[fir.second] = a[i].first;</span><br><span class="line">                    s.<span class="built_in">pop</span>();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            s.<span class="built_in">push</span>(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l[i] &amp;&amp; r[i] &amp;&amp; l[i] % r[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -2719,15 +2720,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 个人认为学习动态规划更容易理解的学习路径为暴力搜索\(\Rightarrow\)记忆化搜索优化\(\Rightarrow\)动态规划。
 Problem A
 题目描述
-给定\(...</p>-->
+...</p>-->
         </a>
       
       
         <a class='next' href='/2021-10-24-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E5%9B%9B%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/'>
           <p class='title'>算法分析与设计第四次作业题题解<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <!--<p class='content'>题目发布于2021年10月25日下午5点。 
-本次题目主要都是动态规划，A题和B题都是换汤不换药的0-1背包问题，C题是求最大递增、递减子序列，D题是很基础的路径问题，E题也很易得递推方程。
-P...</p>-->
+本次题目主要都是动态规划，A题和B题都是换汤不换药的0-1背包问题，C题是求最大递增、递减子序列，D题是很基础的路径问题，E题也很易得递推方程。...</p>-->
         </a>
       
     </div>
@@ -2907,13 +2907,19 @@ P...</p>-->
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3916,7 +3922,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2708,12 +2708,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>动态规划的题目。 <span id="more"></span></p>
-<p>个人认为学习动态规划更容易理解的学习路径为<b>暴力搜索</b><span class="math inline">\(\Rightarrow\)</span><b>记忆化搜索优化</b><span class="math inline">\(\Rightarrow\)</span><b>动态规划</b>。</p>
+<p>个人认为学习动态规划更容易理解的学习路径为<b>暴力搜索</b><span
+class="math inline">\(\Rightarrow\)</span><b>记忆化搜索优化</b><span
+class="math inline">\(\Rightarrow\)</span><b>动态规划</b>。</p>
 <h2 id="problem-a">Problem A</h2>
 <h3 id="题目描述">题目描述</h3>
-<p>给定<span class="math inline">\(1×N\)</span>的单行矩阵，矩阵每个元素都是<span class="math inline">\(-127\)</span>到<span class="math inline">\(127\)</span>之间的整数。请找到一个连续子矩阵，使得其元素之和最大。</p>
+<p>给定<span
+class="math inline">\(1×N\)</span>的单行矩阵，矩阵每个元素都是<span
+class="math inline">\(-127\)</span>到<span
+class="math inline">\(127\)</span>之间的整数。请找到一个连续子矩阵，使得其元素之和最大。</p>
 <h3 id="输入数据">输入数据</h3>
-<p>多组测试数据，每组数据的第一行为一个整数<span class="math inline">\(N(N \leq 100)\)</span>，第二行包含<span class="math inline">\(N\)</span>个整数，为行矩阵的<span class="math inline">\(N\)</span>个元素，每个元素介于<span class="math inline">\(-127\)</span>到<span class="math inline">\(127\)</span>之间。</p>
+<p>多组测试数据，每组数据的第一行为一个整数<span
+class="math inline">\(N(N \leq 100)\)</span>，第二行包含<span
+class="math inline">\(N\)</span>个整数，为行矩阵的<span
+class="math inline">\(N\)</span>个元素，每个元素介于<span
+class="math inline">\(-127\)</span>到<span
+class="math inline">\(127\)</span>之间。</p>
 <h3 id="输出数据">输出数据</h3>
 <p>最大子矩阵之和，每组对应一行。</p>
 <h3 id="样例输入">样例输入</h3>
@@ -2726,9 +2736,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> N;</span><br><span class="line">	<span class="keyword">while</span> (cin &gt;&gt; N) &#123;</span><br><span class="line">		<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">nums</span><span class="params">(N)</span></span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i : nums) &#123;</span><br><span class="line">			cin &gt;&gt; i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N, INT_MIN)</span></span>;</span><br><span class="line">		<span class="type">int</span> ans = INT_MIN;</span><br><span class="line">		dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N; i++) &#123;</span><br><span class="line">			dp[i] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>] + nums[i], nums[i]);</span><br><span class="line">			ans = <span class="built_in">max</span>(ans, dp[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-b">Problem B</h2>
 <h3 id="题目描述-1">题目描述</h3>
-<p>给定<span class="math inline">\(N×N\)</span>矩阵，矩阵元素都是<span class="math inline">\(-127\)</span>到<span class="math inline">\(127\)</span>之间的整数。请找到一个子矩阵，使得其元素之和最大。</p>
+<p>给定<span class="math inline">\(N×N\)</span>矩阵，矩阵元素都是<span
+class="math inline">\(-127\)</span>到<span
+class="math inline">\(127\)</span>之间的整数。请找到一个子矩阵，使得其元素之和最大。</p>
 <h3 id="输入数据-1">输入数据</h3>
-<p>多组测试数据，每组测试数据的第一行整数<span class="math inline">\(N (N \leq 100)\)</span>；接下来N行元素，每行N个元素，每个元素介于<span class="math inline">\(-127\)</span>到<span class="math inline">\(127\)</span>之间。</p>
+<p>多组测试数据，每组测试数据的第一行整数<span class="math inline">\(N
+(N \leq 100)\)</span>；接下来N行元素，每行N个元素，每个元素介于<span
+class="math inline">\(-127\)</span>到<span
+class="math inline">\(127\)</span>之间。</p>
 <h3 id="输出数据-1">输出数据</h3>
 <p>最大子矩阵元素之和，每组测试数据对应一行。</p>
 <h3 id="样例输入-1">样例输入</h3>
@@ -2736,51 +2751,140 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="样例输出-1">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
 <h3 id="题目分析-1">题目分析</h3>
-<p>思想与A题类似，本题对输入的矩阵进行列的求和，然后用<span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>对行进行遍历<span class="math inline">\((1 \leq i \leq j \leq N)\)</span>，然后对于确定的<span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>，使用<span class="math inline">\(k\)</span>进行列的遍历，最后求出最大的结果即可。</p>
+<p>思想与A题类似，本题对输入的矩阵进行列的求和，然后用<span
+class="math inline">\(i\)</span>和<span
+class="math inline">\(j\)</span>对行进行遍历<span
+class="math inline">\((1 \leq i \leq j \leq
+N)\)</span>，然后对于确定的<span class="math inline">\(i\)</span>和<span
+class="math inline">\(j\)</span>，使用<span
+class="math inline">\(k\)</span>进行列的遍历，最后求出最大的结果即可。</p>
 <h3 id="题解-1">题解</h3>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> N;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">while</span> (cin &gt;&gt; N) &#123;</span><br><span class="line">		vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">nums</span>(N + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(N + <span class="number">1</span>));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= N; j++) &#123;</span><br><span class="line">				cin &gt;&gt; nums[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(N + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(N + <span class="number">1</span>, INT_MIN));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= N; j++) &#123;</span><br><span class="line">				dp[i][j] = dp[i - <span class="number">1</span>][j] + nums[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> ans = nums[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= N; j++) &#123;</span><br><span class="line">				<span class="type">int</span> _sum = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= N; k++) &#123;</span><br><span class="line">					_sum = <span class="built_in">max</span>(dp[j][k] - dp[i - <span class="number">1</span>][k] + _sum, dp[j][k] - dp[i - <span class="number">1</span>][k]);</span><br><span class="line">					ans = <span class="built_in">max</span>(ans, _sum);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-c">Problem C</h2>
 <h3 id="题目描述-2">题目描述</h3>
-<p>作为一个有很多游戏想买但囊中羞涩的大学生，小明决定在这个暑假开始打工赚钱。经过一段时间的寻找，他一共找到了<span class="math inline">\(n\)</span>个打工的招聘广告，其中第<span class="math inline">\(i\)</span>个打工的日期从<span class="math inline">\(l_i\)</span>开始，到<span class="math inline">\(r_i\)</span>为止，一共付给他<span class="math inline">\(c_i\)</span>元钱。因为这些打工的时间都相互冲突，所以同一天小明最多参加一个打工，并且一个打工一旦开始，就必须一直工作到结束，不能中途退出。现在小明想要知道，这个暑假他打工最多能得到多少钱？</p>
+<p>作为一个有很多游戏想买但囊中羞涩的大学生，小明决定在这个暑假开始打工赚钱。经过一段时间的寻找，他一共找到了<span
+class="math inline">\(n\)</span>个打工的招聘广告，其中第<span
+class="math inline">\(i\)</span>个打工的日期从<span
+class="math inline">\(l_i\)</span>开始，到<span
+class="math inline">\(r_i\)</span>为止，一共付给他<span
+class="math inline">\(c_i\)</span>元钱。因为这些打工的时间都相互冲突，所以同一天小明最多参加一个打工，并且一个打工一旦开始，就必须一直工作到结束，不能中途退出。现在小明想要知道，这个暑假他打工最多能得到多少钱？</p>
 <h3 id="输入数据-2">输入数据</h3>
-<p>第一行一个整数<span class="math inline">\(n(1 \leq n \leq 1000000)\)</span>，表示招聘广告的数量；接下来一共<span class="math inline">\(n\)</span>行，每行3个整数<span class="math inline">\(l_i,r_i,c_i(1 \leq l_i ≤ r_i \leq 1000000,1 \leq c_i \leq 1000000000)\)</span>，表示打工的开始时间，结束时间和报酬。</p>
+<p>第一行一个整数<span class="math inline">\(n(1 \leq n \leq
+1000000)\)</span>，表示招聘广告的数量；接下来一共<span
+class="math inline">\(n\)</span>行，每行3个整数<span
+class="math inline">\(l_i,r_i,c_i(1 \leq l_i ≤ r_i \leq 1000000,1 \leq
+c_i \leq 1000000000)\)</span>，表示打工的开始时间，结束时间和报酬。</p>
 <h3 id="输出数据-2">输出数据</h3>
-<p>一行一个整数<span class="math inline">\(k\)</span>，表示小明最多能够得到的钱数。</p>
+<p>一行一个整数<span
+class="math inline">\(k\)</span>，表示小明最多能够得到的钱数。</p>
 <h3 id="样例输入-2">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 2 3</span><br><span class="line">3 4 3</span><br><span class="line">2 3 5</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出-2">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
 <h3 id="题目分析-2">题目分析</h3>
 <h4 id="基本思路">基本思路</h4>
-<p>这题目的思路可以从<a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/515">LintCode 515</a>题中得到一些启发。如果采用动态规划的话，对于<span class="math inline">\(n\)</span>项工作而言，每一项工作只有选和不选两种情况，设<span class="math inline">\(dp[i][0]、dp[i][1]\)</span>为第<span class="math inline">\(i\)</span>件工作接受或者不接受的条件下所获得的最大酬劳，那么最终的答案为<span class="math inline">\(max(dp[n][0],dp[n][1])\)</span>。</p>
+<p>这题目的思路可以从<a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/515">LintCode
+515</a>题中得到一些启发。如果采用动态规划的话，对于<span
+class="math inline">\(n\)</span>项工作而言，每一项工作只有选和不选两种情况，设<span
+class="math inline">\(dp[i][0]、dp[i][1]\)</span>为第<span
+class="math inline">\(i\)</span>件工作接受或者不接受的条件下所获得的最大酬劳，那么最终的答案为<span
+class="math inline">\(max(dp[n][0],dp[n][1])\)</span>。</p>
 <p>但是本题对于每项工作的选择是有后效性的，必须要满足时间的约束条件；而要使得获得的薪酬最大，应该尽可能多做一些工作。根据会场安排的问题可以想到应该按照工作的结束时间进行排序。</p>
 <h4 id="会场安排问题">会场安排问题</h4>
-<p>假设某社团某一天要组织<span class="math inline">\(𝑛\)</span>个活动<span class="math inline">\(𝐸=\begin{Bmatrix}1, 2,⋯,n\end{Bmatrix}\)</span>，其中每个活动都要求使用同一礼堂，而且在同一时间内只有一个活动能使用这个礼堂。每个活动<span class="math inline">\(i\)</span>都有一个要求使用礼堂的起始时间<span class="math inline">\(s_i\)</span>和结束时间<span class="math inline">\(f_i\)</span>，且有<span class="math inline">\(s_i &lt; f_i\)</span>。如果选择了活动<span class="math inline">\(i\)</span>，则它在半开时间区间<span class="math inline">\([s_i,f_i)\)</span>内占用资源。若区间<span class="math inline">\([s_i,f_i)\)</span>与区间<span class="math inline">\([s_j,f_j)\)</span>不相交，则称活动<span class="math inline">\(i\)</span>与活动<span class="math inline">\(j\)</span>是相容的。现在给定𝑛个活动的开始时间和结束时间，请设计一个活动安排方案，使得安排的相容活动<b>数目最多</b>。</p>
-<p>分析题目，要解决这个问题可以使用二进制枚举，但是时间复杂度是<span class="math inline">\(O(2^n)\)</span>，不可以接受，因此换一个思路。使用贪心的策略大致有三个思路：</p>
+<p>假设某社团某一天要组织<span
+class="math inline">\(𝑛\)</span>个活动<span
+class="math inline">\(𝐸=\begin{Bmatrix}1,
+2,⋯,n\end{Bmatrix}\)</span>，其中每个活动都要求使用同一礼堂，而且在同一时间内只有一个活动能使用这个礼堂。每个活动<span
+class="math inline">\(i\)</span>都有一个要求使用礼堂的起始时间<span
+class="math inline">\(s_i\)</span>和结束时间<span
+class="math inline">\(f_i\)</span>，且有<span class="math inline">\(s_i
+&lt; f_i\)</span>。如果选择了活动<span
+class="math inline">\(i\)</span>，则它在半开时间区间<span
+class="math inline">\([s_i,f_i)\)</span>内占用资源。若区间<span
+class="math inline">\([s_i,f_i)\)</span>与区间<span
+class="math inline">\([s_j,f_j)\)</span>不相交，则称活动<span
+class="math inline">\(i\)</span>与活动<span
+class="math inline">\(j\)</span>是相容的。现在给定𝑛个活动的开始时间和结束时间，请设计一个活动安排方案，使得安排的相容活动<b>数目最多</b>。</p>
+<p>分析题目，要解决这个问题可以使用二进制枚举，但是时间复杂度是<span
+class="math inline">\(O(2^n)\)</span>，不可以接受，因此换一个思路。使用贪心的策略大致有三个思路：</p>
 <ul>
 <li>按照占用时间短优先；</li>
 <li>按照开始时间早优先；</li>
 <li>按照结束时间早优先。</li>
 </ul>
-<p>对于前两种情况，都可以找出反例证明贪心算法不成立：对于按照占用时间短优先的方案，反例为<span class="math inline">\([0,10),[9,14),[13,17)\)</span>，按照占用时间短优先的话应该先安排<span class="math inline">\([9,14)\)</span>，而最优安排显然是选另外两个；对于按照开始时间早优先的方案，反例为<span class="math inline">\([0,10),[2,5),[6,7)\)</span>，显然。那么如何证明按照结束时间早的贪心策略是正确的呢？</p>
-<p>将集合<span class="math inline">\(S\)</span>中的活动按照结束时间递增顺序排列，即记为<span class="math inline">\(S=\begin{Bmatrix}1,2,⋯,n \end{Bmatrix}\)</span>；假设<span class="math inline">\(A=\begin{Bmatrix}j_1,j_2,...,j_m \end{Bmatrix}\)</span>是<span class="math inline">\(S\)</span>的一个最优解，其中活动也按照结束时间递增顺序排列。不妨设<span class="math inline">\(B=\begin{Bmatrix}A_1,A_2,⋯,A_c \end{Bmatrix}\)</span>为该问题的最佳解构成的集合，显然对于任意一个有限的会场安排问题，总是存在最优解。现在需要证明对于贪心算法得出的这样的解<span class="math inline">\(A\)</span>总满足<span class="math inline">\(A \in B\)</span>。</p>
-<p>设<span class="math inline">\(k=1\)</span>时选择活动为<span class="math inline">\(\begin{Bmatrix}1\end{Bmatrix}\)</span>，需要证明存在一个最优解包含<span class="math inline">\(\begin{Bmatrix}1\end{Bmatrix}\)</span>，若<span class="math inline">\(j_1=1\)</span>，那么最优解包含了<span class="math inline">\(\begin{Bmatrix}1\end{Bmatrix}\)</span>；否则，用活动<span class="math inline">\(1\)</span>替换最优解中的<span class="math inline">\(j_1\)</span>，显然<span class="math inline">\(A&#39;=\begin{Bmatrix} 1,j_2,...,j_m \end{Bmatrix}\)</span>也是一个相容的活动集合（<span class="math inline">\(1\)</span>是结束时间最早的活动），也是一个最优的活动安排。</p>
-<p>当<span class="math inline">\(k&gt;1\)</span>时，设<span class="math inline">\(\{ i_1,1_2,...,i_k \}\)</span>是贪心算法前<span class="math inline">\(k\)</span>步顺序选择的活动，那么存在一个最优解:<span class="math inline">\(A=\{ i_1=1,1_2,...,i_k \} \bigcup B\)</span>。假设<span class="math inline">\(S&#39;\)</span>是<span class="math inline">\(S\)</span>中与<span class="math inline">\(\{ i_1, i_2,⋯,i_k \}\)</span>相容的活动，即<span class="math inline">\(S&#39;=\{ j | s[j]≥𝑓[i_k], j \in 𝑆 \}\)</span>，那么<span class="math inline">\(B\)</span>是<span class="math inline">\(S&#39;\)</span>的一个最优解。再用刚才关于活动<span class="math inline">\(1\)</span>的替换等价性证明可知<span class="math inline">\(𝑆&#39;\)</span> 的结束时间最早的活动<span class="math inline">\(𝑖_{𝑘+1}\)</span>包含在某一个最优解<span class="math inline">\(B&#39;\)</span>中，则可以构造原问题的一个最优解为<span class="math inline">\(A&#39;=\{ i_1=1,1_2,...,i_k,i_{k+1} \} \bigcup (B - \{ i_{k+1} \})\)</span>。</p>
+<p>对于前两种情况，都可以找出反例证明贪心算法不成立：对于按照占用时间短优先的方案，反例为<span
+class="math inline">\([0,10),[9,14),[13,17)\)</span>，按照占用时间短优先的话应该先安排<span
+class="math inline">\([9,14)\)</span>，而最优安排显然是选另外两个；对于按照开始时间早优先的方案，反例为<span
+class="math inline">\([0,10),[2,5),[6,7)\)</span>，显然。那么如何证明按照结束时间早的贪心策略是正确的呢？</p>
+<p>将集合<span
+class="math inline">\(S\)</span>中的活动按照结束时间递增顺序排列，即记为<span
+class="math inline">\(S=\begin{Bmatrix}1,2,⋯,n
+\end{Bmatrix}\)</span>；假设<span
+class="math inline">\(A=\begin{Bmatrix}j_1,j_2,...,j_m
+\end{Bmatrix}\)</span>是<span
+class="math inline">\(S\)</span>的一个最优解，其中活动也按照结束时间递增顺序排列。不妨设<span
+class="math inline">\(B=\begin{Bmatrix}A_1,A_2,⋯,A_c
+\end{Bmatrix}\)</span>为该问题的最佳解构成的集合，显然对于任意一个有限的会场安排问题，总是存在最优解。现在需要证明对于贪心算法得出的这样的解<span
+class="math inline">\(A\)</span>总满足<span class="math inline">\(A \in
+B\)</span>。</p>
+<p>设<span class="math inline">\(k=1\)</span>时选择活动为<span
+class="math inline">\(\begin{Bmatrix}1\end{Bmatrix}\)</span>，需要证明存在一个最优解包含<span
+class="math inline">\(\begin{Bmatrix}1\end{Bmatrix}\)</span>，若<span
+class="math inline">\(j_1=1\)</span>，那么最优解包含了<span
+class="math inline">\(\begin{Bmatrix}1\end{Bmatrix}\)</span>；否则，用活动<span
+class="math inline">\(1\)</span>替换最优解中的<span
+class="math inline">\(j_1\)</span>，显然<span
+class="math inline">\(A&#39;=\begin{Bmatrix} 1,j_2,...,j_m
+\end{Bmatrix}\)</span>也是一个相容的活动集合（<span
+class="math inline">\(1\)</span>是结束时间最早的活动），也是一个最优的活动安排。</p>
+<p>当<span class="math inline">\(k&gt;1\)</span>时，设<span
+class="math inline">\(\{ i_1,1_2,...,i_k \}\)</span>是贪心算法前<span
+class="math inline">\(k\)</span>步顺序选择的活动，那么存在一个最优解:<span
+class="math inline">\(A=\{ i_1=1,1_2,...,i_k \} \bigcup
+B\)</span>。假设<span class="math inline">\(S&#39;\)</span>是<span
+class="math inline">\(S\)</span>中与<span class="math inline">\(\{ i_1,
+i_2,⋯,i_k \}\)</span>相容的活动，即<span class="math inline">\(S&#39;=\{
+j | s[j]≥𝑓[i_k], j \in 𝑆 \}\)</span>，那么<span
+class="math inline">\(B\)</span>是<span
+class="math inline">\(S&#39;\)</span>的一个最优解。再用刚才关于活动<span
+class="math inline">\(1\)</span>的替换等价性证明可知<span
+class="math inline">\(𝑆&#39;\)</span> 的结束时间最早的活动<span
+class="math inline">\(𝑖_{𝑘+1}\)</span>包含在某一个最优解<span
+class="math inline">\(B&#39;\)</span>中，则可以构造原问题的一个最优解为<span
+class="math inline">\(A&#39;=\{ i_1=1,1_2,...,i_k,i_{k+1} \} \bigcup (B
+- \{ i_{k+1} \})\)</span>。</p>
 <p>最终的代码如下所示。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">activity</span> &#123;</span><br><span class="line">	<span class="type">int</span> start;</span><br><span class="line">	<span class="type">int</span> end;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> activity&amp; b) <span class="type">const</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> end &lt; b.end;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span> (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;activity&gt; <span class="title">act</span><span class="params">(n)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i : act) &#123;</span><br><span class="line">		cin &gt;&gt; i.start &gt;&gt; i.end;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(act.<span class="built_in">begin</span>(), act.<span class="built_in">end</span>());</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">1</span>;<span class="comment">//选择第一个活动</span></span><br><span class="line">	<span class="type">int</span> last_selected = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (act[i].start &gt;= act[last_selected].end) &#123;</span><br><span class="line">			last_selected = i;</span><br><span class="line">			ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">测试用例1（答案为2）</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">0 10</span></span><br><span class="line"><span class="comment">2 5</span></span><br><span class="line"><span class="comment">7 9</span></span><br><span class="line"><span class="comment">测试用例2（答案为2）</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">0 4</span></span><br><span class="line"><span class="comment">3 5</span></span><br><span class="line"><span class="comment">4 9</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></p>
 <p>网上查找了资料后发现本题或许可以使用树状数组来解决。</p>
 <h4 id="树状数组">树状数组</h4>
-<p>树状数组可以解决大部分基于区间上的更新以及求和问题。设结点编号为<span class="math inline">\(x\)</span>，那么该节点维护的值为<span class="math inline">\((x-\text{lowbit}(x),x]\)</span>的和，其中<span class="math inline">\(\text{lowbit}(x)=x^k\)</span>，其中<span class="math inline">\(k\)</span>为<span class="math inline">\(x\)</span>最低位1所在的二进制位。这种情况下要求树状数组的编号范围是<span class="math inline">\([1,2^n]\)</span>。</p>
-<p><span class="math inline">\(\text{lowbit}\)</span>值一般使用<span class="math inline">\(x \&amp; (-x)\)</span>的方式计算，这一点利用了补码的运算性质，证略。</p>
-<p>本题目使用树状数组进行了工作结束日期的统计。 最后改完代码后发现用 <code>vector</code> 空间会爆掉，所以直接使用空间足够大的数组即可。</p>
+<p>树状数组可以解决大部分基于区间上的更新以及求和问题。设结点编号为<span
+class="math inline">\(x\)</span>，那么该节点维护的值为<span
+class="math inline">\((x-\text{lowbit}(x),x]\)</span>的和，其中<span
+class="math inline">\(\text{lowbit}(x)=x^k\)</span>，其中<span
+class="math inline">\(k\)</span>为<span
+class="math inline">\(x\)</span>最低位1所在的二进制位。这种情况下要求树状数组的编号范围是<span
+class="math inline">\([1,2^n]\)</span>。</p>
+<p><span class="math inline">\(\text{lowbit}\)</span>值一般使用<span
+class="math inline">\(x \&amp;
+(-x)\)</span>的方式计算，这一点利用了补码的运算性质，证略。</p>
+<p>本题目使用树状数组进行了工作结束日期的统计。 最后改完代码后发现用
+<code>vector</code> 空间会爆掉，所以直接使用空间足够大的数组即可。</p>
 <h3 id="题解-2">题解</h3>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_SIZE 1000005</span></span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">adver</span> &#123;</span><br><span class="line">	<span class="type">int</span> start;</span><br><span class="line">	<span class="type">int</span> end;</span><br><span class="line">	<span class="type">int</span> income;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ll dp[MAX_SIZE][<span class="number">2</span>];</span><br><span class="line">ll temp[MAX_SIZE];</span><br><span class="line">adver adver_info[MAX_SIZE];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lowbit</span><span class="params">(<span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> i &amp; (-i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> i)</span> </span>&#123;<span class="comment">//统计结束日期小于i的工作数量</span></span><br><span class="line">	<span class="type">int</span> s = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">		s += temp[i];</span><br><span class="line">		i -= <span class="built_in">lowbit</span>(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> i)</span> </span>&#123;<span class="comment">//添加一个结束日期为i的工作</span></span><br><span class="line">	<span class="keyword">if</span> (i &gt; <span class="number">0</span>)&#123;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; MAX_SIZE) &#123;</span><br><span class="line">			temp[i]++;</span><br><span class="line">			i += <span class="built_in">lowbit</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(adver&amp; a, adver&amp; b)</span> </span>&#123;<span class="comment">//排序依据</span></span><br><span class="line">	<span class="keyword">return</span> a.end &lt; b.end;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	ll ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; adver_info[i].start &gt;&gt; adver_info[i].end &gt;&gt; adver_info[i].income;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(adver_info + <span class="number">1</span>, adver_info + n + <span class="number">1</span>, cmp);</span><br><span class="line">	<span class="comment">//sort(adver_info + 1, adver_info + n + 1, [](adver&amp; a, adver&amp; b) &#123; return a.end &lt; b.end; &#125;);</span></span><br><span class="line">	<span class="comment">//sort(adver_info + 1, adver_info + n + 1, comparator(adver, end));</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		dp[i][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][<span class="number">0</span>], dp[i - <span class="number">1</span>][<span class="number">1</span>]);</span><br><span class="line">		ll s = <span class="built_in">sum</span>(adver_info[i].start - <span class="number">1</span>);</span><br><span class="line">		dp[i][<span class="number">1</span>] = <span class="built_in">max</span>(dp[s][<span class="number">0</span>], dp[s][<span class="number">1</span>]) + adver_info[i].income;</span><br><span class="line">		<span class="built_in">add</span>(adver_info[i].end);</span><br><span class="line">	&#125;</span><br><span class="line">	ans = <span class="built_in">max</span>(dp[n][<span class="number">1</span>], dp[n][<span class="number">0</span>]);</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-d">Problem D</h2>
 <h3 id="题目描述-3">题目描述</h3>
-<p>给定一个信封，最多只允许粘贴<span class="math inline">\(N\)</span>张邮票，计算在给定<span class="math inline">\(M(N+M \leq 10)\)</span>种邮票的情况下（假定所有的邮票数量都足够），如何设计邮票的面值，能得到最大<span class="math inline">\(max\)</span>，使得<span class="math inline">\(\{1,\dots ,max\}\)</span>的每一个邮资值都能得到？</p>
+<p>给定一个信封，最多只允许粘贴<span
+class="math inline">\(N\)</span>张邮票，计算在给定<span
+class="math inline">\(M(N+M \leq
+10)\)</span>种邮票的情况下（假定所有的邮票数量都足够），如何设计邮票的面值，能得到最大<span
+class="math inline">\(max\)</span>，使得<span
+class="math inline">\(\{1,\dots
+,max\}\)</span>的每一个邮资值都能得到？</p>
 <h3 id="输入数据-3">输入数据</h3>
 <p>一行，分别为<span class="math inline">\(N,M\)</span>。</p>
 <h3 id="输出数据-3">输出数据</h3>
-<p>第一行为<span class="math inline">\(m\)</span>种邮票的面值，按升序排列，各数之间用一个空格隔开；第二行为最大值，格式为：<code>"MAX=%d"</code> 。</p>
+<p>第一行为<span
+class="math inline">\(m\)</span>种邮票的面值，按升序排列，各数之间用一个空格隔开；第二行为最大值，格式为：<code>"MAX=%d"</code>
+。</p>
 <h3 id="样例输入-3">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出-3">样例输出</h3>
@@ -2793,7 +2897,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="题目描述-4">题目描述</h3>
 <p>某国为了防御敌国的导弹袭击，研发出一种导弹拦截系统。但是这种导弹拦截系统有一个缺陷：虽然它的第一发炮弹能够到达任意的高度，但是以后每一发炮弹都不能高于前一发的高度。某天，雷达捕捉到敌国的导弹来袭。由于该系统还在试验阶段，所以只有一套系统，因此有可能不能拦截所有的导弹。</p>
 <h3 id="输入数据-4">输入数据</h3>
-<p>输入数据只有一行，该行包含若干个数据，之间用半角逗号隔开，表示导弹依次飞来的高度（导弹最多有<span class="math inline">\(20\)</span>枚，其高度为不大于<span class="math inline">\(3×10^3\)</span>的正整数）。</p>
+<p>输入数据只有一行，该行包含若干个数据，之间用半角逗号隔开，表示导弹依次飞来的高度（导弹最多有<span
+class="math inline">\(20\)</span>枚，其高度为不大于<span
+class="math inline">\(3×10^3\)</span>的正整数）。</p>
 <h3 id="输出数据-4">输出数据</h3>
 <p>输出数据只有一行，该行包含两个数据，之间用半角逗号隔开。第一个数据表示这套系统最多能拦截的导弹数；第二个数据表示若要拦截所有导弹至少要再添加多少套这样的系统。</p>
 <h3 id="样例输入-4">样例输入</h3>
@@ -2822,16 +2928,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>2021年11月11日练习。
 
 平面上最近点对问题
-给定平面上\(n\)个点及其横纵坐标（保证横纵坐标都是 long long 范围内的整数），求这\(n\)个点中距离最小的一对点，要求输出最小...</p>-->
+给定平面上\(n\)个点及其横纵坐标（保证横纵坐标都是
+long long 范围内的整数），求这\(n\)个点中距离最小的一对点，要求...</p>-->
         </a>
       
       
         <a class='next' href='/2021-10-25-%E5%8D%95%E8%B0%83%E6%A0%88%E5%92%8C%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/'>
           <p class='title'>单调栈和单调队列<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <!--<p class='content'>单调栈和单调队列可以用来降低一些查找问题的时间复杂度。 
+          <!--<p class='content'>单调栈和单调队列可以用来降低一些查找问题的时间复杂度。
+
 内容待补充。
 LintCode 1316
-本题对于算法的时间复杂度要求较高。 12345678910111213141516171819...</p>-->
+本题对于算法的时间复杂度要求较高。 1234567891011121314151617...</p>-->
         </a>
       
     </div>
@@ -3011,13 +3119,19 @@ LintCode 1316
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -4020,7 +4134,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

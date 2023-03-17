@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2704,7 +2704,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>枚举算法也称之为穷举算法，就是按照问题本身的性质，一一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃它。</p>
 <p>其中很重要的两点是<font color ="red">不重、不漏</font>，注意<strong>枚举算法是计算机可求解问题的本质方法</strong>，其特点为全面且实现简单，效率则相对较低，效率提升空间大。</p>
 <h2 id="例题">例题</h2>
-<p>设<span class="math inline">\(S\)</span>为由所有正整数按从小到大的顺序组成的序列，即<span class="math inline">\(S=1234567891011 \dots\)</span>，记<span class="math inline">\(S\)</span>中第一次出现<span class="math inline">\(1\)</span>为位置<span class="math inline">\(1\)</span>，求S的第<span class="math inline">\(n\)</span>位。</p>
+<p>设<span
+class="math inline">\(S\)</span>为由所有正整数按从小到大的顺序组成的序列，即<span
+class="math inline">\(S=1234567891011 \dots\)</span>，记<span
+class="math inline">\(S\)</span>中第一次出现<span
+class="math inline">\(1\)</span>为位置<span
+class="math inline">\(1\)</span>，求S的第<span
+class="math inline">\(n\)</span>位。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//1、确定n所在的位数范围</span></span><br><span class="line">	<span class="type">int</span> base = <span class="number">1</span>;<span class="comment">//位数</span></span><br><span class="line">	<span class="type">int</span> l = <span class="number">1</span>, step = <span class="number">9</span>, lnum = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (; base &lt;= <span class="number">8</span>; base++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n &gt;= l &amp;&amp; n &lt;= l + step - <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l += step;</span><br><span class="line">			step *= (<span class="number">10</span> * (base + <span class="number">1</span>));</span><br><span class="line">			step /= base;</span><br><span class="line">			lnum *= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (base &gt; <span class="number">9</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//2、计算在哪个数</span></span><br><span class="line">	<span class="type">int</span> target = (n - l) / base + lnum;</span><br><span class="line">	<span class="comment">//3、计算在这个数的第几位</span></span><br><span class="line">	<span class="type">int</span> targetIndex = (n - l + <span class="number">1</span>) % base;</span><br><span class="line">	targetIndex = (!targetIndex ? base : targetIndex);</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">	<span class="keyword">while</span> (target)&#123;</span><br><span class="line">		v.<span class="built_in">push_back</span>(target % <span class="number">10</span>);</span><br><span class="line">		target /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> v[v.<span class="built_in">size</span>() - targetIndex];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2721,7 +2727,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>题目发布于2021年9月23日上午十点。
 
 Problem A
-有形如\(ax^3+bx^2+cx+d=0\)这样的一个一元三次方程。给出该方程中各项的系数（\(a,bc,d\)均为实数），并约...</p>-->
+有形如\(ax^3+bx^2+cx+d=0\)这样的一个一元三次方程。给出该方程中各项的系数（\(a,bc,d\)均为实数）...</p>-->
         </a>
       
       
@@ -2902,13 +2908,19 @@ Problem A
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3911,7 +3923,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

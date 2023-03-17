@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2710,17 +2710,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>题目发布于2021年9月23日上午十点。</p>
 <span id="more"></span>
 <h2 id="problem-a">Problem A</h2>
-<p>有形如<span class="math inline">\(ax^3+bx^2+cx+d=0\)</span>这样的一个一元三次方程。给出该方程中各项的系数（<span class="math inline">\(a,bc,d\)</span>均为实数），并约定该方程存在三个不同实根（根的范围为<span class="math inline">\([-100,100]\)</span>），且根与根之差的绝对值不小于<span class="math inline">\(1\)</span>。要求由小到大依次在同一行输出这三个实根（根与根之间留有空格），并精确到小数点后<span class="math inline">\(2\)</span>位。</p>
+<p>有形如<span
+class="math inline">\(ax^3+bx^2+cx+d=0\)</span>这样的一个一元三次方程。给出该方程中各项的系数（<span
+class="math inline">\(a,bc,d\)</span>均为实数），并约定该方程存在三个不同实根（根的范围为<span
+class="math inline">\([-100,100]\)</span>），且根与根之差的绝对值不小于<span
+class="math inline">\(1\)</span>。要求由小到大依次在同一行输出这三个实根（根与根之间留有空格），并精确到小数点后<span
+class="math inline">\(2\)</span>位。</p>
 <h3 id="输入数据">输入数据</h3>
-<p>输入该方程中各项的系数（<span class="math inline">\(a,b,c,d\)</span>均为浮点数）。</p>
+<p>输入该方程中各项的系数（<span
+class="math inline">\(a,b,c,d\)</span>均为浮点数）。</p>
 <h3 id="输出数据">输出数据</h3>
-<p>由小到大依次在同一行输出这三个实根（根与根之间留有空格），并精确到小数点后<span class="math inline">\(2\)</span>位。</p>
+<p>由小到大依次在同一行输出这三个实根（根与根之间留有空格），并精确到小数点后<span
+class="math inline">\(2\)</span>位。</p>
 <h3 id="样例输入">样例输入</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 -5 -4 20</span><br></pre></td></tr></table></figure>
 <h3 id="样例输出">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-2.00 2.00 5.00</span><br></pre></td></tr></table></figure>
 <h2 id="题解">题解</h2>
-<p>二分法的题目。由于该一元三次方程必有三个实根，记<span class="math inline">\(f(x)=ax^3+bx^2+cx+d\)</span>，则<span class="math inline">\(f&#39;(x)\)</span>必有两个相异实根<span class="math inline">\(x_1\)</span>与<span class="math inline">\(x_2\)</span>，不妨记<span class="math inline">\(x_1 &lt; x_2\)</span>，由三次函数的性质及题设可知：三个实根分别在<span class="math inline">\((-100, x1),(x1, x2),(x2, 100)\)</span>三个区间内。</p>
+<p>二分法的题目。由于该一元三次方程必有三个实根，记<span
+class="math inline">\(f(x)=ax^3+bx^2+cx+d\)</span>，则<span
+class="math inline">\(f&#39;(x)\)</span>必有两个相异实根<span
+class="math inline">\(x_1\)</span>与<span
+class="math inline">\(x_2\)</span>，不妨记<span
+class="math inline">\(x_1 &lt;
+x_2\)</span>，由三次函数的性质及题设可知：三个实根分别在<span
+class="math inline">\((-100, x1),(x1, x2),(x2,
+100)\)</span>三个区间内。</p>
 <p>对三个区间运用二分法即可。注意输出时候要设置格式。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">double</span> a, b, c, d;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a * x * x * x + b * x * x + c * x + d);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">find_solution</span><span class="params">(<span class="type">double</span> start, <span class="type">double</span> end)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (end - start &lt; <span class="number">0.01</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> (start + end) / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="type">double</span> fl = <span class="built_in">f</span>(start);</span><br><span class="line">		<span class="type">double</span> fm = <span class="built_in">f</span>((start + end) / <span class="number">2.0</span>);</span><br><span class="line">		<span class="keyword">if</span> (fl * fm &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">find_solution</span>(start, (start + end) / <span class="number">2.0</span> - <span class="number">0.0001</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">find_solution</span>((start + end) / <span class="number">2.0</span> + <span class="number">0.0001</span>, end);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;</span><br><span class="line">	<span class="type">double</span> seg1 = <span class="number">-100</span>, seg4 = <span class="number">100</span>;</span><br><span class="line">	<span class="type">double</span> seg2 = <span class="built_in">min</span>((-b + <span class="built_in">sqrt</span>(b * b - <span class="number">3</span> * a * c)) / (<span class="number">3</span> * a), (-b - <span class="built_in">sqrt</span>(b * b - <span class="number">3</span> * a * c)) / (<span class="number">3</span> * a));</span><br><span class="line">	<span class="type">double</span> seg3 = <span class="built_in">max</span>((-b + <span class="built_in">sqrt</span>(b * b - <span class="number">3</span> * a * c)) / (<span class="number">3</span> * a), (-b - <span class="built_in">sqrt</span>(b * b - <span class="number">3</span> * a * c)) / (<span class="number">3</span> * a));</span><br><span class="line">	<span class="comment">//cout &lt;&lt; seg2 &lt;&lt; &#x27; &#x27; &lt;&lt; seg3 &lt;&lt; endl;</span></span><br><span class="line">	<span class="type">double</span> x1, x2, x3;</span><br><span class="line">	x1 = <span class="built_in">find_solution</span>(seg1, seg2);</span><br><span class="line">	x2 = <span class="built_in">find_solution</span>(seg2, seg3);</span><br><span class="line">	x3 = <span class="built_in">find_solution</span>(seg3, seg4);</span><br><span class="line">	cout &lt;&lt; <span class="built_in">setiosflags</span>(ios::fixed) &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; x1 &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; x2 &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; x3 &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-b">Problem B</h2>
@@ -2731,11 +2746,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">101</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">valid</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; arr[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> k = j + <span class="number">1</span>; k &lt; n; k++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">valid</span>(arr[i], arr[j], arr[k])) &#123;</span><br><span class="line">					ans = <span class="built_in">max</span>(ans, arr[i] + arr[j] + arr[k]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-d">Problem D</h2>
 <h3 id="题目描述">题目描述</h3>
-<p>在一个被分成<span class="math inline">\(n \times n\)</span>个格子的平原上，有一些格子有铁矿，两格铁矿如果相邻那么就认为他们属于同一个矿床，每个矿床都包含一个或更多个铁矿，问一共有几个矿床。两个格子只要有公共边或公共点就算相邻。</p>
+<p>在一个被分成<span class="math inline">\(n \times
+n\)</span>个格子的平原上，有一些格子有铁矿，两格铁矿如果相邻那么就认为他们属于同一个矿床，每个矿床都包含一个或更多个铁矿，问一共有几个矿床。两个格子只要有公共边或公共点就算相邻。</p>
 <h3 id="输入数据-1">输入数据</h3>
 <p>输入包括<span class="math inline">\(n+1\)</span>行。</p>
-<p>第一行为一个正整数<span class="math inline">\(n(n \leq 1000)\)</span>。</p>
-<p>接下来有<span class="math inline">\(n\)</span>行，每行有<span class="math inline">\(n\)</span>个字符，<code>#</code> 表示平原的对应位置有铁矿，<code>*</code> 代表没有。</p>
+<p>第一行为一个正整数<span class="math inline">\(n(n \leq
+1000)\)</span>。</p>
+<p>接下来有<span class="math inline">\(n\)</span>行，每行有<span
+class="math inline">\(n\)</span>个字符，<code>#</code>
+表示平原的对应位置有铁矿，<code>*</code> 代表没有。</p>
 <h3 id="输出数据-1">输出数据</h3>
 <p>矿床个数。</p>
 <h3 id="样例输入-1">样例输入</h3>
@@ -2762,8 +2781,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>2021年9月26日练习。
 
 LintCode 1270
-实际上就是判断组成字符串 ransomNote 字符集合是否是组成字符串 magazine 字符集合的子集。
-C++ 中可以使用 inc...</p>-->
+实际上就是判断组成字符串 ransomNote
+字符集合是否是组成字符串 magazine 字符集合的子集。
+C++ 中可以使...</p>-->
         </a>
       
       
@@ -2771,7 +2791,7 @@ C++ 中可以使用 inc...</p>-->
           <p class='title'>枚举算法学习<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <!--<p class='content'>枚举算法是最朴素的算法之一。
 
-枚举算法也称之为穷举算法，就是按照问题本身的性质，一一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则抛弃...</p>-->
+枚举算法也称之为穷举算法，就是按照问题本身的性质，一一列举出该问题所有可能的解，并在列举的过程中，逐一检验每个可能解是否是问题的真正解。若是则采纳这个解；否则...</p>-->
         </a>
       
     </div>
@@ -2951,13 +2971,19 @@ C++ 中可以使用 inc...</p>-->
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3960,7 +3986,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

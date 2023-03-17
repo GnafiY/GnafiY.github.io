@@ -1875,7 +1875,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2703,45 +2703,152 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>想起之前学概率论的时候整理了不少计算的小技巧，正好拿来练练写公式。</p>
 <span id="more"></span>
 <h2 id="常用的七个幂级数展开式">常用的七个幂级数展开式</h2>
-<p><span class="math display">\[\displaystyle \sin x = \sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-...,x\in(-\infty,+\infty)\]</span></p>
-<p><span class="math display">\[\displaystyle \cos x = \sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-...,x\in(-\infty,+\infty)\]</span></p>
-<p><span class="math display">\[\displaystyle e^x=\sum\limits_{n=0}^\infty\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...,x\in(-\infty,+\infty)\]</span></p>
-<p>由以上三个公式可得欧拉公式：<span class="math inline">\(\displaystyle e^{ix}=i \sin x+ \cos x\)</span>。</p>
-<p><span class="math display">\[\displaystyle \ln(1+x)= \sum \limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}x^n=x-\frac{x^2}{2}+\frac{x^3}{3}-...,x\in(-1,1]\]</span></p>
-<p>由<span class="math inline">\(\ln(1+x)\)</span>的展开式可得<span class="math inline">\(\displaystyle \ln2= \sum \limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}\)</span>。</p>
-<p>事实上，<span class="math inline">\(\ln(x+1)\)</span>的展开式可以由下式推出：</p>
-<p><span class="math display">\[\displaystyle\frac{1}{1+x}= \sum \limits_{n=0}^\infty (-x)^n=1-x+x^2-...,x\in(-1,1)\]</span></p>
-<p>将上式中的 <span class="math inline">\(x\)</span> 代换为<span class="math inline">\((-x)\)</span>即可得到下式：</p>
-<p><span class="math display">\[\displaystyle\frac{1}{1-x} =\sum \limits_{n=0}^\infty x^n=1+x+x^2+...,x\in(-1,1)\]</span></p>
-<p>事实上，<span class="math inline">\(\displaystyle\frac{1}{1+x}\)</span>与<span class="math inline">\(\displaystyle\frac{1}{1-x}\)</span>的泰勒展开式就是首项为<span class="math inline">\(1\)</span>，公比为<span class="math inline">\(\mp x\)</span>的等比数列的前 <span class="math inline">\(n\)</span> 项和 <span class="math inline">\(S_n\)</span> 在<span class="math inline">\(n\to\infty\)</span>的极限。关于等比级数还有一个常用的结论：当<span class="math inline">\(|q|&lt;1\)</span> 时，级数<span class="math inline">\(\displaystyle \sum \limits_{n=1}^\infty a_1q^{n-1}\)</span>收敛于<span class="math inline">\(\displaystyle \frac{a_1}{1-q}\)</span>。</p>
+<p><span class="math display">\[\displaystyle \sin x =
+\sum\limits_{n=0}^\infty
+\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-...,x\in(-\infty,+\infty)\]</span></p>
+<p><span class="math display">\[\displaystyle \cos x =
+\sum\limits_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-...,x\in(-\infty,+\infty)\]</span></p>
+<p><span class="math display">\[\displaystyle
+e^x=\sum\limits_{n=0}^\infty\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...,x\in(-\infty,+\infty)\]</span></p>
+<p>由以上三个公式可得欧拉公式：<span class="math inline">\(\displaystyle
+e^{ix}=i \sin x+ \cos x\)</span>。</p>
+<p><span class="math display">\[\displaystyle \ln(1+x)= \sum
+\limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}x^n=x-\frac{x^2}{2}+\frac{x^3}{3}-...,x\in(-1,1]\]</span></p>
+<p>由<span class="math inline">\(\ln(1+x)\)</span>的展开式可得<span
+class="math inline">\(\displaystyle \ln2= \sum
+\limits_{n=1}^\infty\frac{(-1)^{n+1}}{n}\)</span>。</p>
+<p>事实上，<span
+class="math inline">\(\ln(x+1)\)</span>的展开式可以由下式推出：</p>
+<p><span class="math display">\[\displaystyle\frac{1}{1+x}= \sum
+\limits_{n=0}^\infty (-x)^n=1-x+x^2-...,x\in(-1,1)\]</span></p>
+<p>将上式中的 <span class="math inline">\(x\)</span> 代换为<span
+class="math inline">\((-x)\)</span>即可得到下式：</p>
+<p><span class="math display">\[\displaystyle\frac{1}{1-x} =\sum
+\limits_{n=0}^\infty x^n=1+x+x^2+...,x\in(-1,1)\]</span></p>
+<p>事实上，<span
+class="math inline">\(\displaystyle\frac{1}{1+x}\)</span>与<span
+class="math inline">\(\displaystyle\frac{1}{1-x}\)</span>的泰勒展开式就是首项为<span
+class="math inline">\(1\)</span>，公比为<span class="math inline">\(\mp
+x\)</span>的等比数列的前 <span class="math inline">\(n\)</span> 项和
+<span class="math inline">\(S_n\)</span> 在<span
+class="math inline">\(n\to\infty\)</span>的极限。关于等比级数还有一个常用的结论：当<span
+class="math inline">\(|q|&lt;1\)</span> 时，级数<span
+class="math inline">\(\displaystyle \sum \limits_{n=1}^\infty
+a_1q^{n-1}\)</span>收敛于<span class="math inline">\(\displaystyle
+\frac{a_1}{1-q}\)</span>。</p>
 <p>还有一个相对其他六个不太常用的一个公式：</p>
-<p><span class="math display">\[\displaystyle (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+...,x\in(-1,1),a\neq0\]</span></p>
-<p>由第七个公式可得一个常用的等价无穷小：<span class="math inline">\((1+\beta x)^{\alpha}-1\)</span>~<span class="math inline">\(\alpha \beta x,x\to0\)</span>。</p>
+<p><span class="math display">\[\displaystyle (1+x)^{\alpha}=1+\alpha
+x+\frac{\alpha(\alpha-1)}{2!}x^2+...,x\in(-1,1),a\neq0\]</span></p>
+<p>由第七个公式可得一个常用的等价无穷小：<span
+class="math inline">\((1+\beta x)^{\alpha}-1\)</span>~<span
+class="math inline">\(\alpha \beta x,x\to0\)</span>。</p>
 <p>事实上，记住以上七个泰勒公式后，很多等价无穷小可以直接推出。</p>
 <p>另外，同理第五个、第六个公式，有以下公式：</p>
-<p><span class="math display">\[\displaystyle\frac{1}{1+x^2}= \sum \limits_{n=0}^\infty(-1)^nx^{2n}=1-x^2+...,x\in(-1,1)\]</span></p>
-<p>对上式积分有：<span class="math inline">\(\displaystyle\int_0^x\frac{1}{1+t^2}dt=\int_0^x\displaystyle \sum \limits_{n=0}^ \infty(-1)^nt^{2n}dt\)</span>，等式左侧<span class="math inline">\(=\arctan x\)</span>，等式右侧<span class="math inline">\(=\displaystyle \sum \limits_{n=0}^ \infty(-1)^{n}(\frac{1}{2n+1}x^{2n+1})\)</span>，所以：</p>
-<p><span class="math display">\[\arctan x =\displaystyle \sum \limits_{n=0}^ \infty(-1)^{n}(\frac{1}{2n+1}x^{2n+1})=x-\frac{x^3}{3}+\frac{x^5}{5}-...,x\in(-1,1)\]</span></p>
-<h2 id="与e-x有关的反常积分">与<span class="math inline">\(e^{-x}\)</span>有关的反常积分</h2>
-<p>首先是最简单的一个积分：<span class="math inline">\(\displaystyle\int_0^{+\infty} e^{-x}dx=[-e^{-x}]_0^{+\infty}=1\)</span>。</p>
-<p>然后进行一些简单的推广：<span class="math inline">\(\displaystyle\int_0^{+\infty} x^n e^{-x}dx=n!,x\in N\)</span>，当<span class="math inline">\(n=0\)</span>时就是上面的积分，这个积分有很多种证明的方法，使用分部积分法加上第一数学归纳法或者待定系数法都可以证明，这里略去证明。当<span class="math inline">\(n\)</span>换为另外一个实数时，以上积分的值需要进行推广，在实数域上就是伽马函数。值得注意的是<span class="math inline">\(\Gamma(x+1)=x\Gamma(x)\)</span>，而<span class="math inline">\((n+1)!=(n+1)n!\)</span>。</p>
-<p>随后再进行一些变换：<span class="math inline">\(\displaystyle\int_0^{+\infty} x^n e^{-\lambda x}dx=\frac{n!}{\lambda ^ {n+1}},n\in N,\lambda\in R^+\)</span>。有了上面的积分的结果，只需要进行一步换元，令<span class="math inline">\(\lambda x = t\)</span>很容易计算出上面的结果。</p>
-<h2 id="与e-x2有关的反常积分">与<span class="math inline">\(e^{-x^2}\)</span>有关的反常积分</h2>
-<p>首先是最著名的高斯积分：<span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}e^{-x^2}dx=\sqrt{\pi}\)</span>。求解这个积分最常见的方法是将其转换为二重积分。记<span class="math inline">\(\displaystyle I = \int ^{+\infty}_{-\infty} e^{-x^2} dx\)</span>，则：</p>
-<p><span class="math display">\[\displaystyle I^2 = \int ^{+\infty} _{-\infty} e^{-x^2} dx\int ^{+\infty} _{-\infty} e^{-y^2} dy = \int ^{+\infty} _{-\infty}  \int ^{+\infty} _{-\infty}e^{-(x^2+y^2)}dxdy \]</span></p>
-<p>随后进行极坐标换元有：<span class="math inline">\(\displaystyle I^2 = \int_0^{2\pi}d\theta\int ^{+\infty} _0 \rho e^{-\rho^2}d\rho=\pi\)</span>，显然<span class="math inline">\(I&gt;0\)</span>，因此<span class="math inline">\(I=\sqrt{\pi}\)</span>。</p>
-<p>此外，还有一个我很喜欢的广义积分：<span class="math inline">\(\displaystyle \int_0^{+\infty}\frac{\sin x}{x}dx=\frac{\pi}{2}\)</span>，这个积分被称为狄利克雷积分积分，使用拉普拉斯变换可以很容易求解这个积分。</p>
-<p>正态分布是概率论中很重要的的一种分布，设<span class="math inline">\(X\)</span>~<span class="math inline">\(N(\mu,\sigma^2)\)</span>，则<span class="math inline">\(X\)</span>的概率密度函数为<span class="math inline">\(\displaystyle f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},x\in(-\infty,+\infty),\mu\in R,\sigma\in R^+\)</span>，而由概率密度函数的意义有：<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}f_X(x)dx=1\)</span>，因此有<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx=1\)</span>。纯粹从求解题目的角度来讲，从概率密度函数定义的角度出发也是可以求解高斯积分的。令<span class="math inline">\(\mu=0,\sigma=\displaystyle\frac{\sqrt{2}}{2}\)</span>，代入上述概率密度函数的积分有：<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}\frac{1}{\sqrt{\pi}}e^{-x^2}dx=1\)</span>，结果很显然了。</p>
-<p>设随机变量<span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>，则有：</p>
-<p><span class="math display">\[\displaystyle E(X)=\int ^{+\infty} _{-\infty}xf_X(x)dx=\int ^{+\infty} _{-\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx{\xlongequal{t=\frac{x-\mu}{\sigma}}}\int ^{+\infty} _{-\infty}\frac{\sigma t + \mu}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2}}d(\sigma t+\mu)=\mu\int ^{+\infty} _{-\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu\]</span></p>
+<p><span class="math display">\[\displaystyle\frac{1}{1+x^2}= \sum
+\limits_{n=0}^\infty(-1)^nx^{2n}=1-x^2+...,x\in(-1,1)\]</span></p>
+<p>对上式积分有：<span
+class="math inline">\(\displaystyle\int_0^x\frac{1}{1+t^2}dt=\int_0^x\displaystyle
+\sum \limits_{n=0}^ \infty(-1)^nt^{2n}dt\)</span>，等式左侧<span
+class="math inline">\(=\arctan x\)</span>，等式右侧<span
+class="math inline">\(=\displaystyle \sum \limits_{n=0}^
+\infty(-1)^{n}(\frac{1}{2n+1}x^{2n+1})\)</span>，所以：</p>
+<p><span class="math display">\[\arctan x =\displaystyle \sum
+\limits_{n=0}^
+\infty(-1)^{n}(\frac{1}{2n+1}x^{2n+1})=x-\frac{x^3}{3}+\frac{x^5}{5}-...,x\in(-1,1)\]</span></p>
+<h2 id="与e-x有关的反常积分">与<span
+class="math inline">\(e^{-x}\)</span>有关的反常积分</h2>
+<p>首先是最简单的一个积分：<span
+class="math inline">\(\displaystyle\int_0^{+\infty}
+e^{-x}dx=[-e^{-x}]_0^{+\infty}=1\)</span>。</p>
+<p>然后进行一些简单的推广：<span
+class="math inline">\(\displaystyle\int_0^{+\infty} x^n e^{-x}dx=n!,x\in
+N\)</span>，当<span
+class="math inline">\(n=0\)</span>时就是上面的积分，这个积分有很多种证明的方法，使用分部积分法加上第一数学归纳法或者待定系数法都可以证明，这里略去证明。当<span
+class="math inline">\(n\)</span>换为另外一个实数时，以上积分的值需要进行推广，在实数域上就是伽马函数。值得注意的是<span
+class="math inline">\(\Gamma(x+1)=x\Gamma(x)\)</span>，而<span
+class="math inline">\((n+1)!=(n+1)n!\)</span>。</p>
+<p>随后再进行一些变换：<span
+class="math inline">\(\displaystyle\int_0^{+\infty} x^n e^{-\lambda
+x}dx=\frac{n!}{\lambda ^ {n+1}},n\in N,\lambda\in
+R^+\)</span>。有了上面的积分的结果，只需要进行一步换元，令<span
+class="math inline">\(\lambda x = t\)</span>很容易计算出上面的结果。</p>
+<h2 id="与e-x2有关的反常积分">与<span
+class="math inline">\(e^{-x^2}\)</span>有关的反常积分</h2>
+<p>首先是最著名的高斯积分：<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}e^{-x^2}dx=\sqrt{\pi}\)</span>。求解这个积分最常见的方法是将其转换为二重积分。记<span
+class="math inline">\(\displaystyle I = \int ^{+\infty}_{-\infty}
+e^{-x^2} dx\)</span>，则：</p>
+<p><span class="math display">\[\displaystyle I^2 = \int ^{+\infty}
+_{-\infty} e^{-x^2} dx\int ^{+\infty} _{-\infty} e^{-y^2} dy = \int
+^{+\infty} _{-\infty}  \int ^{+\infty} _{-\infty}e^{-(x^2+y^2)}dxdy
+\]</span></p>
+<p>随后进行极坐标换元有：<span class="math inline">\(\displaystyle I^2 =
+\int_0^{2\pi}d\theta\int ^{+\infty} _0 \rho
+e^{-\rho^2}d\rho=\pi\)</span>，显然<span
+class="math inline">\(I&gt;0\)</span>，因此<span
+class="math inline">\(I=\sqrt{\pi}\)</span>。</p>
+<p>此外，还有一个我很喜欢的广义积分：<span
+class="math inline">\(\displaystyle \int_0^{+\infty}\frac{\sin
+x}{x}dx=\frac{\pi}{2}\)</span>，这个积分被称为狄利克雷积分积分，使用拉普拉斯变换可以很容易求解这个积分。</p>
+<p>正态分布是概率论中很重要的的一种分布，设<span
+class="math inline">\(X\)</span>~<span
+class="math inline">\(N(\mu,\sigma^2)\)</span>，则<span
+class="math inline">\(X\)</span>的概率密度函数为<span
+class="math inline">\(\displaystyle
+f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},x\in(-\infty,+\infty),\mu\in
+R,\sigma\in R^+\)</span>，而由概率密度函数的意义有：<span
+class="math inline">\(\displaystyle \int ^{+\infty}
+_{-\infty}f_X(x)dx=1\)</span>，因此有<span
+class="math inline">\(\displaystyle \int ^{+\infty}
+_{-\infty}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx=1\)</span>。纯粹从求解题目的角度来讲，从概率密度函数定义的角度出发也是可以求解高斯积分的。令<span
+class="math inline">\(\mu=0,\sigma=\displaystyle\frac{\sqrt{2}}{2}\)</span>，代入上述概率密度函数的积分有：<span
+class="math inline">\(\displaystyle \int ^{+\infty}
+_{-\infty}\frac{1}{\sqrt{\pi}}e^{-x^2}dx=1\)</span>，结果很显然了。</p>
+<p>设随机变量<span class="math inline">\(X\sim
+N(\mu,\sigma^2)\)</span>，则有：</p>
+<p><span class="math display">\[\displaystyle E(X)=\int ^{+\infty}
+_{-\infty}xf_X(x)dx=\int ^{+\infty}
+_{-\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx{\xlongequal{t=\frac{x-\mu}{\sigma}}}\int
+^{+\infty} _{-\infty}\frac{\sigma t +
+\mu}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2}}d(\sigma t+\mu)=\mu\int
+^{+\infty}
+_{-\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu\]</span></p>
 <p>同理可求得<span class="math inline">\(E(X^2)\)</span>：</p>
-<p><span class="math display">\[\displaystyle E(X^2)=\int ^{+\infty} _{-\infty}x^2 f_X(x)dx=\int ^{+\infty} _{-\infty}\frac{x^2}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx{\xlongequal{t=\frac{x-\mu}{\sigma}}}\int ^{+\infty} _{-\infty}\frac{(\sigma t + \mu)^2}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2}}d(\sigma t+\mu)=\mu^2+\frac{\sigma^2}{\sqrt{2\pi}}\int ^{+\infty} _{-\infty}t^2e^{-\frac{t^2}{2}}dt\]</span></p>
-<p>对于最后一部分的积分，有：<span class="math inline">\(\displaystyle \int ^{+\infty} _{-\infty}t^2e^{-\frac{t^2}{2}}dt=\int^{+\infty} _{-\infty}e^{-\frac{t^2}{2}}dt-[te^{-\frac{t^2}{2}}]^{+\infty} _{-\infty}=\sqrt{2\pi}\)</span>，因此<span class="math inline">\(E(X^2)=\mu^2+\sigma^2\)</span>。</p>
-<p>又<span class="math inline">\(D(X)=E(X^2)-[E(X)]^2\)</span>，故<span class="math inline">\(D(X)=\sigma^2\)</span>。</p>
-<p>在求解正态分布的期望和方差时，我们又得到了一个非常有用的积分值<span class="math inline">\(\displaystyle \int^{+\infty} _{-\infty}\frac{x^2}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx=1\)</span>。事实上，可以求出标准正态分布的<span class="math inline">\(n\)</span>阶原点矩。设<span class="math inline">\(X\sim N(0,1)\)</span>当<span class="math inline">\(n\)</span>为偶数时，<span class="math inline">\(E(X^n)=(n-1)!!\)</span>；当<span class="math inline">\(n\)</span>为奇数时，<span class="math inline">\(E(X^n)=0\)</span>。还有一个比较常用的值为<span class="math inline">\(E(X^4)=3\)</span>。</p>
+<p><span class="math display">\[\displaystyle E(X^2)=\int ^{+\infty}
+_{-\infty}x^2 f_X(x)dx=\int ^{+\infty}
+_{-\infty}\frac{x^2}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx{\xlongequal{t=\frac{x-\mu}{\sigma}}}\int
+^{+\infty} _{-\infty}\frac{(\sigma t +
+\mu)^2}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2}}d(\sigma
+t+\mu)=\mu^2+\frac{\sigma^2}{\sqrt{2\pi}}\int ^{+\infty}
+_{-\infty}t^2e^{-\frac{t^2}{2}}dt\]</span></p>
+<p>对于最后一部分的积分，有：<span class="math inline">\(\displaystyle
+\int ^{+\infty} _{-\infty}t^2e^{-\frac{t^2}{2}}dt=\int^{+\infty}
+_{-\infty}e^{-\frac{t^2}{2}}dt-[te^{-\frac{t^2}{2}}]^{+\infty}
+_{-\infty}=\sqrt{2\pi}\)</span>，因此<span
+class="math inline">\(E(X^2)=\mu^2+\sigma^2\)</span>。</p>
+<p>又<span class="math inline">\(D(X)=E(X^2)-[E(X)]^2\)</span>，故<span
+class="math inline">\(D(X)=\sigma^2\)</span>。</p>
+<p>在求解正态分布的期望和方差时，我们又得到了一个非常有用的积分值<span
+class="math inline">\(\displaystyle \int^{+\infty}
+_{-\infty}\frac{x^2}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx=1\)</span>。事实上，可以求出标准正态分布的<span
+class="math inline">\(n\)</span>阶原点矩。设<span
+class="math inline">\(X\sim N(0,1)\)</span>当<span
+class="math inline">\(n\)</span>为偶数时，<span
+class="math inline">\(E(X^n)=(n-1)!!\)</span>；当<span
+class="math inline">\(n\)</span>为奇数时，<span
+class="math inline">\(E(X^n)=0\)</span>。还有一个比较常用的值为<span
+class="math inline">\(E(X^4)=3\)</span>。</p>
 <h2 id="大学物理中出现的一些积分">大学物理中出现的一些积分</h2>
-<p><span class="math display">\[\displaystyle \int_{-\infty}^{+\infty}x^{2n}e^{-bx^2}dx =2\int^{+\infty}_0(\frac{t}{b})^ne^{-t}d(\sqrt\frac{t}{b})=\frac{1}{(\sqrt b)^{2n+1}}\int_0^{+\infty}t^{n-\frac{1}{2}}e^{-t}dt=\frac{1}{(\sqrt b)^{2n+1}}\Gamma(n+\frac{1}{2})=\displaystyle\frac{(2n-1)!!}{2^{n+1}b^n}\sqrt{\frac{\pi}{b}}\]</span></p>
-<p><span class="math display">\[\displaystyle \int_{0}^{+\infty}\frac{x^3}{e^x-1}dx=\int_{0}^{+\infty}x^3\frac{e^{-x}}{1-e^{-x}}dx=\displaystyle \int_0^{+\infty}x^3 \sum_{n=1}^{\infty} e^{-n} dx=\displaystyle \sum_{n=1}^{\infty}\int_{0}^{+\infty} x^3e^{-n}dx=3! \cdot \displaystyle \sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{\pi^4}{15}\]</span></p>
+<p><span class="math display">\[\displaystyle
+\int_{-\infty}^{+\infty}x^{2n}e^{-bx^2}dx
+=2\int^{+\infty}_0(\frac{t}{b})^ne^{-t}d(\sqrt\frac{t}{b})=\frac{1}{(\sqrt
+b)^{2n+1}}\int_0^{+\infty}t^{n-\frac{1}{2}}e^{-t}dt=\frac{1}{(\sqrt
+b)^{2n+1}}\Gamma(n+\frac{1}{2})=\displaystyle\frac{(2n-1)!!}{2^{n+1}b^n}\sqrt{\frac{\pi}{b}}\]</span></p>
+<p><span class="math display">\[\displaystyle
+\int_{0}^{+\infty}\frac{x^3}{e^x-1}dx=\int_{0}^{+\infty}x^3\frac{e^{-x}}{1-e^{-x}}dx=\displaystyle
+\int_0^{+\infty}x^3 \sum_{n=1}^{\infty} e^{-n} dx=\displaystyle
+\sum_{n=1}^{\infty}\int_{0}^{+\infty} x^3e^{-n}dx=3! \cdot \displaystyle
+\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{\pi^4}{15}\]</span></p>
 
   </div>
   
@@ -2757,7 +2864,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>2021年11月12日练习。
 
 BJTU-ALGO 2015
-做题做的人有点麻，来道签到题。 12345678910111213141516171819#include &lt;bits/std...</p>-->
+做题做的人有点麻，来道签到题。 12345678910111213141516171819#include &lt;bits/...</p>-->
         </a>
       
       
@@ -2766,7 +2873,8 @@ BJTU-ALGO 2015
           <!--<p class='content'>2021年11月11日练习。
 
 平面上最近点对问题
-给定平面上\(n\)个点及其横纵坐标（保证横纵坐标都是 long long 范围内的整数），求这\(n\)个点中距离最小的一对点，要求输出最小...</p>-->
+给定平面上\(n\)个点及其横纵坐标（保证横纵坐标都是
+long long 范围内的整数），求这\(n\)个点中距离最小的一对点，要求...</p>-->
         </a>
       
     </div>
@@ -2946,13 +3054,19 @@ BJTU-ALGO 2015
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3955,7 +4069,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

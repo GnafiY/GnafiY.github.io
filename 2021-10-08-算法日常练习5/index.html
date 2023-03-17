@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2705,15 +2705,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>2021年10月8日练习。 <span id="more"></span></p>
 <h2 id="bjtu-algo-1002">BJTU-ALGO 1002</h2>
-<p>记得我第一次用这个平台还是2020年的暑假小学期的时候，当时想按顺序做几道题，但是到这个题目就卡住了。思索很久也没有答案，正好最近在学动态规划，于是想着把这道题解出来。 ### 题目描述</p>
-<p>在河上有一座独木桥，一只青蛙想沿着独木桥从河的一侧跳到另一侧。在桥上有一些石子，青蛙很讨厌踩在这些石子上。由于桥的长度和青蛙一次跳过的距离都是正整数，我们可以把独木桥上青蛙可能到达的点看成数轴上的一串整点：<span class="math inline">\(0,1,\dots,L\)</span>（其中<span class="math inline">\(L\)</span>是桥的长度）。坐标为<span class="math inline">\(0\)</span>的点表示桥的起点，坐标为<span class="math inline">\(L\)</span>的点表示桥的终点。青蛙从桥的起点开始，不停的向终点方向跳跃。一次跳跃的距离是S到T之间的任意正整数（包括S,T）。当青蛙跳到或跳过坐标为L的点时，就算青蛙已经跳出了独木桥。 题目给出独木桥的长度<span class="math inline">\(L\)</span>，青蛙跳跃的距离范围<span class="math inline">\(S,T\)</span>，桥上石子的位置。你的任务是确定青蛙要想过河，最少需要踩到的石子数。</p>
-<p>对于30%的数据，<span class="math inline">\(L \leq 10000\)</span>；</p>
-<p>对于全部的数据，<span class="math inline">\(L \leq 10^9\)</span>。</p>
+<p>记得我第一次用这个平台还是2020年的暑假小学期的时候，当时想按顺序做几道题，但是到这个题目就卡住了。思索很久也没有答案，正好最近在学动态规划，于是想着把这道题解出来。
+### 题目描述</p>
+<p>在河上有一座独木桥，一只青蛙想沿着独木桥从河的一侧跳到另一侧。在桥上有一些石子，青蛙很讨厌踩在这些石子上。由于桥的长度和青蛙一次跳过的距离都是正整数，我们可以把独木桥上青蛙可能到达的点看成数轴上的一串整点：<span
+class="math inline">\(0,1,\dots,L\)</span>（其中<span
+class="math inline">\(L\)</span>是桥的长度）。坐标为<span
+class="math inline">\(0\)</span>的点表示桥的起点，坐标为<span
+class="math inline">\(L\)</span>的点表示桥的终点。青蛙从桥的起点开始，不停的向终点方向跳跃。一次跳跃的距离是S到T之间的任意正整数（包括S,T）。当青蛙跳到或跳过坐标为L的点时，就算青蛙已经跳出了独木桥。
+题目给出独木桥的长度<span
+class="math inline">\(L\)</span>，青蛙跳跃的距离范围<span
+class="math inline">\(S,T\)</span>，桥上石子的位置。你的任务是确定青蛙要想过河，最少需要踩到的石子数。</p>
+<p>对于30%的数据，<span class="math inline">\(L \leq
+10000\)</span>；</p>
+<p>对于全部的数据，<span class="math inline">\(L \leq
+10^9\)</span>。</p>
 <h3 id="输入数据">输入数据</h3>
 <p>输入共包括三行。</p>
-<p>第一行有一个正整数<span class="math inline">\(L(1≤L≤10^9)\)</span>， 表示独木桥的长度。</p>
-<p>第二行有三个正整数<span class="math inline">\(S,T,M\)</span>， 分别表示青蛙一次跳跃的最小距离，最大距离及桥上石子的个数，其中<span class="math inline">\(1≤S≤T≤10,1≤M≤100\)</span>。</p>
-<p>第三行有<span class="math inline">\(M\)</span>个不同的正整数分别表示这<span class="math inline">\(M\)</span>个石子在数轴上的位置（数据保证桥的起点和终点处没有石子）。所有相邻的整数之间用一个空格隔开。</p>
+<p>第一行有一个正整数<span class="math inline">\(L(1≤L≤10^9)\)</span>，
+表示独木桥的长度。</p>
+<p>第二行有三个正整数<span class="math inline">\(S,T,M\)</span>，
+分别表示青蛙一次跳跃的最小距离，最大距离及桥上石子的个数，其中<span
+class="math inline">\(1≤S≤T≤10,1≤M≤100\)</span>。</p>
+<p>第三行有<span
+class="math inline">\(M\)</span>个不同的正整数分别表示这<span
+class="math inline">\(M\)</span>个石子在数轴上的位置（数据保证桥的起点和终点处没有石子）。所有相邻的整数之间用一个空格隔开。</p>
 <h3 id="输出数据">输出数据</h3>
 <p>输出只包括一个整数，表示青蛙过河最少需要踩到的石子数。</p>
 <h3 id="样例输入">样例输入</h3>
@@ -2721,7 +2736,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="样例输出">样例输出</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
 <h3 id="题目分析">题目分析</h3>
-<p>阅读题目可知只要跳过<span class="math inline">\(L\)</span>即可，记到达某一位置<span class="math inline">\(i\)</span>所需踩的最少的石头数记作<span class="math inline">\(\text{dp}[i]\)</span>，其中<span class="math inline">\(i \in [0, L-1+T]\)</span>，当前到达当前位置所需的代价与之前<span class="math inline">\(S\)</span>到<span class="math inline">\(T\)</span>的位置有关。因此很容易写出状态转移方程<span class="math inline">\(\text{dp}[i]= \min(\text{dp}[i-j])\)</span>，其中<span class="math inline">\(S \leq i-j \leq T\)</span>。再看题目中<span class="math inline">\(L\)</span>的数据范围可知对于<span class="math inline">\(70\%\)</span>的数据需要进行空间的压缩。由<span class="math inline">\(S\)</span>和<span class="math inline">\(T\)</span>的范围，记<span class="math inline">\(\text{MOD}=\text{lcm}(1,...,10)\)</span>，则<span class="math inline">\(\text{MOD}=2520\)</span>。之所以这样做的原因是要求出从任一位置<span class="math inline">\(i\)</span>一定能前进的距离的最大值，也就是说可以任取<span class="math inline">\(i\)</span>一定能从<span class="math inline">\(i\)</span>跳至<span class="math inline">\((i+\text{MOD})\)</span>处。由此可以对距离进行压缩，压缩至大约<span class="math inline">\(5 \times 10^5\)</span>的范围内，可以使用动态规划。最终在区间<span class="math inline">\([L,L+T-1]\)</span>的范围内找出最小值输出即可。</p>
+<p>阅读题目可知只要跳过<span
+class="math inline">\(L\)</span>即可，记到达某一位置<span
+class="math inline">\(i\)</span>所需踩的最少的石头数记作<span
+class="math inline">\(\text{dp}[i]\)</span>，其中<span
+class="math inline">\(i \in [0,
+L-1+T]\)</span>，当前到达当前位置所需的代价与之前<span
+class="math inline">\(S\)</span>到<span
+class="math inline">\(T\)</span>的位置有关。因此很容易写出状态转移方程<span
+class="math inline">\(\text{dp}[i]=
+\min(\text{dp}[i-j])\)</span>，其中<span class="math inline">\(S \leq
+i-j \leq T\)</span>。再看题目中<span
+class="math inline">\(L\)</span>的数据范围可知对于<span
+class="math inline">\(70\%\)</span>的数据需要进行空间的压缩。由<span
+class="math inline">\(S\)</span>和<span
+class="math inline">\(T\)</span>的范围，记<span
+class="math inline">\(\text{MOD}=\text{lcm}(1,...,10)\)</span>，则<span
+class="math inline">\(\text{MOD}=2520\)</span>。之所以这样做的原因是要求出从任一位置<span
+class="math inline">\(i\)</span>一定能前进的距离的最大值，也就是说可以任取<span
+class="math inline">\(i\)</span>一定能从<span
+class="math inline">\(i\)</span>跳至<span
+class="math inline">\((i+\text{MOD})\)</span>处。由此可以对距离进行压缩，压缩至大约<span
+class="math inline">\(5 \times
+10^5\)</span>的范围内，可以使用动态规划。最终在区间<span
+class="math inline">\([L,L+T-1]\)</span>的范围内找出最小值输出即可。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MOD 2520</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> L;</span><br><span class="line">	cin &gt;&gt; L;</span><br><span class="line">	<span class="type">int</span> S, T, M;</span><br><span class="line">	cin &gt;&gt; S &gt;&gt; T &gt;&gt; M;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; stones;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">		<span class="type">int</span> temp;</span><br><span class="line">		cin &gt;&gt; temp;</span><br><span class="line">		stones.<span class="built_in">emplace_back</span>(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(stones.<span class="built_in">begin</span>(), stones.<span class="built_in">end</span>(), <span class="built_in">less</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">compressed</span><span class="params">(MOD * <span class="number">107</span>)</span></span>;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; dis;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; M; i++) &#123;</span><br><span class="line">		dis.<span class="built_in">push_back</span>((stones[i] - stones[i - <span class="number">1</span>]) % MOD);</span><br><span class="line">	&#125;</span><br><span class="line">	stones[<span class="number">0</span>] = stones[<span class="number">0</span>] % MOD;</span><br><span class="line">	stones[<span class="number">0</span>] += (stones[<span class="number">0</span>] == <span class="number">0</span> ? MOD : <span class="number">0</span>);</span><br><span class="line">	compressed[stones[<span class="number">0</span>]] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; M; i++) &#123;</span><br><span class="line">		stones[i] = stones[i - <span class="number">1</span>] + dis[i - <span class="number">1</span>];</span><br><span class="line">		compressed[stones[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	L = stones[M - <span class="number">1</span>];</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(L + T + <span class="number">1</span>, <span class="number">107</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= L + T; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = S; j &lt;= T; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (i - j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">				dp[i] = <span class="built_in">min</span>(dp[i - j], dp[i]) + (compressed[i] == <span class="literal">true</span> ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">10e9</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = L; i &lt; L + T; i++) &#123;</span><br><span class="line">		ans = <span class="built_in">min</span>(ans, dp[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2845,8 +2883,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 Problem A
 题目描述
 我们有\(n\)根的木棍。现在从这些木棍中切割出来\(m\)条长度相同的木棍，问这\(m\)根木棍最长有多长？
-题解
-实际...</p>-->
+...</p>-->
         </a>
       
       
@@ -2855,7 +2892,7 @@ Problem A
           <!--<p class='content'>2021年10月4日练习。
 
 BJTU-ALGO 1355
-火柴棒拼等式，经典的枚举问题。首先确定\(1111+1=1112\)共需要27根火柴，而题设说明\(n\leq24\)，故枚举范围可知...</p>-->
+火柴棒拼等式，经典的枚举问题。首先确定\(1111+1=1112\)共需要27根火柴，而题设说明\(n\leq24\)，故枚举范...</p>-->
         </a>
       
     </div>
@@ -3035,13 +3072,19 @@ BJTU-ALGO 1355
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -4044,7 +4087,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

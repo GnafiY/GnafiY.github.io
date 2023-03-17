@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2702,18 +2702,51 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>折半查找的思想十分简单，其效率也很高；但是要将其运用到实际程序中却并不容易，需要考虑很多细节上的问题。</p>
 <span id="more"></span>
 <h2 id="在数组中查找">在数组中查找</h2>
-<p>设 <code>arr</code> 为一个数组， <code>target</code> 为目标值。假设 <code>arr</code> 已经是升序排序过的并且下文中默认这个条件。取 <code>arr</code> 的长度为<span class="math inline">\(L\)</span>。</p>
+<p>设 <code>arr</code> 为一个数组， <code>target</code> 为目标值。假设
+<code>arr</code> 已经是升序排序过的并且下文中默认这个条件。取
+<code>arr</code> 的长度为<span class="math inline">\(L\)</span>。</p>
 <h3 id="查找值">查找值</h3>
-<p>假定需要在 <code>arr</code> 中查找是否存在等于 <code>target</code> 的元素，如果查找到了则返回对应元素的下标；否则返回<span class="math inline">\(-1\)</span>。</p>
-<p>对于这种情况，返回结果的范围是<span class="math inline">\(\{-1\} \bigcup \{0,1,\dots ,L-1\}\)</span>，因此取<strong>初始区间</strong><span class="math inline">\([l, r]\)</span>为<span class="math inline">\([0,L-1]\)</span>，若找到 <code>target</code> 直接返回 <code>mid</code> ，否则一直查找，最后返回<span class="math inline">\(-1\)</span>即可。值得注意还有<b>结束条件</b>，由于查找的有效结果是一个值，因此要保证区间<span class="math inline">\([0,L-1]\)</span>中没有遗漏的值，那么必须保证没有找到的条件下，退出时的区间<span class="math inline">\([l,r]\)</span>满足<span class="math inline">\(l &gt; r\)</span>，可以得出循环条件为<span class="math inline">\(l \leqslant r\)</span>。</p>
+<p>假定需要在 <code>arr</code> 中查找是否存在等于 <code>target</code>
+的元素，如果查找到了则返回对应元素的下标；否则返回<span
+class="math inline">\(-1\)</span>。</p>
+<p>对于这种情况，返回结果的范围是<span class="math inline">\(\{-1\}
+\bigcup \{0,1,\dots
+,L-1\}\)</span>，因此取<strong>初始区间</strong><span
+class="math inline">\([l, r]\)</span>为<span
+class="math inline">\([0,L-1]\)</span>，若找到 <code>target</code>
+直接返回 <code>mid</code> ，否则一直查找，最后返回<span
+class="math inline">\(-1\)</span>即可。值得注意还有<b>结束条件</b>，由于查找的有效结果是一个值，因此要保证区间<span
+class="math inline">\([0,L-1]\)</span>中没有遗漏的值，那么必须保证没有找到的条件下，退出时的区间<span
+class="math inline">\([l,r]\)</span>满足<span class="math inline">\(l
+&gt; r\)</span>，可以得出循环条件为<span class="math inline">\(l
+\leqslant r\)</span>。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findVal</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] == target) &#123;</span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &gt; target) &#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="查找界">查找界</h3>
-<p>假定要查找 <code>arr</code> 中 <code>target</code> 的上确界，并且要求如果所有元素均大于等于 <code>target</code> 则返回<span class="math inline">\(0\)</span>，如果所有元素均小于等于 <code>target</code> 则返回<span class="math inline">\(L\)</span>。</p>
-<p>对于这种情况，返回结果的范围是<span class="math inline">\(\{0,1,\dots ,L-1\} \bigcup \{L\} = \{0,1,\dots ,L-1,L\}\)</span>，因此取<b>初始区间</b><span class="math inline">\([l, r]\)</span>为<span class="math inline">\([0,L]\)</span>，若 <code>target</code> <span class="math inline">\(\leqslant\)</span> <code>arr[mid]</code> ，那么可能的结果区间为<span class="math inline">\([l,mid]\)</span>，则更新<span class="math inline">\(r=mid\)</span>；否则更新区间为<span class="math inline">\([mid+1,r]\)</span>。由于最终退出循环时为一个区间<span class="math inline">\([l,r]\)</span>，其中<span class="math inline">\(l \leqslant r\)</span>，那么<b>结束条件</b>为<span class="math inline">\(l \leqslant r\)</span>，可以得出循环条件为<span class="math inline">\(l&lt;r\)</span>，最终的返回值为<span class="math inline">\(l\)</span>。</p>
+<p>假定要查找 <code>arr</code> 中 <code>target</code>
+的上确界，并且要求如果所有元素均大于等于 <code>target</code> 则返回<span
+class="math inline">\(0\)</span>，如果所有元素均小于等于
+<code>target</code> 则返回<span class="math inline">\(L\)</span>。</p>
+<p>对于这种情况，返回结果的范围是<span class="math inline">\(\{0,1,\dots
+,L-1\} \bigcup \{L\} = \{0,1,\dots
+,L-1,L\}\)</span>，因此取<b>初始区间</b><span class="math inline">\([l,
+r]\)</span>为<span class="math inline">\([0,L]\)</span>，若
+<code>target</code> <span class="math inline">\(\leqslant\)</span>
+<code>arr[mid]</code> ，那么可能的结果区间为<span
+class="math inline">\([l,mid]\)</span>，则更新<span
+class="math inline">\(r=mid\)</span>；否则更新区间为<span
+class="math inline">\([mid+1,r]\)</span>。由于最终退出循环时为一个区间<span
+class="math inline">\([l,r]\)</span>，其中<span class="math inline">\(l
+\leqslant r\)</span>，那么<b>结束条件</b>为<span class="math inline">\(l
+\leqslant r\)</span>，可以得出循环条件为<span
+class="math inline">\(l&lt;r\)</span>，最终的返回值为<span
+class="math inline">\(l\)</span>。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findSupremum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">while</span> (r - l &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &gt;= target) &#123;</span><br><span class="line">			r = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l;<span class="comment">//返回第一个元素的下标</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>查找下确界同理。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">findInfimum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">0</span>, r = arr.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">while</span> (r - l &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &lt;= target) &#123;</span><br><span class="line">			l = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> r;<span class="comment">//返回最后一个元素的下标</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>findSupremum()</code> 函数实现了查找第一个大于等于 <code>target</code> 的数的功能，<code>findInfimum()</code> 实现了查找最后一个小于等于 <code>target</code> 的数的功能。通过修改循环中分支的条件可以更改查找的功能。</p>
+<p><code>findSupremum()</code> 函数实现了查找第一个大于等于
+<code>target</code> 的数的功能，<code>findInfimum()</code>
+实现了查找最后一个小于等于 <code>target</code>
+的数的功能。通过修改循环中分支的条件可以更改查找的功能。</p>
 
   </div>
   
@@ -2728,7 +2761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>排序算法</p>
           <!--<p class='content'>一些排序算法的 C++ 实现。
 
-12345678910111213141516171819202122232425262728293031323334353637383940414243444...</p>-->
+123456789101112131415161718192021222324252627282930313233343536373839404142434...</p>-->
         </a>
       
       
@@ -2739,8 +2772,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 Problem A
 题目描述
 我们有\(n\)根的木棍。现在从这些木棍中切割出来\(m\)条长度相同的木棍，问这\(m\)根木棍最长有多长？
-题解
-实际...</p>-->
+...</p>-->
         </a>
       
     </div>
@@ -2920,13 +2952,19 @@ Problem A
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3929,7 +3967,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

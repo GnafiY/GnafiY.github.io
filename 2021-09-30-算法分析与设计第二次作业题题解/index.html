@@ -1874,7 +1874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2711,15 +2711,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="problem-a">Problem A</h2>
 <h3 id="题目描述">题目描述</h3>
 <p>如果一个质数能被表示为三个不同的质数的和的形式，那么我们称它为立方质数。</p>
-<p>现在给你一个数<span class="math inline">\(n(n \leq 1000)\)</span>，判断它是不是立方质数。</p>
+<p>现在给你一个数<span class="math inline">\(n(n \leq
+1000)\)</span>，判断它是不是立方质数。</p>
 <h3 id="题解">题解</h3>
-<p>观察<span class="math inline">\(n\)</span>的范围，直接暴力枚举即可。</p>
+<p>观察<span
+class="math inline">\(n\)</span>的范围，直接暴力枚举即可。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">is_prime</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!(n % <span class="number">2</span>)) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">3</span>; i * i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; primeList;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span> (!<span class="built_in">is_prime</span>(n)) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;No&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">is_prime</span>(i)) &#123;</span><br><span class="line">			primeList.<span class="built_in">push_back</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> l = primeList.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; l; j++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> k = j + <span class="number">1</span>; k &lt; l; k++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (n == primeList[i] + primeList[j] + primeList[k]) &#123;</span><br><span class="line">					cout &lt;&lt; <span class="string">&quot;Yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;No&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-b">Problem B</h2>
 <h3 id="题目描述-1">题目描述</h3>
-<p>有<span class="math inline">\(n\)</span>盏灯，编号为<span class="math inline">\(1,2,\dots,n\)</span>，初始灯都是关着的。有<span class="math inline">\(n\)</span>个人，第<span class="math inline">\(i\)</span>个人会打开所有编号为<span class="math inline">\(i\)</span>的倍数的灯，那么最后有几盏灯是亮着的？</p>
+<p>有<span class="math inline">\(n\)</span>盏灯，编号为<span
+class="math inline">\(1,2,\dots,n\)</span>，初始灯都是关着的。有<span
+class="math inline">\(n\)</span>个人，第<span
+class="math inline">\(i\)</span>个人会打开所有编号为<span
+class="math inline">\(i\)</span>的倍数的灯，那么最后有几盏灯是亮着的？</p>
 <h3 id="题解-1">题解</h3>
-<p>实际上，仔细读题发现，最后只有被按了奇数次的灯会亮着，也就是说，本题是求在区间<span class="math inline">\([1, n]\)</span>中的整数<span class="math inline">\(i\)</span>满足条件当且仅当<span class="math inline">\(i\)</span>恰好有奇数个不同的因数。大于<span class="math inline">\(1\)</span>的任意一个正整数的因数都是成对出现的，除非这个数是完全平方数。说到底，这个题就是要求<span class="math inline">\([1, n]\)</span>中有多少个完全平方数。直接返回<span class="math inline">\(\lfloor \sqrt{n} \rfloor\)</span>即可。</p>
+<p>实际上，仔细读题发现，最后只有被按了奇数次的灯会亮着，也就是说，本题是求在区间<span
+class="math inline">\([1, n]\)</span>中的整数<span
+class="math inline">\(i\)</span>满足条件当且仅当<span
+class="math inline">\(i\)</span>恰好有奇数个不同的因数。大于<span
+class="math inline">\(1\)</span>的任意一个正整数的因数都是成对出现的，除非这个数是完全平方数。说到底，这个题就是要求<span
+class="math inline">\([1, n]\)</span>中有多少个完全平方数。直接返回<span
+class="math inline">\(\lfloor \sqrt{n} \rfloor\)</span>即可。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">1</span>; i * i &lt;= n; i++)&#123;&#125;</span><br><span class="line">	cout &lt;&lt; i - <span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-c">Problem C</h2>
 <h3 id="题目描述-2">题目描述</h3>
@@ -2729,24 +2741,44 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> FRONT true</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BACK false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	string s, fr, ans;</span><br><span class="line">	cin &gt;&gt; s;</span><br><span class="line">	<span class="type">bool</span> mode = BACK;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> c : s) &#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">&#x27;[&#x27;</span>) &#123;</span><br><span class="line">			mode = FRONT;</span><br><span class="line">			ans = fr + ans;</span><br><span class="line">			fr.<span class="built_in">clear</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">&#x27;]&#x27;</span>) &#123;</span><br><span class="line">			mode = BACK;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (mode == BACK) &#123;</span><br><span class="line">				ans.<span class="built_in">push_back</span>(c);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				fr.<span class="built_in">push_back</span>(c);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	ans = fr + ans;</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-d">Problem D</h2>
 <h3 id="题目描述-3">题目描述</h3>
-<p>对于数<span class="math inline">\(7331\)</span>而言，<span class="math inline">\(7,73,733,7331\)</span>都是质数，因此<span class="math inline">\(7331\)</span>被称作长度为<span class="math inline">\(4\)</span>的特殊质数。</p>
-<p>输入为<span class="math inline">\(N(1 \leq N \leq 8)\)</span>，求出所有长度为<span class="math inline">\(N\)</span>的特殊质数。</p>
+<p>对于数<span class="math inline">\(7331\)</span>而言，<span
+class="math inline">\(7,73,733,7331\)</span>都是质数，因此<span
+class="math inline">\(7331\)</span>被称作长度为<span
+class="math inline">\(4\)</span>的特殊质数。</p>
+<p>输入为<span class="math inline">\(N(1 \leq N \leq
+8)\)</span>，求出所有长度为<span
+class="math inline">\(N\)</span>的特殊质数。</p>
 <h3 id="题解-3">题解</h3>
 <p>实际上可以使用宽搜求解。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> N;</span><br><span class="line">	cin &gt;&gt; N;</span><br><span class="line">	<span class="function">queue&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>&#125;)</span></span>;</span><br><span class="line">	<span class="type">int</span> lastCount = <span class="number">4</span>;</span><br><span class="line">	<span class="type">int</span> curCount = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= N; i++) &#123;</span><br><span class="line">		curCount = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lastCount; j++) &#123;</span><br><span class="line">			<span class="type">int</span> cur = ans.<span class="built_in">front</span>();</span><br><span class="line">			ans.<span class="built_in">pop</span>();</span><br><span class="line">			cur *= <span class="number">10</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">9</span>; k += <span class="number">2</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="built_in">is_prime</span>(cur + k)) &#123;</span><br><span class="line">					ans.<span class="built_in">push</span>(cur + k);</span><br><span class="line">					curCount++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		lastCount = curCount;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(!ans.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">		cout &lt;&lt; ans.<span class="built_in">front</span>() &lt;&lt; endl;</span><br><span class="line">		ans.<span class="built_in">pop</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-e">Problem E</h2>
 <h3 id="题目描述-4">题目描述</h3>
-<p>输入一个<span class="math inline">\(32\)</span>位无符号整数，输出其高<span class="math inline">\(16\)</span>位与低<span class="math inline">\(16\)</span>位交换后的结果。</p>
+<p>输入一个<span
+class="math inline">\(32\)</span>位无符号整数，输出其高<span
+class="math inline">\(16\)</span>位与低<span
+class="math inline">\(16\)</span>位交换后的结果。</p>
 <h3 id="题解-4">题解</h3>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> base 65536 <span class="comment">//2^16</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">size_t</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="type">size_t</span> low = n / base, high = n % base;</span><br><span class="line">	cout &lt;&lt; high * base + low &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="problem-f">Problem F</h2>
 <h3 id="题目描述-5">题目描述</h3>
-<p>输入两个正整数<span class="math inline">\(x_0,y_0(2≤x_0≤100000，2≤y_0≤1000000)\)</span>，求出满足下列条件的<span class="math inline">\(P,Q\)</span>的个数：</p>
+<p>输入两个正整数<span
+class="math inline">\(x_0,y_0(2≤x_0≤100000，2≤y_0≤1000000)\)</span>，求出满足下列条件的<span
+class="math inline">\(P,Q\)</span>的个数：</p>
 <p>（1）<span class="math inline">\(P,Q\)</span>都是正整数；</p>
-<p>（2）要求<span class="math inline">\(P,Q\)</span>以<span class="math inline">\(x_0\)</span>为最大公约数，以<span class="math inline">\(y_0\)</span>为最小公倍数。</p>
+<p>（2）要求<span class="math inline">\(P,Q\)</span>以<span
+class="math inline">\(x_0\)</span>为最大公约数，以<span
+class="math inline">\(y_0\)</span>为最小公倍数。</p>
 <p>试求满足条件的所有可能的两个正整数的个数。</p>
 <h3 id="题解-5">题解</h3>
-<p>设<span class="math inline">\(P=k_1x_0, Q=k_2x_0（k_1与k_2互质）\)</span>, 则依题意<span class="math inline">\(k_1k_2x_0=y_0\)</span>，也就是说<span class="math inline">\(k_1k_2=\displaystyle \frac{y_0}{x_0}\)</span>。若<span class="math inline">\(x_0\)</span>不能整除<span class="math inline">\(y_0\)</span>，则满足要求的个数为0；否则只要统计<span class="math inline">\(\displaystyle \frac{y_0}{x_0}\)</span>的互质因数的组数即可（也就是所有的非平方根因数的个数）。</p>
+<p>设<span class="math inline">\(P=k_1x_0,
+Q=k_2x_0（k_1与k_2互质）\)</span>, 则依题意<span
+class="math inline">\(k_1k_2x_0=y_0\)</span>，也就是说<span
+class="math inline">\(k_1k_2=\displaystyle
+\frac{y_0}{x_0}\)</span>。若<span
+class="math inline">\(x_0\)</span>不能整除<span
+class="math inline">\(y_0\)</span>，则满足要求的个数为0；否则只要统计<span
+class="math inline">\(\displaystyle
+\frac{y_0}{x_0}\)</span>的互质因数的组数即可（也就是所有的非平方根因数的个数）。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a % b == <span class="number">0</span> ? b : <span class="built_in">gcd</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> x0, y0;</span><br><span class="line">	cin &gt;&gt; x0 &gt;&gt; y0;</span><br><span class="line">	<span class="keyword">if</span> (y0 % x0) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> p = y0 / x0;</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i * i &lt; p; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p % i == <span class="number">0</span> &amp;&amp; <span class="built_in">gcd</span>(i, p / i) == <span class="number">1</span>) &#123;</span><br><span class="line">			ans += <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2765,7 +2797,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 数论入门
 求最大公约数与最小公倍数
 求最大公约数的最朴素的想法就是暴力枚举。
-12345678910int gcd1(int a, int b) &#12...</p>-->
+12345678910int gcd1(int a, int b)...</p>-->
         </a>
       
       
@@ -2774,7 +2806,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>本页主要记录网页的建设与维护的过程，并分享一些经验。
 
 2021年9月28日
-网页出现乱码问题，经查证是编码问题，查找资料后在对 WinSCP 的登陆设置与登陆后的编辑设置中进行修改后问题解决。...</p>-->
+网页出现乱码问题，经查证是编码问题，查找资料后在对
+WinSCP 的登陆设置与登陆后的编辑设置中进行修改后问...</p>-->
         </a>
       
     </div>
@@ -2954,13 +2987,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3963,7 +4002,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

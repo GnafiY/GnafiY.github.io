@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2700,159 +2700,404 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>这篇博客用于总结概率论相关的积分计算问题。</p>
 <span id="more"></span>
-<h2 id="求zgxy的概率密度函数"><strong>求<span class="math inline">\(Z=g(X,Y)\)</span>的概率密度函数</strong></h2>
-<p>设有二维随机变量<span class="math inline">\((X,Y)\)</span>以及其联合分布的概率密度函数<span class="math inline">\(f(x,y)\)</span>，试求<span class="math inline">\(Z=g(X,Y)\)</span>的概率密度函数。</p>
-<h3 id="求zxy的概率密度函数"><strong>求<span class="math inline">\(Z=X+Y\)</span>的概率密度函数</strong></h3>
-<p><span class="math inline">\(\displaystyle F_{Z}(z)=P\{Z \leq z\} = P\{X+Y \leq z\} = \iint_{x+y\leq z} f(x,y)dxdy = \int_{-\infty}^{+\infty}dx \int_{-\infty}^{z-x}f(x,y)dy\)</span></p>
-<p><span class="math inline">\(\displaystyle\xlongequal{y+x=u}\int_{-\infty}^{+\infty}dx\int_{-\infty}^{z}f(x,u-x)du=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(x,u-x)dx\)</span></p>
-<p>事实上，<span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}f(x,u-x)dx\)</span> 是关于<span class="math inline">\(u\)</span>的函数，那么有：</p>
-<p><span class="math display">\[\displaystyle f_{Z}(z) = [F_{Z}(z)]_{z}&#39;=\int_{-\infty}^{+\infty}f(x,z-x)dx=\int_{-\infty}^{+\infty}f(z-y,y)dy\]</span></p>
-<p>此外，函数<span class="math inline">\(f(t)\)</span>与<span class="math inline">\(g(t)\)</span>的卷积<span class="math inline">\(f * g\)</span>就被定义为<span class="math inline">\(\displaystyle(f * g)(t) = \int_{-\infty}^{+\infty}f(t - \tau)g(\tau)d\tau\)</span>。</p>
-<h3 id="求zx-y的概率密度函数"><strong>求<span class="math inline">\(Z=X-Y\)</span>的概率密度函数</strong></h3>
-<p>习惯上，当<span class="math inline">\(g(X,Y)\)</span>不关于<span class="math inline">\(X,Y\)</span>对称时，先对<span class="math inline">\(x\)</span>积分，有：</p>
-<p><span class="math inline">\(\displaystyle F_{Z}(z)=P\{Z \leq z\} = P\{X-Y \leq z\} = \iint_{x-y\leq z} f(x,y)dxdy = \int_{-\infty}^{+\infty}dy\int_{-\infty}^{y+z}f(x,y)dx\)</span></p>
-<p><span class="math inline">\(\displaystyle\xlongequal{x-y=u}\int_{-\infty}^{+\infty}dy\int_{-\infty}^{z}f(u+y,y)du=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(u+y,y)dy\)</span></p>
+<h2 id="求zgxy的概率密度函数"><strong>求<span
+class="math inline">\(Z=g(X,Y)\)</span>的概率密度函数</strong></h2>
+<p>设有二维随机变量<span
+class="math inline">\((X,Y)\)</span>以及其联合分布的概率密度函数<span
+class="math inline">\(f(x,y)\)</span>，试求<span
+class="math inline">\(Z=g(X,Y)\)</span>的概率密度函数。</p>
+<h3 id="求zxy的概率密度函数"><strong>求<span
+class="math inline">\(Z=X+Y\)</span>的概率密度函数</strong></h3>
+<p><span class="math inline">\(\displaystyle F_{Z}(z)=P\{Z \leq z\} =
+P\{X+Y \leq z\} = \iint_{x+y\leq z} f(x,y)dxdy =
+\int_{-\infty}^{+\infty}dx \int_{-\infty}^{z-x}f(x,y)dy\)</span></p>
+<p><span
+class="math inline">\(\displaystyle\xlongequal{y+x=u}\int_{-\infty}^{+\infty}dx\int_{-\infty}^{z}f(x,u-x)du=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(x,u-x)dx\)</span></p>
+<p>事实上，<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}f(x,u-x)dx\)</span> 是关于<span
+class="math inline">\(u\)</span>的函数，那么有：</p>
+<p><span class="math display">\[\displaystyle f_{Z}(z) =
+[F_{Z}(z)]_{z}&#39;=\int_{-\infty}^{+\infty}f(x,z-x)dx=\int_{-\infty}^{+\infty}f(z-y,y)dy\]</span></p>
+<p>此外，函数<span class="math inline">\(f(t)\)</span>与<span
+class="math inline">\(g(t)\)</span>的卷积<span class="math inline">\(f *
+g\)</span>就被定义为<span class="math inline">\(\displaystyle(f * g)(t)
+= \int_{-\infty}^{+\infty}f(t - \tau)g(\tau)d\tau\)</span>。</p>
+<h3 id="求zx-y的概率密度函数"><strong>求<span
+class="math inline">\(Z=X-Y\)</span>的概率密度函数</strong></h3>
+<p>习惯上，当<span class="math inline">\(g(X,Y)\)</span>不关于<span
+class="math inline">\(X,Y\)</span>对称时，先对<span
+class="math inline">\(x\)</span>积分，有：</p>
+<p><span class="math inline">\(\displaystyle F_{Z}(z)=P\{Z \leq z\} =
+P\{X-Y \leq z\} = \iint_{x-y\leq z} f(x,y)dxdy =
+\int_{-\infty}^{+\infty}dy\int_{-\infty}^{y+z}f(x,y)dx\)</span></p>
+<p><span
+class="math inline">\(\displaystyle\xlongequal{x-y=u}\int_{-\infty}^{+\infty}dy\int_{-\infty}^{z}f(u+y,y)du=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(u+y,y)dy\)</span></p>
 <p>同理有：</p>
-<p><span class="math display">\[\displaystyle f_{Z}(z) = [F_{Z}(z)]_{z}&#39;= \int_{-\infty}^{+\infty}f(z+y,y)dy\]</span></p>
-<h3 id="求zxy的概率密度函数-1"><strong>求<span class="math inline">\(Z=XY\)</span>的概率密度函数</strong></h3>
-<p><span class="math display">\[\displaystyle F_{Z}(z)=P\{Z \leq z\} = P\{XY \leq z\} = \iint_{xy\leq z} f(x,y)dxdy\]</span></p>
-<p>注意到上述积分需要分类讨论，不妨考虑<span class="math inline">\(z&gt;0\)</span>的情况，那么有：</p>
-<p><span class="math inline">\(\displaystyle F_{Z}(z) = \int_{-\infty}^{0}dx\int_{\frac{z}{x}}^{+\infty}f(x,y)dy+\int_{0}^{+\infty}dx\int_{-\infty}^{\frac{z}{x}}f(x,y)dy\)</span></p>
-<p><span class="math inline">\(\displaystyle=\int_{-\infty}^{0}dx\int_{z}^{-\infty}f(x,\frac{u}{x})\frac{1}{x}du + \int_{0}^{+\infty}dx\int_{-\infty}^{z}f(x,\frac{u}{x})du=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(x,\frac{u}{x})\frac{1}{|x|}dx\)</span></p>
-<p><font color = "red">上述积分在进行<span class="math inline">\(u=xy\)</span>换元时，一定注意无穷积分限的正负。</font>对于<span class="math inline">\(z&lt;0\)</span>的情况同理，最终得到的结果为：</p>
-<p><span class="math display">\[f_{Z}(z) = [F_{Z}(z)]_{z}&#39;= \displaystyle \int_{-\infty}^{+\infty}f(x,\frac{z}{x})\frac{1}{|x|}dx=\int_{-\infty}^{+\infty}f(\frac{z}{y},y)\frac{1}{|y|}dy\]</span></p>
-<h3 id="求zdisplaystylefracxy的概率密度函数"><strong>求<span class="math inline">\(Z=\displaystyle\frac{X}{Y}\)</span>的概率密度函数</strong></h3>
-<p><span class="math inline">\(\displaystyle F_{Z}(z)=P\{Z \leq z\} = P\{\frac{X}{Y} \leq z\} = \iint_{\frac{x}{y}\leq z} f(x,y)dxdy\)</span></p>
-<p>注意到上述积分需要分类讨论，不妨考虑<span class="math inline">\(z&gt;0\)</span>的情况，那么有：</p>
-<p><span class="math inline">\(\displaystyle F_{Z}(z) = \int_{-\infty}^{0}dy\int_{yz}^{+\infty}f(x,y)dx+\int_{0}^{+\infty}dy\int_{-\infty}^{yz}f(x,y)dx\)</span></p>
-<p><span class="math inline">\(\displaystyle = \int_{-\infty}^{0}dy\int_{z}^{-\infty}f(uy,y)ydu+\int_{0}^{+\infty}dy\int_{-\infty}^{z}f(uy,y)ydu=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(uy,y)|y|dy\)</span></p>
-<p><font color = "red">上述积分在进行<span class="math inline">\(\displaystyle u=\frac{x}{y}\)</span>换元时，一定注意无穷积分限的正负。</font>对于<span class="math inline">\(z&lt;0\)</span>的情况同理，最终得到的结果为：</p>
-<p><span class="math display">\[f_{Z}(z) = [F_{Z}(z)]_{z}&#39;= \int_{-\infty}^{+\infty}f(yz,y)|y|dy\]</span></p>
+<p><span class="math display">\[\displaystyle f_{Z}(z) =
+[F_{Z}(z)]_{z}&#39;= \int_{-\infty}^{+\infty}f(z+y,y)dy\]</span></p>
+<h3 id="求zxy的概率密度函数-1"><strong>求<span
+class="math inline">\(Z=XY\)</span>的概率密度函数</strong></h3>
+<p><span class="math display">\[\displaystyle F_{Z}(z)=P\{Z \leq z\} =
+P\{XY \leq z\} = \iint_{xy\leq z} f(x,y)dxdy\]</span></p>
+<p>注意到上述积分需要分类讨论，不妨考虑<span
+class="math inline">\(z&gt;0\)</span>的情况，那么有：</p>
+<p><span class="math inline">\(\displaystyle F_{Z}(z) =
+\int_{-\infty}^{0}dx\int_{\frac{z}{x}}^{+\infty}f(x,y)dy+\int_{0}^{+\infty}dx\int_{-\infty}^{\frac{z}{x}}f(x,y)dy\)</span></p>
+<p><span
+class="math inline">\(\displaystyle=\int_{-\infty}^{0}dx\int_{z}^{-\infty}f(x,\frac{u}{x})\frac{1}{x}du
++
+\int_{0}^{+\infty}dx\int_{-\infty}^{z}f(x,\frac{u}{x})du=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(x,\frac{u}{x})\frac{1}{|x|}dx\)</span></p>
+<p><font color = "red">上述积分在进行<span
+class="math inline">\(u=xy\)</span>换元时，一定注意无穷积分限的正负。</font>对于<span
+class="math inline">\(z&lt;0\)</span>的情况同理，最终得到的结果为：</p>
+<p><span class="math display">\[f_{Z}(z) = [F_{Z}(z)]_{z}&#39;=
+\displaystyle
+\int_{-\infty}^{+\infty}f(x,\frac{z}{x})\frac{1}{|x|}dx=\int_{-\infty}^{+\infty}f(\frac{z}{y},y)\frac{1}{|y|}dy\]</span></p>
+<h3 id="求zdisplaystylefracxy的概率密度函数"><strong>求<span
+class="math inline">\(Z=\displaystyle\frac{X}{Y}\)</span>的概率密度函数</strong></h3>
+<p><span class="math inline">\(\displaystyle F_{Z}(z)=P\{Z \leq z\} =
+P\{\frac{X}{Y} \leq z\} = \iint_{\frac{x}{y}\leq z}
+f(x,y)dxdy\)</span></p>
+<p>注意到上述积分需要分类讨论，不妨考虑<span
+class="math inline">\(z&gt;0\)</span>的情况，那么有：</p>
+<p><span class="math inline">\(\displaystyle F_{Z}(z) =
+\int_{-\infty}^{0}dy\int_{yz}^{+\infty}f(x,y)dx+\int_{0}^{+\infty}dy\int_{-\infty}^{yz}f(x,y)dx\)</span></p>
+<p><span class="math inline">\(\displaystyle =
+\int_{-\infty}^{0}dy\int_{z}^{-\infty}f(uy,y)ydu+\int_{0}^{+\infty}dy\int_{-\infty}^{z}f(uy,y)ydu=\int_{-\infty}^{z}du\int_{-\infty}^{+\infty}f(uy,y)|y|dy\)</span></p>
+<p><font color = "red">上述积分在进行<span
+class="math inline">\(\displaystyle
+u=\frac{x}{y}\)</span>换元时，一定注意无穷积分限的正负。</font>对于<span
+class="math inline">\(z&lt;0\)</span>的情况同理，最终得到的结果为：</p>
+<p><span class="math display">\[f_{Z}(z) = [F_{Z}(z)]_{z}&#39;=
+\int_{-\infty}^{+\infty}f(yz,y)|y|dy\]</span></p>
 <h3 id="通用方法"><strong>通用方法</strong></h3>
 <p>参考<a href = "https://www.bilibili.com/video/BV1Va411v7gi" target = "_blank">17分钟搞定卷积公式</a>，可利用二重积分的换元法求解。</p>
-<p>对<span class="math inline">\(z = g(x,y)\)</span><strong>等价</strong>变形为<span class="math inline">\(x = x(y,z)\)</span>，作变换<span class="math inline">\(\left\{\begin{matrix} x = x(y,z) \\ y = y \end{matrix}\right.\)</span>，那么<span class="math inline">\(xOy\)</span>平面上的区域<span class="math inline">\(D\)</span>被变换为<span class="math inline">\(yOz\)</span>平面上的区域<span class="math inline">\(D&#39;\)</span>，则：</p>
-<p><span class="math display">\[\iint_{D} f(x,y) dxdy = \iint_{D&#39;}f(x(y,z),y)|J|dydz\]</span></p>
-<p>其中，<span class="math inline">\(J = \left|\begin{matrix} \displaystyle \frac{\partial x}{\partial y} \frac{\partial x}{\partial z} \\ \displaystyle \frac{\partial y}{\partial y} \frac{\partial y}{\partial z} \end{matrix}\right|\)</span>，为雅可比行列式。</p>
+<p>对<span class="math inline">\(z =
+g(x,y)\)</span><strong>等价</strong>变形为<span class="math inline">\(x
+= x(y,z)\)</span>，作变换<span
+class="math inline">\(\left\{\begin{matrix} x = x(y,z) \\ y = y
+\end{matrix}\right.\)</span>，那么<span
+class="math inline">\(xOy\)</span>平面上的区域<span
+class="math inline">\(D\)</span>被变换为<span
+class="math inline">\(yOz\)</span>平面上的区域<span
+class="math inline">\(D&#39;\)</span>，则：</p>
+<p><span class="math display">\[\iint_{D} f(x,y) dxdy =
+\iint_{D&#39;}f(x(y,z),y)|J|dydz\]</span></p>
+<p>其中，<span class="math inline">\(J = \left|\begin{matrix}
+\displaystyle \frac{\partial x}{\partial y} \frac{\partial x}{\partial
+z} \\ \displaystyle \frac{\partial y}{\partial y} \frac{\partial
+y}{\partial z} \end{matrix}\right|\)</span>，为雅可比行列式。</p>
 <p>此时令<span class="math inline">\(D=R^2\)</span>有：</p>
-<p><span class="math display">\[\iint_{D&#39;}f(x(y,z),y)|\frac{\partial x}{\partial z}|dydz=1\]</span></p>
-<p>可知<span class="math inline">\(\displaystyle f(x(y,z),y)|\frac{\partial x}{\partial z}|\)</span>是二维随机变量<span class="math inline">\((Y,Z)\)</span>的联合概率密度，那么：</p>
-<p><span class="math display">\[\displaystyle f_{Z}(z) = \int_{-\infty}^{+\infty}f(x(y,z),y)|\frac{\partial x}{\partial z}|dy\]</span></p>
-<h2 id="常见一维随机变量分布的分布律概率密度函数期望和方差以及关系"><strong>常见一维随机变量分布的分布律/概率密度函数、期望和方差以及关系</strong></h2>
+<p><span class="math display">\[\iint_{D&#39;}f(x(y,z),y)|\frac{\partial
+x}{\partial z}|dydz=1\]</span></p>
+<p>可知<span class="math inline">\(\displaystyle
+f(x(y,z),y)|\frac{\partial x}{\partial z}|\)</span>是二维随机变量<span
+class="math inline">\((Y,Z)\)</span>的联合概率密度，那么：</p>
+<p><span class="math display">\[\displaystyle f_{Z}(z) =
+\int_{-\infty}^{+\infty}f(x(y,z),y)|\frac{\partial x}{\partial
+z}|dy\]</span></p>
+<h2
+id="常见一维随机变量分布的分布律概率密度函数期望和方差以及关系"><strong>常见一维随机变量分布的分布律/概率密度函数、期望和方差以及关系</strong></h2>
 <p><img src = "/static/images/分布表.png"></img></p>
-<h3 id="上表中一维随机变量分布的期望和方差的计算过程"><strong>上表中一维随机变量分布的期望和方差的计算过程</strong></h3>
-<p>计算时善用常用积分值、裂项和方差定义<span class="math inline">\(D(X) = E(X^2)-[E(X)]^2\)</span>。</p>
+<h3
+id="上表中一维随机变量分布的期望和方差的计算过程"><strong>上表中一维随机变量分布的期望和方差的计算过程</strong></h3>
+<p>计算时善用常用积分值、裂项和方差定义<span class="math inline">\(D(X)
+= E(X^2)-[E(X)]^2\)</span>。</p>
 <h4 id="伯努利分布"><strong>伯努利分布</strong></h4>
 <p>根据定义结论显然。</p>
 <h4 id="二项分布"><strong>二项分布</strong></h4>
 <p>设<span class="math inline">\(X\sim B(n,p)\)</span>，那么：</p>
-<p><span class="math inline">\(E(X) = \displaystyle \sum_{i}x_i P\{X = x_i\}=\sum_{i=0}^{n}i C_{n}^{i}p^i(1-p)^{n-i} = \sum_{i=1}^{n}i \frac{n!}{i!(n-i)!} p^i(1-p)^{n-i}\)</span></p>
-<p><span class="math inline">\(\displaystyle= np\sum_{i=1}^{n}\frac{(n-1)!}{(i-1)!(n-i)!}p^{i-1}(1-p)^{n-i} \xlongequal{j = i - 1} np\sum_{j=0}^{n-1}C_{n-1}^{j}p^j(1-p)^{n-1-j}=np\)</span></p>
-<p>计算<span class="math inline">\(E(X^2)\)</span>时，可以利用恒等式<span class="math inline">\(i^2=i(i-1) + i\)</span>：</p>
-<p><span class="math inline">\(E(X^2) = \displaystyle \sum_{i}x_i P\{X = x_i\}=\sum_{i=0}^{n}i^2 C_{n}^{i}p^i(1-p)^{n-i} = \sum_{i=1}^{n}C_{n-1}^{i-1}p^{i-1}(1-p)^{n-i} + \sum\frac{i(i-1)n!}{i!(n-i)!}p^i(1-p)^{n-i}\)</span></p>
+<p><span class="math inline">\(E(X) = \displaystyle \sum_{i}x_i P\{X =
+x_i\}=\sum_{i=0}^{n}i C_{n}^{i}p^i(1-p)^{n-i} = \sum_{i=1}^{n}i
+\frac{n!}{i!(n-i)!} p^i(1-p)^{n-i}\)</span></p>
+<p><span class="math inline">\(\displaystyle=
+np\sum_{i=1}^{n}\frac{(n-1)!}{(i-1)!(n-i)!}p^{i-1}(1-p)^{n-i}
+\xlongequal{j = i - 1}
+np\sum_{j=0}^{n-1}C_{n-1}^{j}p^j(1-p)^{n-1-j}=np\)</span></p>
+<p>计算<span
+class="math inline">\(E(X^2)\)</span>时，可以利用恒等式<span
+class="math inline">\(i^2=i(i-1) + i\)</span>：</p>
+<p><span class="math inline">\(E(X^2) = \displaystyle \sum_{i}x_i P\{X =
+x_i\}=\sum_{i=0}^{n}i^2 C_{n}^{i}p^i(1-p)^{n-i} =
+\sum_{i=1}^{n}C_{n-1}^{i-1}p^{i-1}(1-p)^{n-i} +
+\sum\frac{i(i-1)n!}{i!(n-i)!}p^i(1-p)^{n-i}\)</span></p>
 <p><span class="math inline">\(= E(X) + n(n-1)p^2\)</span></p>
-<p>那么<span class="math inline">\(D(X) = E(X^2)-[E(X)]^2 = np(1-p)\)</span>。</p>
-<p>事实上，还有另外一种求解方法。设随机变量<span class="math inline">\(X_i=\left\{\begin{matrix}1,\text{第}i\text{次实验成功} \\ 0,\text{否则} \end{matrix}\right. ,i \in \{1,2,\cdots,n\}\)</span>，显然各<span class="math inline">\(X_i\)</span>独立同分布且<span class="math inline">\(X_1 \sim B(1,p)\)</span>，由伯努利分布的性质及期望的性质显而易见：<span class="math inline">\(E(X) = np,D(X)=np(1-p)\)</span>。</p>
+<p>那么<span class="math inline">\(D(X) = E(X^2)-[E(X)]^2 =
+np(1-p)\)</span>。</p>
+<p>事实上，还有另外一种求解方法。设随机变量<span
+class="math inline">\(X_i=\left\{\begin{matrix}1,\text{第}i\text{次实验成功}
+\\ 0,\text{否则} \end{matrix}\right. ,i \in
+\{1,2,\cdots,n\}\)</span>，显然各<span
+class="math inline">\(X_i\)</span>独立同分布且<span
+class="math inline">\(X_1 \sim
+B(1,p)\)</span>，由伯努利分布的性质及期望的性质显而易见：<span
+class="math inline">\(E(X) = np,D(X)=np(1-p)\)</span>。</p>
 <h4 id="帕斯卡分布和几何分布">帕斯卡分布和几何分布</h4>
-<p>由于几何分布是帕斯卡分布的特例，因此可以直接求解帕斯卡分布的期望和方差，设<span class="math inline">\(X\sim NB(r,p)\)</span>，那么：</p>
-<p><span class="math display">\[E(X) = \displaystyle \sum_{k=r}^{\infty}kC_{k-1}^{r-1}p^r(1-p)^{k-r}=\frac{r}{p}\sum_{k=r+1}^{\infty}C_{k-1}^{(r+1)-1}p^{r+1}(1-p)^{k-r}=\frac{r}{p}\]</span></p>
+<p>由于几何分布是帕斯卡分布的特例，因此可以直接求解帕斯卡分布的期望和方差，设<span
+class="math inline">\(X\sim NB(r,p)\)</span>，那么：</p>
+<p><span class="math display">\[E(X) = \displaystyle
+\sum_{k=r}^{\infty}kC_{k-1}^{r-1}p^r(1-p)^{k-r}=\frac{r}{p}\sum_{k=r+1}^{\infty}C_{k-1}^{(r+1)-1}p^{r+1}(1-p)^{k-r}=\frac{r}{p}\]</span></p>
 <p>仿照上式可以求解<span class="math inline">\(E(X^2)\)</span>为：</p>
-<p><span class="math inline">\(E(X^2) = \displaystyle \sum_{k=r}^{\infty}k^2C_{k-1}^{r-1}p^r(1-p)^{k-r}=\sum_{k=r}^{\infty}(k+1)kC_{k-1}^{r-1}p^r(1-p)^{k-r} - E(X)\)</span></p>
-<p><span class="math inline">\(\displaystyle =\frac{r(r+2)}{p^2} \sum_{k=r+2} C_{k-1}^{(r+2)-1}p^{r+2}(1-p)^{k-r} - E(X) =\frac{r^2 + (1-p)r}{p^2} \Rightarrow D(X) = \frac{r(1-p)}{p^2}\)</span></p>
+<p><span class="math inline">\(E(X^2) = \displaystyle
+\sum_{k=r}^{\infty}k^2C_{k-1}^{r-1}p^r(1-p)^{k-r}=\sum_{k=r}^{\infty}(k+1)kC_{k-1}^{r-1}p^r(1-p)^{k-r}
+- E(X)\)</span></p>
+<p><span class="math inline">\(\displaystyle =\frac{r(r+2)}{p^2}
+\sum_{k=r+2} C_{k-1}^{(r+2)-1}p^{r+2}(1-p)^{k-r} - E(X) =\frac{r^2 +
+(1-p)r}{p^2} \Rightarrow D(X) = \frac{r(1-p)}{p^2}\)</span></p>
 <p>此外，还可以利用幂级数求解。</p>
-<p>令<span class="math inline">\(r=1\)</span>可知几何分布的期望和方差分别为<span class="math inline">\(\displaystyle \frac{1}{p}\)</span>和<span class="math inline">\(\displaystyle \frac{1-p}{p^2}\)</span>。</p>
+<p>令<span
+class="math inline">\(r=1\)</span>可知几何分布的期望和方差分别为<span
+class="math inline">\(\displaystyle \frac{1}{p}\)</span>和<span
+class="math inline">\(\displaystyle \frac{1-p}{p^2}\)</span>。</p>
 <h4 id="泊松分布">泊松分布</h4>
 <p>设<span class="math inline">\(X\sim P(\lambda)\)</span>，那么：</p>
-<p><span class="math display">\[E(X) = \displaystyle\sum_{n=0}^{\infty}n\frac{\lambda^n}{n!}e^{-\lambda}=\lambda \sum_{n-1=0}^{\infty}\frac{\lambda^{n-1}}{(n-1)!}e^{-\lambda}=\lambda\]</span></p>
-<p><span class="math display">\[E(X^2)=\displaystyle\sum_{n=0}^{\infty}n^2\frac{\lambda^n}{n!}e^{-\lambda}=\sum_{n-2=0}^{\infty}\frac{\lambda^n}{(n-2)!}e^{-\lambda}+E(X)=\lambda^2+\lambda \Rightarrow D(X) = \lambda\]</span></p>
+<p><span class="math display">\[E(X) =
+\displaystyle\sum_{n=0}^{\infty}n\frac{\lambda^n}{n!}e^{-\lambda}=\lambda
+\sum_{n-1=0}^{\infty}\frac{\lambda^{n-1}}{(n-1)!}e^{-\lambda}=\lambda\]</span></p>
+<p><span
+class="math display">\[E(X^2)=\displaystyle\sum_{n=0}^{\infty}n^2\frac{\lambda^n}{n!}e^{-\lambda}=\sum_{n-2=0}^{\infty}\frac{\lambda^n}{(n-2)!}e^{-\lambda}+E(X)=\lambda^2+\lambda
+\Rightarrow D(X) = \lambda\]</span></p>
 <h4 id="均匀分布">均匀分布</h4>
 <p>设<span class="math inline">\(X\sim U(a,b)\)</span>，那么：</p>
-<p><span class="math display">\[E(X) = \displaystyle \frac{1}{b-a}\int_{a}^{b}xdx=\frac{a+b}{2}\]</span></p>
-<p><span class="math display">\[E(X^2) = \displaystyle \frac{1}{b-a} \int_{a}^{b}x^2dx=\frac{a^2+ab+b^2}{3} \]</span></p>
-<p><span class="math display">\[D(X) = E(X^2)-[E(X)^2]=\displaystyle \frac{(b-a)^2}{12}\]</span></p>
+<p><span class="math display">\[E(X) = \displaystyle
+\frac{1}{b-a}\int_{a}^{b}xdx=\frac{a+b}{2}\]</span></p>
+<p><span class="math display">\[E(X^2) = \displaystyle \frac{1}{b-a}
+\int_{a}^{b}x^2dx=\frac{a^2+ab+b^2}{3} \]</span></p>
+<p><span class="math display">\[D(X) = E(X^2)-[E(X)^2]=\displaystyle
+\frac{(b-a)^2}{12}\]</span></p>
 <h4 id="正态分布">正态分布</h4>
-<p>设<span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>，那么：</p>
-<p><span class="math display">\[\displaystyle E(X) = \int_{-\infty}^{+\infty}xf_{X}(x)dx=\int_{-\infty}^{+\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{\frac{(x-\mu)^2}{2\sigma^2}}dx\xlongequal{t=\frac{x-\mu}{\sigma}}\int_{=\infty}^{+\infty}\frac{\mu+\sigma t}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu\]</span></p>
+<p>设<span class="math inline">\(X\sim
+N(\mu,\sigma^2)\)</span>，那么：</p>
+<p><span class="math display">\[\displaystyle E(X) =
+\int_{-\infty}^{+\infty}xf_{X}(x)dx=\int_{-\infty}^{+\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{\frac{(x-\mu)^2}{2\sigma^2}}dx\xlongequal{t=\frac{x-\mu}{\sigma}}\int_{=\infty}^{+\infty}\frac{\mu+\sigma
+t}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu\]</span></p>
 <p>同理有：</p>
-<p><span class="math display">\[\displaystyle E(X^2) = \int_{-\infty}^{+\infty}x^2f_{X}(x)dx=\int_{-\infty}^{+\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{\frac{(x-\mu)^2}{2\sigma^2}}dx\xlongequal{t=\frac{x-\mu}{\sigma}}\int_{=\infty}^{+\infty}\frac{(\mu+\sigma t)^2}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu^2+\sigma^2\]</span></p>
-<p>最终有：<span class="math inline">\(E(X)=\mu,D(X)=\sigma\)</span>。</p>
+<p><span class="math display">\[\displaystyle E(X^2) =
+\int_{-\infty}^{+\infty}x^2f_{X}(x)dx=\int_{-\infty}^{+\infty}\frac{x}{\sqrt{2\pi}\sigma}e^{\frac{(x-\mu)^2}{2\sigma^2}}dx\xlongequal{t=\frac{x-\mu}{\sigma}}\int_{=\infty}^{+\infty}\frac{(\mu+\sigma
+t)^2}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\mu^2+\sigma^2\]</span></p>
+<p>最终有：<span
+class="math inline">\(E(X)=\mu,D(X)=\sigma\)</span>。</p>
 <p>求解正态分布相关的积分时，有如下常用结论。</p>
-<p><span class="math inline">\(\displaystyle \int_{0}^{+\infty}x^ne^{-\lambda x}dx = \frac{n!}{\lambda^{n+1}}, n\in \text{N}, \lambda &gt; 0\)</span></p>
-<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}\frac{x^n}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx=\left\{\begin{matrix}(n-1)!!,n\text{为偶数} \\ 0,\text{n为奇数} \end{matrix}\right.\)</span></p>
+<p><span class="math inline">\(\displaystyle
+\int_{0}^{+\infty}x^ne^{-\lambda x}dx = \frac{n!}{\lambda^{n+1}}, n\in
+\text{N}, \lambda &gt; 0\)</span></p>
+<p><span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty}\frac{x^n}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx=\left\{\begin{matrix}(n-1)!!,n\text{为偶数}
+\\ 0,\text{n为奇数} \end{matrix}\right.\)</span></p>
 <h4 id="指数分布">指数分布</h4>
-<p>设<span class="math inline">\(X\sim E(\lambda)\)</span>，利用关于<span class="math inline">\(e^{-x}\)</span>的反常积分的性质易得<span class="math inline">\(\displaystyle E(X) = \frac{1}{\lambda}, E(X^2)=\frac{2}{\lambda^2}\Rightarrow D(X) = \frac{1}{\lambda^2}\)</span>。</p>
+<p>设<span class="math inline">\(X\sim
+E(\lambda)\)</span>，利用关于<span
+class="math inline">\(e^{-x}\)</span>的反常积分的性质易得<span
+class="math inline">\(\displaystyle E(X) = \frac{1}{\lambda},
+E(X^2)=\frac{2}{\lambda^2}\Rightarrow D(X) =
+\frac{1}{\lambda^2}\)</span>。</p>
 <h4 id="瑞利分布">瑞利分布</h4>
-<p>设<span class="math inline">\(X\sim R(\lambda)\)</span>，利用标准正态分布的<span class="math inline">\(n\)</span>阶原点矩的结果有：</p>
-<p><span class="math display">\[E(X) = \displaystyle \sqrt{2\pi} \sigma \int_{0}^{+\infty}(\frac{x}{\sigma})^2\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x}{\sigma})^2}d(\frac{x}{\sigma}) = \sqrt{\frac{\pi}{2}}\sigma\]</span></p>
-<p>再利用关于<span class="math inline">\(e^{-x}\)</span>的反常积分的性质得：</p>
-<p><span class="math display">\[E(X^2)=\displaystyle \int_{0}^{+\infty}\frac{x^2}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}}d(\frac{x^2}{2}) \xlongequal{t=x^2}\frac{1}{2\sigma^2}\int_{0}^{+\infty}t e^{-\frac{t}{2\sigma^2}}dt=2\sigma^2\]</span></p>
-<p>最终得到<span class="math inline">\(D(X) = E(X^2)-[E(X)]^2 = \displaystyle \frac{4-\pi}{2}\sigma^2\)</span>。</p>
-<h3 id="一维随机变量分布之间的关系"><strong>一维随机变量分布之间的关系</strong></h3>
+<p>设<span class="math inline">\(X\sim
+R(\lambda)\)</span>，利用标准正态分布的<span
+class="math inline">\(n\)</span>阶原点矩的结果有：</p>
+<p><span class="math display">\[E(X) = \displaystyle \sqrt{2\pi} \sigma
+\int_{0}^{+\infty}(\frac{x}{\sigma})^2\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x}{\sigma})^2}d(\frac{x}{\sigma})
+= \sqrt{\frac{\pi}{2}}\sigma\]</span></p>
+<p>再利用关于<span
+class="math inline">\(e^{-x}\)</span>的反常积分的性质得：</p>
+<p><span class="math display">\[E(X^2)=\displaystyle
+\int_{0}^{+\infty}\frac{x^2}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}}d(\frac{x^2}{2})
+\xlongequal{t=x^2}\frac{1}{2\sigma^2}\int_{0}^{+\infty}t
+e^{-\frac{t}{2\sigma^2}}dt=2\sigma^2\]</span></p>
+<p>最终得到<span class="math inline">\(D(X) = E(X^2)-[E(X)]^2 =
+\displaystyle \frac{4-\pi}{2}\sigma^2\)</span>。</p>
+<h3
+id="一维随机变量分布之间的关系"><strong>一维随机变量分布之间的关系</strong></h3>
 <p>显而易见，伯努利分布是二项分布的特例，二项分布是帕斯卡分布的特例。</p>
-<p>若独立同分布的两个随机变量<span class="math inline">\(X,Y\)</span>均服从<span class="math inline">\(N(0,\sigma^2)\)</span>，那么<span class="math inline">\(U = \displaystyle \frac{X}{Y}\)</span>服从柯西分布，<span class="math inline">\(V=\displaystyle \sqrt{X^2+Y^2}\)</span>服从瑞利分布，下面给出证明。</p>
-<p><span class="math display">\[f_{U}(u) = \displaystyle \int_{-\infty}^{+\infty}f(uy,y)|y|dy=\int_{-\infty}^{+\infty}\frac{1}{2\pi \sigma^2} e^{-\frac{(1+u^2)y^2}{2\sigma^2}} |y|dy \xlongequal{t=\frac{y}{\frac{\sigma}{\sqrt{1+u^2}}}}\frac{1}{\pi} \frac{1}{1+u^2}\frac{1}{2}\int_{-\infty}^{+\infty}|t|e^{-\frac{t^2}{2}}dt=\frac{1}{\pi} \frac{1}{1+u^2}\]</span></p>
+<p>若独立同分布的两个随机变量<span
+class="math inline">\(X,Y\)</span>均服从<span
+class="math inline">\(N(0,\sigma^2)\)</span>，那么<span
+class="math inline">\(U = \displaystyle
+\frac{X}{Y}\)</span>服从柯西分布，<span
+class="math inline">\(V=\displaystyle
+\sqrt{X^2+Y^2}\)</span>服从瑞利分布，下面给出证明。</p>
+<p><span class="math display">\[f_{U}(u) = \displaystyle
+\int_{-\infty}^{+\infty}f(uy,y)|y|dy=\int_{-\infty}^{+\infty}\frac{1}{2\pi
+\sigma^2} e^{-\frac{(1+u^2)y^2}{2\sigma^2}} |y|dy
+\xlongequal{t=\frac{y}{\frac{\sigma}{\sqrt{1+u^2}}}}\frac{1}{\pi}
+\frac{1}{1+u^2}\frac{1}{2}\int_{-\infty}^{+\infty}|t|e^{-\frac{t^2}{2}}dt=\frac{1}{\pi}
+\frac{1}{1+u^2}\]</span></p>
 <p>由上式可知<span class="math inline">\(U\sim C(1,0)\)</span>。</p>
-<p><span class="math inline">\(\displaystyle F_{V}(v) = P\{V \leq v\} = P\{\sqrt{X^2+Y^2} &lt; v\} = \iint_{\sqrt{x^2+y^2} &lt; v}f(x,y)dxdy\)</span></p>
-<p>显然，当<span class="math inline">\(v\leq 0\)</span>时，<span class="math inline">\(F_{V}(v) = 0\)</span>；当<span class="math inline">\(v &gt; 0\)</span>时有：</p>
-<p><span class="math inline">\(\displaystyle F_{V}(v) = \frac{1}{2\pi \sigma^2} \int_{0}^{2\pi}d\theta \int_{0}^{v} e^{-\frac{\rho^2}{2}} \rho d\rho=\frac{1}{\sigma^2}\int_{0}^{v}\rho e^{-\frac{\rho^2}{2\sigma^2}} d\rho \Rightarrow f_{V}(v) = \frac{v}{\sigma^2}e^{-\frac{v^2}{2\sigma^2}}\)</span></p>
+<p><span class="math inline">\(\displaystyle F_{V}(v) = P\{V \leq v\} =
+P\{\sqrt{X^2+Y^2} &lt; v\} = \iint_{\sqrt{x^2+y^2} &lt;
+v}f(x,y)dxdy\)</span></p>
+<p>显然，当<span class="math inline">\(v\leq 0\)</span>时，<span
+class="math inline">\(F_{V}(v) = 0\)</span>；当<span
+class="math inline">\(v &gt; 0\)</span>时有：</p>
+<p><span class="math inline">\(\displaystyle F_{V}(v) = \frac{1}{2\pi
+\sigma^2} \int_{0}^{2\pi}d\theta \int_{0}^{v} e^{-\frac{\rho^2}{2}} \rho
+d\rho=\frac{1}{\sigma^2}\int_{0}^{v}\rho e^{-\frac{\rho^2}{2\sigma^2}}
+d\rho \Rightarrow f_{V}(v) =
+\frac{v}{\sigma^2}e^{-\frac{v^2}{2\sigma^2}}\)</span></p>
 <p>因而<span class="math inline">\(V\sim R(\sigma)\)</span>。</p>
 <h2 id="正态分布性质推导"><strong>正态分布性质推导</strong></h2>
 <h3 id="一维正态分布的性质">一维正态分布的性质</h3>
-<p>设<span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>，那么<span class="math inline">\(Y=aX+b\sim N(a\mu + b, (a\sigma)^2),a \neq 0\)</span>。这一性质很好证明，当<span class="math inline">\(a&gt;0\)</span>时：</p>
-<p><span class="math display">\[F_{Y}(y) = P\{Y \leq y\} = P\{aX + b \leq y\} = P\{\displaystyle X \leq \frac{y-b}{a} \}=F_{X}(\frac{y-b}{a})\]</span></p>
+<p>设<span class="math inline">\(X\sim
+N(\mu,\sigma^2)\)</span>，那么<span class="math inline">\(Y=aX+b\sim
+N(a\mu + b, (a\sigma)^2),a \neq 0\)</span>。这一性质很好证明，当<span
+class="math inline">\(a&gt;0\)</span>时：</p>
+<p><span class="math display">\[F_{Y}(y) = P\{Y \leq y\} = P\{aX + b
+\leq y\} = P\{\displaystyle X \leq \frac{y-b}{a}
+\}=F_{X}(\frac{y-b}{a})\]</span></p>
 <p>那么：</p>
-<p><span class="math display">\[f_{Y}(y) = [F_{Y}(y)]&#39;_y = \frac{1}{a}f_{X}(\frac{y-b}{a}) = \displaystyle \frac{1}{\sqrt{2\pi}a\sigma}e^{-\frac{[y-(a\mu+b)]^2}{2(a\sigma)^2}}\]</span></p>
-<p>显然<span class="math inline">\(Y\sim N(a\mu + b, a^2\sigma^2)\)</span>，<span class="math inline">\(a &lt; 0\)</span>时同理。</p>
+<p><span class="math display">\[f_{Y}(y) = [F_{Y}(y)]&#39;_y =
+\frac{1}{a}f_{X}(\frac{y-b}{a}) = \displaystyle
+\frac{1}{\sqrt{2\pi}a\sigma}e^{-\frac{[y-(a\mu+b)]^2}{2(a\sigma)^2}}\]</span></p>
+<p>显然<span class="math inline">\(Y\sim N(a\mu + b,
+a^2\sigma^2)\)</span>，<span class="math inline">\(a &lt;
+0\)</span>时同理。</p>
 <h3 id="二维正态分布相关的性质">二维正态分布相关的性质</h3>
-<p>设二维随机变量<span class="math inline">\((X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>，那么有：</p>
+<p>设二维随机变量<span class="math inline">\((X,Y)\sim
+N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>，那么有：</p>
 <ul>
-<li><span class="math inline">\(X\sim N(\mu_1, \sigma_1)\)</span>，<span class="math inline">\(Y \sim N(\mu_2, \sigma_2)\)</span>；</li>
-<li><span class="math inline">\(X\)</span>与<span class="math inline">\(Y\)</span>不相关<span class="math inline">\(\Leftrightarrow X\)</span>与<span class="math inline">\(Y\)</span>独立；</li>
+<li><span class="math inline">\(X\sim N(\mu_1, \sigma_1)\)</span>，<span
+class="math inline">\(Y \sim N(\mu_2, \sigma_2)\)</span>；</li>
+<li><span class="math inline">\(X\)</span>与<span
+class="math inline">\(Y\)</span>不相关<span
+class="math inline">\(\Leftrightarrow X\)</span>与<span
+class="math inline">\(Y\)</span>独立；</li>
 <li><span class="math inline">\(\rho_{XY}=\rho\)</span>；</li>
-<li>设<span class="math inline">\(Z = aX+bY+c\)</span>，那么<span class="math inline">\(Z\sim N(a\mu_1+b\mu_2+c, a^2\sigma_1^2 + 2\rho ab\sigma_1\sigma_2 + b^2\sigma_2^2)\)</span>。</li>
+<li>设<span class="math inline">\(Z = aX+bY+c\)</span>，那么<span
+class="math inline">\(Z\sim N(a\mu_1+b\mu_2+c, a^2\sigma_1^2 + 2\rho
+ab\sigma_1\sigma_2 + b^2\sigma_2^2)\)</span>。</li>
 </ul>
 <p>服从二维正态分布随机变量的概率密度函数如下所示。</p>
-<p><span class="math display">\[f(x,y)=\displaystyle \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp{\{-\frac{1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-\frac{2\rho(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]\}}\]</span></p>
-<p>首先求解随机变量<span class="math inline">\(X\)</span>的概率密度函数。</p>
-<p><span class="math display">\[\displaystyle \int_{-\infty}^{+\infty} f(x,y)dy=\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty} \frac{1}{\sqrt{2\pi(1-\rho^2)}\sigma_2}\exp{\displaystyle\{-\frac{1}{2(1-\rho^2)}[(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1})^2]\}}dy\]</span></p>
-<p>令<span class="math inline">\(\displaystyle\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}=t\)</span>，那么<span class="math inline">\(dy=\sigma_2dt\)</span>，有：</p>
-<p><span class="math display">\[\displaystyle \int_{-\infty}^{+\infty} f(x,y)dy=\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sqrt{1-\rho^2}}e^{-\frac{t^2}{2(\sqrt{1-\rho^2})^2}}dt=\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\]</span></p>
-<p>故可得随机变量<span class="math inline">\(X\)</span>的概率密度函数为<span class="math inline">\(f_{X}(x)=\displaystyle \frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\)</span>，同理可得<span class="math inline">\(\displaystyle f_{Y}(y)=\frac{1}{\sqrt{2\pi}\sigma_2}e^{-\frac{(y-\mu_2)^2}{2\sigma_2^2}}\)</span>，据此可知<span class="math inline">\(f_X(x)\cdot f_{Y}(y)=f(x,y) \Leftrightarrow\rho =0\)</span>。</p>
-<p>此时不妨深入探究<span class="math inline">\(\rho\)</span>的性质，事实上<span class="math inline">\(\rho\)</span>是随机变量<span class="math inline">\(X\)</span>与<span class="math inline">\(Y\)</span>的相关系数。对于一般的随机变量而言，相关系数的公式为<span class="math inline">\(\rho=\displaystyle\frac{\text{Cov}(X,Y)}{\sqrt{D(X)D(Y)}}\)</span>，又<span class="math inline">\(\text{Cov}(X,Y)=E(XY)-E(X)E(Y)\)</span>，故可进行计算。</p>
-<p>先证明二维随机变量<span class="math inline">\((X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>时，<span class="math inline">\(E(X)=\mu_1,D(X)=\sigma_1^2\)</span>。</p>
-<p><span class="math inline">\(E(X)=\displaystyle\int_{R^2}xf(x,y)dxdy=\int_{-\infty}^{+\infty}xdx\int_{-\infty}^{+\infty}f(x,y)dy=\int_{-\infty}^{+\infty}xf_{X}(x)dx=\int_{-\infty}^{+\infty}x\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}dx\)</span></p>
-<p><span class="math inline">\(\xlongequal{t=\frac{x-\mu_1}{\sigma_1}}\displaystyle \int_{-\infty}^{+\infty}\frac{\sigma_1t+\mu_1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\sigma_1\int_{-\infty}^{+\infty} t\frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt+\mu_1\int_{-\infty}^{+\infty} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt=\mu_1\)</span></p>
-<p><span class="math inline">\(E(X^2)=\displaystyle\int_{R^2}x^2f(x,y)dxdy=\int_{-\infty}^{+\infty}x^2dx\int_{-\infty}^{+\infty}f(x,y)dy=\int_{-\infty}^{+\infty}x^2f_{X}(x)dx\)</span></p>
-<p><span class="math inline">\(\displaystyle=\int_{-\infty}^{+\infty}x^2\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}dx\xlongequal{t=\frac{x-\mu_1}{\sigma_1}}\displaystyle \int_{-\infty}^{+\infty}\frac{\sigma_1^2t^2+2\sigma_1\mu_1t+\mu_1^2}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt\)</span></p>
-<p><span class="math inline">\(\displaystyle=\mu_1^2\int_{-\infty}^{+\infty} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt + 2\sigma_1\mu_1 \int_{-\infty}^{+\infty} t \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt +\sigma_1^2\int_{-\infty}^{+\infty} t^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt\)</span></p>
-<p>此时不妨求解标准正态分布的<span class="math inline">\(n\)</span>阶原点矩。</p>
-<p><span class="math inline">\(I_{2n}=\displaystyle \int_{-\infty}^{+\infty} t^{2n} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}t^{2n-1}d(-e^{-\frac{t^2}{2}})\)</span></p>
-<p><span class="math inline">\(\displaystyle=\frac{1}{\sqrt{2\pi}}[-e^{-\frac{t^2}{2}}t^{2n-1}]_{-\infty}^{+\infty}+(2n-1)\cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}t^{2n-2}e^{-\frac{t^2}{2}}dt=(2n-1)I_{2n-2}\)</span></p>
-<p>又<span class="math inline">\(I_0=1\)</span>，故<span class="math inline">\(I_{2n}=(2n-1)!!\Rightarrow I_2=1\)</span>，最终得到如下结论：</p>
-<p>若<span class="math inline">\(X\sim N(0,1)\)</span>，那么<span class="math inline">\(E(X^n)= \left\{\begin{matrix} 0, n \text{为奇数} \\ (n-1)!!, n \text{为偶数} \end{matrix}\right.\)</span></p>
-<p>所以<span class="math inline">\(E(X^2)=\mu_1^2+\sigma_1^2\Rightarrow D(X)=\sigma_1^2\)</span>。</p>
-<p>接下来需要求解<span class="math inline">\(E(XY)\)</span>，计算可以仿照求解边缘分布密度函数的方法进行。</p>
-<p><span class="math inline">\(E(XY)=\displaystyle\int_{R^2}xyf(x,y)dxdy=\int_{-\infty}^{+\infty}dx\int_{-\infty}^{+\infty} xy f(x,y)dy\)</span></p>
-<p>先计算<span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy f(x,y)dy\)</span>。</p>
-<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy f(x,y)dy=\frac{x}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty} \frac{y}{\sqrt{2\pi(1-\rho^2)}\sigma_2}\exp{\displaystyle\{-\frac{1}{2(1-\rho^2)}[(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1})^2]\}}dy\)</span></p>
-<p>令<span class="math inline">\(\displaystyle\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}=t\)</span>，那么<span class="math inline">\(dy=\sigma_2dt\)</span>，<span class="math inline">\(y=\sigma_2\displaystyle t+\sigma_2\rho\frac{x-\mu_1}{\sigma_1}+\mu_2\)</span>，那么：</p>
-<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy f(x,y)dy=\frac{x}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\frac{\sigma_2\displaystyle t+\sigma_2\rho\frac{x-\mu_1}{\sigma_1}+\mu_2}{\sqrt{2\pi}\sqrt{1-\rho^2}}e^{-\frac{t^2}{2(\sqrt{1-\rho^2})^2}}dt\)</span></p>
-<p>再令<span class="math inline">\(\displaystyle u=\frac{t}{\sqrt{1-\rho^2}}\)</span>，那么：</p>
-<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy f(x,y)dy=\frac{x}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\frac{\sigma_2\sqrt{1-\rho^2} u+\sigma_2\rho\frac{x-\mu_1}{\sigma_1}+\mu_2}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}du\)</span></p>
-<p><span class="math inline">\(\displaystyle=\frac{1}{\sqrt{2\pi}\sigma_1}[\rho\frac{\sigma_2}{\sigma_1}x^2+(\mu_2-\rho\mu_1\frac{\sigma_2}{\sigma_1})x]e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\)</span></p>
-<p>令<span class="math inline">\(v=\displaystyle\frac{x-\mu_1}{\sigma_1}\)</span>，那么<span class="math inline">\(x=\sigma_1v+\mu_1\)</span>，有：</p>
-<p><span class="math inline">\(E(XY)=\displaystyle\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sigma_1}[\rho\frac{\sigma_2}{\sigma_1}(\sigma_1v+\mu_1)^2+(\mu_2-\rho\mu_1\frac{\sigma_2}{\sigma_1})(\sigma_1v+\mu_1)]e^{-\frac{v^2}{2}}dv=\rho\sigma_1\sigma_2+\mu_1\mu_2\)</span></p>
-<p>上述积分直接计算十分复杂，善用对称性和积分的线性性质能很快得出答案。将<span class="math inline">\(E(XY)\)</span>、<span class="math inline">\(E(X)\)</span>、<span class="math inline">\(E(Y)\)</span>、<span class="math inline">\(D(X)\)</span>和<span class="math inline">\(D(Y)\)</span>的值代入相关系数的计算公式中可知<span class="math inline">\(\rho_{XY}=\rho\)</span>，得证。</p>
-<p>设<span class="math inline">\((X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>，那么<span class="math inline">\(Z=aX+bY+c\sim N(a\mu_1+b\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab\sigma_1\sigma_2)\)</span>，其中<span class="math inline">\(\rho\)</span>是<span class="math inline">\(X,Y\)</span>的相关系数。该性质的证明过程思路不难，但是计算量极大。</p>
+<p><span class="math display">\[f(x,y)=\displaystyle
+\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp{\{-\frac{1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-\frac{2\rho(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]\}}\]</span></p>
+<p>首先求解随机变量<span
+class="math inline">\(X\)</span>的概率密度函数。</p>
+<p><span class="math display">\[\displaystyle \int_{-\infty}^{+\infty}
+f(x,y)dy=\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}
+\frac{1}{\sqrt{2\pi(1-\rho^2)}\sigma_2}\exp{\displaystyle\{-\frac{1}{2(1-\rho^2)}[(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1})^2]\}}dy\]</span></p>
+<p>令<span
+class="math inline">\(\displaystyle\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}=t\)</span>，那么<span
+class="math inline">\(dy=\sigma_2dt\)</span>，有：</p>
+<p><span class="math display">\[\displaystyle \int_{-\infty}^{+\infty}
+f(x,y)dy=\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sqrt{1-\rho^2}}e^{-\frac{t^2}{2(\sqrt{1-\rho^2})^2}}dt=\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\]</span></p>
+<p>故可得随机变量<span
+class="math inline">\(X\)</span>的概率密度函数为<span
+class="math inline">\(f_{X}(x)=\displaystyle
+\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\)</span>，同理可得<span
+class="math inline">\(\displaystyle
+f_{Y}(y)=\frac{1}{\sqrt{2\pi}\sigma_2}e^{-\frac{(y-\mu_2)^2}{2\sigma_2^2}}\)</span>，据此可知<span
+class="math inline">\(f_X(x)\cdot f_{Y}(y)=f(x,y) \Leftrightarrow\rho
+=0\)</span>。</p>
+<p>此时不妨深入探究<span
+class="math inline">\(\rho\)</span>的性质，事实上<span
+class="math inline">\(\rho\)</span>是随机变量<span
+class="math inline">\(X\)</span>与<span
+class="math inline">\(Y\)</span>的相关系数。对于一般的随机变量而言，相关系数的公式为<span
+class="math inline">\(\rho=\displaystyle\frac{\text{Cov}(X,Y)}{\sqrt{D(X)D(Y)}}\)</span>，又<span
+class="math inline">\(\text{Cov}(X,Y)=E(XY)-E(X)E(Y)\)</span>，故可进行计算。</p>
+<p>先证明二维随机变量<span class="math inline">\((X,Y)\sim
+N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>时，<span
+class="math inline">\(E(X)=\mu_1,D(X)=\sigma_1^2\)</span>。</p>
+<p><span
+class="math inline">\(E(X)=\displaystyle\int_{R^2}xf(x,y)dxdy=\int_{-\infty}^{+\infty}xdx\int_{-\infty}^{+\infty}f(x,y)dy=\int_{-\infty}^{+\infty}xf_{X}(x)dx=\int_{-\infty}^{+\infty}x\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}dx\)</span></p>
+<p><span
+class="math inline">\(\xlongequal{t=\frac{x-\mu_1}{\sigma_1}}\displaystyle
+\int_{-\infty}^{+\infty}\frac{\sigma_1t+\mu_1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\sigma_1\int_{-\infty}^{+\infty}
+t\frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}}
+dt+\mu_1\int_{-\infty}^{+\infty} \frac{1}{\sqrt{2\pi}}
+e^{-\frac{t^2}{2}} dt=\mu_1\)</span></p>
+<p><span
+class="math inline">\(E(X^2)=\displaystyle\int_{R^2}x^2f(x,y)dxdy=\int_{-\infty}^{+\infty}x^2dx\int_{-\infty}^{+\infty}f(x,y)dy=\int_{-\infty}^{+\infty}x^2f_{X}(x)dx\)</span></p>
+<p><span
+class="math inline">\(\displaystyle=\int_{-\infty}^{+\infty}x^2\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}dx\xlongequal{t=\frac{x-\mu_1}{\sigma_1}}\displaystyle
+\int_{-\infty}^{+\infty}\frac{\sigma_1^2t^2+2\sigma_1\mu_1t+\mu_1^2}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt\)</span></p>
+<p><span
+class="math inline">\(\displaystyle=\mu_1^2\int_{-\infty}^{+\infty}
+\frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt + 2\sigma_1\mu_1
+\int_{-\infty}^{+\infty} t \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt
++\sigma_1^2\int_{-\infty}^{+\infty} t^2 \frac{1}{\sqrt{2\pi}}
+e^{-\frac{t^2}{2}} dt\)</span></p>
+<p>此时不妨求解标准正态分布的<span
+class="math inline">\(n\)</span>阶原点矩。</p>
+<p><span class="math inline">\(I_{2n}=\displaystyle
+\int_{-\infty}^{+\infty} t^{2n} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}}
+dt=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}t^{2n-1}d(-e^{-\frac{t^2}{2}})\)</span></p>
+<p><span
+class="math inline">\(\displaystyle=\frac{1}{\sqrt{2\pi}}[-e^{-\frac{t^2}{2}}t^{2n-1}]_{-\infty}^{+\infty}+(2n-1)\cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}t^{2n-2}e^{-\frac{t^2}{2}}dt=(2n-1)I_{2n-2}\)</span></p>
+<p>又<span class="math inline">\(I_0=1\)</span>，故<span
+class="math inline">\(I_{2n}=(2n-1)!!\Rightarrow
+I_2=1\)</span>，最终得到如下结论：</p>
+<p>若<span class="math inline">\(X\sim N(0,1)\)</span>，那么<span
+class="math inline">\(E(X^n)= \left\{\begin{matrix} 0, n \text{为奇数}
+\\ (n-1)!!, n \text{为偶数} \end{matrix}\right.\)</span></p>
+<p>所以<span class="math inline">\(E(X^2)=\mu_1^2+\sigma_1^2\Rightarrow
+D(X)=\sigma_1^2\)</span>。</p>
+<p>接下来需要求解<span
+class="math inline">\(E(XY)\)</span>，计算可以仿照求解边缘分布密度函数的方法进行。</p>
+<p><span
+class="math inline">\(E(XY)=\displaystyle\int_{R^2}xyf(x,y)dxdy=\int_{-\infty}^{+\infty}dx\int_{-\infty}^{+\infty}
+xy f(x,y)dy\)</span></p>
+<p>先计算<span class="math inline">\(\displaystyle
+\int_{-\infty}^{+\infty} xy f(x,y)dy\)</span>。</p>
+<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy
+f(x,y)dy=\frac{x}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}
+\frac{y}{\sqrt{2\pi(1-\rho^2)}\sigma_2}\exp{\displaystyle\{-\frac{1}{2(1-\rho^2)}[(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1})^2]\}}dy\)</span></p>
+<p>令<span
+class="math inline">\(\displaystyle\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}=t\)</span>，那么<span
+class="math inline">\(dy=\sigma_2dt\)</span>，<span
+class="math inline">\(y=\sigma_2\displaystyle
+t+\sigma_2\rho\frac{x-\mu_1}{\sigma_1}+\mu_2\)</span>，那么：</p>
+<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy
+f(x,y)dy=\frac{x}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\frac{\sigma_2\displaystyle
+t+\sigma_2\rho\frac{x-\mu_1}{\sigma_1}+\mu_2}{\sqrt{2\pi}\sqrt{1-\rho^2}}e^{-\frac{t^2}{2(\sqrt{1-\rho^2})^2}}dt\)</span></p>
+<p>再令<span class="math inline">\(\displaystyle
+u=\frac{t}{\sqrt{1-\rho^2}}\)</span>，那么：</p>
+<p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} xy
+f(x,y)dy=\frac{x}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\frac{\sigma_2\sqrt{1-\rho^2}
+u+\sigma_2\rho\frac{x-\mu_1}{\sigma_1}+\mu_2}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}du\)</span></p>
+<p><span
+class="math inline">\(\displaystyle=\frac{1}{\sqrt{2\pi}\sigma_1}[\rho\frac{\sigma_2}{\sigma_1}x^2+(\mu_2-\rho\mu_1\frac{\sigma_2}{\sigma_1})x]e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\)</span></p>
+<p>令<span
+class="math inline">\(v=\displaystyle\frac{x-\mu_1}{\sigma_1}\)</span>，那么<span
+class="math inline">\(x=\sigma_1v+\mu_1\)</span>，有：</p>
+<p><span
+class="math inline">\(E(XY)=\displaystyle\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sigma_1}[\rho\frac{\sigma_2}{\sigma_1}(\sigma_1v+\mu_1)^2+(\mu_2-\rho\mu_1\frac{\sigma_2}{\sigma_1})(\sigma_1v+\mu_1)]e^{-\frac{v^2}{2}}dv=\rho\sigma_1\sigma_2+\mu_1\mu_2\)</span></p>
+<p>上述积分直接计算十分复杂，善用对称性和积分的线性性质能很快得出答案。将<span
+class="math inline">\(E(XY)\)</span>、<span
+class="math inline">\(E(X)\)</span>、<span
+class="math inline">\(E(Y)\)</span>、<span
+class="math inline">\(D(X)\)</span>和<span
+class="math inline">\(D(Y)\)</span>的值代入相关系数的计算公式中可知<span
+class="math inline">\(\rho_{XY}=\rho\)</span>，得证。</p>
+<p>设<span class="math inline">\((X,Y)\sim
+N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2,\rho)\)</span>，那么<span
+class="math inline">\(Z=aX+bY+c\sim
+N(a\mu_1+b\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2+2\rho
+ab\sigma_1\sigma_2)\)</span>，其中<span
+class="math inline">\(\rho\)</span>是<span
+class="math inline">\(X,Y\)</span>的相关系数。该性质的证明过程思路不难，但是计算量极大。</p>
 <p>首先进行如下变换：</p>
-<p><span class="math display">\[\displaystyle f_{Z}(z) = \int_{-\infty}^{+\infty}f(x(y,z),y)|\frac{\partial x}{\partial z}|dy=\frac{1}{|a|}\int_{-\infty}^{+\infty}f(\frac{z-by-c}{a},y)dy\]</span></p>
-<p>上式中最复杂的部分是被积函数<span class="math inline">\(\displaystyle f(\frac{z-by-c}{a},y)\)</span>，积分变量在函数的两个变量位均有出现。类比前面对二维正态分布边缘分布的概率密度函数求解思路。被积函数的指数部分具有如下形式：</p>
-<p><span class="math display">\[\displaystyle -\frac{1}{2(1-\rho^2)}T(y,z)\]</span></p>
-<p>其中，<span class="math inline">\(T(y,z)=\displaystyle\frac{[z-by-(c+a\mu_1)]^2}{(a\sigma_1)^2}-\frac{2\rho}{a\sigma_1\sigma_2}[z-by-(c+a\mu_1)](y-\mu_2)+\frac{(y-\mu_2)^2}{\sigma_2^2}\)</span>。下面是该性质证明中最繁琐的一部分，即对积分变量<span class="math inline">\(y\)</span>进行配方，不妨设<span class="math inline">\(T(y,z)\)</span>具有如下形式：</p>
-<p><span class="math display">\[T(y,z) = Az^2 + By^2 + Cz + Dy + Eyz + F\]</span></p>
-<p>然后对<span class="math inline">\(T(y,z)\)</span>进行形式配方，得到如下结果：</p>
-<p><span class="math display">\[T(y,z) = \displaystyle B(y+\frac{D+Ez}{2B})^2 + (A - \frac{E^2}{4B})(z+\frac{2BC - DE}{4AB-E^2})^2+F-\frac{(2BC-DE)^2}{4B(4AB-E^2)}-\frac{D^2}{4B}\]</span></p>
-<p>将<span class="math inline">\(T(y,z)\)</span>展开，得到如下系数表：</p>
-<div style="width: auto; display: table; margin-left: auto; margin-right: auto;">
+<p><span class="math display">\[\displaystyle f_{Z}(z) =
+\int_{-\infty}^{+\infty}f(x(y,z),y)|\frac{\partial x}{\partial
+z}|dy=\frac{1}{|a|}\int_{-\infty}^{+\infty}f(\frac{z-by-c}{a},y)dy\]</span></p>
+<p>上式中最复杂的部分是被积函数<span class="math inline">\(\displaystyle
+f(\frac{z-by-c}{a},y)\)</span>，积分变量在函数的两个变量位均有出现。类比前面对二维正态分布边缘分布的概率密度函数求解思路。被积函数的指数部分具有如下形式：</p>
+<p><span class="math display">\[\displaystyle
+-\frac{1}{2(1-\rho^2)}T(y,z)\]</span></p>
+<p>其中，<span
+class="math inline">\(T(y,z)=\displaystyle\frac{[z-by-(c+a\mu_1)]^2}{(a\sigma_1)^2}-\frac{2\rho}{a\sigma_1\sigma_2}[z-by-(c+a\mu_1)](y-\mu_2)+\frac{(y-\mu_2)^2}{\sigma_2^2}\)</span>。下面是该性质证明中最繁琐的一部分，即对积分变量<span
+class="math inline">\(y\)</span>进行配方，不妨设<span
+class="math inline">\(T(y,z)\)</span>具有如下形式：</p>
+<p><span class="math display">\[T(y,z) = Az^2 + By^2 + Cz + Dy + Eyz +
+F\]</span></p>
+<p>然后对<span
+class="math inline">\(T(y,z)\)</span>进行形式配方，得到如下结果：</p>
+<p><span class="math display">\[T(y,z) = \displaystyle
+B(y+\frac{D+Ez}{2B})^2 + (A - \frac{E^2}{4B})(z+\frac{2BC -
+DE}{4AB-E^2})^2+F-\frac{(2BC-DE)^2}{4B(4AB-E^2)}-\frac{D^2}{4B}\]</span></p>
+<p>将<span
+class="math inline">\(T(y,z)\)</span>展开，得到如下系数表：</p>
+<div
+style="width: auto; display: table; margin-left: auto; margin-right: auto;">
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -2866,34 +3111,56 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(A\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{a^2\sigma_1^2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{1}{a^2\sigma_1^2}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(B\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{b^2}{a^2\sigma_1^2}+\frac{1}{\sigma_2^2}+\frac{2\rho b}{a\sigma_1\sigma_2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(B\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{b^2}{a^2\sigma_1^2}+\frac{1}{\sigma_2^2}+\frac{2\rho
+b}{a\sigma_1\sigma_2}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(C\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle 2(\frac{\rho \mu_2}{a\sigma_1\sigma_2}-\frac{c+a\mu_1}{a^2\sigma_1^2})\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(C\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle 2(\frac{\rho
+\mu_2}{a\sigma_1\sigma_2}-\frac{c+a\mu_1}{a^2\sigma_1^2})\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(D\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle 2[\frac{\rho(c+a\mu_1)}{a\sigma_1\sigma_2}+\frac{b(c+a\mu_1)}{a^2\sigma_1^2}-\frac{\mu_2}{\sigma_2^2}-\frac{\rho b\mu_2}{a\sigma_1\sigma_2}]\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(D\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+2[\frac{\rho(c+a\mu_1)}{a\sigma_1\sigma_2}+\frac{b(c+a\mu_1)}{a^2\sigma_1^2}-\frac{\mu_2}{\sigma_2^2}-\frac{\rho
+b\mu_2}{a\sigma_1\sigma_2}]\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(E\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle -2 [\frac{b}{a^2\sigma_1^2}+\frac{\rho}{a\sigma_1\sigma_2}]\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(E\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle -2
+[\frac{b}{a^2\sigma_1^2}+\frac{\rho}{a\sigma_1\sigma_2}]\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(F\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{(c+a\mu_1)^2}{a^2\sigma_1^2}+\frac{\mu_2^2}{\sigma_2^2}-\frac{2\rho\mu_2(c+a\mu_1)}{a\sigma_1\sigma_2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(F\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{(c+a\mu_1)^2}{a^2\sigma_1^2}+\frac{\mu_2^2}{\sigma_2^2}-\frac{2\rho\mu_2(c+a\mu_1)}{a\sigma_1\sigma_2}\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>现在只需要将各项系数代入<span class="math inline">\(T(y,z)\)</span>的表达式中并求解即可，不妨再列一个系数表：</p>
-<div style="width: auto; display: table; margin-left: auto; margin-right: auto;">
+<p>现在只需要将各项系数代入<span
+class="math inline">\(T(y,z)\)</span>的表达式中并求解即可，不妨再列一个系数表：</p>
+<div
+style="width: auto; display: table; margin-left: auto; margin-right: auto;">
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -2907,31 +3174,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\displaystyle A-\frac{E^2}{4B}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1-\rho^2}{a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab \sigma_1\sigma_2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle A-\frac{E^2}{4B}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{1-\rho^2}{a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab
+\sigma_1\sigma_2}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(2BC - DE\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle -4\frac{(1-\rho^2)(a\mu_1+b\mu_2+c)}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2BC -
+DE\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+-4\frac{(1-\rho^2)(a\mu_1+b\mu_2+c)}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(4AB-E^2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle 4\frac{(1-\rho^2)}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(4AB-E^2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+4\frac{(1-\rho^2)}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\displaystyle F-\frac{(2BC-DE)^2}{4B(4AB-E^2)}-\frac{D^2}{4B}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+F-\frac{(2BC-DE)^2}{4B(4AB-E^2)}-\frac{D^2}{4B}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(B\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab\sigma_1\sigma_2}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(B\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{a^2\sigma_1^2+b^2\sigma_2^2+2\rho
+ab\sigma_1\sigma_2}{a^2\sigma_1^2\sigma_2^2}\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>不妨记<span class="math inline">\(\sigma^2 = a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab\sigma_1\sigma_2\)</span>和<span class="math inline">\(\mu = a\mu_1+b\mu_2+c\)</span>，那么<span class="math inline">\(B=\displaystyle \frac{\sigma^2}{a^2\sigma_1^2\sigma_2^2}\)</span>，且：</p>
-<p><span class="math inline">\(\displaystyle f_{Z}(z) = \frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}} \int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\frac{|a|\sigma_1\sigma_2}{\sigma}\sqrt{1-\rho^2}}e^{-\frac{B(y+\frac{D+Ez}{2B})^2}{2(1-\rho^2)}}d(y+\frac{D+Ez}{2B})\)</span></p>
-<p><span class="math inline">\(\displaystyle\xlongequal{t=\frac{y+\frac{D+Ez}{2B}}{\sqrt{\frac{1-\rho^2}{B}}}}\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}\)</span></p>
+<p>不妨记<span class="math inline">\(\sigma^2 =
+a^2\sigma_1^2+b^2\sigma_2^2+2\rho ab\sigma_1\sigma_2\)</span>和<span
+class="math inline">\(\mu = a\mu_1+b\mu_2+c\)</span>，那么<span
+class="math inline">\(B=\displaystyle
+\frac{\sigma^2}{a^2\sigma_1^2\sigma_2^2}\)</span>，且：</p>
+<p><span class="math inline">\(\displaystyle f_{Z}(z) =
+\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}
+\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\frac{|a|\sigma_1\sigma_2}{\sigma}\sqrt{1-\rho^2}}e^{-\frac{B(y+\frac{D+Ez}{2B})^2}{2(1-\rho^2)}}d(y+\frac{D+Ez}{2B})\)</span></p>
+<p><span
+class="math inline">\(\displaystyle\xlongequal{t=\frac{y+\frac{D+Ez}{2B}}{\sqrt{\frac{1-\rho^2}{B}}}}\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\mu)^2}{2\sigma^2}}\)</span></p>
 <p>原命题得证。</p>
 <h2 id="计算技巧">计算技巧</h2>
 <p>详见<a href = "/2021-11-11-概率论相关计算技巧/" target = "_blank">概率论相关计算技巧</a>。</p>
@@ -2949,8 +3240,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>上海交通大学计算机考研复试上机题题解</p>
           <!--<p class='content'>之前在准备夏令营机试时做过不少题目，现将牛客网上的部分题目的代码进行整理，以供参考。
 
-String Matching
-1234567891011121314151617181920212223...</p>-->
+String
+Matching
+123456789101112131415161718192021...</p>-->
         </a>
       
       
@@ -2960,7 +3252,7 @@ String Matching
 
 开发环境配置
 Anaconda
-安装过程在此略去，值得注...</p>-->
+安装过程在此略去...</p>-->
         </a>
       
     </div>
@@ -3140,13 +3432,19 @@ Anaconda
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -4149,7 +4447,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2704,12 +2704,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="求最大公约数与最小公倍数">求最大公约数与最小公倍数</h3>
 <p>求最大公约数的最朴素的想法就是暴力枚举。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd1</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;<span class="comment">//假定输入的a，b都是正数</span></span><br><span class="line">	<span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b), _min = a + b - _max;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= _min; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (_max % i == <span class="number">0</span> &amp;&amp; _min % i == <span class="number">0</span>) &#123;</span><br><span class="line">			ans = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此外，还可以使用<b>辗转相除法</b>，其原理为<span class="math inline">\(\text{gcd}(a, b)=\text{gcd}(b, a \mod b)\)</span>。证明如下：</p>
-<p>设<span class="math inline">\(a=kb+r\)</span>，其中<span class="math inline">\(a, b, k, r\in Z，r=a \mod b\)</span>。</p>
-<p>另设<span class="math inline">\(d\)</span>为<span class="math inline">\(a\)</span>与<span class="math inline">\(b\)</span>的一个公约数，由<span class="math inline">\(a=kb+r\)</span>有：<span class="math inline">\(r=a-kb\)</span>，等式两边同除<span class="math inline">\(d\)</span>得：<span class="math inline">\(\displaystyle \frac{r}{d}=\frac{a}{r}-\frac{kb}{d}\)</span>，显然式中任意一项都是整数，则<span class="math inline">\(r\)</span>也是<span class="math inline">\(a\mod(b)\)</span>的因子。</p>
-<p>事实上还有<span class="math inline">\(\text{gcd}(a,b)=\text{gcd}(b,a)\)</span>，这一性质可以用于算法正确性的证明。</p>
+<p>此外，还可以使用<b>辗转相除法</b>，其原理为<span
+class="math inline">\(\text{gcd}(a, b)=\text{gcd}(b, a \mod
+b)\)</span>。证明如下：</p>
+<p>设<span class="math inline">\(a=kb+r\)</span>，其中<span
+class="math inline">\(a, b, k, r\in Z，r=a \mod b\)</span>。</p>
+<p>另设<span class="math inline">\(d\)</span>为<span
+class="math inline">\(a\)</span>与<span
+class="math inline">\(b\)</span>的一个公约数，由<span
+class="math inline">\(a=kb+r\)</span>有：<span
+class="math inline">\(r=a-kb\)</span>，等式两边同除<span
+class="math inline">\(d\)</span>得：<span
+class="math inline">\(\displaystyle
+\frac{r}{d}=\frac{a}{r}-\frac{kb}{d}\)</span>，显然式中任意一项都是整数，则<span
+class="math inline">\(r\)</span>也是<span
+class="math inline">\(a\mod(b)\)</span>的因子。</p>
+<p>事实上还有<span
+class="math inline">\(\text{gcd}(a,b)=\text{gcd}(b,a)\)</span>，这一性质可以用于算法正确性的证明。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a % b == <span class="number">0</span> ? b : <span class="built_in">gcd2</span>(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd3</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> r = a;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="number">0</span>) &#123;</span><br><span class="line">		r = a % b;<span class="comment">//取余数</span></span><br><span class="line">		a = b;<span class="comment">//大数更新为小数</span></span><br><span class="line">		b = r;<span class="comment">//小数更新为余数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实际上，<b>更相减损法</b>与辗转相除法实质是一样的，而且前者所需的计算次数通常更多。更相减损法的原理是<span class="math inline">\(\text{gcd}(a,b)=\text{gcd}(\min(a,b),\max(a,b)-\min(a,b))\)</span>。</p>
+<p>实际上，<b>更相减损法</b>与辗转相除法实质是一样的，而且前者所需的计算次数通常更多。更相减损法的原理是<span
+class="math inline">\(\text{gcd}(a,b)=\text{gcd}(\min(a,b),\max(a,b)-\min(a,b))\)</span>。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd4</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">gcd4</span>(b, a - b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">gcd4</span>(a, b - a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd5</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> _max = <span class="built_in">max</span>(a, b), _min = a + b - _max;</span><br><span class="line">	<span class="keyword">while</span>(_max != _min)&#123;</span><br><span class="line">		<span class="type">int</span> tmp1 = _max - _min, tmp2 = _min;</span><br><span class="line">		_max = <span class="built_in">max</span>(tmp1, tmp2);</span><br><span class="line">		_min = tmp1 + tmp2 - _max;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> _min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd6</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(a!=b)&#123;</span><br><span class="line">		<span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">			a -= b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			b -= a;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>显然，<strong>更相减损法是需要考虑两个数之间的大小的，而辗转相除法不需要</strong>。</p>
 <p>事实上，求最小公倍数可以使用分解质因数法，也可以利用最小公倍数与最大公约数之间的关系求解。</p>
@@ -2717,33 +2731,111 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>还可以利用最大公约数求解，具体原理详见<a href = "/2021-09-30-算法分析与设计第二次作业题题解/" style = "text-decoration: none" target = "_blank">算法分析与设计第二次题解</a>中F题的分析。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm2</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a * b / <span class="built_in">gcd1</span>(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="求一个正整数的因数个数">求一个正整数的因数个数</h3>
-<p>由算术基本定理可知：每个正整数的标准分解式都是唯一的。考虑任意一个正整数<span class="math inline">\(n\)</span>，记<span class="math inline">\(n=\displaystyle\prod_i{p_i^{\alpha_i}}\)</span>，那么<span class="math inline">\(n\)</span>的因数的形式必定为<span class="math inline">\(n=\displaystyle\prod_i{p_i^{\beta_i}}\)</span>，其中，有<span class="math inline">\(0\leq\beta_i\leq\alpha_i\)</span>。每一个质因数<span class="math inline">\(p_i\)</span>的次数<span class="math inline">\(\beta_i\)</span>可取<span class="math inline">\(0\)</span>到<span class="math inline">\(\alpha_i\)</span>，即共有<span class="math inline">\((\alpha_i+1)\)</span>种取法，因此总的因数个数<span class="math inline">\(d(n)\)</span>为<span class="math inline">\(d(n)=\displaystyle\prod_i({\alpha_i + 1})\)</span>。</p>
+<p>由算术基本定理可知：每个正整数的标准分解式都是唯一的。考虑任意一个正整数<span
+class="math inline">\(n\)</span>，记<span
+class="math inline">\(n=\displaystyle\prod_i{p_i^{\alpha_i}}\)</span>，那么<span
+class="math inline">\(n\)</span>的因数的形式必定为<span
+class="math inline">\(n=\displaystyle\prod_i{p_i^{\beta_i}}\)</span>，其中，有<span
+class="math inline">\(0\leq\beta_i\leq\alpha_i\)</span>。每一个质因数<span
+class="math inline">\(p_i\)</span>的次数<span
+class="math inline">\(\beta_i\)</span>可取<span
+class="math inline">\(0\)</span>到<span
+class="math inline">\(\alpha_i\)</span>，即共有<span
+class="math inline">\((\alpha_i+1)\)</span>种取法，因此总的因数个数<span
+class="math inline">\(d(n)\)</span>为<span
+class="math inline">\(d(n)=\displaystyle\prod_i({\alpha_i +
+1})\)</span>。</p>
 <h3 id="求-euler-函数的值">求 Euler 函数的值</h3>
 <h2 id="组合数学">组合数学</h2>
 <h3 id="组合数与排列数">组合数与排列数</h3>
-<p>从<span class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span class="math inline">\(m\)</span>个元素并<strong>排序</strong>，方案数为<span class="math inline">\(\displaystyle \prod_{i=n-m+1}^{n}i =\frac{n!}{(n-m)!} = \text{A}_{n}^{m}\)</span>，其中<span class="math inline">\(\text{A}_{n}^{m}\)</span>被称为排列数，也被记为<span class="math inline">\(\text{P}_{n}^{m}\)</span>。</p>
-<p>从<span class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span class="math inline">\(m\)</span>个元素，<strong>两个方案视为不同当且仅当包含的元素不同，即与元素顺序无关时</strong>，方案数为<span class="math inline">\(\displaystyle\frac{A_{n}^{m}}{m!}=\frac{n!}{m!(n-m)!}=\text{C}_{n}^{m}\)</span>。</p>
-<p>从<span class="math inline">\(n\)</span>个<strong>不同元素</strong>中取<span class="math inline">\(m\)</span>个元素并<strong>排列在圆周上</strong>，其方案数显然是<span class="math inline">\(\displaystyle \frac{\text{P}_{n}^{m}}{m} = \text{Q}_n^m\)</span>，其中<span class="math inline">\(\text{Q}_n^m\)</span>被称为圆排列数。</p>
-<h3 id="常见的组合数公式以及其组合意义上的证明">常见的组合数公式以及其组合意义上的证明</h3>
-<p>考虑从<span class="math inline">\(n\)</span>个不同元素中取<span class="math inline">\(m\)</span>个，其方案数显然是<span class="math inline">\(\text{C}_n^m\)</span>；此外，不妨以是否取其中某个特定元素为标准进行分类讨论，取之的方案数的<span class="math inline">\(\text{C}_{n-1}^{m-1}\)</span>，不取的方案数为<span class="math inline">\(\text{C}_{n-1}^{m}\)</span>，那么可以得到下面的公式。</p>
-<p><span class="math display">\[\text{C}_{n}^{m}=\text{C}_{n-1}^{m-1}+\text{C}_{n-1}^{m} \tag{1}\]</span></p>
-<p>事实上，公式<span class="math inline">\((1)\)</span>可以进行推广。考虑从<span class="math inline">\(n+m\)</span>个不同的元素中取<span class="math inline">\(r\)</span>个，其方案数显然是<span class="math inline">\(\text{C}_{n+m}^r\)</span>；从另外一个思路考虑，可以从<span class="math inline">\(n\)</span>个元素和<span class="math inline">\(m\)</span>个元素两堆中共取<span class="math inline">\(r\)</span>个元素，根据加法原理和乘法原理总的方案数就是<span class="math inline">\(\displaystyle \sum_{i=0}^{r}\text{C}_{n}^{r-i} \text{C}_{m}^{i}\)</span>，即：</p>
-<p><span class="math display">\[\text{C}_{n+m}^{r} = \displaystyle \sum_{i=0}^{r}\text{C}_{n}^{r-i} \text{C}_{m}^{i} \tag{2}\]</span></p>
-<p>据此，公式<span class="math inline">\((1)\)</span>还可以写作<span class="math inline">\(\text{C}_{n}^{m}=\text{C}_{1}^{0}\text{C}_{n-1}^{m}+\text{C}_{1}^{1}\text{C}_{n-1}^{m-1}\)</span>。</p>
+<p>从<span
+class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span
+class="math inline">\(m\)</span>个元素并<strong>排序</strong>，方案数为<span
+class="math inline">\(\displaystyle \prod_{i=n-m+1}^{n}i
+=\frac{n!}{(n-m)!} = \text{A}_{n}^{m}\)</span>，其中<span
+class="math inline">\(\text{A}_{n}^{m}\)</span>被称为排列数，也被记为<span
+class="math inline">\(\text{P}_{n}^{m}\)</span>。</p>
+<p>从<span
+class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span
+class="math inline">\(m\)</span>个元素，<strong>两个方案视为不同当且仅当包含的元素不同，即与元素顺序无关时</strong>，方案数为<span
+class="math inline">\(\displaystyle\frac{A_{n}^{m}}{m!}=\frac{n!}{m!(n-m)!}=\text{C}_{n}^{m}\)</span>。</p>
+<p>从<span
+class="math inline">\(n\)</span>个<strong>不同元素</strong>中取<span
+class="math inline">\(m\)</span>个元素并<strong>排列在圆周上</strong>，其方案数显然是<span
+class="math inline">\(\displaystyle \frac{\text{P}_{n}^{m}}{m} =
+\text{Q}_n^m\)</span>，其中<span
+class="math inline">\(\text{Q}_n^m\)</span>被称为圆排列数。</p>
+<h3
+id="常见的组合数公式以及其组合意义上的证明">常见的组合数公式以及其组合意义上的证明</h3>
+<p>考虑从<span class="math inline">\(n\)</span>个不同元素中取<span
+class="math inline">\(m\)</span>个，其方案数显然是<span
+class="math inline">\(\text{C}_n^m\)</span>；此外，不妨以是否取其中某个特定元素为标准进行分类讨论，取之的方案数的<span
+class="math inline">\(\text{C}_{n-1}^{m-1}\)</span>，不取的方案数为<span
+class="math inline">\(\text{C}_{n-1}^{m}\)</span>，那么可以得到下面的公式。</p>
+<p><span
+class="math display">\[\text{C}_{n}^{m}=\text{C}_{n-1}^{m-1}+\text{C}_{n-1}^{m}
+\tag{1}\]</span></p>
+<p>事实上，公式<span
+class="math inline">\((1)\)</span>可以进行推广。考虑从<span
+class="math inline">\(n+m\)</span>个不同的元素中取<span
+class="math inline">\(r\)</span>个，其方案数显然是<span
+class="math inline">\(\text{C}_{n+m}^r\)</span>；从另外一个思路考虑，可以从<span
+class="math inline">\(n\)</span>个元素和<span
+class="math inline">\(m\)</span>个元素两堆中共取<span
+class="math inline">\(r\)</span>个元素，根据加法原理和乘法原理总的方案数就是<span
+class="math inline">\(\displaystyle \sum_{i=0}^{r}\text{C}_{n}^{r-i}
+\text{C}_{m}^{i}\)</span>，即：</p>
+<p><span class="math display">\[\text{C}_{n+m}^{r} = \displaystyle
+\sum_{i=0}^{r}\text{C}_{n}^{r-i} \text{C}_{m}^{i} \tag{2}\]</span></p>
+<p>据此，公式<span class="math inline">\((1)\)</span>还可以写作<span
+class="math inline">\(\text{C}_{n}^{m}=\text{C}_{1}^{0}\text{C}_{n-1}^{m}+\text{C}_{1}^{1}\text{C}_{n-1}^{m-1}\)</span>。</p>
 <h3 id="允许重复的组合和不相邻的组合">允许重复的组合和不相邻的组合</h3>
 <h4 id="允许重复的组合">允许重复的组合</h4>
 <h4 id="不相邻的组合">不相邻的组合</h4>
 <h3 id="组合数与排列数-1">组合数与排列数</h3>
-<p>从<span class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span class="math inline">\(m\)</span>个元素并<strong>排序</strong>，方案数为<span class="math inline">\(\displaystyle \prod_{i=n-m+1}^{n}i =\frac{n!}{(n-m)!} = \text{A}_{n}^{m}\)</span>，其中<span class="math inline">\(\text{A}_{n}^{m}\)</span>被称为排列数，也被记为<span class="math inline">\(\text{P}_{n}^{m}\)</span>。</p>
-<p>从<span class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span class="math inline">\(m\)</span>个元素，<strong>两个方案视为不同当且仅当包含的元素不同，即与元素顺序无关时</strong>，方案数为<span class="math inline">\(\displaystyle\frac{A_{n}^{m}}{m!}=\frac{n!}{m!(n-m)!}=\text{C}_{n}^{m}\)</span>。</p>
-<p>从<span class="math inline">\(n\)</span>个<strong>不同元素</strong>中取<span class="math inline">\(m\)</span>个元素并<strong>排列在圆周上</strong>，其方案数显然是<span class="math inline">\(\displaystyle \frac{\text{P}_{n}^{m}}{m} = \text{Q}_n^m\)</span>，其中<span class="math inline">\(\text{Q}_n^m\)</span>被称为圆排列数。</p>
-<h3 id="常见的组合数公式以及其组合意义上的证明-1">常见的组合数公式以及其组合意义上的证明</h3>
-<p>考虑从<span class="math inline">\(n\)</span>个不同元素中取<span class="math inline">\(m\)</span>个，其方案数显然是<span class="math inline">\(\text{C}_n^m\)</span>；此外，不妨以是否取其中某个特定元素为标准进行分类讨论，取之的方案数的<span class="math inline">\(\text{C}_{n-1}^{m-1}\)</span>，不取的方案数为<span class="math inline">\(\text{C}_{n-1}^{m}\)</span>，那么可以得到下面的公式。</p>
-<p><span class="math display">\[\text{C}_{n}^{m}=\text{C}_{n-1}^{m-1}+\text{C}_{n-1}^{m} \tag{1}\]</span></p>
-<p>事实上，公式<span class="math inline">\((1)\)</span>可以进行推广。考虑从<span class="math inline">\(n+m\)</span>个不同的元素中取<span class="math inline">\(r\)</span>个，其方案数显然是<span class="math inline">\(\text{C}_{n+m}^r\)</span>；从另外一个思路考虑，可以从<span class="math inline">\(n\)</span>个元素和<span class="math inline">\(m\)</span>个元素两堆中共取<span class="math inline">\(r\)</span>个元素，根据加法原理和乘法原理总的方案数就是<span class="math inline">\(\displaystyle \sum_{i=0}^{r}\text{C}_{n}^{r-i} \text{C}_{m}^{i}\)</span>，即：</p>
-<p><span class="math display">\[\text{C}_{n+m}^{r} = \displaystyle \sum_{i=0}^{r}\text{C}_{n}^{r-i} \text{C}_{m}^{i} \tag{2}\]</span></p>
-<p>据此，公式<span class="math inline">\((1)\)</span>还可以写作<span class="math inline">\(\text{C}_{n}^{m}=\text{C}_{1}^{0}\text{C}_{n-1}^{m}+\text{C}_{1}^{1}\text{C}_{n-1}^{m-1}\)</span>。</p>
-<h3 id="允许重复的组合和不相邻的组合-1">允许重复的组合和不相邻的组合</h3>
+<p>从<span
+class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span
+class="math inline">\(m\)</span>个元素并<strong>排序</strong>，方案数为<span
+class="math inline">\(\displaystyle \prod_{i=n-m+1}^{n}i
+=\frac{n!}{(n-m)!} = \text{A}_{n}^{m}\)</span>，其中<span
+class="math inline">\(\text{A}_{n}^{m}\)</span>被称为排列数，也被记为<span
+class="math inline">\(\text{P}_{n}^{m}\)</span>。</p>
+<p>从<span
+class="math inline">\(n\)</span>个<strong>不同</strong>元素中取出<span
+class="math inline">\(m\)</span>个元素，<strong>两个方案视为不同当且仅当包含的元素不同，即与元素顺序无关时</strong>，方案数为<span
+class="math inline">\(\displaystyle\frac{A_{n}^{m}}{m!}=\frac{n!}{m!(n-m)!}=\text{C}_{n}^{m}\)</span>。</p>
+<p>从<span
+class="math inline">\(n\)</span>个<strong>不同元素</strong>中取<span
+class="math inline">\(m\)</span>个元素并<strong>排列在圆周上</strong>，其方案数显然是<span
+class="math inline">\(\displaystyle \frac{\text{P}_{n}^{m}}{m} =
+\text{Q}_n^m\)</span>，其中<span
+class="math inline">\(\text{Q}_n^m\)</span>被称为圆排列数。</p>
+<h3
+id="常见的组合数公式以及其组合意义上的证明-1">常见的组合数公式以及其组合意义上的证明</h3>
+<p>考虑从<span class="math inline">\(n\)</span>个不同元素中取<span
+class="math inline">\(m\)</span>个，其方案数显然是<span
+class="math inline">\(\text{C}_n^m\)</span>；此外，不妨以是否取其中某个特定元素为标准进行分类讨论，取之的方案数的<span
+class="math inline">\(\text{C}_{n-1}^{m-1}\)</span>，不取的方案数为<span
+class="math inline">\(\text{C}_{n-1}^{m}\)</span>，那么可以得到下面的公式。</p>
+<p><span
+class="math display">\[\text{C}_{n}^{m}=\text{C}_{n-1}^{m-1}+\text{C}_{n-1}^{m}
+\tag{1}\]</span></p>
+<p>事实上，公式<span
+class="math inline">\((1)\)</span>可以进行推广。考虑从<span
+class="math inline">\(n+m\)</span>个不同的元素中取<span
+class="math inline">\(r\)</span>个，其方案数显然是<span
+class="math inline">\(\text{C}_{n+m}^r\)</span>；从另外一个思路考虑，可以从<span
+class="math inline">\(n\)</span>个元素和<span
+class="math inline">\(m\)</span>个元素两堆中共取<span
+class="math inline">\(r\)</span>个元素，根据加法原理和乘法原理总的方案数就是<span
+class="math inline">\(\displaystyle \sum_{i=0}^{r}\text{C}_{n}^{r-i}
+\text{C}_{m}^{i}\)</span>，即：</p>
+<p><span class="math display">\[\text{C}_{n+m}^{r} = \displaystyle
+\sum_{i=0}^{r}\text{C}_{n}^{r-i} \text{C}_{m}^{i} \tag{2}\]</span></p>
+<p>据此，公式<span class="math inline">\((1)\)</span>还可以写作<span
+class="math inline">\(\text{C}_{n}^{m}=\text{C}_{1}^{0}\text{C}_{n-1}^{m}+\text{C}_{1}^{1}\text{C}_{n-1}^{m-1}\)</span>。</p>
+<h3
+id="允许重复的组合和不相邻的组合-1">允许重复的组合和不相邻的组合</h3>
 <h4 id="允许重复的组合-1">允许重复的组合</h4>
 <h4 id="不相邻的组合-1">不相邻的组合</h4>
 <h2 id="参考资料">参考资料</h2>
@@ -2766,7 +2858,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>2021年10月4日练习。
 
 BJTU-ALGO 1355
-火柴棒拼等式，经典的枚举问题。首先确定\(1111+1=1112\)共需要27根火柴，而题设说明\(n\leq24\)，故枚举范围可知...</p>-->
+火柴棒拼等式，经典的枚举问题。首先确定\(1111+1=1112\)共需要27根火柴，而题设说明\(n\leq24\)，故枚举范...</p>-->
         </a>
       
       
@@ -2776,7 +2868,8 @@ BJTU-ALGO 1355
 Problem A
 题目描述
 如果一个质数能被表示为三个不同的质数的和的形式，那么我们称它为立方质数。
-现在给你一个数\(n(n \leq 1000)...</p>-->
+现在给你一个数\(n(n \leq
+...</p>-->
         </a>
       
     </div>
@@ -2956,13 +3049,19 @@ Problem A
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3965,7 +4064,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2700,34 +2700,85 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>这篇博客用于记录一些比较有趣的积分问题。</p>
 <span id="more"></span>
-<h2 id="求idisplaystyle-int_0inftysinx2dx">求<span class="math inline">\(I=\displaystyle \int_{0}^{+\infty}\sin(x^2)dx\)</span></h2>
+<h2 id="求idisplaystyle-int_0inftysinx2dx">求<span
+class="math inline">\(I=\displaystyle
+\int_{0}^{+\infty}\sin(x^2)dx\)</span></h2>
 <p>题目为著名的 Fersnel 积分，下面分步进行求解。</p>
-<p><span class="math display">\[I\xlongequal{x^2=t}\frac{1}{2}\int_{0}^{+\infty}\frac{\sin t}{\sqrt{t}}dt\]</span></p>
-<p>考虑积分<span class="math inline">\(\displaystyle \int_{0}^{+\infty}e^{-ax^2}dx\)</span>，其中<span class="math inline">\(a&gt;0\)</span>：</p>
-<p><span class="math display">\[\int_{0}^{\infty}e^{-ax^2}dx = \frac{1}{2} \sqrt{\frac{\pi}{a}} \int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\cdot\frac{1}{\sqrt{2a}}}e^{-\frac{x^2}{2(\frac{1}{\sqrt{2a}})^2}}dx = \frac{1}{2} \sqrt{\frac{\pi}{a}} \Rightarrow\sqrt{\frac{1}{a}}=\frac{2}{\sqrt{\pi}}\int_{0}^{\infty}e^{-ax^2}dx\]</span></p>
+<p><span
+class="math display">\[I\xlongequal{x^2=t}\frac{1}{2}\int_{0}^{+\infty}\frac{\sin
+t}{\sqrt{t}}dt\]</span></p>
+<p>考虑积分<span class="math inline">\(\displaystyle
+\int_{0}^{+\infty}e^{-ax^2}dx\)</span>，其中<span
+class="math inline">\(a&gt;0\)</span>：</p>
+<p><span class="math display">\[\int_{0}^{\infty}e^{-ax^2}dx =
+\frac{1}{2} \sqrt{\frac{\pi}{a}}
+\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\cdot\frac{1}{\sqrt{2a}}}e^{-\frac{x^2}{2(\frac{1}{\sqrt{2a}})^2}}dx
+= \frac{1}{2} \sqrt{\frac{\pi}{a}}
+\Rightarrow\sqrt{\frac{1}{a}}=\frac{2}{\sqrt{\pi}}\int_{0}^{\infty}e^{-ax^2}dx\]</span></p>
 <p>则有：</p>
-<p><span class="math display">\[I\xlongequal{x^2=t}\frac{1}{\sqrt{\pi}}\int_{0}^{+\infty}\sin t (\int_{0}^{+\infty} e^{-tx^2}dx)dt=\frac{1}{\sqrt{\pi}}\int_{0}^{+\infty}dx\int_{0}^{+\infty}e^{-x^2t}\sin t dt=\frac{1}{\sqrt{\pi}}J\]</span></p>
-<p>上式最后一步直接使用了<span class="math inline">\(\mathcal{L}(\sin at)\)</span>的结果，其中<span class="math inline">\(J=\displaystyle \int_{0}^{+\infty}\frac{1}{x^4+1}dx\)</span>，下面求解<span class="math inline">\(J\)</span>。</p>
-<p><span class="math display">\[J \xlongequal{ x = \frac{1}{t} }\int_{0}^{+\infty}\frac{t^2}{1+t^4}dt=\int_{0}^{+\infty}\frac{x^2}{1+x^4}dx\]</span></p>
-<p><span class="math display">\[J = \frac{1}{2}\int_{0}^{+\infty}\frac{1+x^2}{1+x^4}dx =\frac{1}{2} \int_{0}^{+\infty}\frac{d(x-\frac{1}{x})}{(x-\frac{1}{x})^2+2}=[\frac{1}{2\sqrt{2}}\arctan(\frac{x-\frac{1}{x}}{\sqrt{2}})]_{0}^{+\infty}=\frac{\pi}{2\sqrt{2}}\]</span></p>
-<p>最终得到<span class="math inline">\(\displaystyle\int_{0}^{+\infty} \sin(x^2) dx = \displaystyle \frac{1}{2} \sqrt{\frac{\pi}{2}}\)</span>。此外，<span class="math inline">\(\displaystyle\int_{0}^{+\infty} \sin(x^2) dx = \displaystyle\int_{0}^{+\infty} \cos(x^2) dx\)</span>，这一性质根据<span class="math inline">\(\mathcal{L}(\sin at)\)</span>和<span class="math inline">\(\mathcal{L}(\cos at)\)</span>的关系显而易见。</p>
-<h2 id="求i-displaystyle-int_0fracpi2ln-sin-xdx">求<span class="math inline">\(I = \displaystyle \int_{0}^{\frac{\pi}{2}}\ln \sin xdx\)</span></h2>
-<p>显然<span class="math inline">\(\displaystyle \int_{0}^{\frac{\pi}{2}}\ln \sin xdx =\int_{0}^{\frac{\pi}{2}}\ln \cos xdx\)</span>，那么有：</p>
-<p><span class="math display">\[I = \frac{1}{2}\int_{0}^{\frac{\pi}{2}}\ln (\sin x \cos x)dx=\frac{1}{2}\int_{0}^{\frac{\pi}{2}}\ln \sin 2x dx - \frac{\pi}{4}\ln 2\]</span></p>
-<p><span class="math display">\[\int_{0}^{\frac{\pi}{2}}\ln \sin 2x dx \xlongequal{2x = u} \frac{1}{2}\int_{0}^{\pi}\ln \sin udu = \frac{1}{2}(\int_{0}^{\frac{\pi}{2}}\ln \sin xdx + \int_{\frac{\pi}{2}}^{\pi}\ln \sin xdx)\]</span></p>
-<p><span class="math display">\[\int_{\frac{\pi}{2}}^{\pi}\ln \sin xdx \xlongequal{u=\pi-x}\int_{0}^{\frac{\pi}{2}}\ln \sin udu\]</span></p>
-<p>最终得到<span class="math inline">\(I = \displaystyle-\frac{\pi}{2}\ln 2\)</span></p>
-<h2 id="求i-displaystyleint_0fracpi2sin-x-ln-sin-x-dx">求<span class="math inline">\(I = \displaystyle\int_{0}^{\frac{\pi}{2}}\sin x \ln \sin x dx\)</span></h2>
+<p><span
+class="math display">\[I\xlongequal{x^2=t}\frac{1}{\sqrt{\pi}}\int_{0}^{+\infty}\sin
+t (\int_{0}^{+\infty}
+e^{-tx^2}dx)dt=\frac{1}{\sqrt{\pi}}\int_{0}^{+\infty}dx\int_{0}^{+\infty}e^{-x^2t}\sin
+t dt=\frac{1}{\sqrt{\pi}}J\]</span></p>
+<p>上式最后一步直接使用了<span class="math inline">\(\mathcal{L}(\sin
+at)\)</span>的结果，其中<span class="math inline">\(J=\displaystyle
+\int_{0}^{+\infty}\frac{1}{x^4+1}dx\)</span>，下面求解<span
+class="math inline">\(J\)</span>。</p>
+<p><span class="math display">\[J \xlongequal{ x = \frac{1}{t}
+}\int_{0}^{+\infty}\frac{t^2}{1+t^4}dt=\int_{0}^{+\infty}\frac{x^2}{1+x^4}dx\]</span></p>
+<p><span class="math display">\[J =
+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x^2}{1+x^4}dx =\frac{1}{2}
+\int_{0}^{+\infty}\frac{d(x-\frac{1}{x})}{(x-\frac{1}{x})^2+2}=[\frac{1}{2\sqrt{2}}\arctan(\frac{x-\frac{1}{x}}{\sqrt{2}})]_{0}^{+\infty}=\frac{\pi}{2\sqrt{2}}\]</span></p>
+<p>最终得到<span class="math inline">\(\displaystyle\int_{0}^{+\infty}
+\sin(x^2) dx = \displaystyle \frac{1}{2}
+\sqrt{\frac{\pi}{2}}\)</span>。此外，<span
+class="math inline">\(\displaystyle\int_{0}^{+\infty} \sin(x^2) dx =
+\displaystyle\int_{0}^{+\infty} \cos(x^2) dx\)</span>，这一性质根据<span
+class="math inline">\(\mathcal{L}(\sin at)\)</span>和<span
+class="math inline">\(\mathcal{L}(\cos at)\)</span>的关系显而易见。</p>
+<h2 id="求i-displaystyle-int_0fracpi2ln-sin-xdx">求<span
+class="math inline">\(I = \displaystyle \int_{0}^{\frac{\pi}{2}}\ln \sin
+xdx\)</span></h2>
+<p>显然<span class="math inline">\(\displaystyle
+\int_{0}^{\frac{\pi}{2}}\ln \sin xdx =\int_{0}^{\frac{\pi}{2}}\ln \cos
+xdx\)</span>，那么有：</p>
+<p><span class="math display">\[I =
+\frac{1}{2}\int_{0}^{\frac{\pi}{2}}\ln (\sin x \cos
+x)dx=\frac{1}{2}\int_{0}^{\frac{\pi}{2}}\ln \sin 2x dx -
+\frac{\pi}{4}\ln 2\]</span></p>
+<p><span class="math display">\[\int_{0}^{\frac{\pi}{2}}\ln \sin 2x dx
+\xlongequal{2x = u} \frac{1}{2}\int_{0}^{\pi}\ln \sin udu =
+\frac{1}{2}(\int_{0}^{\frac{\pi}{2}}\ln \sin xdx +
+\int_{\frac{\pi}{2}}^{\pi}\ln \sin xdx)\]</span></p>
+<p><span class="math display">\[\int_{\frac{\pi}{2}}^{\pi}\ln \sin xdx
+\xlongequal{u=\pi-x}\int_{0}^{\frac{\pi}{2}}\ln \sin udu\]</span></p>
+<p>最终得到<span class="math inline">\(I =
+\displaystyle-\frac{\pi}{2}\ln 2\)</span></p>
+<h2 id="求i-displaystyleint_0fracpi2sin-x-ln-sin-x-dx">求<span
+class="math inline">\(I = \displaystyle\int_{0}^{\frac{\pi}{2}}\sin x
+\ln \sin x dx\)</span></h2>
 <p>首先求解被积函数的原函数：</p>
-<p><span class="math display">\[\int\sin x \ln \sin x dx=\int\ln \sin xd(-\cos x)=-\cos x\ln \sin x + \int \frac{1-\sin^2x}{\sin x} \]</span></p>
-<p><span class="math display">\[= (1-\cos x)\ln \sin x - \ln(1+\cos x)+\cos x+C\]</span></p>
+<p><span class="math display">\[\int\sin x \ln \sin x dx=\int\ln \sin
+xd(-\cos x)=-\cos x\ln \sin x + \int \frac{1-\sin^2x}{\sin x}
+\]</span></p>
+<p><span class="math display">\[= (1-\cos x)\ln \sin x - \ln(1+\cos
+x)+\cos x+C\]</span></p>
 <p>再代入积分限有：</p>
-<p><span class="math display">\[I = \ln 2-1-[\lim_\limits{x\to 0}(1-\cos x)\ln \sin x]=\ln2 - 1\]</span></p>
+<p><span class="math display">\[I = \ln 2-1-[\lim_\limits{x\to 0}(1-\cos
+x)\ln \sin x]=\ln2 - 1\]</span></p>
 <p>在此可以复习一下自适应 Simpson 积分的 <code>C++</code> 实现。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sin</span>(x) * <span class="built_in">log</span>(<span class="built_in">sin</span>(x));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">simpson</span><span class="params">(<span class="type">double</span> l, <span class="type">double</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> (r - l) * (<span class="built_in">f</span>(l) + <span class="built_in">f</span>(r) + <span class="number">4</span> * <span class="built_in">f</span>(mid)) / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">asr</span><span class="params">(<span class="type">double</span> l, <span class="type">double</span> r, <span class="type">double</span> area)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="type">double</span> area_l = <span class="built_in">simpson</span>(l, mid), area_r = <span class="built_in">simpson</span>(mid, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fabs</span>(area - area_l - area_r) &lt; eps? (area_l + area_r):</span><br><span class="line">           <span class="built_in">asr</span>(l, mid, area_l) + <span class="built_in">asr</span>(mid, r, area_r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// l should approach 0 close enough but not equal 0</span></span><br><span class="line">    <span class="type">double</span> l = <span class="number">1e-9</span>, r = <span class="built_in">acos</span>(<span class="number">-1</span>) / <span class="number">2</span>;</span><br><span class="line">    cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">4</span>) &lt;&lt; <span class="built_in">asr</span>(l, r, <span class="built_in">simpson</span>(l, r)) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="求i-displaystyle-int_01fracln-x1-x2dx">求<span class="math inline">\(I = \displaystyle \int_{0}^{1}\frac{\ln x}{1-x^2}dx\)</span></h2>
-<p><span class="math display">\[I = \displaystyle \int_{0}^{1}\sum_{n=0}^{\infty}x^{2n}\ln xdx=\sum_{n=0}^{\infty}\int_{0}^{1}x^{2n}\ln xdx \xlongequal{\ln x = t}-\sum_{n=0}^{\infty}\int_{0}^{+\infty}te^{-(2n+1)t}dt=-\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}\]</span></p>
-<p>由 Basel 级数易得<span class="math inline">\(\displaystyle\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}=\frac{3}{4}\cdot\frac{\pi^2}{6}=\frac{\pi^2}{8}\)</span>，那么<span class="math inline">\(I=\displaystyle -\frac{\pi^2}{8}\)</span>。</p>
+<h2 id="求i-displaystyle-int_01fracln-x1-x2dx">求<span
+class="math inline">\(I = \displaystyle \int_{0}^{1}\frac{\ln
+x}{1-x^2}dx\)</span></h2>
+<p><span class="math display">\[I = \displaystyle
+\int_{0}^{1}\sum_{n=0}^{\infty}x^{2n}\ln
+xdx=\sum_{n=0}^{\infty}\int_{0}^{1}x^{2n}\ln xdx \xlongequal{\ln x =
+t}-\sum_{n=0}^{\infty}\int_{0}^{+\infty}te^{-(2n+1)t}dt=-\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}\]</span></p>
+<p>由 Basel 级数易得<span
+class="math inline">\(\displaystyle\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}=\frac{3}{4}\cdot\frac{\pi^2}{6}=\frac{\pi^2}{8}\)</span>，那么<span
+class="math inline">\(I=\displaystyle -\frac{\pi^2}{8}\)</span>。</p>
 
   </div>
   
@@ -2743,7 +2794,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'>一些杂七杂八的数学题目2<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <!--<p class='content'>这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。
 
-求\(\displaystyle I= \lim_\limits{x \to 0}\frac{\ln^2(x+\sqrt{1+x^2})...</p>-->
+求\(\displaystyle I= \lim_\limits{x \to
+0}\frac{\ln^2(x+\sqrt{1+x^...</p>-->
         </a>
       
     </div>
@@ -2801,7 +2853,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_0inftysinx2dx"><span class="toc-text">求\(I&#x3D;\displaystyle \int_{0}^{+\infty}\sin(x^2)dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_0fracpi2ln-sin-xdx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{\frac{\pi}{2}}\ln \sin xdx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyleint_0fracpi2sin-x-ln-sin-x-dx"><span class="toc-text">求\(I &#x3D; \displaystyle\int_{0}^{\frac{\pi}{2}}\sin x \ln \sin x dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_01fracln-x1-x2dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{1}\frac{\ln x}{1-x^2}dx\)</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_0inftysinx2dx"><span class="toc-text">求\(I&#x3D;\displaystyle
+\int_{0}^{+\infty}\sin(x^2)dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_0fracpi2ln-sin-xdx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{\frac{\pi}{2}}\ln \sin
+xdx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyleint_0fracpi2sin-x-ln-sin-x-dx"><span class="toc-text">求\(I &#x3D; \displaystyle\int_{0}^{\frac{\pi}{2}}\sin x
+\ln \sin x dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int_01fracln-x1-x2dx"><span class="toc-text">求\(I &#x3D; \displaystyle \int_{0}^{1}\frac{\ln
+x}{1-x^2}dx\)</span></a></li></ol>
     </div>
   </section>
 
@@ -2923,13 +2979,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3932,7 +3994,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

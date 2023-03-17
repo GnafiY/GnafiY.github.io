@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2689,27 +2689,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>首次阅读这方面的英文论文，有不足和错误之处还望各位不吝赐教。</p>
 <span id="more"></span>
 <h2 id="salo">SALO</h2>
-<p>这篇文章主要介绍了为降低机器学习中的 <code>self-attention</code> 机制计算复杂度而设计的一套软硬件系统。</p>
+<p>这篇文章主要介绍了为降低机器学习中的 <code>self-attention</code>
+机制计算复杂度而设计的一套软硬件系统。</p>
 <h3 id="主要计算过程">主要计算过程</h3>
-<p>为了简单起见，首先考虑一个包含<span class="math inline">\(4\)</span>个输入列向量的矩阵<span class="math inline">\(I=[a_1^T;a_2^T;a_3^T;a_4^T]\)</span>，自注意力机制中涉及的主要计算公式过程包括以下过程。</p>
-<h4 id="得到qk和v矩阵">得到<span class="math inline">\(Q\)</span>、<span class="math inline">\(K\)</span>和<span class="math inline">\(V\)</span>矩阵</h4>
-<p><span class="math display">\[Q = W^q \cdot I\]</span> <span class="math display">\[K = W^k \cdot I\]</span> <span class="math display">\[V = W^v \cdot I\]</span></p>
-<h4 id="利用q和k计算每两个输入向量之间的相关性">利用<span class="math inline">\(Q\)</span>和<span class="math inline">\(K\)</span>计算每两个输入向量之间的相关性</h4>
-<p><span class="math display">\[A = K^T \cdot Q,\ \text{where} \ a_{i,j}=(q^i)^T \cdot k^j\]</span></p>
+<p>为了简单起见，首先考虑一个包含<span
+class="math inline">\(4\)</span>个输入列向量的矩阵<span
+class="math inline">\(I=[a_1^T;a_2^T;a_3^T;a_4^T]\)</span>，自注意力机制中涉及的主要计算公式过程包括以下过程。</p>
+<h4 id="得到qk和v矩阵">得到<span class="math inline">\(Q\)</span>、<span
+class="math inline">\(K\)</span>和<span
+class="math inline">\(V\)</span>矩阵</h4>
+<p><span class="math display">\[Q = W^q \cdot I\]</span> <span
+class="math display">\[K = W^k \cdot I\]</span> <span
+class="math display">\[V = W^v \cdot I\]</span></p>
+<h4 id="利用q和k计算每两个输入向量之间的相关性">利用<span
+class="math inline">\(Q\)</span>和<span
+class="math inline">\(K\)</span>计算每两个输入向量之间的相关性</h4>
+<p><span class="math display">\[A = K^T \cdot Q,\ \text{where} \
+a_{i,j}=(q^i)^T \cdot k^j\]</span></p>
 <p><img src = "/static/images/self-attention1.png" width = "630px"/></p>
 <p style="text-align: center">
 图1-1 矩阵<span class="math inline">\(A\)</span>图示
 </p>
-<h4 id="对a使用textsoftmax函数进行激活得到矩阵a">对<span class="math inline">\(A\)</span>使用<span class="math inline">\(\text{softmax}\)</span>函数进行激活，得到矩阵<span class="math inline">\(A&#39;\)</span></h4>
-<p><span class="math display">\[a&#39;_{i,j} = \text{softmax}(a_{i,j}) = \displaystyle \frac{e^{a_{i,j}}}{\displaystyle \sum_{i = 1} ^ {4}\sum_{j = 1} ^ {4} e^{a_{i,j}}}\]</span></p>
-<h4 id="最终得到输出矩阵o">最终得到输出矩阵<span class="math inline">\(O\)</span></h4>
-<p><span class="math display">\[O = V \cdot A&#39;,\ \text{where}\ b_i = \sum_{j=1}^4 v_i \alpha&#39;_{i,j}\]</span></p>
+<h4 id="对a使用textsoftmax函数进行激活得到矩阵a">对<span
+class="math inline">\(A\)</span>使用<span
+class="math inline">\(\text{softmax}\)</span>函数进行激活，得到矩阵<span
+class="math inline">\(A&#39;\)</span></h4>
+<p><span class="math display">\[a&#39;_{i,j} = \text{softmax}(a_{i,j}) =
+\displaystyle \frac{e^{a_{i,j}}}{\displaystyle \sum_{i = 1} ^ {4}\sum_{j
+= 1} ^ {4} e^{a_{i,j}}}\]</span></p>
+<h4 id="最终得到输出矩阵o">最终得到输出矩阵<span
+class="math inline">\(O\)</span></h4>
+<p><span class="math display">\[O = V \cdot A&#39;,\ \text{where}\ b_i =
+\sum_{j=1}^4 v_i \alpha&#39;_{i,j}\]</span></p>
 <p><img src = "/static/images/self-attention2.png" width = "630px"/></p>
 <p style="text-align: center">
 图1-2 矩阵<span class="math inline">\(O\)</span>图示
 </p>
 <h3 id="文章设计的解决方案">文章设计的解决方案</h3>
-<h4 id="sparse-attention-mechanisms"><code>Sparse Attention Mechanisms</code></h4>
+<h4 id="sparse-attention-mechanisms"><code>Sparse Attention
+Mechanisms</code></h4>
 <p><img src = "/static/images/sparse-self-attention1.png" width = "630px"/></p>
 <h2 id="scalehls">ScaleHLS</h2>
 <h2 id="参考资料">参考资料</h2>
@@ -2733,16 +2751,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <!--<p class='content'>复变函数与积分变换能为积分求解、信号处理等问题提供新的方法，值得学习。
 
 前言
-这篇博客是学习复变函数与积分变换（华中科技大学）时所作的笔记，适合快速入门或者期末考试做题家速成，如果希望深入学习...</p>-->
+这篇博客是学习复变函数与积分变换（华中科技大学）时所作的笔记，适合快速入门或者期末考试做题家速成，如果希望深...</p>-->
         </a>
       
       
         <a class='next' href='/2022-09-30-hello-world/'>
           <p class='title'>Hello, world!<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <!--<p class='content'>记录一下网站的配置过程，方便以后查阅。 
-公式渲染和代码高亮的问题卡了一天，最后直接重用了旧版本的 Volantis 搭建的博客的代码。
+公式渲染和代码高亮的问题卡了一天，最后直接重用了旧版本的
+Volantis 搭建的博客的代码。
 前言
-一直有建立个人网站的想法，借着大三上学期选修课的机...</p>-->
+一直有建立个人网站的想法，借着大三上学期选...</p>-->
         </a>
       
     </div>
@@ -2800,7 +2819,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#salo"><span class="toc-text">SALO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">主要计算过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%97%E5%88%B0qk%E5%92%8Cv%E7%9F%A9%E9%98%B5"><span class="toc-text">得到\(Q\)、\(K\)和\(V\)矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8q%E5%92%8Ck%E8%AE%A1%E7%AE%97%E6%AF%8F%E4%B8%A4%E4%B8%AA%E8%BE%93%E5%85%A5%E5%90%91%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="toc-text">利用\(Q\)和\(K\)计算每两个输入向量之间的相关性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9a%E4%BD%BF%E7%94%A8textsoftmax%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E6%BF%80%E6%B4%BB%E5%BE%97%E5%88%B0%E7%9F%A9%E9%98%B5a"><span class="toc-text">对\(A\)使用\(\text{softmax}\)函数进行激活，得到矩阵\(A&#39;\)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E8%BE%93%E5%87%BA%E7%9F%A9%E9%98%B5o"><span class="toc-text">最终得到输出矩阵\(O\)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">文章设计的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sparse-attention-mechanisms"><span class="toc-text">Sparse Attention Mechanisms</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scalehls"><span class="toc-text">ScaleHLS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#salo-1"><span class="toc-text">SALO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scalehls-1"><span class="toc-text">ScaleHLS</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#salo"><span class="toc-text">SALO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">主要计算过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%97%E5%88%B0qk%E5%92%8Cv%E7%9F%A9%E9%98%B5"><span class="toc-text">得到\(Q\)、\(K\)和\(V\)矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8q%E5%92%8Ck%E8%AE%A1%E7%AE%97%E6%AF%8F%E4%B8%A4%E4%B8%AA%E8%BE%93%E5%85%A5%E5%90%91%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="toc-text">利用\(Q\)和\(K\)计算每两个输入向量之间的相关性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9a%E4%BD%BF%E7%94%A8textsoftmax%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E6%BF%80%E6%B4%BB%E5%BE%97%E5%88%B0%E7%9F%A9%E9%98%B5a"><span class="toc-text">对\(A\)使用\(\text{softmax}\)函数进行激活，得到矩阵\(A&#39;\)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E8%BE%93%E5%87%BA%E7%9F%A9%E9%98%B5o"><span class="toc-text">最终得到输出矩阵\(O\)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">文章设计的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sparse-attention-mechanisms"><span class="toc-text">Sparse Attention
+Mechanisms</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scalehls"><span class="toc-text">ScaleHLS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#salo-1"><span class="toc-text">SALO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scalehls-1"><span class="toc-text">ScaleHLS</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2922,13 +2942,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3931,7 +3957,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

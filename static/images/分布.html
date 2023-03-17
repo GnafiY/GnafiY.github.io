@@ -34,15 +34,15 @@
   <title>一方の笔记本</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="一方の笔记本 - John Doe - 一方の笔记本">
-  
+  <meta name="description" content="分布名称 分布记号 分布律&#x2F;概率密度函数 期望 方差     Bernoulli(0-1) Distribution \(B(1,p)\) \(P\{X&#x3D;k\}&#x3D;p,k\in\{0,1\}\) \(p\) \(p(1-p)\)   Bionomiol Distribution \(B(n,p)\) \(P\{X &#x3D; k\}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="一方の笔记本">
 <meta property="og:url" content="http://example.com/static/images/%E5%88%86%E5%B8%83.html">
 <meta property="og:site_name" content="一方の笔记本">
-<meta property="og:description" content="分布名称 分布记号 分布律&#x2F;概率密度函数 期望 方差     Bernoulli(0-1) Distribution \(B(1,p)\) \(P\{X&#x3D;k\}&#x3D;p,k\in\{0,1\}\) \(p\) \(p(1-p)\)   Bionomiol Distribution \(B(n,p)\) \(P\{X &#x3D; k\} &#x3D; C_{n}^{k}p^k(1-p)^{n-k},k">
+<meta property="og:description" content="分布名称 分布记号 分布律&#x2F;概率密度函数 期望 方差     Bernoulli(0-1) Distribution \(B(1,p)\) \(P\{X&#x3D;k\}&#x3D;p,k\in\{0,1\}\) \(p\) \(p(1-p)\)   Bionomiol Distribution \(B(n,p)\) \(P\{X &#x3D; k\}">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-02-07T06:19:07.322Z">
+<meta property="article:published_time" content="2023-03-17T09:26:13.116Z">
 <meta property="article:modified_time" content="2023-02-07T06:19:07.322Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2653,78 +2653,128 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Bernoulli(0-1) Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(B(1,p)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P\{X=k\}=p,k\in\{0,1\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(p\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(p(1-p)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(B(1,p)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(P\{X=k\}=p,k\in\{0,1\}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(p\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(p(1-p)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Bionomiol Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(B(n,p)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P\{X = k\} = C_{n}^{k}p^k(1-p)^{n-k},k \in \{0,1,\cdots,n\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(np\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(np(1-p)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(B(n,p)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\{X = k\} =
+C_{n}^{k}p^k(1-p)^{n-k},k \in \{0,1,\cdots,n\}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(np\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(np(1-p)\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Pascal Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(NB(r,p)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P\{X = k\} = C^{r-1}_{k-1}p^r(1-p)^{k-r},k\geq r\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{r}{p}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle\frac{r(1-p)}{p^2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(NB(r,p)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\{X = k\} =
+C^{r-1}_{k-1}p^r(1-p)^{k-r},k\geq r\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle \frac{r}{p}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle\frac{r(1-p)}{p^2}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Geometric Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(GE(p)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P\{X = k\} = p(1-p)^{k-1}, k \in \N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle\frac{1}{p}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle\frac{1-p}{p^2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(GE(p)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\{X = k\} =
+p(1-p)^{k-1}, k \in \N\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle\frac{1}{p}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle\frac{1-p}{p^2}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Hypergeomotric Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(H(N,n,M)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P\{X=k\} = \displaystyle \frac{C_{M}^{k}C_{N-M}^{n-k}}{C_{N}^{n}}, k \in\{0,1,\cdots,\min\{n,M\}\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{nM}{N}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle (1-\frac{M}{N})\frac{N-n}{N-1}E(X)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(H(N,n,M)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\{X=k\} =
+\displaystyle \frac{C_{M}^{k}C_{N-M}^{n-k}}{C_{N}^{n}}, k
+\in\{0,1,\cdots,\min\{n,M\}\}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle \frac{nM}{N}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+(1-\frac{M}{N})\frac{N-n}{N-1}E(X)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Poisson Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(P(\lambda)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P\{ X = k\} = \displaystyle \frac{\lambda^k}{k!}e^{-\lambda}, k \in \N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\lambda\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(P(\lambda)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\{ X = k\}
+= \displaystyle \frac{\lambda^k}{k!}e^{-\lambda}, k \in \N\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\lambda\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\lambda\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Exponential Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(E(\lambda)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(f_{X}(x)=\lambda e^{-\lambda}, x &gt; 0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{\lambda}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{\lambda^2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(E(\lambda)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(f_{X}(x)=\lambda e^{-\lambda}, x &gt;
+0\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle \frac{1}{\lambda}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle \frac{1}{\lambda^2}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Normal Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(N(\mu, \sigma^2)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle f_{X}(x) = \frac{1}{\sqrt{2 \pi} \sigma} e ^{-\frac{(x-\mu)^2}{2\sigma^2}}, x \in \R\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mu\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N(\mu,
+\sigma^2)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle f_{X}(x) = \frac{1}{\sqrt{2 \pi}
+\sigma} e ^{-\frac{(x-\mu)^2}{2\sigma^2}}, x \in \R\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\mu\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\sigma^2\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Uniform Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(U(a,b)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(f_{X}(x) = \displaystyle \frac{1}{b-a}, x \in [a,b], b \neq a\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{a+b}{2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{(b-a)^2}{12}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(U(a,b)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f_{X}(x) =
+\displaystyle \frac{1}{b-a}, x \in [a,b], b \neq a\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle \frac{a+b}{2}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle \frac{(b-a)^2}{12}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Rayleigh Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(R(\sigma)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle f_{X}(x) = \frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}},x &gt; 0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \sqrt{\frac{\pi}{2}}\sigma\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{4-\pi}{2}\sigma^2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(R(\sigma)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle f_{X}(x) =
+\frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}},x &gt; 0\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\sqrt{\frac{\pi}{2}}\sigma\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle
+\frac{4-\pi}{2}\sigma^2\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Cauchy Distribution</td>
-<td style="text-align: center;"><span class="math inline">\(C(\gamma,x_0)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle f_{X}(x) = \frac{1}{\pi} \frac{1}{\gamma((\frac{x - x_0}{\gamma})^2+1)}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(C(\gamma,x_0)\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\displaystyle f_{X}(x) = \frac{1}{\pi}
+\frac{1}{\gamma((\frac{x - x_0}{\gamma})^2+1)}\)</span></td>
 <td style="text-align: center;">不存在</td>
 <td style="text-align: center;">不存在</td>
 </tr>
@@ -2992,13 +3042,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -4001,7 +4057,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4230,7 +4286,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/static/images/%E5%88%86%E5%B8%83.html"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/static/images/%E5%88%86%E5%B8%83.html","wordCount":0,"datePublished":"2023-02-07T06:19:07.322Z","dateModified":"2023-02-07T06:19:07.322Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/static/images/%E5%88%86%E5%B8%83.html"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/static/images/%E5%88%86%E5%B8%83.html","wordCount":0,"datePublished":"2023-03-17T09:26:13.116Z","dateModified":"2023-02-07T06:19:07.322Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

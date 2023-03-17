@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2700,41 +2700,97 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。</p>
 <span id="more"></span>
-<h2 id="求displaystyle-i-lim_limitsx-to-0fracln2xsqrt1x2e-x2-1x4">求<span class="math inline">\(\displaystyle I= \lim_\limits{x \to 0}\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></h2>
-<p>显然<span class="math inline">\(e^{-x^2}-1=-x^2+\displaystyle\frac{1}{2}x^4+o(x^4), x\to0\)</span>，下面将对数函数部分展开。</p>
-<p><span class="math display">\[x+\sqrt{1+x^2}=1+x+\frac{1}{2}x^2-\frac{1}{8}x^4+o(x^4)\]</span></p>
+<h2
+id="求displaystyle-i-lim_limitsx-to-0fracln2xsqrt1x2e-x2-1x4">求<span
+class="math inline">\(\displaystyle I= \lim_\limits{x \to
+0}\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></h2>
+<p>显然<span
+class="math inline">\(e^{-x^2}-1=-x^2+\displaystyle\frac{1}{2}x^4+o(x^4),
+x\to0\)</span>，下面将对数函数部分展开。</p>
+<p><span
+class="math display">\[x+\sqrt{1+x^2}=1+x+\frac{1}{2}x^2-\frac{1}{8}x^4+o(x^4)\]</span></p>
 <p>那么有：</p>
-<p><span class="math display">\[\ln(x+\sqrt{1+x^2}) = u-\frac{1}{2}u^2+\frac{1}{3}u^3+o(x^3), u=x+\frac{1}{2}x^2-\frac{1}{8}x^4+o(x^4)\]</span></p>
-<p>上式中将对数展开得到<span class="math inline">\(x^2\)</span>项的系数即可，整理得到：</p>
-<p><span class="math display">\[\ln(x+\sqrt{1+x^2}) = x - \frac{1}{6}x^3+o(x^3)\]</span></p>
+<p><span class="math display">\[\ln(x+\sqrt{1+x^2}) =
+u-\frac{1}{2}u^2+\frac{1}{3}u^3+o(x^3),
+u=x+\frac{1}{2}x^2-\frac{1}{8}x^4+o(x^4)\]</span></p>
+<p>上式中将对数展开得到<span
+class="math inline">\(x^2\)</span>项的系数即可，整理得到：</p>
+<p><span class="math display">\[\ln(x+\sqrt{1+x^2}) = x -
+\frac{1}{6}x^3+o(x^3)\]</span></p>
 <p>最终有：</p>
-<p><span class="math display">\[I= \lim_\limits{x \to 0}\frac{(x - \frac{1}{6}x^3+o(x^3))^2-x^2+\displaystyle\frac{1}{2}x^4+o(x^4)}{x^4}=\frac{1}{6}\]</span></p>
-<h2 id="求i-displaystyle-int-sum_n0-_inftyn3n1xndx">求<span class="math inline">\(I = \displaystyle \int \sum_{n=0}^ {_\infty}(n+3)(n+1)x^ndx\)</span></h2>
-<p>记<span class="math inline">\(S(x) = \displaystyle\sum_{n=0}^ {_\infty}(n+3)(n+1)x^n\)</span>，易得函数的收敛域为<span class="math inline">\((-1,1)\)</span>，并且有：</p>
-<p><span class="math display">\[S(x) = \sum_{n=0}^ {_\infty}(n+2)(n+1)x^n + \sum_{n=0}^ {_\infty}(n+1)x^n\]</span></p>
+<p><span class="math display">\[I= \lim_\limits{x \to 0}\frac{(x -
+\frac{1}{6}x^3+o(x^3))^2-x^2+\displaystyle\frac{1}{2}x^4+o(x^4)}{x^4}=\frac{1}{6}\]</span></p>
+<h2 id="求i-displaystyle-int-sum_n0-_inftyn3n1xndx">求<span
+class="math inline">\(I = \displaystyle \int \sum_{n=0}^
+{_\infty}(n+3)(n+1)x^ndx\)</span></h2>
+<p>记<span class="math inline">\(S(x) = \displaystyle\sum_{n=0}^
+{_\infty}(n+3)(n+1)x^n\)</span>，易得函数的收敛域为<span
+class="math inline">\((-1,1)\)</span>，并且有：</p>
+<p><span class="math display">\[S(x) = \sum_{n=0}^
+{_\infty}(n+2)(n+1)x^n + \sum_{n=0}^ {_\infty}(n+1)x^n\]</span></p>
 <p>接下来有：</p>
-<p><span class="math display">\[\int_{0}^{x}S(t)dt = \sum_{n=0}^ {_\infty}(n+2)x^{n+1} + \sum_{n=0}^ {_\infty}x^{n+1}=(\frac{x^2}{1-x})&#39;+\frac{x}{1-x}=\frac{x(3-2x)}{(1-x)^2}\]</span></p>
-<p>最终<span class="math inline">\(I=\displaystyle \frac{x(3-2x)}{(1-x)^2} + C\)</span>。</p>
-<h2 id="求displaystyle-lim_limitsxto-0fracnxn-prod_t1nsin-txxn2">求<span class="math inline">\(\displaystyle \lim_\limits{x\to 0}\frac{n!x^n-\prod_{t=1}^n\sin tx}{x^{n+2}}\)</span></h2>
+<p><span class="math display">\[\int_{0}^{x}S(t)dt = \sum_{n=0}^
+{_\infty}(n+2)x^{n+1} + \sum_{n=0}^
+{_\infty}x^{n+1}=(\frac{x^2}{1-x})&#39;+\frac{x}{1-x}=\frac{x(3-2x)}{(1-x)^2}\]</span></p>
+<p>最终<span class="math inline">\(I=\displaystyle
+\frac{x(3-2x)}{(1-x)^2} + C\)</span>。</p>
+<h2 id="求displaystyle-lim_limitsxto-0fracnxn-prod_t1nsin-txxn2">求<span
+class="math inline">\(\displaystyle \lim_\limits{x\to
+0}\frac{n!x^n-\prod_{t=1}^n\sin tx}{x^{n+2}}\)</span></h2>
 <h3 id="taylor-展开">Taylor 展开</h3>
-<p>不妨对<span class="math inline">\(\displaystyle \prod_{t=1}^n\sin tx\)</span>进行 Taylor 展开，不难发现该函数展开式中<span class="math inline">\(x\)</span>的次数为<span class="math inline">\(n,n+2,\cdots\)</span>，其中<span class="math inline">\(x^n\)</span>的系数显然是<span class="math inline">\(n!\)</span>，考虑<span class="math inline">\(\sin x =\displaystyle x - \frac{x^3}{6} + o(x^3)\)</span>，通过观察易得：</p>
-<p><span class="math display">\[\prod_{t=1}^n\sin tx=n!x^n-\frac{n!}{6}\sum_{t=1}^nt^2=\frac{n!}{6}\frac{n(n+1)(2n+1)}{6} + o(x^{n+2})\]</span></p>
-<p>最终求得<span class="math inline">\(I = \displaystyle\frac{n!}{6}\frac{n(n+1)(2n+1)}{6}\)</span>。</p>
+<p>不妨对<span class="math inline">\(\displaystyle \prod_{t=1}^n\sin
+tx\)</span>进行 Taylor 展开，不难发现该函数展开式中<span
+class="math inline">\(x\)</span>的次数为<span
+class="math inline">\(n,n+2,\cdots\)</span>，其中<span
+class="math inline">\(x^n\)</span>的系数显然是<span
+class="math inline">\(n!\)</span>，考虑<span class="math inline">\(\sin
+x =\displaystyle x - \frac{x^3}{6} + o(x^3)\)</span>，通过观察易得：</p>
+<p><span class="math display">\[\prod_{t=1}^n\sin
+tx=n!x^n-\frac{n!}{6}\sum_{t=1}^nt^2=\frac{n!}{6}\frac{n(n+1)(2n+1)}{6}
++ o(x^{n+2})\]</span></p>
+<p>最终求得<span class="math inline">\(I =
+\displaystyle\frac{n!}{6}\frac{n(n+1)(2n+1)}{6}\)</span>。</p>
 <h3 id="巧妙的等价无穷小代换">巧妙的等价无穷小代换</h3>
-<p><span class="math display">\[I = n!\lim_\limits{x\to 0}\frac{1-\prod_{t=1}^{n}\frac{\sin tx}{tx}}{x^2} = -n!\lim_\limits{x \to 0}\frac{\ln\prod_{t=1}^{n}\frac{\sin tx}{tx}}{x^2}=-n!\lim_\limits{x\to 0}\frac{\sum_{t=1}^{n}\frac{\sin tx}{tx}}{x^2} \]</span></p>
-<p><span class="math display">\[ = -n!\sum_{t=1}^n \lim_\limits{x\to 0} \frac{\frac{\sin tx}{tx} - 1}{x^2}=\frac{n!}{6}\sum_{t=1}^nt^2=\frac{n!}{6}\frac{n(n+1)(2n+1)}{6}\]</span></p>
+<p><span class="math display">\[I = n!\lim_\limits{x\to
+0}\frac{1-\prod_{t=1}^{n}\frac{\sin tx}{tx}}{x^2} = -n!\lim_\limits{x
+\to 0}\frac{\ln\prod_{t=1}^{n}\frac{\sin
+tx}{tx}}{x^2}=-n!\lim_\limits{x\to 0}\frac{\sum_{t=1}^{n}\frac{\sin
+tx}{tx}}{x^2} \]</span></p>
+<p><span class="math display">\[ = -n!\sum_{t=1}^n \lim_\limits{x\to 0}
+\frac{\frac{\sin tx}{tx} -
+1}{x^2}=\frac{n!}{6}\sum_{t=1}^nt^2=\frac{n!}{6}\frac{n(n+1)(2n+1)}{6}\]</span></p>
 <h2 id="利用有理数运算估计根式的值">利用有理数运算估计根式的值</h2>
-<p>以估算<span class="math inline">\(\sqrt{2}\)</span>为例，很容易发现<span class="math inline">\(\displaystyle \frac{7}{5}&lt;\sqrt{2}&lt;\frac{3}{2}\)</span>，那么：</p>
-<p><span class="math display">\[\frac{2}{5}&lt;\sqrt{2} - 1&lt;\frac{1}{2} \Rightarrow \frac{4}{25}&lt;3-2\sqrt{2}&lt;\frac{1}{4}\Rightarrow \frac{11}{8} &lt; \sqrt{2}&lt;\frac{71}{50}\]</span></p>
-<p><span class="math display">\[\frac{3}{8} &lt; \sqrt{2} - 1&lt;\frac{21}{50} \Rightarrow \frac{9}{64} &lt; 3-2\sqrt{2}&lt;\frac{441}{2500}\Rightarrow \frac{7059}{5000}&lt; \sqrt{2} &lt; \frac{183}{128}\]</span></p>
+<p>以估算<span
+class="math inline">\(\sqrt{2}\)</span>为例，很容易发现<span
+class="math inline">\(\displaystyle
+\frac{7}{5}&lt;\sqrt{2}&lt;\frac{3}{2}\)</span>，那么：</p>
+<p><span class="math display">\[\frac{2}{5}&lt;\sqrt{2} -
+1&lt;\frac{1}{2} \Rightarrow
+\frac{4}{25}&lt;3-2\sqrt{2}&lt;\frac{1}{4}\Rightarrow \frac{11}{8} &lt;
+\sqrt{2}&lt;\frac{71}{50}\]</span></p>
+<p><span class="math display">\[\frac{3}{8} &lt; \sqrt{2} -
+1&lt;\frac{21}{50} \Rightarrow \frac{9}{64} &lt;
+3-2\sqrt{2}&lt;\frac{441}{2500}\Rightarrow \frac{7059}{5000}&lt;
+\sqrt{2} &lt; \frac{183}{128}\]</span></p>
 <p><span class="math display">\[\cdots\]</span></p>
 <p>以上方法收敛速度很快且计算方便，非常适合手算一定精度的根式近似值。</p>
 <h2 id="待定系数法的本质">待定系数法的本质</h2>
-<p>数域<span class="math inline">\(P\)</span>上的<span class="math inline">\(n\)</span>次多项式全体<span class="math inline">\(P[x]_n\)</span>是<span class="math inline">\(P\)</span>上的线性空间，<span class="math inline">\(1,x,\cdots, x^n\)</span>是一组基，<span class="math inline">\(P[x_n]\)</span>中的任何一个向量<span class="math inline">\(f(x)\)</span>均可由这组<strong>线性无关</strong>的基线性表出，即：</p>
+<p>数域<span class="math inline">\(P\)</span>上的<span
+class="math inline">\(n\)</span>次多项式全体<span
+class="math inline">\(P[x]_n\)</span>是<span
+class="math inline">\(P\)</span>上的线性空间，<span
+class="math inline">\(1,x,\cdots, x^n\)</span>是一组基，<span
+class="math inline">\(P[x_n]\)</span>中的任何一个向量<span
+class="math inline">\(f(x)\)</span>均可由这组<strong>线性无关</strong>的基线性表出，即：</p>
 <p><span class="math display">\[f(x)=a_0+a_1x+\cdots+a_nx^n\]</span></p>
-<p>若<span class="math inline">\(f(x)\)</span>还有另外一种表达方式，即<span class="math inline">\(f(x)=b_0+b_1x+\cdots+b_nx^n\)</span>，那么：</p>
-<p><span class="math display">\[(a_0-b_0)+(a_1-b_1)x+\cdots +(a_n-b_n)x^n=0\]</span></p>
-<p>由于<span class="math inline">\(1,x,\cdots, x^n\)</span><strong>线性无关</strong>，故<span class="math inline">\(a_i=b_i(i=0,1,\cdots,n)\)</span>。</p>
+<p>若<span
+class="math inline">\(f(x)\)</span>还有另外一种表达方式，即<span
+class="math inline">\(f(x)=b_0+b_1x+\cdots+b_nx^n\)</span>，那么：</p>
+<p><span class="math display">\[(a_0-b_0)+(a_1-b_1)x+\cdots
++(a_n-b_n)x^n=0\]</span></p>
+<p>由于<span class="math inline">\(1,x,\cdots,
+x^n\)</span><strong>线性无关</strong>，故<span
+class="math inline">\(a_i=b_i(i=0,1,\cdots,n)\)</span>。</p>
 
   </div>
   
@@ -2749,8 +2805,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>积分题目4</p>
           <!--<p class='content'>这篇博客用于记录一些比较有趣的积分问题。
 
-求\(I=\displaystyle \int_{0}^{+\infty}\sin(x^2)dx\)
-题目为著名的 Fersnel 积分，下面分步进行...</p>-->
+求\(I=\displaystyle
+\int_{0}^{+\infty}\sin(x^2)dx\)
+题目为著名的 Fersnel 积分，下面...</p>-->
         </a>
       
       
@@ -2758,7 +2815,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'>费曼积分法与复变函数在求解定积分中的应用实例<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <!--<p class='content'>很多定积分可以利用费曼积分法与复变函数的方法更便捷地进行计算。
 
-求\(I = \displaystyle \int_{-\infty}^{+\infty}\frac{\cos x}{1+x^2...</p>-->
+求\(I = \displaystyle
+\int_{-\infty}^{+\infty}\frac{\cos x}{1+...</p>-->
         </a>
       
     </div>
@@ -2816,7 +2874,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-lim_limitsx-to-0fracln2xsqrt1x2e-x2-1x4"><span class="toc-text">求\(\displaystyle I&#x3D; \lim_\limits{x \to 0}\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-sum_n0-_inftyn3n1xndx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \sum_{n&#x3D;0}^ {_\infty}(n+3)(n+1)x^ndx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-lim_limitsxto-0fracnxn-prod_t1nsin-txxn2"><span class="toc-text">求\(\displaystyle \lim_\limits{x\to 0}\frac{n!x^n-\prod_{t&#x3D;1}^n\sin tx}{x^{n+2}}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#taylor-%E5%B1%95%E5%BC%80"><span class="toc-text">Taylor 展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A7%E5%A6%99%E7%9A%84%E7%AD%89%E4%BB%B7%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%BB%A3%E6%8D%A2"><span class="toc-text">巧妙的等价无穷小代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%89%E7%90%86%E6%95%B0%E8%BF%90%E7%AE%97%E4%BC%B0%E8%AE%A1%E6%A0%B9%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="toc-text">利用有理数运算估计根式的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%85%E5%AE%9A%E7%B3%BB%E6%95%B0%E6%B3%95%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">待定系数法的本质</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-lim_limitsx-to-0fracln2xsqrt1x2e-x2-1x4"><span class="toc-text">求\(\displaystyle I&#x3D; \lim_\limits{x \to
+0}\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-sum_n0-_inftyn3n1xndx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \sum_{n&#x3D;0}^
+{_\infty}(n+3)(n+1)x^ndx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-lim_limitsxto-0fracnxn-prod_t1nsin-txxn2"><span class="toc-text">求\(\displaystyle \lim_\limits{x\to
+0}\frac{n!x^n-\prod_{t&#x3D;1}^n\sin tx}{x^{n+2}}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#taylor-%E5%B1%95%E5%BC%80"><span class="toc-text">Taylor 展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A7%E5%A6%99%E7%9A%84%E7%AD%89%E4%BB%B7%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%BB%A3%E6%8D%A2"><span class="toc-text">巧妙的等价无穷小代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%89%E7%90%86%E6%95%B0%E8%BF%90%E7%AE%97%E4%BC%B0%E8%AE%A1%E6%A0%B9%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="toc-text">利用有理数运算估计根式的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%85%E5%AE%9A%E7%B3%BB%E6%95%B0%E6%B3%95%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">待定系数法的本质</span></a></li></ol>
     </div>
   </section>
 
@@ -2938,13 +2999,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3947,7 +4014,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 

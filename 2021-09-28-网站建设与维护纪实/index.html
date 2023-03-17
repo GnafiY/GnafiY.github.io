@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1678388536338),
+    lastupdate: new Date(1679044060279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2701,23 +2701,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>本页主要记录网页的建设与维护的过程，并分享一些经验。</p>
 <span id="more"></span>
 <h2 id="年9月28日">2021年9月28日</h2>
-<p>网页出现乱码问题，经查证是编码问题，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangrusheng5200/article/details/83484260" target = "_blank">查找资料</a>后在对 WinSCP 的登陆设置与登陆后的编辑设置中进行修改后问题解决。</p>
+<p>网页出现乱码问题，经查证是编码问题，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangrusheng5200/article/details/83484260" target = "_blank">查找资料</a>后在对
+WinSCP 的登陆设置与登陆后的编辑设置中进行修改后问题解决。</p>
 <p><img src="/img/problem20210928.png" class="lazyload" data-srcset="/img/problem20210928.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" align="middle" /></p>
-<p>要使用 <code>Markdown</code> 进行公式编辑就需要在每篇博客的头部加上如下代码。</p>
+<p>要使用 <code>Markdown</code>
+进行公式编辑就需要在每篇博客的头部加上如下代码。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>最终得到的效果为：<span class="math inline">\(e^{i\pi}+1=0\)</span>。</p>
-<p>以上内容为 <code>Volantis-4.3.1</code> 中的配置方式，事实上，在 <code>Volantis-5.7.6</code> 中，配置方式如下。</p>
+<p>最终得到的效果为：<span
+class="math inline">\(e^{i\pi}+1=0\)</span>。</p>
+<p>以上内容为 <code>Volantis-4.3.1</code> 中的配置方式，事实上，在
+<code>Volantis-5.7.6</code> 中，配置方式如下。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">mathjax</span></span><br></pre></td></tr></table></figure>
 <h2 id="年9月29日">2021年9月29日</h2>
-<p>经大佬的提示，我将网站中的图片进行压缩，转为 <code>webp</code> 格式。</p>
+<p>经大佬的提示，我将网站中的图片进行压缩，转为 <code>webp</code>
+格式。</p>
 <h2 id="年11月9日">2021年11月9日</h2>
-<p>经过查找资料后，我将网站的代码字体更换为 Fira Code，实际上流程很简单。</p>
+<p>经过查找资料后，我将网站的代码字体更换为 Fira
+Code，实际上流程很简单。</p>
 <p>在腾讯云服务器的 Ubuntu 系统中使用如下命令安装 Fira Code 字体。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure>
-<p>随后修改 <code>_config.volantis.yml</code> 中的 <code>codefont</code> 之后即可使用字体，如下所示。</p>
+<p>随后修改 <code>_config.volantis.yml</code> 中的 <code>codefont</code>
+之后即可使用字体，如下所示。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file: _config.volantis.yml</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">  <span class="attr">fontfamily:</span></span><br><span class="line">    <span class="attr">codefont:</span></span><br><span class="line">      <span class="attr">fontfamily:</span> <span class="string">&#x27;Fira Code&#x27;</span></span><br><span class="line">    <span class="attr">logofont:</span></span><br><span class="line">      <span class="attr">fontfamily:</span> <span class="string">&#x27;&quot;Times New Roman&quot;, SimSun&#x27;</span></span><br><span class="line">      <span class="attr">weight:</span> <span class="string">normal</span></span><br><span class="line">      <span class="attr">style:</span> <span class="string">normal</span></span><br><span class="line">    <span class="attr">bodyfont:</span></span><br><span class="line">      <span class="attr">fontfamily:</span> <span class="string">&#x27;&quot;Times New Roman&quot;, SimSun&#x27;</span></span><br><span class="line">      <span class="attr">weight:</span> <span class="string">normal</span></span><br><span class="line">      <span class="attr">style:</span> <span class="string">normal</span></span><br><span class="line"><span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
 <h2 id="年10月19日">2022年10月19日</h2>
-<p>观察到博客翻页功能的内容不够美观，于是将 <code>article.ejs</code> 中部分行进行了注释。</p>
+<p>观察到博客翻页功能的内容不够美观，于是将 <code>article.ejs</code>
+中部分行进行了注释。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="attr">file</span>: blog-root-path/themes/volantis/layout/_partial/article.<span class="property">ejs</span> --&gt;</span><br><span class="line">          &lt;!-- ... --&gt;</span><br><span class="line">            &lt;-- line: 154, 160 --&gt;</span><br><span class="line">            &lt;!--&lt;p class=&#x27;content&#x27;&gt;&lt;%- prev.exp %&gt;&lt;/p&gt;--&gt;</span><br><span class="line">          &lt;!-- ... --&gt;</span><br><span class="line">            &lt;-- line: 173, 179 --&gt;</span><br><span class="line">            &lt;!--&lt;p class=&#x27;content&#x27;&gt;</span><br><span class="line">            &lt;%- truncate(strip_html(page.prev.content), &#123;length: 100&#125;) %&gt;&lt;/p&gt;--&gt;</span><br><span class="line">          &lt;!-- ... --&gt;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2735,7 +2743,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 Problem A
 题目描述
 如果一个质数能被表示为三个不同的质数的和的形式，那么我们称它为立方质数。
-现在给你一个数\(n(n \leq 1000)...</p>-->
+现在给你一个数\(n(n \leq
+...</p>-->
         </a>
       
       
@@ -2744,7 +2753,9 @@ Problem A
           <!--<p class='content'>2021年9月28日练习。
 
 LintCode 1300
-事实上，当\(n \leq 3\)时，总是能赢；\(n \geq 4\)时，只要\(n\)是4的倍数一定输，其他情况我一定赢，因此只要返...</p>-->
+事实上，当\(n \leq
+3\)时，总是能赢；\(n \geq
+4\)时，只要\(n\)是4的倍数一定输，其他情况我一定赢，...</p>-->
         </a>
       
     </div>
@@ -2924,13 +2935,19 @@ LintCode 1300
       
     
       
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
 </div>
         
       
@@ -3933,7 +3950,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://s3.bmp.ovh/imgs/2022/10/19/7440c79fcb1f30e5.webp","https://s3.bmp.ovh/imgs/2022/10/19/14104e1b4f41b58c.webp","https://s3.bmp.ovh/imgs/2022/10/19/9c4627646afb6b0a.webp"];
+  let imgs = ["/static/images/cover1.webp","/static/images/cover3.webp","/static/images/cover8.webp"];
   let index = 0;
   let IntervalParallax = null;
 
