@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-03-09T15:59:48.000Z">
-<meta property="article:modified_time" content="2023-03-28T04:32:24.852Z">
+<meta property="article:modified_time" content="2023-07-23T15:36:21.467Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1683274721663),
+    lastupdate: new Date(1697730472668),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2791,6 +2791,178 @@ class="math inline">\(f(x)=b_0+b_1x+\cdots+b_nx^n\)</span>，那么：</p>
 <p>由于<span class="math inline">\(1,x,\cdots,
 x^n\)</span><strong>线性无关</strong>，故<span
 class="math inline">\(a_i=b_i(i=0,1,\cdots,n)\)</span>。</p>
+<h2 id="求ilim_limitsxto-0displaystyle-frac1-ln-ln-xe1xfrac1xx">求<span
+class="math inline">\(I=\lim_\limits{x\to 0}\displaystyle \frac{1-\ln
+(\ln (x+e^{(1+x)^{\frac{1}{x}}}))}{x}\)</span></h2>
+<p><span class="math display">\[I=\lim_\limits{x\to
+0}\displaystyle\frac{\ln \frac{e}{\ln
+(x+e^{(1+x)^{\frac{1}{x}}})}}{x}=\lim_\limits{x\to 0}\frac{\frac{e}{\ln
+(x+e^{(1+x)^{\frac{1}{x}}})}-1}{x}=\frac{1}{e}\lim_\limits{x\to
+0}\frac{e-\ln
+(x+e^{(1+x)^{\frac{1}{x}}})}{x}=\frac{1}{e}\lim_\limits{x\to 0}\frac{\ln
+\frac{e^e}{x+e^{(1+x)^{\frac{1}{x}}}}}{x}=\frac{1}{e}\lim_\limits{x\to
+0}\frac{ \frac{e^e}{x+e^{(1+x)^{\frac{1}{x}}}}-1}{x}\]</span></p>
+<p><span
+class="math display">\[=\displaystyle\frac{1}{e^{e+1}}(\lim_\limits{x\to
+0}\frac{e^e-e^{(1+x)^{\frac{1}{x}}}}{x}-1)\]</span></p>
+<p>又：</p>
+<p><span class="math display">\[\displaystyle \lim_\limits{x\to
+0}\frac{e^e-e^{(1+x)^{\frac{1}{x}}}}{x} = e^e\lim_\limits{x\to
+0}\frac{e-(1+x)^{\frac{1}{x}}}{x}=e^{e+1}\lim_\limits{x\to
+0}\frac{1-\frac{1}{x}\ln(1+x)}{x}=\frac{1}{2}e^{e+1}\]</span></p>
+<p>因此<span
+class="math inline">\(I=\displaystyle\frac{1}{2}-\frac{1}{e^{e+1}}\)</span>。</p>
+<h2
+id="求displaystyle-i-lim_limitsxto-0fracxexfrac1x-e2frac32e2xx2">求<span
+class="math inline">\(\displaystyle I = \lim_\limits{x\to
+0}\frac{(x+e^x)^{\frac{1}{x}}-e^2+\frac{3}{2}e^2x}{x^2}\)</span></h2>
+<p><span class="math inline">\(\displaystyle I = e^2\lim_\limits{x\to
+0}\frac{e^{\frac{1}{x}\ln(x+e^x)-2}-1+\frac{3}{2}x}{x^2}\)</span></p>
+<p>对指数部分进行泰勒展开有：</p>
+<p><span class="math display">\[x+e^x=\displaystyle
+1+2x+\frac{1}{2}x^2+\frac{1}{6}x^3+o(x^3)\]</span></p>
+<p>进一步地：</p>
+<p><span class="math display">\[\displaystyle
+\frac{1}{x}\ln(x+e^x)=\frac{1}{x}(2x+\frac{1}{2}x^2+\frac{1}{6}x^3+o(x^3))-\frac{1}{2x}(2x+\frac{1}{2}x^2+\frac{1}{6}x^3+o(x^3))^2+\frac{1}{3x}(2x+\frac{1}{2}x^2+\frac{1}{6}x^3+o(x^3))^3+o(x^2)\]</span></p>
+<p><span class="math inline">\(=\displaystyle 2
+-\frac{3}{2}x+\frac{11}{6}x^2+o(x^2)\)</span></p>
+<p>最终得到如下结果。</p>
+<p><span class="math inline">\(\displaystyle I=e^2\lim_\limits{x\to
+0}\frac{\frac{11}{6}x^2+\frac{1}{2}(-\frac{3}{2}x+\frac{11}{6}x^2+o(x^2))^2+o(x^2)}{x^2}=\frac{71}{24}e^2\)</span></p>
+<h2 id="求idisplaystylelim_limitsxto0frac1-prod_t1ncos-txx2">求<span
+class="math inline">\(I=\displaystyle\lim_\limits{x\to0}\frac{1-\prod_{t=1}^n\cos
+tx}{x^2}\)</span></h2>
+<p>本题解法很多，泰勒展开、洛必达等等方法都可以，下面采用数列递推的方法。</p>
+<p>记<span
+class="math inline">\(a_n=\displaystyle\lim_\limits{x\to0}\frac{1-\prod_{t=1}^n\cos
+tx}{x^2}\)</span>，那么<span
+class="math inline">\(a_1=\displaystyle\frac{1}{2}\)</span>；<span
+class="math inline">\(n\geq 2\)</span>时则有：</p>
+<p><span
+class="math display">\[a_n=\displaystyle\lim_\limits{x\to0}\frac{1-\cos
+nx +\cos nx(1-\prod_{t=1}^{n-1}\cos
+tx)}{x^2}=\frac{1}{2}n^2+I_{n-1}\]</span></p>
+<p>最终有<span
+class="math inline">\(a_n=\displaystyle\frac{1}{2}\frac{n(n+1)(2n+1)}{6}\)</span>。</p>
+<h2 id="求ilim_limitsxto0displaystylefracln2xsqrt1x2e-x2-1x4">求<span
+class="math inline">\(I=\lim_\limits{x\to0}\displaystyle\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></h2>
+<p>之前已经解过一次，现作另解。</p>
+<p>如下积分的结果是显然的：</p>
+<p><span
+class="math display">\[\displaystyle\int\frac{dx}{\sqrt{1+x^2}}=\ln(x+\sqrt{1+x^2})+C\]</span></p>
+<p>当<span class="math inline">\(x \to 0\)</span>时有：</p>
+<p><span class="math inline">\(\displaystyle
+\frac{1}{\sqrt{1+x^2}}=(1+x^2)^{-\frac{1}{2}}=1-\frac{1}{2}x^2+\frac{3}{8}x^4+o(x^5)\)</span></p>
+<p>那么<span class="math inline">\(\ln(x+\sqrt{1+x^2})\sim\displaystyle
+x-\frac{1}{6}x^3+\frac{3}{40}x^5+o(x^5)\)</span>，代入计算易得<span
+class="math inline">\(I=\displaystyle\frac{1}{6}\)</span>。</p>
+<p>本题启示：<strong>积分公式要熟练，倒背如流。</strong></p>
+<h2 id="求idisplaystyleint_01fracsinln-xln-xdx">求<span
+class="math inline">\(I=\displaystyle\int_0^1\frac{\sin(\ln x)}{\ln
+x}dx\)</span></h2>
+<p><span class="math display">\[I\displaystyle \xlongequal{\ln x =
+t}\int_{-\infty}^{0}\frac{\sin
+t}{t}e^tdt\xlongequal{u=-t}\int_{0}^{+\infty}\frac{\sin
+u}{u}e^{-u}du=\int_{0}^{+\infty}\sum_{n=0}^{\infty}\frac{(-1)^nu^{2n}}{(2n+1)!}e^{-u}du\]</span>
+<span
+class="math inline">\(=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\int_{0}^{+\infty}u^{2n}e^{-u}du=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=\frac{\pi}{4}\)</span></p>
+<h2 id="求idisplaystyleint_0fracpi2fracxtan-xdx">求<span
+class="math inline">\(I=\displaystyle\int_{0}^{\frac{\pi}{2}}\frac{x}{\tan
+x}dx\)</span></h2>
+<p>设<span class="math inline">\(I(a)=\displaystyle
+\int_{0}^{\frac{\pi}{2}}\frac{\arctan(a\tan x)}{\tan
+x}dx,a&gt;0\)</span>，那么<span
+class="math inline">\(I(0)=0\)</span>，<span
+class="math inline">\(I=I(1)\)</span>。</p>
+<p><span class="math display">\[I&#39;(a)=\displaystyle
+\int_{0}^{\frac{\pi}{2}}\frac{\partial }{\partial a}\frac{\arctan(a\tan
+x)}{\tan x}dx=\int_{0}^{\frac{\pi}{2}}\frac{1}{1+(a\tan
+x)^2}dx=\int_{0}^{\frac{\pi}{2}}\frac{\sec^2 x}{[1+(a\tan x)^2]\sec^2
+x}dx\]</span></p>
+<p><span
+class="math inline">\(\displaystyle=\int_{0}^{\frac{\pi}{2}}\frac{d\tan
+x}{(1+a^2\tan^2 x)(1+\tan^2x)}\xlongequal{\tan x=
+t}\int_{0}^{+\infty}\frac{dt}{(1+a^2t^2)(1+t^2)}\)</span></p>
+<p><span
+class="math display">\[\displaystyle\frac{1}{(1+a^2t^2)(1+t^2)}=\frac{\alpha}{1+a^2t^2}+\frac{\beta}{1+t^2}\Rightarrow
+\left\{ \begin{matrix}\alpha=\displaystyle \frac{a^2}{a^2-1} \\ \beta
+=\displaystyle -\frac{1}{a^2-1} \end{matrix}\right.\]</span></p>
+<p>因此<span
+class="math inline">\(I&#39;(a)=\displaystyle\frac{\pi}{2}\frac{1}{a+1}\Rightarrow
+I(a)=\frac{\pi}{2}\ln(a+1)+C\)</span>，并且<span
+class="math inline">\(I(0)=0\Rightarrow C=0\)</span>。</p>
+<p>最终有：<span
+class="math inline">\(I=I(1)=\displaystyle\frac{\pi}{2}\ln
+2\)</span>。</p>
+<h2 id="求idisplaystyle-int_1inftyfracln-xxndxn-intextn">求<span
+class="math inline">\(I=\displaystyle \int_{1}^{+\infty}(\frac{\ln
+x}{x})^{n}dx,n \in\text{N}\)</span></h2>
+<p><span class="math display">\[\displaystyle I \xlongequal{\ln x =
+t}\int_{0}^{+\infty}t^{n}e^{-(n-1)t}dt=\frac{n!}{(n-1)^{n}}\]</span></p>
+<h2 id="求idisplaystyle-int_0fracpi2fracxsin-xdx">求<span
+class="math inline">\(I=\displaystyle
+\int_{0}^{\frac{\pi}{2}}\frac{x}{\sin x}dx\)</span></h2>
+<p>卡特兰常数的定义为：</p>
+<p><span class="math display">\[G=\displaystyle
+\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n+1)^2}\]</span></p>
+<p><span class="math display">\[I\displaystyle
+=\int_{0}^{\frac{\pi}{2}}xd\ln \tan
+\frac{x}{2}=-\int_{0}^{\frac{\pi}{2}}\ln \tan
+\frac{x}{2}dx\xlongequal{t=-\ln
+\tan\frac{x}{2}}-2\int_{0}^{+\infty}td\arctan
+e^{-t}=2\int_{0}^{+\infty}\frac{\arctan e^{-t}}{e^t}de^t\]</span></p>
+<p><span
+class="math inline">\(\displaystyle\xlongequal{e^t=u}2\int_{1}^{+\infty}\frac{\arctan
+\frac{1}{u}}{u}du=2\sum_{n=0}^{\infty}\int_{1}^{+\infty}\frac{(-1)^n}{(2n+1)}x^{-(2n+2)}dx\xlongequal{t=\frac{1}{x}}2\sum_{n=0}^{\infty}\int_{0}^{1}\frac{(-1)^n}{(2n+1)}t^{2n}dt=2G\)</span></p>
+<h2 id="证明displaystyle-frac6pi2prod_p1-frac1p2">证明<span
+class="math inline">\(\displaystyle
+\frac{6}{\pi^2}=\prod_{p}(1-\frac{1}{p^2})\)</span></h2>
+<p><span class="math display">\[\displaystyle
+\frac{\pi^2}{6}=\frac{1}{1^2}+\frac{1}{2^2}+\cdots+\frac{1}{n^2}+\cdots\]</span></p>
+<p><span class="math display">\[\displaystyle
+\frac{1}{2^2}\frac{\pi^2}{6}=\frac{1}{2^2}+\frac{1}{4^2}+\cdots+\frac{1}{(2n)^2}+\cdots\]</span></p>
+<p>因此有：</p>
+<p><span class="math display">\[\displaystyle
+(1-\frac{1}{2^2})\frac{\pi^2}{6}=\frac{1}{1^2}+\frac{1}{3^2}+\cdots+\frac{1}{(2n+1)^2}+\cdots\]</span>
+以此类推，从形式上可证明原式成立，思想类似于线性筛。</p>
+<h2
+id="求ilim_limitsxto-0displaystylefrac1-prod_t1nsqrttcos-txx2">求<span
+class="math inline">\(I=\lim_\limits{x\to
+0}\displaystyle\frac{1-\prod_{t=1}^n\sqrt[t]{\cos
+tx}}{x^2}\)</span></h2>
+<p>记<span class="math inline">\(I(n)=\lim_\limits{x\to
+0}\displaystyle\frac{1-\prod_{t=1}^n\sqrt[t]{\cos
+tx}}{x^2}\)</span>，那么<span
+class="math inline">\(I(1)=\displaystyle\frac{1}{2}\)</span>；<span
+class="math inline">\(n\geq2\)</span>时有：</p>
+<p><span
+class="math display">\[I(n)-I(n-1)=\displaystyle\lim_\limits{x\to
+0}\frac{\prod_{t=1}^{n-1}\sqrt[t]{\cos tx}-\prod_{t=1}^n\sqrt[t]{\cos
+tx}}{x^2}=\lim_\limits{x\to 0}\frac{1-\sqrt[n]{\cos
+nx}}{x^2}=\frac{1}{2}n\]</span></p>
+<p>由递推关系易得<span
+class="math inline">\(I=I(n)=\displaystyle\frac{n(n+1)}{4}\)</span>。</p>
+<h2 id="求ilim_limitsxto-0displaystylefrace1xfrac1x-1xfracexx2">求<span
+class="math inline">\(I=\lim_\limits{x\to
+0}\displaystyle\frac{e^{(1+x)^\frac{1}{x}}-(1+x)^{\frac{e}{x}}}{x^2}\)</span></h2>
+<h3 id="暴力泰勒展开">暴力泰勒展开</h3>
+<p><span
+class="math inline">\(\displaystyle(1+x)^{\frac{1}{x}}=e^{\frac{1}{x}\ln(1+x)}=e\cdot
+e^{\frac{1}{x}\ln(1+x)-1}\)</span></p>
+<p><span class="math inline">\(\displaystyle
+\frac{\ln(1+x)}{x}-1=-\frac{x}{2}+\frac{x^2}{3}+o(x^2)\)</span></p>
+<p><span class="math inline">\((1+x)^{\frac{1}{x}}=\displaystyle
+e[1+(-\frac{x}{2}+\frac{x^2}{3}+o(x^2))+\frac{1}{2}(-\frac{x}{2}+\frac{x^2}{3}+o(x^2))^2+o(x^2)]=e(1-\frac{x}{2}+\frac{11}{24}x^2)+o(x^2),
+x\to 0\)</span></p>
+<p><span class="math inline">\(\displaystyle
+e^{(1+x)^{\frac{1}{x}}}=e^e\cdot
+\exp[(-\frac{e}{2}x+\frac{11e}{24}x^2)+o(x^2)]=e^e[1+((-\frac{e}{2}x+\frac{11e}{24}x^2)+o(x^2))+\frac{1}{2}((-\frac{e}{2}x+\frac{11e}{24}x^2)+o(x^2))^2+o(x^2)]=e^e[1-\frac{e}{2}x+(\frac{e^2}{8}+\frac{11e}{24})x^2]+o(x^2)\)</span></p>
+<p><span class="math inline">\(((1+x)^{\frac{1}{x}})^e=\displaystyle
+e^e\cdot(1-\frac{1}{2}x+\frac{11}{24}x^2+o(x^2))^e=e^e[1-\frac{e}{2}x+\frac{11e}{24}x^2+\frac{e(e-1)}{2}(-\frac{1}{2}x+\frac{11}{24}x^2)^2]+o(x^2)=e^e[1-\frac{e}{2}x+(\frac{e^2}{8}+\frac{e}{3})x^2]+o(x^2)\)</span></p>
+<p><span class="math inline">\(I\displaystyle
+=\frac{e^{e+1}}{8}\)</span></p>
+<h3 id="经典计算方法">经典计算方法</h3>
+<h1 id="todo">todo</h1>
 
   </div>
   
@@ -2877,7 +3049,18 @@ class="math inline">\(a_i=b_i(i=0,1,\cdots,n)\)</span>。</p>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-lim_limitsx-to-0fracln2xsqrt1x2e-x2-1x4"><span class="toc-text">求\(\displaystyle I&#x3D; \lim_\limits{x \to
 0}\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82i-displaystyle-int-sum_n0-_inftyn3n1xndx"><span class="toc-text">求\(I &#x3D; \displaystyle \int \sum_{n&#x3D;0}^
 {_\infty}(n+3)(n+1)x^ndx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-lim_limitsxto-0fracnxn-prod_t1nsin-txxn2"><span class="toc-text">求\(\displaystyle \lim_\limits{x\to
-0}\frac{n!x^n-\prod_{t&#x3D;1}^n\sin tx}{x^{n+2}}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#taylor-%E5%B1%95%E5%BC%80"><span class="toc-text">Taylor 展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A7%E5%A6%99%E7%9A%84%E7%AD%89%E4%BB%B7%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%BB%A3%E6%8D%A2"><span class="toc-text">巧妙的等价无穷小代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%89%E7%90%86%E6%95%B0%E8%BF%90%E7%AE%97%E4%BC%B0%E8%AE%A1%E6%A0%B9%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="toc-text">利用有理数运算估计根式的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%85%E5%AE%9A%E7%B3%BB%E6%95%B0%E6%B3%95%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">待定系数法的本质</span></a></li></ol>
+0}\frac{n!x^n-\prod_{t&#x3D;1}^n\sin tx}{x^{n+2}}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#taylor-%E5%B1%95%E5%BC%80"><span class="toc-text">Taylor 展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A7%E5%A6%99%E7%9A%84%E7%AD%89%E4%BB%B7%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%BB%A3%E6%8D%A2"><span class="toc-text">巧妙的等价无穷小代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9C%89%E7%90%86%E6%95%B0%E8%BF%90%E7%AE%97%E4%BC%B0%E8%AE%A1%E6%A0%B9%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="toc-text">利用有理数运算估计根式的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%85%E5%AE%9A%E7%B3%BB%E6%95%B0%E6%B3%95%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">待定系数法的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82ilim_limitsxto-0displaystyle-frac1-ln-ln-xe1xfrac1xx"><span class="toc-text">求\(I&#x3D;\lim_\limits{x\to 0}\displaystyle \frac{1-\ln
+(\ln (x+e^{(1+x)^{\frac{1}{x}}}))}{x}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82displaystyle-i-lim_limitsxto-0fracxexfrac1x-e2frac32e2xx2"><span class="toc-text">求\(\displaystyle I &#x3D; \lim_\limits{x\to
+0}\frac{(x+e^x)^{\frac{1}{x}}-e^2+\frac{3}{2}e^2x}{x^2}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystylelim_limitsxto0frac1-prod_t1ncos-txx2"><span class="toc-text">求\(I&#x3D;\displaystyle\lim_\limits{x\to0}\frac{1-\prod_{t&#x3D;1}^n\cos
+tx}{x^2}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82ilim_limitsxto0displaystylefracln2xsqrt1x2e-x2-1x4"><span class="toc-text">求\(I&#x3D;\lim_\limits{x\to0}\displaystyle\frac{\ln^2(x+\sqrt{1+x^2})+e^{-x^2}-1}{x^4}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint_01fracsinln-xln-xdx"><span class="toc-text">求\(I&#x3D;\displaystyle\int_0^1\frac{\sin(\ln x)}{\ln
+x}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyleint_0fracpi2fracxtan-xdx"><span class="toc-text">求\(I&#x3D;\displaystyle\int_{0}^{\frac{\pi}{2}}\frac{x}{\tan
+x}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_1inftyfracln-xxndxn-intextn"><span class="toc-text">求\(I&#x3D;\displaystyle \int_{1}^{+\infty}(\frac{\ln
+x}{x})^{n}dx,n \in\text{N}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82idisplaystyle-int_0fracpi2fracxsin-xdx"><span class="toc-text">求\(I&#x3D;\displaystyle
+\int_{0}^{\frac{\pi}{2}}\frac{x}{\sin x}dx\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E6%98%8Edisplaystyle-frac6pi2prod_p1-frac1p2"><span class="toc-text">证明\(\displaystyle
+\frac{6}{\pi^2}&#x3D;\prod_{p}(1-\frac{1}{p^2})\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82ilim_limitsxto-0displaystylefrac1-prod_t1nsqrttcos-txx2"><span class="toc-text">求\(I&#x3D;\lim_\limits{x\to
+0}\displaystyle\frac{1-\prod_{t&#x3D;1}^n\sqrt[t]{\cos
+tx}}{x^2}\)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82ilim_limitsxto-0displaystylefrace1xfrac1x-1xfracexx2"><span class="toc-text">求\(I&#x3D;\lim_\limits{x\to
+0}\displaystyle\frac{e^{(1+x)^\frac{1}{x}}-(1+x)^{\frac{e}{x}}}{x^2}\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80"><span class="toc-text">暴力泰勒展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-text">经典计算方法</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4312,7 +4495,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-03-09-一些杂七杂八的数学题目2/","name":"一些杂七杂八的数学题目2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目2","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-03-09-%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE2/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-03-09-%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE2/","wordCount":27,"datePublished":"2023-03-09T15:59:48.000Z","dateModified":"2023-03-28T04:32:24.852Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-03-09-一些杂七杂八的数学题目2/","name":"一些杂七杂八的数学题目2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些杂七杂八的数学题目2","description":"这篇博客用于记录一些杂七杂八的数学题目以及相关的知识。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-03-09-%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE2/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-03-09-%E4%B8%80%E4%BA%9B%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE2/","wordCount":27,"datePublished":"2023-03-09T15:59:48.000Z","dateModified":"2023-07-23T15:36:21.467Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
