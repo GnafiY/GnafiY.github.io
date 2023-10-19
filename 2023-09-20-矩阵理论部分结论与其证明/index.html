@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-09-20T06:26:50.000Z">
-<meta property="article:modified_time" content="2023-10-19T15:47:23.951Z">
+<meta property="article:modified_time" content="2023-10-19T16:04:54.651Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1873,7 +1873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1697730472668),
+    lastupdate: new Date(1697731529803),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","webinfo"],
       for_post: ["toc"],
@@ -2968,15 +2968,41 @@ class="math inline">\(\geq n-1\)</span></p>
 class="math inline">\(P\)</span>和<span
 class="math inline">\(Q\)</span>都可逆</p>
 <p>行满秩列满秩</p>
-<p><img src="/static/images/满秩分解.png" class="lazyload" data-srcset="/static/images/满秩分解.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
 <h2 id="常用的矩阵分解方法">常用的矩阵分解方法</h2>
-<h3 id="谱特征值分解">谱（特征值）分解</h3>
+<h3 id="qr分解">QR分解</h3>
+<p>记<span class="math inline">\(A=(\alpha_1,\alpha_2,\cdots,
+\alpha_n)\)</span>，设<span
+class="math inline">\(A\)</span>列满秩，那么可以通过施密特正交化求得<span
+class="math inline">\(A\)</span>的一组标准正交基。</p>
+<p>首先进行正交化。</p>
+<p>再进行标准化。</p>
 <h3 id="满秩分解">满秩分解</h3>
-<p>矩阵的满秩分解是不唯一的</p>
-<p>初等行变换</p>
+<p>利用行初等变换和列初等变换可以将矩阵化为其标准型。设<span
+class="math inline">\(A_{m\times n}\)</span>以及<span
+class="math inline">\(\text{rank}(A)=r\)</span>，那么存在可逆矩阵<span
+class="math inline">\(P\)</span>和<span
+class="math inline">\(Q\)</span>使</p>
+<p><span class="math display">\[A=P\left(\begin{matrix} I_{r} &amp; O_{r
+\times (n - r)} \\ O_{(m-r) \times r} &amp; O_{(m - r)\times(n - r)}
+\end{matrix}\right)Q\]</span></p>
+<p>又<span class="math inline">\(\left(\begin{matrix} I_{r} &amp; O_{r
+\times (n - r)} \\ O_{(m-r) \times r} &amp; O_{(m - r)\times(n - r)}
+\end{matrix}\right)=\left(\begin{matrix} I_{r} \\ O_{(m-r) \times r}
+\end{matrix}\right) \times \left(\begin{matrix} I_{r} &amp; O_{r \times
+(n - r)} \end{matrix}\right)\)</span></p>
+<p>故<span class="math inline">\(A=\left(\begin{matrix} P \\ O_{(m-r)
+\times r} \end{matrix}\right) \times \left(\begin{matrix} Q &amp; O_{r
+\times (n - r)}
+\end{matrix}\right)\)</span>，这就是矩阵的满秩分解。记<span
+class="math inline">\(L=\left(\begin{matrix} P \\ O_{(m-r) \times r}
+\end{matrix}\right)\)</span>和<span
+class="math inline">\(R=\left(\begin{matrix} Q &amp; O_{r \times (n -
+r)} \end{matrix}\right)\)</span>，得到<span
+class="math inline">\(A=LR\)</span>。矩阵的满秩分解是不唯一的。</p>
+<h3 id="svd分解">SVD分解</h3>
+<h3 id="谱特征值分解">谱（特征值）分解</h3>
 <h3 id="schur-分解">Schur 分解</h3>
 <h3 id="三角分解与-cholesky-分解">三角分解与 Cholesky 分解</h3>
-<h3 id="qr分解">QR分解</h3>
 <h3 id="奇异值分解">奇异值分解</h3>
 <h3 id="极分解">极分解</h3>
 
@@ -3053,7 +3079,7 @@ class="math inline">\(Q\)</span>都可逆</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-text">特征值和特征向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="toc-text">分块矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%A9%E7%9A%84%E5%B8%B8%E8%A7%81%E7%BB%93%E8%AE%BA"><span class="toc-text">秩的常见结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">常用的矩阵分解方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%B1%E7%89%B9%E5%BE%81%E5%80%BC%E5%88%86%E8%A7%A3"><span class="toc-text">谱（特征值）分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%A1%E7%A7%A9%E5%88%86%E8%A7%A3"><span class="toc-text">满秩分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#schur-%E5%88%86%E8%A7%A3"><span class="toc-text">Schur 分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%88%86%E8%A7%A3%E4%B8%8E-cholesky-%E5%88%86%E8%A7%A3"><span class="toc-text">三角分解与 Cholesky 分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#qr%E5%88%86%E8%A7%A3"><span class="toc-text">QR分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3"><span class="toc-text">奇异值分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E5%88%86%E8%A7%A3"><span class="toc-text">极分解</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-text">特征值和特征向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="toc-text">分块矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%A9%E7%9A%84%E5%B8%B8%E8%A7%81%E7%BB%93%E8%AE%BA"><span class="toc-text">秩的常见结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">常用的矩阵分解方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#qr%E5%88%86%E8%A7%A3"><span class="toc-text">QR分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%A1%E7%A7%A9%E5%88%86%E8%A7%A3"><span class="toc-text">满秩分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#svd%E5%88%86%E8%A7%A3"><span class="toc-text">SVD分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%B1%E7%89%B9%E5%BE%81%E5%80%BC%E5%88%86%E8%A7%A3"><span class="toc-text">谱（特征值）分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#schur-%E5%88%86%E8%A7%A3"><span class="toc-text">Schur 分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%88%86%E8%A7%A3%E4%B8%8E-cholesky-%E5%88%86%E8%A7%A3"><span class="toc-text">三角分解与 Cholesky 分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3"><span class="toc-text">奇异值分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E5%88%86%E8%A7%A3"><span class="toc-text">极分解</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4488,7 +4514,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-09-20-矩阵理论部分结论与其证明/","name":"矩阵理论部分结论与其证明"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"矩阵理论部分结论与其证明","description":"本文从矩阵理论的前置知识出发，总结了矩阵理论课程的内容。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-09-20-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%85%B6%E8%AF%81%E6%98%8E/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-09-20-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%85%B6%E8%AF%81%E6%98%8E/","wordCount":28,"datePublished":"2023-09-20T06:26:50.000Z","dateModified":"2023-10-19T15:47:23.951Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023-09-20-矩阵理论部分结论与其证明/","name":"矩阵理论部分结论与其证明"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"矩阵理论部分结论与其证明","description":"本文从矩阵理论的前置知识出发，总结了矩阵理论课程的内容。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023-09-20-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%85%B6%E8%AF%81%E6%98%8E/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023-09-20-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%85%B6%E8%AF%81%E6%98%8E/","wordCount":28,"datePublished":"2023-09-20T06:26:50.000Z","dateModified":"2023-10-19T16:04:54.651Z","articleSection":"数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
