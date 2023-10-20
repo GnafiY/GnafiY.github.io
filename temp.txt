@@ -1,0 +1,6 @@
+\left(\begin{matrix}
+||\gamma_1|| & ||\gamma_1||\frac{(\gamma_1,\alpha_2)}{(\gamma_1,\gamma_1)} & \cdots & ||\gamma_1||\frac{(\gamma_1,\alpha_n)}{(\gamma_1,\gamma_1)}\\
+0 & |\gamma_2|| & \cdots & |\gamma_2||\frac{(\gamma_2,\alpha_n)}{(\gamma_2,\gamma_2)}\\
+\cdots & \cdots & \cdots & \cdots \\
+0 &  0 & \cdots & ||\gamma_n||
+\end{matrix}\right)
