@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-09-28T11:49:50.000Z">
-<meta property="article:modified_time" content="2023-02-07T06:19:07.282Z">
+<meta property="article:modified_time" content="2024-09-08T04:45:20.819Z">
 <meta property="article:author" content="GnafiY">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2226,7 +2226,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1725741192598),
+    lastupdate: new Date(1726804395039),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2633,20 +2633,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
   
-    
-      
-      
-      <div class='new-meta-item category'>
-        <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-        <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/">网站相关</a>
-        
-          <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-            <a href="/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/" itemprop="url"><span itemprop="name">网站相关</span></a>
-          </span>
-        
-      </div>
-      
-  
 
 
 
@@ -2708,6 +2694,8 @@ Code，实际上流程很简单。</p>
 <p>观察到博客翻页功能的内容不够美观，于是将 <code>article.ejs</code>
 中部分行进行了注释。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="attr">file</span>: blog-root-path/themes/volantis/layout/_partial/article.<span class="property">ejs</span> --&gt;</span><br><span class="line">          &lt;!-- ... --&gt;</span><br><span class="line">            &lt;-- line: 154, 160 --&gt;</span><br><span class="line">            &lt;!--&lt;p class=&#x27;content&#x27;&gt;&lt;%- prev.exp %&gt;&lt;/p&gt;--&gt;</span><br><span class="line">          &lt;!-- ... --&gt;</span><br><span class="line">            &lt;-- line: 173, 179 --&gt;</span><br><span class="line">            &lt;!--&lt;p class=&#x27;content&#x27;&gt;</span><br><span class="line">            &lt;%- truncate(strip_html(page.prev.content), &#123;length: 100&#125;) %&gt;&lt;/p&gt;--&gt;</span><br><span class="line">          &lt;!-- ... --&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="年9月8日">2024年9月8日</h2>
+<p>重现修了一下丢弃好久的博客。</p>
 
   </div>
   
@@ -2718,26 +2706,11 @@ Code，实际上流程很简单。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/09/30/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A%E9%A2%98%E9%A2%98%E8%A7%A3/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>算法分析与设计第二次作业题题解</p>
-          <p class='content'>题目发布于2021年9月30日上午十点。 
-Problem A
-题目描述
-如果一个质数能被表示为三个不同的质数的和的形式，那么我们称它为立方质数。
-现在给你一个数\(n(n \leq
-...</p>
+        <a class='prev' href='/2022/11/26/survive-BJTU/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Survive BJTU</p>
+          <p class='content'>笔者在2022年经历了计算机专业的保研之战，经历了近九个月的精神内耗，期间对大学本科期间的学习、生活和心态等方面有了很多思考。恰逢近日学习效率格外低下，于是决定写一篇随笔，记录自己的所思所想，期...</p>
         </a>
       
-      
-        <a class='next' href='/2021/09/28/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A03/'>
-          <p class='title'>算法日常练习3<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2021年9月28日练习。
-
-LintCode 1300
-事实上，当\(n \leq
-3\)时，总是能赢；\(n \geq
-4\)时，只要\(n\)是4的倍数一定输，其他情况我一定赢，...</p>
-        </a>
       
     </div>
   
@@ -2797,7 +2770,7 @@ LintCode 1300
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%8828%E6%97%A5"><span class="toc-text">2021年9月28日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%8829%E6%97%A5"><span class="toc-text">2021年9月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B411%E6%9C%889%E6%97%A5"><span class="toc-text">2021年11月9日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B410%E6%9C%8819%E6%97%A5"><span class="toc-text">2022年10月19日</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%8828%E6%97%A5"><span class="toc-text">2021年9月28日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%8829%E6%97%A5"><span class="toc-text">2021年9月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B411%E6%9C%889%E6%97%A5"><span class="toc-text">2021年11月9日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B410%E6%9C%8819%E6%97%A5"><span class="toc-text">2022年10月19日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B49%E6%9C%888%E6%97%A5"><span class="toc-text">2024年9月8日</span></a></li></ol>
   </div>
 </section>
 
@@ -3937,7 +3910,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"GnafiY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"The only source of knowledge is experience."},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/网站相关/","name":"网站相关"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/09/28/网站建设与维护纪实/","name":"网站建设与维护纪实"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"The only source of knowledge is experience.","author":{"@type":"Person","name":"GnafiY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"The only source of knowledge is experience."},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"网站建设与维护纪实","description":"本页主要记录网页的建设与维护的过程，并分享一些经验。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/09/28/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/"},"author":{"@type":"Person","name":"GnafiY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/09/28/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/","wordCount":26,"datePublished":"2021-09-28T11:49:50.000Z","dateModified":"2023-02-07T06:19:07.282Z","articleSection":"网站相关","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"GnafiY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"The only source of knowledge is experience."},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"一方の笔记本"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/essays/","name":"essays"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/essays/网站相关/","name":"网站相关"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/09/28/网站建设与维护纪实/","name":"网站建设与维护纪实"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"一方の笔记本","url":"http://example.com/","keywords":null,"description":"The only source of knowledge is experience.","author":{"@type":"Person","name":"GnafiY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"The only source of knowledge is experience."},"publisher":{"@type":"Organization","name":"一方の笔记本","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"网站建设与维护纪实","description":"本页主要记录网页的建设与维护的过程，并分享一些经验。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/09/28/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/"},"author":{"@type":"Person","name":"GnafiY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"一方の笔记本","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/09/28/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%BA%AA%E5%AE%9E/","wordCount":26,"datePublished":"2021-09-28T11:49:50.000Z","dateModified":"2024-09-08T04:45:20.819Z","articleSection":"essays","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
